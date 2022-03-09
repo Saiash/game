@@ -1,0 +1,3 @@
+{
+  "acrobatics": {"name": "акробатика", "description": "описание", "code": "acr", "parentAttr": "dex", "difficulty":"hard"}
+}
