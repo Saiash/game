@@ -1,24 +1,24 @@
 import { Character } from '../../models/characters';
-import { Dexterity } from '../../models/characters/attributes/models/dexterity';
-import { Skill } from '../../models/characters/skills/skill';
+import { Item } from '../../models/characters/inventory/item';
+import type { CTX } from '../../types/';
 
 export class GameData {
   playerCharacter: Character;
+  dataSource: CTX['dataSource'];
 
-  constructor() {
+  constructor(dataSource: CTX['dataSource']) {
+    this.dataSource = dataSource;
     this.playerCharacter = new Character({
       name: 'Test Name',
-      attributeProps: [{ ...Dexterity.getDefaultProps(), rawValue: 13 }],
-      skillProps: [
-        {
-          skillProps: { ...Skill.getDefaultProps(), parentAttrCode: 'dex' },
-          exp: 10,
-        },
-      ],
     });
   }
 
   getPlayerCharacter(): Character {
     return this.playerCharacter;
+  }
+
+  async initialLoading() {
+    const item = await Item.initByName(this.dataSource, 'padded_mittens');
+    await this.playerCharacter.inventory.addItem(item);
   }
 }

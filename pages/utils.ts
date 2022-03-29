@@ -5,7 +5,7 @@ export async function callAPIEndpoint({
   endpoint: string;
   data: any;
 }): Promise<any> {
-  return fetch('/api/endpoint', {
+  return fetch('http://localhost:3000/api/endpoint', {
     body: JSON.stringify({ endpoint, data }),
     method: 'POST',
     headers: new Headers({

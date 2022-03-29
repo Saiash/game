@@ -1,4 +1,5 @@
 import { item } from '../../index';
+import { Item } from './item';
 
 export class Inventory {
   items: { [index: number]: item.Item };
@@ -11,7 +12,7 @@ export class Inventory {
     let index = 0;
     let freeSlot = false;
     while (index < 1000 && !freeSlot) {
-      if (this.items[index]) {
+      if (!this.items[index]) {
         freeSlot = true;
       } else {
         index++;
@@ -39,6 +40,10 @@ export class Inventory {
     this.items[toIndex] = this.items[fromIndex];
     delete this.items[fromIndex];
     this.items[fromIndex] = temp;
+  }
+
+  getItemsAsArray(): item.Item[] {
+    return Object.values(this.items);
   }
 
   getRaw() {}

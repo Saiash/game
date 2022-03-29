@@ -1,6 +1,38 @@
 .container {
-  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #333333;
+}
+.settings {
+  height: 10%;
+  border-bottom: 2px ridge #777777;
+}
+.content {
+  display: flex;
+  height: 70%;
+  border-bottom: 2px ridge #777777;
+}
+
+.playerContainer {
   height: 100%;
+  width: 30%;
+  border-right: 2px ridge #777777;
+}
+.textContainer {
+  height: 100%;
+  width: 40%;
+  border-right: 2px ridge #777777;
+}
+.viewContainer {
+  height: 100%;
+  width: 30%;
+}
+
+.interactions {
+  height: 20%;
 }
 
 .condition {
@@ -10,6 +42,14 @@
 }
 
 .information {
+  position: absolute;
+  left: 10px;
+  top: 0;
+  bottom: 0;
+  width: 550px;
+  background-color: black;
+  display: flex;
+  z-index: 15;
 }
 
 .interaction {
@@ -25,6 +65,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 10;
 }
 
 .textNode {

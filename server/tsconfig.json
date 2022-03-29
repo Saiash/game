@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+          "module": "CommonJS",
+          "esModuleInterop": true,
+      "sourceMap": true
+    },
+          "module": "CommonJS",
+          "esModuleInterop": true,
+    "sourceMap": true,
+    "ts-node": {
+        "compilerOptions": {
+          "module": "CommonJS",
+          "sourceMap": true
+        }
+      }
+  }

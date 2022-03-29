@@ -1,9 +1,13 @@
 import { Context, GameData } from '../models';
 
 export type CTX = {
+  update: (data: CTX) => void;
   context: Context;
-  dataSource: { swr: any };
+  dataSource: {
+    swr: any;
+    dataloaders: { [index: string]: (data: any) => any };
+  };
   gameData: GameData;
-  setTextNodeId: React.Dispatch<React.SetStateAction<string>>;
-  setTextSceneId: React.Dispatch<React.SetStateAction<string>>;
+  setTextNodeId: (textNodeId: string) => void;
+  setTextSceneId: (textSceneId: string) => void;
 };
