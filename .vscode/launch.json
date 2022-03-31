@@ -24,11 +24,25 @@
       "type": "node-terminal"
     },
     {
+      "command": "nvm use 16 && yarn start",
+      "name": "run start",
+      "request": "launch",
+      "type": "node-terminal",
+      "url": "http://localhost:4000",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "command": "yarn startServ",
+      "name": "run startServ",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
       "command": "yarn dev",
-      "name": "run dev debug chrome",
+      "name": "run start debug chrome",
       "request": "launch",
       "type": "pwa-chrome",
-      "url": "http://localhost:3000",
+      "url": "http://localhost:4000",
       "webRoot": "${workspaceFolder}"
     }
   ]

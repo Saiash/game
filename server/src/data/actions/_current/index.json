@@ -1,6 +1,0 @@
-{
-  "actions_1": {"text": "описание", "actionType": "selectNode", "actionValue": "nodes_2"},
-  "actions_2": {"text": "описание", "actionType": "selectNode", "actionValue": "nodes_3"},
-  "actions_3": {"text": "описание", "actionType": "selectNode", "actionValue": "nodes_4"},
-  "actions_4": {"text": "описание", "actionType": "selectNode", "actionValue": "nodes_5"}
-}
