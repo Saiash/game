@@ -1,5 +1,9 @@
+import { ModificatorManager } from '../../Modificator';
 import { attributes, attribute } from '../../index';
 import { Skill } from './skill';
+import { characters } from '../../index';
+
+import type { CTX } from '../../../types/';
 
 export type SkillInputProps = {
   name: string;
@@ -7,16 +11,12 @@ export type SkillInputProps = {
   code: string;
   parentAttrCode: string;
   difficulty: 'easy' | 'medium' | 'hard' | 'very hard';
+  ModificatorManager: ModificatorManager;
 };
 
-export type SkillProps = {
-  name: string;
-  description: string;
-  code: string;
+export type SkillProps = SkillInputProps & {
   exp: number;
   parentAttr: attribute.Attribute;
-  parentAttrCode: string;
-  difficulty: 'easy' | 'medium' | 'hard' | 'very hard';
 };
 
 export type InputSkillsProps = {
@@ -37,40 +37,40 @@ export type CheckResults = {
 
 export class Skills {
   collection: { [index: string]: Skill };
+  character: characters.Character;
 
-  constructor(input?: InputSkillsProps) {
+  constructor(character: characters.Character, input?: InputSkillsProps) {
     this.collection = {};
-    if (input) this.addSkills(input);
+    this.character = character;
   }
 
   check(key: string, difficulty: number): CheckResults {
     return this.collection[key].check(difficulty);
   }
 
-  addSkill({
-    skillInputProps,
-    attributes,
-    exp,
+  async add({
+    dataloaders,
+    name,
+    exp = 0,
   }: {
-    skillInputProps: InputSkillProps;
-    attributes: attributes.Attributes;
+    dataloaders: CTX['dataloaders'];
+    name: string;
     exp?: number;
-  }) {
+  }): Promise<boolean> {
+    if (this.collection[name]) return false;
+    const skillData = await dataloaders.getSkill(name);
+    const { parentAttr: parentAttrCode } = skillData;
+
     let parentAttr: attribute.Attribute =
-      attributes.collection[skillInputProps.skillProps.parentAttrCode];
-    const skillProps = {
-      ...skillInputProps.skillProps,
-      parentAttr,
-      ...(exp ? { exp } : { exp: 0 }),
-    };
-    const skill = new Skill(skillProps);
-    this.collection[skill.props.code] = skill;
+      this.character.attributes.getByCode(parentAttrCode);
+    const skill = new Skill({ ...skillData, parentAttr, exp });
+    this.collection[name] = skill;
+    return true;
   }
 
-  addSkills({ attributes, skills }: InputSkillsProps) {
-    if (!skills) return;
-    for (const skill of skills) {
-      this.addSkill({ skillInputProps: skill, exp: skill.exp, attributes });
-    }
+  getAsArray(): [string, Skill][] {
+    return Object.entries(this.collection).map(i => {
+      return [i[0], i[1]];
+    });
   }
 }

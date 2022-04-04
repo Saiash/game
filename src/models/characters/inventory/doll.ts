@@ -18,6 +18,10 @@ export class Doll {
     this.zones = {};
   }
 
+  uneqipItem({ zoneIndex }: { zoneIndex: number }): boolean {
+    return this.removeItem({ zoneIndex, performer: this.character });
+  }
+
   removeItem({
     zoneIndex,
     performer,
@@ -25,6 +29,7 @@ export class Doll {
     zoneIndex: number;
     performer: characters.Character;
   }): boolean {
+    if (!this.zones[zoneIndex]) return false;
     const zone = this.zones[zoneIndex];
     if (zone.locked) return false;
 
@@ -35,7 +40,7 @@ export class Doll {
       delete this.zones[zone];
     });
 
-    return performer.inventory.addItem(item);
+    return performer.inventory.add(item);
   }
 
   checkIfPossibleToEquip(item: item.Item) {
@@ -70,6 +75,15 @@ export class Doll {
     return true;
   }
 
+  equipFromInventory({ index }: { index: number }): boolean {
+    const item = this.character.inventory.getItem(index);
+    const equipped = this.equipItem({ item, performer: this.character });
+    if (equipped) {
+      this.character.inventory.removeItem(index);
+    }
+    return equipped;
+  }
+
   switchItemLock(zoneIndex: number) {
     const zone = this.zones[zoneIndex];
     const item = zone.item;
@@ -80,11 +94,12 @@ export class Doll {
     });
   }
 
-  getEquippedItems(): item.Item[] {
-    const items: item.Item[] = [];
+  getEquippedItems(): [number, item.Item][] {
+    const items: [number, item.Item][] = [];
     for (const zoneIndex in this.zones) {
       const item = this.zones[zoneIndex].item;
-      if (!this.zones[zoneIndex].parentZone) items.push(item);
+      if (!this.zones[zoneIndex].parentZone)
+        items.push([parseInt(zoneIndex), item]);
     }
     return items;
   }

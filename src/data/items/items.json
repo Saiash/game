@@ -1,4 +1,7 @@
 {
-  "iron_collar": {"name": "Железный ошейник", "description": "обычный железный ошейник", "text": "шлем", "image": "", "weight": 1, "zones":[1], "cost": 1, "mods": []},
-  "padded_mittens": {"name": "Укрепленные рукавицы", "description": "Рукавицы из крепкой кожи, ограничивающие движения ладоней", "text": "рукавицы", "image": "", "weight": 1, "zones":[2,3], "cost": 1, "mods": [], "tags": ["applied.character.hands.secured"]}
+  "iron_collar": {"name": "Железный ошейник", "description": "обычный железный ошейник", "text": "шлем", "image": "", "weight": 1, "zones":[1050], "cost": 1, "mods": []},
+  "padded_mittens": {"name": "Укрепленные рукавицы", "description": "Рукавицы из крепкой кожи, ограничивающие движения ладоней", "text": "Рукавицы", "image": "", "weight": 1, "zones":[3050,3150], "cost": 1, "mods": [], "tags": ["applied.character.hands.secured"]},
+  "leather_gloves": {"name": "Кожаные перчатки", "description": "Кожаные перчатки из тонкой кожи", "text": "Перчатки", "image": "", "weight": 1, "zones":[3050,3150], "cost": 1, "mods": [], "tags": []},
+  "hand_cuffs": {"name": "Наручники", "description": "Железные нарукничи, соединяющие руки вместе", "text": "Наручники", "image": "", "weight": 1, "zones":[3040,3140], "cost": 1, "mods": [], "tags": ["applied.character.hands.secured"]},
+  "knife": {"name": "Нож", "description": "Короткий железный нож", "text": "Нож", "image": "", "weight": 1, "zones":[5100], "cost": 1, "mods": [], "tags": ["applied.character.hands.weapon"]}
 }

@@ -3,6 +3,7 @@ import useSWR, { mutate } from 'swr';
 import Nodes from './components/Node/nodes';
 import PlayerTabs from './components/Player/playerTabs';
 import PlayerNode from './components/Player/playerNode';
+import Interactions from './components/Interactions';
 import { callAPIEndpoint } from './utils';
 
 import styles from './styles/Home.module.css';
@@ -10,16 +11,15 @@ import { Context, GameData, getDataloaders } from './models';
 import type { CTX } from './types/';
 
 function App() {
-  const [init, setInit] = useState(1);
+  let test = 0;
+  const [init, setInit] = useState(0);
   const [settings, setSettings] = useState<{
     ctx: CTX | null;
-    initLoading: boolean;
     tab: string;
     textNodeId: string;
     textSceneId: string;
   }>({
     ctx: null,
-    initLoading: false,
     tab: 'items',
     textNodeId: '',
     textSceneId: '',
@@ -45,34 +45,28 @@ function App() {
 
   React.useMemo(async () => {
     const dataloaders = getDataloaders();
-    const dataSource = { swr: { mutate, useSWR }, dataloaders };
     const data = await callAPIEndpoint({
       endpoint: 'parseData',
-      data: {test: '1'}
+      data: { test: '1' },
     });
-    setSettings({
-      ctx: {
-        update: setCtx,
-        context: new Context(data),
-        dataSource,
-        gameData: new GameData(dataSource),
-        setTextNodeId,
-        setTextSceneId,
-      },
-      initLoading: false,
+    const ctx = {
+      update: setCtx,
+      context: new Context(data),
+      dataloaders,
+      gameData: new GameData(dataloaders),
+      setTextNodeId,
+      setTextSceneId,
+    };
+    const settings = {
+      ctx,
       tab: 'items',
       textNodeId: 'nodes_1',
       textSceneId: 'scene_01',
-    });
+    };
+    const newCtx = { ...settings.ctx };
+    await newCtx.gameData?.initialLoading();
+    setSettings({ ...settings, ctx: newCtx });
   }, [init]);
-
-  React.useMemo(async () => {
-    if (settings.ctx && !settings.initLoading) {
-      const newCtx = { ...settings.ctx };
-      await newCtx.gameData?.initialLoading();
-      setSettings({ ...settings, ctx: newCtx, initLoading: true });
-    }
-  }, [settings.ctx]);
 
   if (!settings.ctx) return <>empty page</>;
 
@@ -93,7 +87,9 @@ function App() {
         </div>
         <div className={styles.viewContainer}></div>
       </div>
-      <div className={styles.interactions}></div>
+      <div className={styles.interactions}>
+        <Interactions ctx={settings.ctx} />
+      </div>
     </div>
   );
 }

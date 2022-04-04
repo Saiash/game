@@ -1,6 +1,7 @@
 import { AttributeProps, Attributes } from '..';
 import { Inteligence } from './inteligence';
 import { Attribute } from '../attribute';
+import { ModificatorManager } from '../../../Modificator';
 
 export class Will extends Attribute {
   inteligence: Inteligence;
@@ -13,15 +14,13 @@ export class Will extends Attribute {
   }
 
   getValue(): number {
-    let value = this.props.rawValue;
-    this.props.mods.forEach(mod => {
-      value += mod.value;
-    });
-    return this.inteligence.getValue() + value;
+    return (
+      this.inteligence.getValue() + this.props.rawValue + this.getModsValue()
+    );
   }
 
   getRawValue(): number {
-    return this.props.rawValue;
+    return this.inteligence.getValue();
   }
 
   static getDefaultProps(): AttributeProps {
@@ -29,7 +28,8 @@ export class Will extends Attribute {
       name: 'Will',
       code: 'will',
       rawValue: 0,
-      mods: [],
+      ModificatorManager: new ModificatorManager(),
+      typePriority: 1,
     };
   }
 }

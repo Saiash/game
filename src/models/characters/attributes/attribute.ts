@@ -1,3 +1,4 @@
+import { ModificatorManager } from '../../Modificator';
 import { Attributes, AttributeProps, CheckResults } from './';
 
 export class Attribute {
@@ -7,12 +8,17 @@ export class Attribute {
     this.props = props;
   }
 
+  getName(): string {
+    return this.props.name;
+  }
+
   getValue(): number {
     let value = this.props.rawValue;
-    this.props.mods.forEach(mod => {
-      value += mod.value;
-    });
-    return value;
+    return value + this.getModsValue();
+  }
+
+  getModsValue(): number {
+    return this.props.ModificatorManager.getValue();
   }
 
   getRawValue(): number {
@@ -32,7 +38,8 @@ export class Attribute {
       name: '',
       code: '',
       rawValue: 10,
-      mods: [],
+      ModificatorManager: new ModificatorManager(),
+      typePriority: 0,
     };
   }
 

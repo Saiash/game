@@ -1,3 +1,4 @@
+import { ModificatorManager } from '../../../Modificator';
 import { AttributeProps, Attributes } from '..';
 import { Health } from './health';
 import { Dexterity } from './dexterity';
@@ -18,17 +19,14 @@ export class Speed extends Attribute {
   }
 
   getValue(): number {
-    let value = this.props.rawValue;
-    this.props.mods.forEach(mod => {
-      value += mod.value;
-    });
+    const value = this.props.rawValue + this.getModsValue();
     return (
       this.health.getValue() * 0.25 + this.dexterity.getValue() * 0.25 + value
     );
   }
 
   getRawValue(): number {
-    return this.props.rawValue;
+    return this.health.getValue() * 0.25 + this.dexterity.getValue() * 0.25;
   }
 
   static getDefaultProps(): AttributeProps {
@@ -36,7 +34,8 @@ export class Speed extends Attribute {
       name: 'Speed',
       code: 'speed',
       rawValue: 0,
-      mods: [],
+      ModificatorManager: new ModificatorManager(),
+      typePriority: 1,
     };
   }
 }

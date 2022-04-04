@@ -1,10 +1,16 @@
+import { ModificatorManager } from '../../Modificator';
 import { SkillProps, SkillInputProps, CheckResults } from './';
+import { attribute } from '../../index';
 
 export class Skill {
-  props: SkillProps;
+  exp: number;
+  attribute: attribute.Attribute;
+  difficulty: string;
 
   constructor(props: SkillProps) {
-    this.props = props;
+    this.attribute = props.parentAttr;
+    this.exp = props.exp;
+    this.difficulty = props.difficulty;
   }
 
   check(difficulty: number): CheckResults {
@@ -15,12 +21,15 @@ export class Skill {
   }
 
   getEffectiveValue(): number {
-    const expMod = this.calculateExpMod();
-    return this.props.parentAttr.getValue() + expMod - this.diffMod().value;
+    return this.getRawValue() + this.getExpMod();
   }
 
-  calculateExpMod(): number {
-    const exp = this.props.exp;
+  getRawValue(): number {
+    return this.attribute.getValue() - this.diffMod().value;
+  }
+
+  getExpMod(): number {
+    const exp = this.exp;
     if (exp <= 0) return -4;
     if (exp >= 1 && exp < 2) return 0;
     if (exp >= 2 && exp < 3) return 1;
@@ -30,7 +39,7 @@ export class Skill {
 
   diffMod(): { difficulty: string; value: number } {
     let value = 0;
-    switch (this.props.difficulty) {
+    switch (this.difficulty) {
       case 'easy':
         value = 0;
         break;
@@ -47,7 +56,11 @@ export class Skill {
         value = 3;
         break;
     }
-    return { difficulty: this.props.difficulty, value };
+    return { difficulty: this.difficulty, value };
+  }
+
+  setExp(exp: number) {
+    this.exp = exp;
   }
 
   static getDefaultProps(): SkillInputProps {
@@ -57,6 +70,7 @@ export class Skill {
       code: 'def',
       parentAttrCode: 'dex',
       difficulty: 'easy',
+      ModificatorManager: new ModificatorManager(),
     };
   }
 

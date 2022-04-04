@@ -21,7 +21,7 @@ export class Inventory {
     return index;
   }
 
-  addItem(item: item.Item): boolean {
+  add(item: item.Item): boolean {
     this.items[this.getFirstFreeSlot()] = item;
     return true;
   }
@@ -42,8 +42,10 @@ export class Inventory {
     this.items[fromIndex] = temp;
   }
 
-  getItemsAsArray(): item.Item[] {
-    return Object.values(this.items);
+  getAsArray(): [number, item.Item][] {
+    return Object.entries(this.items).map(i => {
+      return [parseInt(i[0]), i[1]];
+    });
   }
 
   getRaw() {}

@@ -1,3 +1,4 @@
+import { ModificatorManager } from '../../Modificator';
 import { Attribute } from './attribute';
 import { Dexterity } from './models/dexterity';
 import { Fatigue } from './models/fatigue';
@@ -14,7 +15,8 @@ export type AttributeProps = {
   name: string;
   code: string;
   rawValue: number;
-  mods: { source: string; value: number; duration: number }[];
+  ModificatorManager: ModificatorManager;
+  typePriority: number;
 };
 
 export type CheckResults = {
@@ -52,5 +54,15 @@ export class Attributes {
 
   check(key: string, difficulty: number): CheckResults {
     return this.collection[key].check(difficulty);
+  }
+
+  getAsArray(): [string, Attribute][] {
+    return Object.entries(this.collection).map(i => {
+      return [i[0], i[1]];
+    });
+  }
+
+  getByCode(code: string) {
+    return this.collection[code];
   }
 }

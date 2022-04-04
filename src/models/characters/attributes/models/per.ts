@@ -1,3 +1,4 @@
+import { ModificatorManager } from '../../../Modificator';
 import { AttributeProps, Attributes } from '..';
 import { Inteligence } from './inteligence';
 import { Attribute } from '../attribute';
@@ -13,15 +14,12 @@ export class Perception extends Attribute {
   }
 
   getValue(): number {
-    let value = this.props.rawValue;
-    this.props.mods.forEach(mod => {
-      value += mod.value;
-    });
+    const value = this.props.rawValue + this.getModsValue();
     return this.inteligence.getValue() + value;
   }
 
   getRawValue(): number {
-    return this.props.rawValue;
+    return this.inteligence.getValue();
   }
 
   static getDefaultProps(): AttributeProps {
@@ -29,7 +27,8 @@ export class Perception extends Attribute {
       name: 'Perception',
       code: 'per',
       rawValue: 0,
-      mods: [],
+      ModificatorManager: new ModificatorManager(),
+      typePriority: 1,
     };
   }
 }

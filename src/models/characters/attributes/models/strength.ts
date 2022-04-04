@@ -1,3 +1,4 @@
+import { ModificatorManager } from '../../../Modificator';
 import { AttributeProps } from '../';
 import { Attribute } from '../attribute';
 
@@ -7,7 +8,8 @@ export class Strength extends Attribute {
       name: 'Strength',
       code: 'str',
       rawValue: 10,
-      mods: [],
+      ModificatorManager: new ModificatorManager(),
+      typePriority: 0,
     };
   }
 }

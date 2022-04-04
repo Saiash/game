@@ -1,3 +1,4 @@
 {
-  "acrobatics": {"name": "акробатика", "description": "описание", "code": "acr", "parentAttr": "dex", "difficulty":"hard"}
+  "acrobatics": {"name": "Акробатика", "description": "описание", "code": "acrobatics", "parentAttr": "dex", "difficulty":"hard"},
+  "lockpicking": {"name": "Взлом", "description": "описание", "code": "lockpicking", "parentAttr": "int", "difficulty":"medium"}
 }

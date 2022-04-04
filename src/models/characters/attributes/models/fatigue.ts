@@ -1,3 +1,4 @@
+import { ModificatorManager } from '../../../Modificator';
 import { AttributeProps, Attributes } from '..';
 import { Attribute } from '../attribute';
 import { Health } from './health';
@@ -13,15 +14,12 @@ export class Fatigue extends Attribute {
   }
 
   getValue(): number {
-    let value = this.props.rawValue;
-    this.props.mods.forEach(mod => {
-      value += mod.value;
-    });
+    const value = this.props.rawValue + this.getModsValue();
     return this.health.getValue() + value;
   }
 
   getRawValue(): number {
-    return this.props.rawValue;
+    return this.health.getValue();
   }
 
   static getDefaultProps(): AttributeProps {
@@ -29,7 +27,8 @@ export class Fatigue extends Attribute {
       name: 'Fatigue',
       code: 'ft',
       rawValue: 0,
-      mods: [],
+      ModificatorManager: new ModificatorManager(),
+      typePriority: 1,
     };
   }
 }

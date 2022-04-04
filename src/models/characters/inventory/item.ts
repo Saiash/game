@@ -2,9 +2,42 @@ import { TagSystem } from '../../';
 import type { CTX } from '../../../types/';
 
 export const itemZones = [
-  { zones: 1, key: 'neck' },
-  { zones: 2, key: 'left hand' },
-  { zones: 3, key: 'right hand' },
+  { zones: 1000, key: 'head' },
+  { zones: 1010, key: 'skull' },
+  { zones: 1020, key: 'left eye' },
+  { zones: 1120, key: 'right eye' },
+  { zones: 1030, key: 'nose' },
+  { zones: 1040, key: 'mouth' },
+  { zones: 1050, key: 'neck' },
+
+  { zones: 2000, key: 'body' },
+  { zones: 2010, key: 'chest' },
+  { zones: 2020, key: 'belly' },
+  { zones: 2030, key: 'belt' },
+  { zones: 2040, key: 'pelvis' },
+  { zones: 2050, key: 'back' },
+
+  { zones: 3000, key: 'leftHand' },
+  { zones: 3100, key: 'rightHand' },
+  { zones: 3010, key: 'upperShoulder' },
+  { zones: 3020, key: 'shoulder' },
+  { zones: 3030, key: 'forearm' },
+  { zones: 3040, key: 'wrist' },
+  { zones: 3050, key: 'hand' },
+  { zones: 3060, key: 'finger' },
+
+  { zones: 4000, key: 'leftLeg' },
+  { zones: 4100, key: 'rightLeg' },
+  { zones: 4010, key: 'thigh' },
+  { zones: 4020, key: 'knee' },
+  { zones: 4030, key: 'shin' },
+  { zones: 4040, key: 'foot' },
+  { zones: 4050, key: 'toe' },
+
+  { zones: 5000, key: 'leftHandItem' },
+  { zones: 5100, key: 'rightHandItem' },
+
+  //слоты быстрого использования: с пояса, рюкзака, разгрузки, карманов
 ];
 
 export type ItemProps = {
@@ -40,10 +73,9 @@ export class Item {
   }
 
   static async initByName(
-    dataSource: CTX['dataSource'],
+    dataloaders: CTX['dataloaders'],
     name: string
   ): Promise<Item> {
-    const { dataloaders } = dataSource;
     const itemData = await dataloaders.getItem(name);
     return new Item(itemData);
   }
