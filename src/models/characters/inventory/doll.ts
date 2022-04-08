@@ -40,6 +40,7 @@ export class Doll {
       delete this.zones[zone];
     });
 
+    this.character.tags.removeTagSystem(item.props.tags);
     return performer.inventory.add(item);
   }
 
@@ -72,6 +73,7 @@ export class Doll {
         parentZone: i > 0 ? item.props.zones[0] : null,
       };
     });
+    this.character.tags.applyTagSystem(item.props.tags);
     return true;
   }
 

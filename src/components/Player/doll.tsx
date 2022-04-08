@@ -5,7 +5,13 @@ import doll from '../../Assets/doll.png';
 import type { CTX } from '../../types';
 import styles from '../styles/Home.module.css';
 
-export default function Inventory({ ctx }: { ctx: CTX }) {
+export default function Inventory({
+  ctx,
+  skillState,
+}: {
+  ctx: CTX;
+  skillState: () => void;
+}) {
   const { gameData } = ctx;
   const character = gameData.getPlayerCharacter();
   const [items, setItems] = useState(character.doll.getEquippedItems());
@@ -14,6 +20,7 @@ export default function Inventory({ ctx }: { ctx: CTX }) {
     const result = character.doll.uneqipItem({ zoneIndex: index });
     if (result) {
       setItems(character.doll.getEquippedItems());
+      skillState();
     }
     return result;
   };

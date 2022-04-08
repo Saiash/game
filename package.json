@@ -6,12 +6,10 @@
   "scripts": {
     "startServ": "nodemon --exec \"node --inspect -r ts-node/register src/server.ts\"",
     "buildServ": "tsc",
-
     "startCli": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-
     "start": "concurrently \"yarn startServ\" \"yarn startCli\""
   },
   "nodemonConfig": {
@@ -31,12 +29,14 @@
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.4.1",
+    "@types/lodash": "^4.14.181",
     "@types/node": "^17.0.23",
     "@types/react": "^17.0.43",
     "@types/react-dom": "^17.0.14",
     "eslint": "^7.32.0",
     "express": "^4.17.3",
     "json-loader": "^0.5.7",
+    "lodash": "^4.17.21",
     "prettier": "^2.3.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",

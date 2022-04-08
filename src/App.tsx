@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import useSWR, { mutate } from 'swr';
 import Nodes from './components/Node/nodes';
 import PlayerTabs from './components/Player/playerTabs';
 import PlayerNode from './components/Player/playerNode';
@@ -24,6 +23,7 @@ function App() {
     textNodeId: '',
     textSceneId: '',
   });
+  const [skillState, setSkillState] = useState(0);
 
   const isAdmin = true;
 
@@ -41,6 +41,14 @@ function App() {
 
   const setTab = (tab: string) => {
     setSettings({ ...settings, tab });
+  };
+
+  const switchSkillState = () => {
+    if (skillState === 1) {
+      setSkillState(0);
+    } else {
+      setSkillState(1);
+    }
   };
 
   React.useMemo(async () => {
@@ -76,7 +84,11 @@ function App() {
       <div className={styles.content}>
         <div className={styles.playerContainer}>
           <PlayerTabs setTab={setTab} />
-          <PlayerNode ctx={settings.ctx} tab={settings.tab} />
+          <PlayerNode
+            ctx={settings.ctx}
+            tab={settings.tab}
+            skillState={switchSkillState}
+          />
         </div>
         <div className={styles.textContainer}>
           <Nodes
@@ -88,7 +100,7 @@ function App() {
         <div className={styles.viewContainer}></div>
       </div>
       <div className={styles.interactions}>
-        <Interactions ctx={settings.ctx} />
+        <Interactions ctx={settings.ctx} skillState={skillState} />
       </div>
     </div>
   );

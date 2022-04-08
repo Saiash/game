@@ -7,7 +7,15 @@ import Doll from './doll';
 import styles from '../../styles/Home.module.css';
 import type { CTX } from '../../types';
 
-export default function PlayerNode({ ctx, tab }: { ctx: CTX; tab: string }) {
+export default function PlayerNode({
+  ctx,
+  tab,
+  skillState,
+}: {
+  ctx: CTX;
+  tab: string;
+  skillState: () => void;
+}) {
   const { gameData } = ctx;
   const player = gameData.getPlayerCharacter();
 
@@ -15,7 +23,7 @@ export default function PlayerNode({ ctx, tab }: { ctx: CTX; tab: string }) {
     <div className={styles.textNode}>
       {tab === 'items' && (
         <span>
-          <Inventory ctx={ctx} />
+          <Inventory ctx={ctx} skillState={skillState} />
         </span>
       )}
       {tab === 'skills' && (
@@ -30,7 +38,7 @@ export default function PlayerNode({ ctx, tab }: { ctx: CTX; tab: string }) {
       )}
       {tab === 'doll' && (
         <span>
-          <Doll ctx={ctx} />
+          <Doll ctx={ctx} skillState={skillState} />
         </span>
       )}
     </div>
