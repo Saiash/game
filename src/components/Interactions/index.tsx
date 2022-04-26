@@ -17,10 +17,12 @@ const TIME_OPTIONS_LABELS = {
 
 export default function Interactions({
   ctx,
-  skillState,
+  interactionsState,
+  stateManager,
 }: {
   ctx: CTX;
-  skillState: number;
+  stateManager: { [index: string]: () => void };
+  interactionsState: number;
 }) {
   const { gameData } = ctx;
   const player = gameData.getPlayerCharacter();
@@ -39,7 +41,7 @@ export default function Interactions({
     setSkills(_skills);
     setSkillSelected(_skills[0]);
     setTargets(actions[_skills[0]]);
-  }, [skillState]);
+  }, [interactionsState]);
 
   const onSkillSelect = (event: any) => {
     setSkillSelected(event.target.value);
@@ -65,9 +67,10 @@ export default function Interactions({
       },
     });
     if (result) {
-      ctx.update(ctx);
-      //renewGameState
+      stateManager.updateSkills();
+      stateManager.updatePlayer();
     }
+    stateManager.updateLog();
   };
 
   return (

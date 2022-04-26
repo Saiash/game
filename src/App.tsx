@@ -24,7 +24,9 @@ function App() {
     textNodeId: '',
     textSceneId: '',
   });
-  const [skillState, setSkillState] = useState(0);
+  const [interactionsState, setInteractionsState] = useState(0);
+  const [logState, setLogState] = useState(0);
+  const [playerState, setPlayerState] = useState(0);
 
   const isAdmin = true;
 
@@ -45,11 +47,19 @@ function App() {
   };
 
   const switchSkillState = () => {
-    if (skillState === 1) {
-      setSkillState(0);
-    } else {
-      setSkillState(1);
-    }
+    setInteractionsState(interactionsState ? 0 : 1);
+  };
+  const switchPlayerState = () => {
+    setPlayerState(playerState ? 0 : 1);
+  };
+  const switchLogState = () => {
+    setLogState(logState ? 0 : 1);
+  };
+
+  const stateManager = {
+    updateSkills: switchSkillState,
+    updatePlayer: switchPlayerState,
+    updateLog: switchLogState,
   };
 
   React.useMemo(async () => {
@@ -93,16 +103,25 @@ function App() {
           <PlayerNode
             ctx={settings.ctx}
             tab={settings.tab}
-            skillState={switchSkillState}
+            playerState={playerState}
+            stateManager={stateManager}
           />
         </div>
         <div className={styles.textContainer}>
-          <Log ctx={settings.ctx} />
+          <Log
+            ctx={settings.ctx}
+            logState={logState}
+            stateManager={stateManager}
+          />
         </div>
         <div className={styles.viewContainer}></div>
       </div>
       <div className={styles.interactions}>
-        <Interactions ctx={settings.ctx} skillState={skillState} />
+        <Interactions
+          ctx={settings.ctx}
+          stateManager={stateManager}
+          interactionsState={interactionsState}
+        />
       </div>
     </div>
   );

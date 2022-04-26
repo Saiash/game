@@ -6,10 +6,10 @@ import styles from '../styles/Home.module.css';
 
 export default function Inventory({
   ctx,
-  skillState,
+  stateManager,
 }: {
   ctx: CTX;
-  skillState: () => void;
+  stateManager: { [index: string]: () => void };
 }) {
   const { gameData } = ctx;
   const character = gameData.getPlayerCharacter();
@@ -20,10 +20,8 @@ export default function Inventory({
     const result = character.doll.equipFromInventory({ index });
     if (result) {
       setItems(character.inventory.getAsArray());
-      skillState();
-      ctx.gameData.log.addEvent({
-        text: `Item equipped: ${items[index][1].getName()}`,
-      });
+      stateManager.updateSkills();
+      stateManager.updateLog();
     }
     return result;
   };

@@ -91,6 +91,9 @@ export class Doll {
     if (equipped) {
       this.character.inventory.removeItem(index);
       item.setOwner(this.character);
+      this.ctx.gameData.log.addEvent({
+        text: `Item equipped: ${item.getName()}`,
+      });
     }
     return equipped;
   }

@@ -1,3 +1,4 @@
+import { CTX } from '../../types';
 import { Character } from '../characters';
 import { Item } from '../characters/inventory/item';
 
@@ -10,8 +11,10 @@ export type Event = {
 
 export class Log {
   events: Event[];
+  ctx: CTX;
 
-  constructor() {
+  constructor(ctx: CTX) {
+    this.ctx = ctx;
     this.events = [];
   }
 

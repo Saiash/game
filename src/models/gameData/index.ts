@@ -27,7 +27,7 @@ export class GameData {
     this.dataloaders = dataloaders;
     this.playerCharacter = new Character({ ctx, name: 'Test Name' });
     this.connector = new Connector({ ctx, gameData: this });
-    this.log = new Log();
+    this.log = new Log(ctx);
   }
 
   getPlayerCharacter(): Character {

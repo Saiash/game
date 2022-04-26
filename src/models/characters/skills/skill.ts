@@ -97,6 +97,10 @@ export class Skill {
     const { skill, difficulty, timeMod } = payload;
     if (!sourceActor) return false;
     const skillCheckResult = this.check(difficulty + timeMod);
+    this.ctx.gameData.log.addEvent({
+      source: sourceActor,
+      text: `${this.name}: ${skillCheckResult.result}, ${skillCheckResult.value}`,
+    });
     return this.resolver.resolve({
       result: skillCheckResult,
       sourceActor,

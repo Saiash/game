@@ -7,10 +7,10 @@ import styles from '../styles/Home.module.css';
 
 export default function Inventory({
   ctx,
-  skillState,
+  stateManager,
 }: {
   ctx: CTX;
-  skillState: () => void;
+  stateManager: { [index: string]: () => void };
 }) {
   const { gameData } = ctx;
   const character = gameData.getPlayerCharacter();
@@ -20,7 +20,7 @@ export default function Inventory({
     const result = character.doll.uneqipItem({ zoneIndex: index });
     if (result) {
       setItems(character.doll.getEquippedItems());
-      skillState();
+      stateManager.updateSkills();
     }
     return result;
   };
@@ -30,7 +30,7 @@ export default function Inventory({
 
     const item = character.doll.getItemByZone(index);
     if (!item) return false;
-    skillState();
+    stateManager.updateSkills();
     return item.lock();
   };
 

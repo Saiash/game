@@ -163,3 +163,21 @@
   justify-content: space-between;
   flex-direction: column;
 }
+
+.logContainer {
+  padding: 10px;
+  color: white;
+}
+
+.eventMessage {
+  padding-bottom: 10px;
+}
+
+.playerCharacterEvent {
+  color: lightgreen;
+}
+
+.otherCharacterEvent {
+  text-align: right;
+  color: darkred;
+}

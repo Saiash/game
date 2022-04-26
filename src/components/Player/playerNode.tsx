@@ -10,11 +10,13 @@ import type { CTX } from '../../types';
 export default function PlayerNode({
   ctx,
   tab,
-  skillState,
+  playerState,
+  stateManager,
 }: {
   ctx: CTX;
   tab: string;
-  skillState: () => void;
+  playerState: number;
+  stateManager: { [index: string]: () => void };
 }) {
   const { gameData } = ctx;
   const player = gameData.getPlayerCharacter();
@@ -23,22 +25,22 @@ export default function PlayerNode({
     <div className={styles.textNode}>
       {tab === 'items' && (
         <span>
-          <Inventory ctx={ctx} skillState={skillState} />
+          <Inventory ctx={ctx} stateManager={stateManager} />
         </span>
       )}
       {tab === 'skills' && (
         <span>
-          <Skills ctx={ctx} />
+          <Skills ctx={ctx} stateManager={stateManager} />
         </span>
       )}
       {tab === 'attrs' && (
         <span>
-          <Attributes ctx={ctx} />
+          <Attributes ctx={ctx} stateManager={stateManager} />
         </span>
       )}
       {tab === 'doll' && (
         <span>
-          <Doll ctx={ctx} skillState={skillState} />
+          <Doll ctx={ctx} stateManager={stateManager} />
         </span>
       )}
     </div>

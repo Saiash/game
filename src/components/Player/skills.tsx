@@ -5,7 +5,13 @@ import doll from '../../Assets/doll.png';
 import type { CTX } from '../../types';
 import styles from '../styles/Home.module.css';
 
-export default function Skills({ ctx }: { ctx: CTX }) {
+export default function Skills({
+  ctx,
+  stateManager,
+}: {
+  ctx: CTX;
+  stateManager: { [index: string]: () => void };
+}) {
   const { gameData } = ctx;
   const character = gameData.getPlayerCharacter();
   const [skills, setSkills] = useState(character.skills.getAsArray());
