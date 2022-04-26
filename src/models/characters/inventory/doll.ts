@@ -1,19 +1,28 @@
+import { CTX } from '../../../types';
 import { item } from '../../index';
 import { characters } from '../../index';
+import { Item } from './item';
 
 export type zone = {
-  locked: boolean;
   item: item.Item;
   parentZone: number | null;
 };
 
 export class Doll {
   character: characters.Character;
+  ctx: CTX;
   zones: {
     [index: number]: zone;
   };
 
-  constructor(character: characters.Character) {
+  constructor({
+    ctx,
+    character,
+  }: {
+    ctx: CTX;
+    character: characters.Character;
+  }) {
+    this.ctx = ctx;
     this.character = character;
     this.zones = {};
   }
@@ -31,7 +40,7 @@ export class Doll {
   }): boolean {
     if (!this.zones[zoneIndex]) return false;
     const zone = this.zones[zoneIndex];
-    if (zone.locked) return false;
+    if (zone.item.locked) return false;
 
     const item = zone.item;
     if (!item) return false;
@@ -48,7 +57,7 @@ export class Doll {
     let value = true;
     item.props.zones.forEach(zoneIndex => {
       if (!this.zones[zoneIndex]) return;
-      if (this.zones[zoneIndex].locked) value = false;
+      if (this.zones[zoneIndex].item.locked) value = false;
     });
     return value;
   }
@@ -68,7 +77,6 @@ export class Doll {
 
     item.props.zones.forEach((zoneIndex, i) => {
       this.zones[zoneIndex] = {
-        locked: false,
         item,
         parentZone: i > 0 ? item.props.zones[0] : null,
       };
@@ -82,18 +90,9 @@ export class Doll {
     const equipped = this.equipItem({ item, performer: this.character });
     if (equipped) {
       this.character.inventory.removeItem(index);
+      item.setOwner(this.character);
     }
     return equipped;
-  }
-
-  switchItemLock(zoneIndex: number) {
-    const zone = this.zones[zoneIndex];
-    const item = zone.item;
-    if (!item) return false;
-
-    item.props.zones.forEach(zone => {
-      this.zones[zone].locked = this.zones[zone].locked ? false : true;
-    });
   }
 
   getEquippedItems(): [number, item.Item][] {
@@ -104,6 +103,24 @@ export class Doll {
         items.push([parseInt(zoneIndex), item]);
     }
     return items;
+  }
+
+  getItemByZone(zone: number): Item | null {
+    return this.zones[zone].item ? this.zones[zone].item : null;
+  }
+
+  lockZone(index: number) {
+    const item = this.getItemByZone(index);
+    if (!item) return;
+    item.lock();
+    this.character.tags.renewSkillsOnConditionAdded(item.props.tags);
+  }
+
+  unlockZone(index: number) {
+    const item = this.getItemByZone(index);
+    if (!item) return;
+    item.unlock();
+    this.character.tags.renewSkillsOnConditionRemoved(item.props.tags);
   }
 
   getRaw() {}

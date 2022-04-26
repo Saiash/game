@@ -2,12 +2,21 @@ import { ModificatorManager } from '../../../Modificator';
 import { AttributeProps, Attributes } from '..';
 import { Strength } from './strength';
 import { Attribute } from '../attribute';
+import { CTX } from '../../../../types';
 
 export class Hitpoints extends Attribute {
   strength: Strength;
 
-  constructor(props: AttributeProps, attributes?: Attributes) {
-    super(props);
+  constructor({
+    ctx,
+    props,
+    attributes,
+  }: {
+    ctx: CTX;
+    props: AttributeProps;
+    attributes?: Attributes;
+  }) {
+    super({ ctx, props, attributes });
     if (!attributes?.collection['str'])
       throw Error('Str should be defined before HP');
     this.strength = attributes.collection['str'];

@@ -25,19 +25,40 @@ export default function Inventory({
     return result;
   };
 
+  const lockItem = (index: number): boolean => {
+    character.doll.lockZone(index);
+
+    const item = character.doll.getItemByZone(index);
+    if (!item) return false;
+    skillState();
+    return item.lock();
+  };
+
   return (
     <div>
       {items.map(item => {
         return (
           <div key={item[0]}>
-            <button
-              onClick={() => {
-                unequipItem(item[0]);
-              }}
-            >
-              U
-            </button>
-            {item[1].props.name}
+            {!item[1].locked && (
+              <button
+                onClick={() => {
+                  unequipItem(item[0]);
+                }}
+              >
+                U
+              </button>
+            )}
+            {item[1].isLockable() && (
+              <button
+                onClick={() => {
+                  lockItem(item[0]);
+                }}
+              >
+                L
+              </button>
+            )}
+            {item[1].isLocked() && <span>(L) </span>}
+            {item[1].getName()}
           </div>
         );
       })}

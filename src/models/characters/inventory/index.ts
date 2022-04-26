@@ -1,11 +1,25 @@
+import { Character } from '..';
+import { CTX } from '../../../types';
 import { item } from '../../index';
 import { Item } from './item';
 
 export class Inventory {
   items: { [index: number]: item.Item };
+  character: Character;
+  ctx: CTX;
 
-  constructor(items?: { [index: number]: item.Item }) {
+  constructor({
+    character,
+    items,
+    ctx,
+  }: {
+    character: Character;
+    ctx: CTX;
+    items?: { [index: number]: item.Item };
+  }) {
+    this.ctx = ctx;
     this.items = items || {};
+    this.character = character;
   }
 
   getFirstFreeSlot() {
@@ -23,11 +37,15 @@ export class Inventory {
 
   add(item: item.Item): boolean {
     this.items[this.getFirstFreeSlot()] = item;
+    item.owner = this.character;
     return true;
   }
 
   removeItem(index: number) {
-    if (this.items[index]) delete this.items[index];
+    if (this.items[index]) {
+      this.items[index].setOwner(undefined);
+      delete this.items[index];
+    }
   }
 
   getItem(index: number): item.Item {

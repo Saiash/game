@@ -1,7 +1,7 @@
 {
   "iron_collar": {"name": "Железный ошейник", "description": "обычный железный ошейник", "text": "шлем", "image": "", "weight": 1, "zones":[1050], "cost": 1, "mods": []},
-  "padded_mittens": {"name": "Укрепленные рукавицы", "description": "Рукавицы из крепкой кожи, ограничивающие движения ладоней", "text": "Рукавицы", "image": "", "weight": 1, "zones":[3250], "cost": 1, "mods": [], "tags": [{"applied": [{"itemSlot": [{"skillCheck":[{"lockpicking": 12}]}, {"restricted": 16}]}] }]},
+  "padded_mittens": {"name": "Укрепленные рукавицы", "description": "Рукавицы из крепкой кожи, ограничивающие движения ладоней", "text": "Рукавицы", "image": "", "weight": 1, "zones":[3250], "cost": 1, "mods": [], "options": {"lockable": true, "morph": []} , "tags": [{"applied": [{"itemSlot": [{"skillCheck":[{"conditions": ["locked"], "lockpicking": -1}]}, {"restricted": -5}]}] }]},
   "leather_gloves": {"name": "Кожаные перчатки", "description": "Кожаные перчатки из тонкой кожи", "text": "Перчатки", "image": "", "weight": 1, "zones":[3250], "cost": 1, "mods": [], "tags": []},
-  "hand_cuffs": {"name": "Наручники", "description": "Железные нарукничи, соединяющие руки вместе", "text": "Наручники", "image": "", "weight": 1, "zones":[3240], "cost": 1, "mods": [], "tags": [{"applied": [{"itemSlot": [{"locked": 14}, {"restricted": 12}]}] }]},
+  "hand_cuffs": {"name": "Наручники", "description": "Железные нарукничи, соединяющие руки вместе", "text": "Наручники", "image": "", "weight": 1, "zones":[3240], "cost": 1, "mods": [], "tags": [{"applied": [{"itemSlot": [{"locked": -1}, {"restricted": -1}]}] }]},
   "knife": {"name": "Нож", "description": "Короткий железный нож", "text": "Нож", "image": "", "weight": 1, "zones":[5100], "cost": 1, "mods": []}
 }

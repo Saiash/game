@@ -21,6 +21,9 @@ export default function Inventory({
     if (result) {
       setItems(character.inventory.getAsArray());
       skillState();
+      ctx.gameData.log.addEvent({
+        text: `Item equipped: ${items[index][1].getName()}`,
+      });
     }
     return result;
   };
@@ -37,7 +40,7 @@ export default function Inventory({
             >
               E
             </button>
-            {item[1].props.name}
+            {item[1].getName()}
           </div>
         );
       })}

@@ -1,3 +1,4 @@
+import { CTX } from '../../types';
 import { attributes } from '../index';
 import { inventory } from '../index';
 import { item } from '../index';
@@ -12,27 +13,42 @@ export class Character {
   doll: doll.Doll;
   name: string;
   tags: TagSystem;
+  ctx: CTX;
 
   constructor({
+    ctx,
     attributeProps,
     inventoryProps,
     skillProps,
     name,
   }: {
+    ctx: CTX;
     attributeProps?: attributes.AttributeProps[];
     inventoryProps?: { [index: number]: item.Item };
     skillProps?: skills.InputSkillProps[];
     name: string;
   }) {
-    this.tags = new TagSystem();
-    this.attributes = new attributes.Attributes(attributeProps);
-    this.inventory = new inventory.Inventory(inventoryProps);
-    this.skills = new skills.Skills(this, {
-      skills: skillProps,
-      attributes: this.attributes,
+    this.ctx = ctx;
+    this.tags = new TagSystem(ctx);
+    this.attributes = new attributes.Attributes({
+      ctx,
+      inputAttrs: attributeProps,
+    });
+    this.inventory = new inventory.Inventory({
+      ctx,
+      character: this,
+      items: inventoryProps,
+    });
+    this.skills = new skills.Skills({
+      ctx,
+      character: this,
+      input: {
+        skills: skillProps,
+        attributes: this.attributes,
+      },
     });
     this.name = name;
-    this.doll = new doll.Doll(this);
+    this.doll = new doll.Doll({ ctx, character: this });
   }
 
   getAvaliableActons(): {

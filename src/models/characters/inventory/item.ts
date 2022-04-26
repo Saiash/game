@@ -1,4 +1,5 @@
-import { TagSystem } from '../../';
+import { Character } from '..';
+import { characters, TagSystem } from '../../';
 import type { CTX } from '../../../types/';
 
 export const itemZones = [
@@ -59,23 +60,36 @@ export type ItemProps = {
 
   cost: number;
   mods: any;
+  options: any;
 };
 
 export class Item {
   id: number;
   props: ItemProps;
+  locked: boolean = false;
+  lockable: boolean = false;
+  owner?: Character;
+  ctx: CTX;
 
-  constructor(props: ItemProps) {
+  constructor({ ctx, props }: { ctx: CTX; props: ItemProps }) {
+    this.ctx = ctx;
     this.id = itemId++;
     const tags = props.tags as any as string;
     this.props = props;
+    if (props.options?.lockable) {
+      this.lockable = true;
+    }
     this.props.zones = this.calculateZones(props.zones);
-    const tagSystem = new TagSystem({ props: tags, item: this });
+    const tagSystem = new TagSystem(ctx, { props: tags, item: this });
     this.props.tags = tagSystem;
   }
 
   getId(): number {
     return this.id;
+  }
+
+  setOwner(character: Character | undefined) {
+    this.owner = character;
   }
 
   getName(): string {
@@ -91,12 +105,17 @@ export class Item {
     return new Item(props);
   }
 
-  static async initByName(
-    dataloaders: CTX['dataloaders'],
-    name: string
-  ): Promise<Item> {
+  static async initByName({
+    ctx,
+    dataloaders,
+    name,
+  }: {
+    ctx: CTX;
+    dataloaders: CTX['dataloaders'];
+    name: string;
+  }): Promise<Item> {
     const itemData = await dataloaders.getItem(name);
-    return new Item(itemData);
+    return new Item({ ctx, props: itemData });
   }
 
   calculateZones(zones: number[]): number[] {
@@ -114,4 +133,26 @@ export class Item {
   getMainSlot(): number {
     return this.props.zones[0];
   }
+
+  lock() {
+    this.locked = true;
+    this.props.tags.conditionAdded('locked');
+    return true;
+  }
+
+  unlock() {
+    this.locked = false;
+    this.props.tags.conditionRemoved('locked');
+    return true;
+  }
+
+  isLockable() {
+    return this.lockable && !this.locked;
+  }
+
+  isLocked() {
+    return this.locked;
+  }
+
+  //У предмета могут быть морфы(?) - возможность превращаться в другие предметы. Морфы должны быть строго совместимы.
 }

@@ -1,9 +1,12 @@
 import { ModificatorManager } from '../../Modificator';
-import { attributes, attribute } from '../../index';
+import { attributes, attribute, item } from '../../index';
 import { Skill } from './skill';
 import { characters } from '../../index';
 
 import type { CTX } from '../../../types/';
+import { Character } from '..';
+import { Item } from '../inventory/item';
+import { ActionPayload } from '../../connector';
 
 export type SkillInputProps = {
   name: string;
@@ -33,19 +36,42 @@ export type CheckResults = {
   rand: number;
   value: number;
   result: boolean;
+  difficulty: number;
 };
 
 export class Skills {
   collection: { [index: string]: Skill };
   character: characters.Character;
+  ctx: CTX;
 
-  constructor(character: characters.Character, input?: InputSkillsProps) {
+  constructor({
+    ctx,
+    character,
+    input,
+  }: {
+    ctx: CTX;
+    character: characters.Character;
+    input?: InputSkillsProps;
+  }) {
+    this.ctx = ctx;
     this.collection = {};
     this.character = character;
   }
 
-  check(key: string, difficulty: number): CheckResults {
-    return this.collection[key].check(difficulty);
+  check({
+    code,
+    difficulty,
+    timeMod,
+  }: {
+    code: string;
+    difficulty: number;
+    timeMod: number;
+  }): CheckResults {
+    return this.collection[code].check(difficulty + timeMod);
+  }
+
+  resolve(input: ActionPayload): boolean {
+    return this.collection[input.payload.skill].resolve(input);
   }
 
   async add({
@@ -63,7 +89,10 @@ export class Skills {
 
     let parentAttr: attribute.Attribute =
       this.character.attributes.getByCode(parentAttrCode);
-    const skill = new Skill({ ...skillData, parentAttr, exp });
+    const skill = new Skill({
+      ctx: this.ctx,
+      props: { ...skillData, parentAttr, exp },
+    });
     this.collection[name] = skill;
     return true;
   }

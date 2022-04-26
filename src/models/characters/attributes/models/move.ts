@@ -2,12 +2,21 @@ import { ModificatorManager } from '../../../Modificator';
 import { AttributeProps, Attributes } from '..';
 import { Speed } from './speed';
 import { Attribute } from '../attribute';
+import { CTX } from '../../../../types';
 
 export class Move extends Attribute {
   speed: Speed;
 
-  constructor(props: AttributeProps, attributes?: Attributes) {
-    super(props);
+  constructor({
+    ctx,
+    props,
+    attributes,
+  }: {
+    ctx: CTX;
+    props: AttributeProps;
+    attributes?: Attributes;
+  }) {
+    super({ ctx, props, attributes });
     if (
       !attributes?.collection['speed'] ||
       !(attributes?.collection['speed']! instanceof Speed)

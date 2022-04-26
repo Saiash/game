@@ -3,13 +3,22 @@ import { AttributeProps, Attributes } from '..';
 import { Health } from './health';
 import { Dexterity } from './dexterity';
 import { Attribute } from '../attribute';
+import { CTX } from '../../../../types';
 
 export class Speed extends Attribute {
   health: Health;
   dexterity: Dexterity;
 
-  constructor(props: AttributeProps, attributes?: Attributes) {
-    super(props);
+  constructor({
+    ctx,
+    props,
+    attributes,
+  }: {
+    ctx: CTX;
+    props: AttributeProps;
+    attributes?: Attributes;
+  }) {
+    super({ ctx, props, attributes });
     if (!attributes?.collection['dex'])
       throw Error('Dex should be defined before speed');
     if (!attributes?.collection['ht'])

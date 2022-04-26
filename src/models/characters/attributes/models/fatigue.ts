@@ -2,12 +2,21 @@ import { ModificatorManager } from '../../../Modificator';
 import { AttributeProps, Attributes } from '..';
 import { Attribute } from '../attribute';
 import { Health } from './health';
+import { CTX } from '../../../../types';
 
 export class Fatigue extends Attribute {
   health: Health;
 
-  constructor(props: AttributeProps, attributes?: Attributes) {
-    super(props);
+  constructor({
+    ctx,
+    props,
+    attributes,
+  }: {
+    ctx: CTX;
+    props: AttributeProps;
+    attributes?: Attributes;
+  }) {
+    super({ ctx, props, attributes });
     if (!attributes?.collection['ht'])
       throw Error('Health should be defined before fatigue');
     this.health = attributes.collection['ht'];

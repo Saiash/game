@@ -1,0 +1,14 @@
+Classification	Description	modifier	DC Equivalent
+Automatic	Tasks so trivial that waiving the success roll is an option	+10	0
+Trivial	Situations where failure is extremely unlikely, and would require incredibly bad luck.	+8 or +9	
+Very Easy	Tasks where failure is possible, but would require bad luck	+7 or +6	
+Easy	Most mundane tasks, including rolls made by ordinary people at day-to-day jobs	+4 or +5	5
+Very Favorable	Mildly risky tasks that most people would undertake without hesitation	+3 or +2	
+Favorable	Tasks that most people would hesitate at, due to the risk, but that a career adventurer would regard as easy.	+1	
+Average	Most adventuring tasks, and the majority of skill use under stress	no modifier	10
+Unfavorable	Stressful tasks that would challenge a novice adventurer, but not an old hand	-1	15
+Very Unfavorable	Stressful tasks that would challenge a professional	-2 or -3	20
+Hard	Tasks so challenging that even an expert will look for alternatives	-4 or -5	25
+Very Hard	Situations that even the masters might have second thoughts about	-6 or -7	30
+Dangerous	Tasks at which even the greatest masters expect to fail	-8 or -9	40
+Impossible	No sane person would attempt such a task	-10	

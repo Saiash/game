@@ -1,4 +1,6 @@
+import { CTX } from '../../../types';
 import { ModificatorManager } from '../../Modificator';
+import { CheckResults } from '../skills';
 import { Attribute } from './attribute';
 import { Dexterity } from './models/dexterity';
 import { Fatigue } from './models/fatigue';
@@ -19,12 +21,6 @@ export type AttributeProps = {
   typePriority: number;
 };
 
-export type CheckResults = {
-  rand: number;
-  value: number;
-  result: boolean;
-};
-
 const ATTRS_LIST = [
   { code: 'str', model: Strength },
   { code: 'dex', model: Dexterity },
@@ -40,15 +36,25 @@ const ATTRS_LIST = [
 
 export class Attributes {
   collection: { [index: string]: Attribute };
+  ctx: CTX;
 
-  constructor(inputAttrs?: AttributeProps[]) {
+  constructor({
+    ctx,
+    inputAttrs,
+  }: {
+    ctx: CTX;
+    inputAttrs?: AttributeProps[];
+  }) {
+    this.ctx = ctx;
     this.collection = {};
     ATTRS_LIST.forEach(attr => {
       const data = inputAttrs?.find(inputAttr => inputAttr.code === attr.code);
-      this.collection[attr.code] = new attr.model(
-        data || attr.model.getDefaultProps(),
-        this
-      );
+      const props = data || attr.model.getDefaultProps();
+      this.collection[attr.code] = new attr.model({
+        ctx,
+        props,
+        attributes: this,
+      });
     });
   }
 

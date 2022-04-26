@@ -8,6 +8,7 @@ import { callAPIEndpoint } from './utils';
 import styles from './styles/Home.module.css';
 import { Context, GameData, getDataloaders } from './models';
 import type { CTX } from './types/';
+import Log from './components/Log';
 
 function App() {
   let test = 0;
@@ -57,14 +58,19 @@ function App() {
       endpoint: 'parseData',
       data: { test: '1' },
     });
-    const ctx = {
-      update: setCtx,
-      context: new Context(data),
-      dataloaders,
-      gameData: new GameData(dataloaders),
-      setTextNodeId,
-      setTextSceneId,
+    const ctxGetter = function () {
+      const ctx: CTX = {
+        update: setCtx,
+        context: new Context(data),
+        gameData: {} as GameData,
+        dataloaders,
+        setTextNodeId,
+        setTextSceneId,
+      };
+      ctx.gameData = new GameData({ ctx, dataloaders });
+      return ctx;
     };
+    const ctx = ctxGetter();
     const settings = {
       ctx,
       tab: 'items',
@@ -91,11 +97,7 @@ function App() {
           />
         </div>
         <div className={styles.textContainer}>
-          <Nodes
-            ctx={settings.ctx}
-            id={settings.textNodeId}
-            isAdmin={isAdmin}
-          />
+          <Log ctx={settings.ctx} />
         </div>
         <div className={styles.viewContainer}></div>
       </div>
