@@ -56,11 +56,11 @@ export default function Interactions({
   };
 
   const handleAction = () => {
-    const result = gameData.connector.performAction({
+    const result = gameData.actionResolver.performAction({
       sourceActor: player,
       target: targets[targetSelected].source,
-      action: 'useSkill',
       payload: {
+        type: 'useSkill',
         skill: skillSelected,
         difficulty: targets[targetSelected].difficulty,
         timeMod: modOption,
@@ -78,6 +78,7 @@ export default function Interactions({
       <div className={styles.inputContainer}>
         <select onChange={onSkillSelect} value={skillSelected}>
           {skills.map(skill => {
+            //what skill
             return (
               <option key={skill} value={skill}>
                 {skill}
@@ -89,6 +90,7 @@ export default function Interactions({
         <select onChange={onTargetSelect} value={targetSelected}>
           {targets &&
             targets.map((target, index) => {
+              //on what target
               return (
                 <option key={index} value={index}>
                   {target.source.getName()}
@@ -103,6 +105,7 @@ export default function Interactions({
       <div className={styles.inputContainer}>
         <select onChange={onModSelected} value={modOption}>
           {Object.values(TIME_OPTIONS_LABELS).map(option => {
+            //for how long
             return (
               <option key={option.value} value={option.value}>
                 {option.label}
@@ -112,6 +115,9 @@ export default function Interactions({
         </select>
         <br />
         <input type="text" />
+        {
+          //using what object / assistance?
+        }
       </div>
     </div>
   );

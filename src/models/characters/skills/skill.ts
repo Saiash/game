@@ -3,7 +3,7 @@ import { SkillProps, SkillInputProps, CheckResults } from './';
 import { attribute } from '../../index';
 import { Character } from '..';
 import { Item } from '../inventory/item';
-import { ActionPayload } from '../../connector';
+import { ActionPayload } from '../../actionConnector';
 import { SkillResolver } from './resolvers';
 import { Lockpicking } from './resolvers/lockpicking';
 import { CTX } from '../../../types';

@@ -6,7 +6,7 @@ import { characters } from '../../index';
 import type { CTX } from '../../../types/';
 import { Character } from '..';
 import { Item } from '../inventory/item';
-import { ActionPayload } from '../../connector';
+import { ActionPayload } from '../../actionConnector';
 
 export type SkillInputProps = {
   name: string;

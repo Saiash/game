@@ -7,26 +7,30 @@ import { callAPIEndpoint } from './utils';
 
 import styles from './styles/Home.module.css';
 import { Context, GameData, getDataloaders } from './models';
-import type { CTX } from './types/';
 import Log from './components/Log';
+import ViewTabs from './components/View/viewTabs';
+
+import type { CTX } from './types/';
+import ViewNode from './components/View/viewNode';
 
 function App() {
   let test = 0;
   const [init, setInit] = useState(0);
   const [settings, setSettings] = useState<{
     ctx: CTX | null;
-    tab: string;
     textNodeId: string;
     textSceneId: string;
   }>({
     ctx: null,
-    tab: 'items',
     textNodeId: '',
     textSceneId: '',
   });
   const [interactionsState, setInteractionsState] = useState(0);
   const [logState, setLogState] = useState(0);
   const [playerState, setPlayerState] = useState(0);
+  const [playerTab, setPlayerTab] = useState('items');
+  const [viewState, setViewState] = useState(0);
+  const [viewTab, setViewTab] = useState('location');
 
   const isAdmin = true;
 
@@ -42,10 +46,6 @@ function App() {
     setSettings({ ...settings, textSceneId });
   };
 
-  const setTab = (tab: string) => {
-    setSettings({ ...settings, tab });
-  };
-
   const switchSkillState = () => {
     setInteractionsState(interactionsState ? 0 : 1);
   };
@@ -55,11 +55,15 @@ function App() {
   const switchLogState = () => {
     setLogState(logState ? 0 : 1);
   };
+  const switchViewState = () => {
+    setViewState(viewState ? 0 : 1);
+  };
 
   const stateManager = {
     updateSkills: switchSkillState,
     updatePlayer: switchPlayerState,
     updateLog: switchLogState,
+    updateView: switchViewState,
   };
 
   React.useMemo(async () => {
@@ -99,10 +103,10 @@ function App() {
       <div className={styles.settings}></div>
       <div className={styles.content}>
         <div className={styles.playerContainer}>
-          <PlayerTabs setTab={setTab} />
+          <PlayerTabs setTab={setPlayerTab} />
           <PlayerNode
             ctx={settings.ctx}
-            tab={settings.tab}
+            tab={playerTab}
             playerState={playerState}
             stateManager={stateManager}
           />
@@ -114,7 +118,15 @@ function App() {
             stateManager={stateManager}
           />
         </div>
-        <div className={styles.viewContainer}></div>
+        <div className={styles.viewContainer}>
+          <ViewTabs setTab={setViewTab} />
+          <ViewNode
+            ctx={settings.ctx}
+            tab={viewTab}
+            viewState={viewState}
+            stateManager={stateManager}
+          />
+        </div>
       </div>
       <div className={styles.interactions}>
         <Interactions

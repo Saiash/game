@@ -17,7 +17,14 @@ export default function Inventory({
   const [items, setItems] = useState(character.doll.getEquippedItems());
 
   const unequipItem = (index: number): boolean => {
-    const result = character.doll.uneqipItem({ zoneIndex: index });
+    const result = gameData.actionResolver.performAction({
+      sourceActor: character,
+      target: character,
+      payload: {
+        type: 'unequipItem',
+        zoneIndex: index,
+      },
+    });
     if (result) {
       setItems(character.doll.getEquippedItems());
       stateManager.updateSkills();
@@ -27,11 +34,16 @@ export default function Inventory({
 
   const lockItem = (index: number): boolean => {
     character.doll.lockZone(index);
-
-    const item = character.doll.getItemByZone(index);
-    if (!item) return false;
+    const result = gameData.actionResolver.performAction({
+      sourceActor: character,
+      target: character,
+      payload: {
+        type: 'lockItem',
+        zoneIndex: index,
+      },
+    });
     stateManager.updateSkills();
-    return item.lock();
+    return result;
   };
 
   return (

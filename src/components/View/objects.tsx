@@ -4,7 +4,7 @@ import { inventory } from '../../models/';
 import type { CTX } from '../../types';
 import styles from '../styles/Home.module.css';
 
-export default function Inventory({
+export default function Objects({
   ctx,
   stateManager,
 }: {
@@ -17,20 +17,12 @@ export default function Inventory({
 
   const equipItem = (index: number): boolean => {
     const character = gameData.getPlayerCharacter();
-    const result = gameData.actionResolver.performAction({
-      sourceActor: character,
-      target: character,
-      payload: {
-        type: 'equipItem',
-        itemIndex: index,
-      },
-    });
+    const result = character.doll.equipFromInventory({ index });
     if (result) {
       setItems(character.inventory.getAsArray());
       stateManager.updateSkills();
       stateManager.updateLog();
     }
-    stateManager.updateLog();
     return result;
   };
 

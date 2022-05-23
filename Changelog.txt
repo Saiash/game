@@ -1,3 +1,6 @@
+v. 0.0.14
+Action Resolver + Action connector
+
 v. 0.0.13
 State manager и базовое ведение логов действий
 

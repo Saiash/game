@@ -4,6 +4,7 @@ import { inventory } from '../index';
 import { item } from '../index';
 import { skills } from '../index';
 import { doll } from '../index';
+import { Location } from '../locations';
 import { TagSystem } from '../tag';
 
 let itemId = 0;
@@ -17,6 +18,7 @@ export class Character {
   tags: TagSystem;
   ctx: CTX;
   id: number;
+  location: Location;
 
   constructor({
     ctx,
@@ -24,14 +26,17 @@ export class Character {
     inventoryProps,
     skillProps,
     name,
+    location,
   }: {
     ctx: CTX;
     attributeProps?: attributes.AttributeProps[];
     inventoryProps?: { [index: number]: item.Item };
     skillProps?: skills.InputSkillProps[];
     name: string;
+    location: Location;
   }) {
     this.id = itemId++;
+    this.location = location;
     this.ctx = ctx;
     this.tags = new TagSystem(ctx);
     this.attributes = new attributes.Attributes({
