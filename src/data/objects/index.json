@@ -1,0 +1,61 @@
+{
+    "chest_test": {"name": "Сундук", "description": "Обычный сундук", 
+        "tags": [
+            {"skillCheck": [
+                {
+                    "name": "lockpicking", "difficulty": -1, "conditions": [{"and": [{"locked": true}]}]
+                },
+                {
+                    "name": "disarm",
+                    "difficulty": -1, 
+                    "conditions": [
+                        {"and": [
+                            {"status": ["trapped"]},
+                            {"knownLore": [{"id": "1", "name": "test_chect_lore"}]}
+                        ]}
+                    ], 
+                    "onSuccess": [
+                        {"removeStatus": ["trapped"]}
+                    ], 
+                    "onFail": [
+                        {"sendMessage": [{"id": [1]}]}
+                    ]
+                }
+            ]},
+            {"actions": [
+                {
+                    "name": "open",
+                    "difficulty": 0, 
+                    "conditions": [
+                        {"and": [{"status": ["closed"]}, {"locked": true}]}
+                    ],
+                    "onSuccess": [
+                        {"removeStatus": ["closed"]}, {"addStatus": ["open"]},
+                        {"triggerEvent": [{"id": 1}], "conditions": [{"and": [{"status": ["trapped"]}]}]}
+                    ]
+                },
+                {
+                    "name": "look",
+                    "difficulty": 0,
+                    "conditions": [
+                        {"or": [
+                            {"unknownLore": [{"id": [1]}]},
+                            {"unknownLore": [{"id": [2]}]}
+                        ]}
+                    ],
+                    "onSuccess": [
+                        {"addLore": [{"id": 1}]}
+                    ],
+                    "onFail": [
+                        {"addLore": [{"id": 2}]}
+                    ]
+                }
+            ]}
+        ],
+        "status": ["closed", "trapped"],
+        "locked": true,
+        "inventory": [
+            {"name": "Нож"}
+        ]
+    }
+}
