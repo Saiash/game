@@ -5,9 +5,13 @@ import { Item } from '../characters/inventory/item';
 const MAX_LENGTH = 10;
 
 export type Event = {
+  id: number;
+  time: string;
   text: string;
   source: Character | Item | 'System';
 };
+
+let id = 0;
 
 export class Log {
   events: Event[];
@@ -25,7 +29,10 @@ export class Log {
     text: string;
     source?: Character | Item | 'System';
   }) {
-    this.events.push({ source, text });
+    const time = this.ctx.gameData.timeManager
+      .getCurrentTime()
+      .format('hh:mm:ss');
+    this.events.push({ id: id++, source, text, time });
     if (this.events.length > MAX_LENGTH) {
       this.removeEvent();
     }

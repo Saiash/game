@@ -3,6 +3,8 @@ import { AttributeProps, Attributes } from '..';
 import { Speed } from './speed';
 import { Attribute } from '../attribute';
 import { CTX } from '../../../../types';
+import { Character } from '../..';
+import { Weight } from '../../secondaryAttributes/models/weight';
 
 export class Move extends Attribute {
   speed: Speed;
@@ -10,13 +12,15 @@ export class Move extends Attribute {
   constructor({
     ctx,
     props,
+    character,
     attributes,
   }: {
     ctx: CTX;
     props: AttributeProps;
+    character: Character;
     attributes?: Attributes;
   }) {
-    super({ ctx, props, attributes });
+    super({ ctx, props, attributes, character });
     if (
       !attributes?.collection['speed'] ||
       !(attributes?.collection['speed']! instanceof Speed)
@@ -27,7 +31,15 @@ export class Move extends Attribute {
 
   getValue(): number {
     const value = this.props.rawValue + this.getModsValue();
-    return Math.floor(this.speed.getValue()) + value;
+    const encumbrance = (
+      this.character.secondaryAttributes.getByCode('weight') as Weight
+    ).encumbrance();
+    return Math.max(
+      ...[
+        Math.floor(this.speed.getValue() * (1 - encumbrance * 0.2)) + value,
+        1,
+      ]
+    );
   }
 
   getRawValue(): number {

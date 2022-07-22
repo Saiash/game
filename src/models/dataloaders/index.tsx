@@ -11,5 +11,11 @@ export function getDataloaders() {
         data: { skillName: name },
       });
     },
+    getObject: async (name: string) => {
+      return callAPIEndpoint({
+        endpoint: 'getObject',
+        data: { objectName: name },
+      });
+    },
   };
 }

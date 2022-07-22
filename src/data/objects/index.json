@@ -1,11 +1,12 @@
 {
     "chest_test": {"name": "Сундук", "description": "Обычный сундук", 
         "tags": [
-            {"skillCheck": [
+            {"self": [
                 {
-                    "name": "lockpicking", "difficulty": -1, "conditions": [{"and": [{"locked": true}]}]
+                    "type": "skill", "name": "lockpicking", "difficulty": -1, "conditions": [{"and": [{"status": ["locked"]}]}]
                 },
                 {
+                    "type": "skill", 
                     "name": "disarm",
                     "difficulty": -1, 
                     "conditions": [
@@ -20,14 +21,13 @@
                     "onFail": [
                         {"sendMessage": [{"id": [1]}]}
                     ]
-                }
-            ]},
-            {"actions": [
+                },
                 {
+                    "type": "action", 
                     "name": "open",
                     "difficulty": 0, 
                     "conditions": [
-                        {"and": [{"status": ["closed"]}, {"locked": true}]}
+                        {"and": [{"status": ["closed", "locked"]}]}
                     ],
                     "onSuccess": [
                         {"removeStatus": ["closed"]}, {"addStatus": ["open"]},
@@ -35,6 +35,7 @@
                     ]
                 },
                 {
+                    "type": "action", 
                     "name": "look",
                     "difficulty": 0,
                     "conditions": [

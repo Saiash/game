@@ -4,6 +4,7 @@ import { Health } from './health';
 import { Dexterity } from './dexterity';
 import { Attribute } from '../attribute';
 import { CTX } from '../../../../types';
+import { Character } from '../..';
 
 export class Speed extends Attribute {
   health: Health;
@@ -13,12 +14,14 @@ export class Speed extends Attribute {
     ctx,
     props,
     attributes,
+    character,
   }: {
     ctx: CTX;
     props: AttributeProps;
+    character: Character;
     attributes?: Attributes;
   }) {
-    super({ ctx, props, attributes });
+    super({ ctx, props, attributes, character });
     if (!attributes?.collection['dex'])
       throw Error('Dex should be defined before speed');
     if (!attributes?.collection['ht'])
@@ -29,9 +32,7 @@ export class Speed extends Attribute {
 
   getValue(): number {
     const value = this.props.rawValue + this.getModsValue();
-    return (
-      this.health.getValue() * 0.25 + this.dexterity.getValue() * 0.25 + value
-    );
+    return this.getRawValue() + value;
   }
 
   getRawValue(): number {

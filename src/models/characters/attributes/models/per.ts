@@ -3,6 +3,7 @@ import { AttributeProps, Attributes } from '..';
 import { Inteligence } from './inteligence';
 import { Attribute } from '../attribute';
 import { CTX } from '../../../../types';
+import { Character } from '../..';
 
 export class Perception extends Attribute {
   inteligence: Inteligence;
@@ -10,13 +11,15 @@ export class Perception extends Attribute {
   constructor({
     ctx,
     props,
+    character,
     attributes,
   }: {
     ctx: CTX;
     props: AttributeProps;
+    character: Character;
     attributes?: Attributes;
   }) {
-    super({ ctx, props, attributes });
+    super({ ctx, props, attributes, character });
     if (!attributes?.collection['int'])
       throw Error('Inteligence should be defined before per');
     this.inteligence = attributes.collection['int'];

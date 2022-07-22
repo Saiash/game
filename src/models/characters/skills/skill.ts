@@ -1,12 +1,13 @@
 import { ModificatorManager } from '../../Modificator';
-import { SkillProps, SkillInputProps, CheckResults } from './';
+import { SkillProps, SkillInputProps, CheckResults, ResolveResult } from './';
 import { attribute } from '../../index';
 import { Character } from '..';
 import { Item } from '../inventory/item';
-import { ActionPayload } from '../../actionConnector';
+import { ActionPayload, useSkillPayload } from '../../actionConnector';
 import { SkillResolver } from './resolvers';
 import { Lockpicking } from './resolvers/lockpicking';
 import { CTX } from '../../../types';
+import { result } from 'lodash';
 
 export class Skill {
   exp: number;
@@ -92,20 +93,30 @@ export class Skill {
     };
   }
 
-  resolve(input: ActionPayload): boolean {
+  resolve(input: ActionPayload): ResolveResult {
     const { sourceActor, payload, target } = input;
-    const { skill, difficulty, timeMod } = payload;
-    if (!sourceActor) return false;
-    const skillCheckResult = this.check(difficulty + timeMod);
-    this.ctx.gameData.log.addEvent({
-      source: sourceActor,
-      text: `${this.name}: ${skillCheckResult.result}, ${skillCheckResult.value}`,
-    });
-    return this.resolver.resolve({
+    if (payload.type !== 'useSkill') return { executed: false, payload: input };
+    const { skill, difficulty, timeMod, options } = payload;
+    if (!sourceActor) return { executed: false, payload: input };
+    const optionsMod = this.calcOptionsMod(options);
+    const skillCheckResult = this.check(difficulty + timeMod * 1 + optionsMod);
+    this.resolver.resolve({
       result: skillCheckResult,
       sourceActor,
       target,
     });
+    return {
+      executed: true,
+      payload: input,
+      checkResult: skillCheckResult,
+      message: `${this.name}: ${skillCheckResult.result}, ${skillCheckResult.value}`,
+    };
+  }
+
+  calcOptionsMod(options: useSkillPayload['options']): number {
+    let result = 0;
+    if (options?.offHand) result -= 4;
+    return result;
   }
 
   getRaw() {}

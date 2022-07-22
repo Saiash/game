@@ -1,25 +1,30 @@
 import { Character } from '..';
 import { CTX } from '../../../types';
 import { item } from '../../index';
+import { ObjectModel } from '../../locations/object';
 import { Item } from './item';
 
 export class Inventory {
   items: { [index: number]: item.Item };
-  character: Character;
+  character?: Character;
+  container?: ObjectModel;
   ctx: CTX;
 
   constructor({
     character,
+    container,
     items,
     ctx,
   }: {
-    character: Character;
+    character?: Character;
+    container?: ObjectModel;
     ctx: CTX;
     items?: { [index: number]: item.Item };
   }) {
     this.ctx = ctx;
     this.items = items || {};
     this.character = character;
+    this.container = container;
   }
 
   getFirstFreeSlot() {

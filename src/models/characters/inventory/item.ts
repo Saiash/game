@@ -69,6 +69,7 @@ export class Item {
   locked: boolean = false;
   lockable: boolean = false;
   owner?: Character;
+  status: string[];
   ctx: CTX;
 
   constructor({ ctx, props }: { ctx: CTX; props: ItemProps }) {
@@ -80,8 +81,9 @@ export class Item {
       this.lockable = true;
     }
     this.props.zones = this.calculateZones(props.zones);
-    const tagSystem = new TagSystem(ctx, { props: tags, item: this });
+    const tagSystem = new TagSystem(ctx, { props: tags, target: this });
     this.props.tags = tagSystem;
+    this.status = [];
   }
 
   getId(): number {
@@ -152,6 +154,23 @@ export class Item {
 
   isLocked() {
     return this.locked;
+  }
+
+  hasStatus(status: string): boolean {
+    return this.status.some(s => {
+      s === status;
+    });
+  }
+
+  addStatus(status: string): boolean {
+    if (this.hasStatus(status)) return false;
+    this.status.push(status);
+    return true;
+  }
+
+  removeStatus(status: string): boolean {
+    this.status = this.status.filter(s => s !== status);
+    return true;
   }
 
   //У предмета могут быть морфы(?) - возможность превращаться в другие предметы. Морфы должны быть строго совместимы.

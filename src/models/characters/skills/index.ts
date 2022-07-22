@@ -33,10 +33,17 @@ export type InputSkillProps = {
 };
 
 export type CheckResults = {
-  rand: number;
-  value: number;
+  rand?: number;
+  value?: number;
   result: boolean;
-  difficulty: number;
+  difficulty?: number;
+};
+
+export type ResolveResult = {
+  executed: boolean;
+  payload?: ActionPayload;
+  checkResult?: CheckResults;
+  message?: string;
 };
 
 export class Skills {
@@ -71,7 +78,15 @@ export class Skills {
   }
 
   resolve(input: ActionPayload): boolean {
-    return this.collection[input.payload.skill].resolve(input);
+    if (input.payload.type !== 'useSkill') return false;
+    const result = this.collection[input.payload.skill].resolve(input);
+    if (result.message) {
+      this.ctx.gameData.log.addEvent({
+        source: result.payload?.sourceActor,
+        text: result.message,
+      });
+    }
+    return result.checkResult?.result || false;
   }
 
   async add({

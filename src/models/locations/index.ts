@@ -34,4 +34,12 @@ export class Location {
     this.objects = [];
     this.tags = new TagSystem(ctx);
   }
+
+  addObject(object: ObjectModel) {
+    this.objects.push(object);
+  }
+
+  addCharacter(character: Character) {
+    this.characters.push(character);
+  }
 }

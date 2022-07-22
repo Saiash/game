@@ -1,3 +1,4 @@
+import { Character } from '..';
 import { CTX } from '../../../types';
 import { ModificatorManager } from '../../Modificator';
 import { CheckResults } from '../skills';
@@ -5,19 +6,23 @@ import { Attributes, AttributeProps } from './';
 
 export class Attribute {
   props: AttributeProps;
+  character: Character;
   ctx: CTX;
 
   constructor({
     props,
     ctx,
+    character,
     attributes,
   }: {
     props: AttributeProps;
+    character: Character;
     attributes?: Attributes;
     ctx: CTX;
   }) {
     this.props = props;
     this.ctx = ctx;
+    this.character = character;
   }
 
   getName(): string {

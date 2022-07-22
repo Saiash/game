@@ -1,9 +1,11 @@
 import { Item } from '../characters/inventory/item';
 import _ from 'lodash';
 import { CTX } from '../../types';
+import e from 'express';
+import { Tag } from './models/tag';
 
 export class TagSystem {
-  input: { props: any; item?: Item } | undefined;
+  input: { props: any; target?: Item } | undefined;
   required: tagNode;
   inherited: tagNode;
   applied: tagNode;
@@ -12,7 +14,7 @@ export class TagSystem {
   ctx: CTX;
   //придумать, что делать со слоями
 
-  constructor(ctx: CTX, input?: { props: any; item?: Item }) {
+  constructor(ctx: CTX, input?: { props: any; target?: Item }) {
     this.ctx = ctx;
     this.required = {};
     this.inherited = {};
@@ -26,97 +28,142 @@ export class TagSystem {
     }
   }
 
-  parseInput(input: { props: Tag[]; item?: Item }) {
-    const { props, item } = input;
+  parseInput(input: { props: any; target?: Item }) {
+    const { props, target } = input;
+    //Self or Apply =>
+    //Actions / Skills / Mods / Attrs / Perks / etc =>
+    // Создаем объект каждого тэга
+    // Если условия прошли - раскладываем модификаторы по папочкам и создаем ссылку на примененный тэг
+    // Если нет - то в другой
+    if (props.self) {
+      props.self.forEach(tagProps => {
+        const newTag = new Tag(tagProps);
+      });
+    }
+    if (props.apply) {
+    }
+
     let result: { [index: string]: any } = {};
     props.forEach(prop => {
       let [key]: any = Object.keys(prop);
       let value: any = prop[key];
       if (key === 'itemSlot') {
-        key = item?.getMainSlot();
+        key = target?.getMainSlot();
       } else if (key === 'required') {
         this.required = value;
       } else if (key === 'skillCheck') {
-        this.checkKeyForSkills({ props: value, item });
+        this.checkKeyForSkills({ props: value, target });
         return;
       }
       if (typeof value !== 'number') {
-        value = this.parseInput({ props: value, item });
+        value = this.parseInput({ props: value, target });
       } else {
         result[key] = value;
       }
-      if (key === 'applied') {
+      if (key === 'applySkillsOwner') {
         this.applied = value;
+      }
+      if (key === 'applySkillsSelf') {
+        //
       }
       result[key] = value;
     });
     return result;
   }
 
-  checkKeyForSkills(input: { props: Tag[]; item?: Item }) {
-    const { props, item } = input;
-    if (!item) return;
+  checkKeyForSkills(input: { props: Tag[]; target?: Item }) {
+    const { props, target } = input;
+    if (!target) return;
     props.forEach(tag => {
-      let isApplieble: string[] = [];
+      let isApplicable: boolean = true;
       const keys = Object.keys(tag);
-      if (tag['conditions']) {
-        isApplieble = this.checkConditions({
-          conditions: tag['conditions'] as string[],
-          item,
+      if (tag.conditions) {
+        [isApplicable] = this.checkConditions({
+          conditions: tag.conditions as Condition[],
+          target,
         });
       }
-      keys.forEach(key => {
-        if (key !== 'conditions') {
-          this.applySkillCheck({ tag, key, item, isApplieble });
-        }
+      this.applySkillCheck({
+        difficulty: tag.difficulty as number,
+        skillName: tag.name as string,
+        target,
+        conditions: tag.conditions as Condition[],
+        isApplicable,
       });
     });
   }
 
   checkConditions({
     conditions,
-    item,
+    target,
   }: {
-    conditions: string[];
-    item: Item;
-  }): string[] {
-    let result: string[] = [];
+    conditions?: Condition[];
+    target: Item;
+  }): boolean[] {
+    let result: boolean[] = [];
+    if (!conditions) return [true];
+
     conditions.forEach(cond => {
-      if (cond === 'locked') {
-        if (!item.locked) {
-          result.push(cond);
+      const condKeys = Object.keys(cond);
+      condKeys.forEach(key => {
+        if (key === 'and') {
+          const localResults = this.checkConditions({
+            conditions: cond[key],
+            target,
+          });
+          result.push(localResults.every(r => r === true));
+        } else if (key === 'or') {
+          const localResults = this.checkConditions({
+            conditions: cond[key],
+            target,
+          });
+          result.push(localResults.some(r => r === true));
+        } else {
+          if (key === 'status') {
+            cond[key]?.forEach(arg => {
+              if (arg === 'locked') {
+                result.push(target.isLocked());
+              } else {
+                result.push(target.hasStatus(arg));
+              }
+            });
+          }
         }
-      }
+      });
     });
     return result;
   }
 
+  checkCondition() {
+    return true;
+  }
+
   applySkillCheck({
-    tag,
-    key,
-    item,
-    isApplieble,
+    difficulty,
+    skillName,
+    target,
+    conditions,
+    isApplicable,
   }: {
-    tag: Tag;
-    key: string;
-    item: Item;
-    isApplieble: string[];
+    difficulty: number;
+    skillName: string;
+    target: Item;
+    conditions: Condition[];
+    isApplicable: boolean;
   }) {
-    const value = tag[key];
-    const difficulty = typeof value === 'number' ? value : 0;
     const obj = {
       difficulty,
-      source: item,
-      slot: item.getMainSlot(),
-      conditions: [...isApplieble],
+      source: target,
+      conditions,
+      slot: target.getMainSlot(),
     };
-    if (isApplieble.length === 0) {
-      if (!this.skillsTargets[key]) this.skillsTargets[key] = [];
-      this.skillsTargets[key].push(obj);
+    if (isApplicable) {
+      if (!this.skillsTargets[skillName]) this.skillsTargets[skillName] = [];
+      this.skillsTargets[skillName].push(obj);
     } else {
-      if (!this.nonAppliedSkillChecks[key])
-        this.nonAppliedSkillChecks[key] = [];
-      this.nonAppliedSkillChecks[key].push(obj);
+      if (!this.nonAppliedSkillChecks[skillName])
+        this.nonAppliedSkillChecks[skillName] = [];
+      this.nonAppliedSkillChecks[skillName].push(obj);
     }
   }
 
@@ -185,11 +232,12 @@ export class TagSystem {
       const skillTargets = this.nonAppliedSkillChecks[skillKey];
       skillTargets.forEach((target, targetIndex) => {
         if (!target.conditions) return;
-        const check = this.checkConditions({
+        //TODO: можно проверять на наличие condition и пропускать все, где оно не используется
+        const [isApplicable] = this.checkConditions({
           conditions: target.conditions,
-          item: target.source,
+          target: target.source,
         });
-        if (check.length === 0) {
+        if (isApplicable) {
           if (!this.skillsTargets[skillKey]) this.skillsTargets[skillKey] = [];
           this.skillsTargets[skillKey].push(target);
           this.nonAppliedSkillChecks[skillKey].splice(targetIndex, 1);
@@ -206,11 +254,12 @@ export class TagSystem {
       const skillTargets = this.skillsTargets[skillKey];
       skillTargets.forEach((target, targetIndex) => {
         if (!target.conditions) return;
-        const check = this.checkConditions({
-          conditions: target.conditions,
-          item: target.source,
+        //TODO: можно проверять на наличие condition и пропускать все, где оно не используется
+        const [isApplicable] = this.checkConditions({
+          conditions: [] as Condition[],
+          target: target.source,
         });
-        if (check.length !== 0) {
+        if (!isApplicable) {
           if (!this.nonAppliedSkillChecks[skillKey])
             this.nonAppliedSkillChecks[skillKey] = [];
           this.nonAppliedSkillChecks[skillKey].push(target);
@@ -259,12 +308,21 @@ export class TagSystem {
 }
 
 type tagNode = { [index: string]: tagNode };
-type Tag = { [index: string]: Tag[] | number | string[] };
+type Tag = {
+  [index: string]: Tag[] | number | string[] | Condition[] | string;
+};
 type skillTargets = {
   [index: string]: {
     source: Item;
     difficulty: number;
     slot?: number;
-    conditions?: string[];
+    conditions?: Condition[];
   }[];
+};
+
+type Condition = {
+  and?: Condition[];
+  or?: Condition[];
+  status?: string[];
+  [index: string]: Object[] | string[] | Condition[] | undefined;
 };

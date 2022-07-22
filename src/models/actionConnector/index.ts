@@ -3,11 +3,14 @@ import { Character } from '../characters';
 import { Item } from '../characters/inventory/item';
 import { GameData } from '../gameData';
 
-type useSkillPaylod = {
+export type useSkillPayload = {
   type: 'useSkill';
   difficulty: number;
   timeMod: number;
   skill: string;
+  options?: {
+    offHand: boolean;
+  };
 };
 type equipItemPayload = { type: 'equipItem'; itemIndex: number };
 type lockItemPayload = { type: 'lockItem'; zoneIndex: number };
@@ -17,7 +20,7 @@ export type ActionPayload = {
   sourceActor?: Character;
   target?: Character | Item;
   payload:
-    | useSkillPaylod
+    | useSkillPayload
     | equipItemPayload
     | lockItemPayload
     | unequipItemPayload;

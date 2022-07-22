@@ -3,6 +3,7 @@ import { AttributeProps, Attributes } from '..';
 import { Attribute } from '../attribute';
 import { Health } from './health';
 import { CTX } from '../../../../types';
+import { Character } from '../..';
 
 export class Fatigue extends Attribute {
   health: Health;
@@ -11,12 +12,14 @@ export class Fatigue extends Attribute {
     ctx,
     props,
     attributes,
+    character,
   }: {
     ctx: CTX;
     props: AttributeProps;
+    character: Character;
     attributes?: Attributes;
   }) {
-    super({ ctx, props, attributes });
+    super({ ctx, props, attributes, character });
     if (!attributes?.collection['ht'])
       throw Error('Health should be defined before fatigue');
     this.health = attributes.collection['ht'];

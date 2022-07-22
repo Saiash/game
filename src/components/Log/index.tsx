@@ -35,8 +35,8 @@ export default function Log({
           type = 'systemEvent';
         }
         return (
-          <div className={(styles.eventMessage, styles[type])}>
-            {event.text}
+          <div className={(styles.eventMessage, styles[type])} key={event.id}>
+            {event.time}: {event.text}
           </div>
         );
       })}

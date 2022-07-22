@@ -8,6 +8,7 @@ import { ActionResolver } from '../actionConnector/actionResolver';
 import { Log } from './Log';
 import { Location } from '../locations';
 import { ObjectModel } from '../locations/object';
+import { TimeManager } from './timeManager';
 
 export class GameData {
   playerCharacter: Character;
@@ -19,6 +20,7 @@ export class GameData {
   characters: { [index: number]: Character };
   locations: { [index: string]: Location };
   objects: { [index: string]: ObjectModel };
+  timeManager: TimeManager;
   //время
   //локация
   //персонажи
@@ -51,6 +53,7 @@ export class GameData {
       actionConnector: this.actionConnector,
     });
     this.log = new Log(ctx);
+    this.timeManager = new TimeManager({ ctx });
   }
 
   getPlayerCharacter(): Character {
@@ -93,6 +96,10 @@ export class GameData {
       name: 'lockpicking',
       exp: 1,
     });
+    await this.addObject({
+      name: 'chest_test',
+      location: this.locations.defaultLocation,
+    });
   }
 
   addLocation({
@@ -130,6 +137,7 @@ export class GameData {
       location,
     });
     this.characters[character.id] = character;
+    location.addCharacter(character);
     return character;
   }
 
@@ -137,23 +145,14 @@ export class GameData {
     delete this.characters[id];
   }
 
-  addObject({
-    name,
-    description,
-    code,
-    location,
-  }: {
-    name: string;
-    description: string;
-    code: string;
-    location: Location;
-  }) {
+  async addObject({ name, location }: { name: string; location: Location }) {
+    const data = await this.dataloaders.getObject(name);
     const object = new ObjectModel({
       ctx: this.ctx,
-      data: { name, location, code, description },
+      location,
+      data,
     });
-    this.objects[code] = object;
-    return object;
+    location.addObject(object);
   }
 
   removeObject(code: string) {

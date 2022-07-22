@@ -12,36 +12,6 @@ export default function Location({
   stateManager: { [index: string]: () => void };
 }) {
   const { gameData } = ctx;
-  const character = gameData.getPlayerCharacter();
-  const [items, setItems] = useState(character.inventory.getAsArray());
-
-  const equipItem = (index: number): boolean => {
-    const character = gameData.getPlayerCharacter();
-    const result = character.doll.equipFromInventory({ index });
-    if (result) {
-      setItems(character.inventory.getAsArray());
-      stateManager.updateSkills();
-      stateManager.updateLog();
-    }
-    return result;
-  };
-
-  return (
-    <div>
-      {items.map(item => {
-        return (
-          <div key={item[0]}>
-            <button
-              onClick={() => {
-                equipItem(item[0]);
-              }}
-            >
-              E
-            </button>
-            {item[1].getName()}
-          </div>
-        );
-      })}
-    </div>
-  );
+  const currentLocation = gameData.playerCharacter.location;
+  return <div>{currentLocation.description}</div>;
 }

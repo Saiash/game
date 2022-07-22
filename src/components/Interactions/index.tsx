@@ -76,17 +76,6 @@ export default function Interactions({
   return (
     <div className={styles.interactionsContainer}>
       <div className={styles.inputContainer}>
-        <select onChange={onSkillSelect} value={skillSelected}>
-          {skills.map(skill => {
-            //what skill
-            return (
-              <option key={skill} value={skill}>
-                {skill}
-              </option>
-            );
-          })}
-        </select>
-        <br />
         <select onChange={onTargetSelect} value={targetSelected}>
           {targets &&
             targets.map((target, index) => {
@@ -97,6 +86,17 @@ export default function Interactions({
                 </option>
               );
             })}
+        </select>
+        <br />
+        <select onChange={onSkillSelect} value={skillSelected}>
+          {skills.map(skill => {
+            //what skill
+            return (
+              <option key={skill} value={skill}>
+                {skill}
+              </option>
+            );
+          })}
         </select>
       </div>
       <button className={styles.actionButton} onClick={handleAction}>
