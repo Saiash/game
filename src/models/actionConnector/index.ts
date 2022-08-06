@@ -2,6 +2,8 @@ import { CTX } from '../../types';
 import { Character } from '../characters';
 import { Item } from '../characters/inventory/item';
 import { GameData } from '../gameData';
+import { Location } from '../locations';
+import { ObjectModel } from '../locations/object';
 
 export type useSkillPayload = {
   type: 'useSkill';
@@ -18,7 +20,7 @@ type unequipItemPayload = { type: 'unequipItem'; zoneIndex: number };
 
 export type ActionPayload = {
   sourceActor?: Character;
-  target?: Character | Item;
+  target?: Character | Item | Location | ObjectModel;
   payload:
     | useSkillPayload
     | equipItemPayload
@@ -45,9 +47,9 @@ export class ActionConnector {
     } else if (type === 'equipItem' && sourceActor) {
       return this.resolveEquipItem(input);
     } else if (type === 'unequipItem' && sourceActor) {
-      return this.resolveEquipItem(input);
+      return this.resolveUnequipItem(input);
     } else if (type === 'lockItem' && sourceActor) {
-      return this.resolveEquipItem(input);
+      return this.resolveLockItem(input);
     }
     return false;
   }
@@ -67,7 +69,7 @@ export class ActionConnector {
       payload: { itemIndex },
     } = input;
     if (!sourceActor || !target) return false;
-    if (sourceActor.id === target.id) {
+    if (sourceActor.getId() === target.getId()) {
       return sourceActor.doll.equipFromInventory({ index: itemIndex });
     }
     throw Error('Доделать использование предметов на других персонажей!');
@@ -81,7 +83,7 @@ export class ActionConnector {
       payload: { zoneIndex },
     } = input;
     if (!sourceActor || !target) return false;
-    if (sourceActor.id === target.id) {
+    if (sourceActor.getId() === target.getId()) {
       const item = sourceActor.doll.getItemByZone(zoneIndex);
       if (!item) return false;
       return item.lock();
@@ -97,7 +99,7 @@ export class ActionConnector {
       payload: { zoneIndex },
     } = input;
     if (!sourceActor || !target) return false;
-    if (sourceActor.id === target.id) {
+    if (sourceActor.getId() === target.getId()) {
       return sourceActor.doll.uneqipItem({ zoneIndex });
     }
     throw Error('Доделать использование предметов на других персонажей!');

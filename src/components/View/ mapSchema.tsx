@@ -16,7 +16,7 @@ export default function MapSchema({
 
   return (
     <div>
-      {currentLocation.connections.map(location => {
+      {currentLocation.getConnections().map(location => {
         return <div key={location}>{location}</div>;
       })}
     </div>

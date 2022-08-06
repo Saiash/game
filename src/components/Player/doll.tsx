@@ -33,7 +33,6 @@ export default function Inventory({
   };
 
   const lockItem = (index: number): boolean => {
-    character.doll.lockZone(index);
     const result = gameData.actionResolver.performAction({
       sourceActor: character,
       target: character,

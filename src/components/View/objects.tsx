@@ -15,7 +15,7 @@ export default function Objects({
   const currentLocation = gameData.playerCharacter.location;
   return (
     <div>
-      {currentLocation.objects.map(obj => {
+      {currentLocation.getObjects().map(obj => {
         return <div key={obj.getId()}>{obj.getName()}</div>;
       })}
     </div>

@@ -16,7 +16,6 @@ export class Lockpicking extends SkillResolver {
     if (!result.result) return false;
     if (target instanceof Item) {
       target.unlock();
-      target.owner?.tags.renewSkillsOnConditionRemoved(target.props.tags);
     }
     return true;
   }

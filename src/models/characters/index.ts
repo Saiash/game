@@ -6,6 +6,7 @@ import { skills } from '../index';
 import { doll } from '../index';
 import { Location } from '../locations';
 import { TagSystem } from '../tag';
+import { Tag } from '../tag/models/tag';
 import { SecondaryAttributes } from './secondaryAttributes';
 
 let itemId = 0;
@@ -41,7 +42,7 @@ export class Character {
     this.id = itemId++;
     this.location = location;
     this.ctx = ctx;
-    this.tags = new TagSystem(ctx);
+    this.tags = new TagSystem({ ctx, owner: this });
     this.attributes = new attributes.Attributes({
       ctx,
       character: this,
@@ -68,14 +69,50 @@ export class Character {
     });
   }
 
+  /**
+   * Все действия доступные персонажу с самим собой, локацией и текущей целью
+   */
   getAvaliableActons(): {
-    [index: string]: {
-      source: item.Item;
-      difficulty: number;
-      slot?: number | undefined;
-    }[];
+    [index: string]: Tag[];
   } {
-    return this.tags.skillsTargets;
+    const result: { [index: string]: Tag[] } = {};
+    const tags = this.tags.getActiveSkills();
+    Object.keys(tags).forEach(tagId => {
+      if (!result[tags[tagId].getName()]) {
+        result[tags[tagId].getName()] = [];
+      }
+      result[tags[tagId].getName()].push(tags[tagId]);
+    });
+    return result;
+  }
+
+  hasStatus(status: string): boolean {
+    return this.status.some(s => {
+      s === status;
+    });
+  }
+
+  addStatus(status: string): boolean {
+    if (this.hasStatus(status)) return false;
+    this.status.push(status);
+    return true;
+  }
+
+  removeStatus(status: string): boolean {
+    this.status = this.status.filter(s => s !== status);
+    return true;
+  }
+
+  isLocked(): boolean {
+    return false;
+  }
+
+  getName() {
+    return this.name;
+  }
+
+  getId() {
+    return this.id;
   }
 
   getRaw() {}

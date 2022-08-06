@@ -3,16 +3,16 @@
         "tags": [
             {"self": [
                 {
-                    "type": "skill", "name": "lockpicking", "difficulty": -1, "conditions": [{"and": [{"status": ["locked"]}]}]
+                    "type": "skill", "name": "lockpicking", "value": -1, "conditions": [{"and": [{"status": ["locked"]}]}]
                 },
                 {
                     "type": "skill", 
                     "name": "disarm",
-                    "difficulty": -1, 
+                    "value": -1, 
                     "conditions": [
                         {"and": [
                             {"status": ["trapped"]},
-                            {"knownLore": [{"id": "1", "name": "test_chect_lore"}]}
+                            {"outerCondition": {"knownLore": [{"id": "1", "name": "test_chect_lore"}]}}
                         ]}
                     ], 
                     "onSuccess": [
@@ -25,7 +25,7 @@
                 {
                     "type": "action", 
                     "name": "open",
-                    "difficulty": 0, 
+                    "value": 0, 
                     "conditions": [
                         {"and": [{"status": ["closed", "locked"]}]}
                     ],
@@ -37,11 +37,11 @@
                 {
                     "type": "action", 
                     "name": "look",
-                    "difficulty": 0,
+                    "value": 0,
                     "conditions": [
                         {"or": [
-                            {"unknownLore": [{"id": [1]}]},
-                            {"unknownLore": [{"id": [2]}]}
+                            {"outerCondition": {"unknownLore": [{"id": [1]}]}},
+                            {"outerCondition": {"unknownLore": [{"id": [2]}]}}
                         ]}
                     ],
                     "onSuccess": [

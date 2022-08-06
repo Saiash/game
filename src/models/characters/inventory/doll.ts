@@ -116,14 +116,12 @@ export class Doll {
     const item = this.getItemByZone(index);
     if (!item) return;
     item.lock();
-    this.character.tags.renewSkillsOnConditionAdded(item.props.tags);
   }
 
   unlockZone(index: number) {
     const item = this.getItemByZone(index);
     if (!item) return;
     item.unlock();
-    this.character.tags.renewSkillsOnConditionRemoved(item.props.tags);
   }
 
   getRaw() {}

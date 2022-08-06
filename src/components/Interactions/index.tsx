@@ -58,11 +58,11 @@ export default function Interactions({
   const handleAction = () => {
     const result = gameData.actionResolver.performAction({
       sourceActor: player,
-      target: targets[targetSelected].source,
+      target: targets[targetSelected].getOwner(),
       payload: {
         type: 'useSkill',
         skill: skillSelected,
-        difficulty: targets[targetSelected].difficulty,
+        difficulty: targets[targetSelected].getValue(),
         timeMod: modOption,
       },
     });
@@ -82,7 +82,7 @@ export default function Interactions({
               //on what target
               return (
                 <option key={index} value={index}>
-                  {target.source.getName()}
+                  {target.getOwner().getName()}
                 </option>
               );
             })}

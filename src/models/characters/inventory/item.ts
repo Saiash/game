@@ -81,7 +81,11 @@ export class Item {
       this.lockable = true;
     }
     this.props.zones = this.calculateZones(props.zones);
-    const tagSystem = new TagSystem(ctx, { props: tags, target: this });
+    const tagSystem = new TagSystem({
+      ctx,
+      input: { props: tags, target: this },
+      owner: this,
+    });
     this.props.tags = tagSystem;
     this.status = [];
   }
@@ -138,13 +142,13 @@ export class Item {
 
   lock() {
     this.locked = true;
-    this.props.tags.conditionAdded('locked');
+    this.props.tags.conditionChanged('locked');
     return true;
   }
 
   unlock() {
     this.locked = false;
-    this.props.tags.conditionRemoved('locked');
+    this.props.tags.conditionChanged('locked');
     return true;
   }
 

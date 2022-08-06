@@ -13,9 +13,10 @@ export class ObjectModel {
   private tags: TagSystem;
   private ctx: CTX;
   private location: Location;
-  private status: string[] = [];
   private inventory: Inventory;
+  private status: string[] = [];
   private locked: boolean;
+  private lockable: boolean;
 
   constructor({
     ctx,
@@ -30,6 +31,7 @@ export class ObjectModel {
       description: string;
       tags: string;
       locked?: boolean;
+      lockable?: boolean;
       items?: { [index: number]: Item };
     };
   }) {
@@ -39,13 +41,18 @@ export class ObjectModel {
     this.code = data.code;
     this.name = data.name;
     this.description = data.description;
-    this.tags = new TagSystem(ctx, { props: data.tags });
+    this.tags = new TagSystem({
+      ctx,
+      input: { props: data.tags },
+      owner: this,
+    });
     this.inventory = new Inventory({
       ctx,
       container: this,
       items: data.items,
     });
     this.locked = data.locked || false;
+    this.lockable = data.lockable || false;
   }
 
   getId() {
@@ -54,5 +61,42 @@ export class ObjectModel {
 
   getName() {
     return this.name;
+  }
+
+  hasStatus(status: string): boolean {
+    return this.status.some(s => {
+      s === status;
+    });
+  }
+
+  addStatus(status: string): boolean {
+    if (this.hasStatus(status)) return false;
+    this.status.push(status);
+    return true;
+  }
+
+  removeStatus(status: string): boolean {
+    this.status = this.status.filter(s => s !== status);
+    return true;
+  }
+
+  lock() {
+    this.locked = true;
+    this.tags.conditionChanged('locked');
+    return true;
+  }
+
+  unlock() {
+    this.locked = false;
+    this.tags.conditionChanged('locked');
+    return true;
+  }
+
+  isLockable() {
+    return this.lockable && !this.locked;
+  }
+
+  isLocked() {
+    return this.locked;
   }
 }
