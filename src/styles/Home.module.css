@@ -181,3 +181,12 @@
   text-align: right;
   color: darkred;
 }
+
+.interactionObject {
+  cursor: pointer;
+}
+
+.interactionObject_active {
+  border: 1px solid gray;
+  cursor: pointer;
+}

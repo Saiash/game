@@ -8,7 +8,7 @@ export class Health extends Attribute {
       name: 'Health',
       code: 'ht',
       rawValue: 10,
-      ModificatorManager: new ModificatorManager(),
+      modificatorManager: new ModificatorManager(),
       typePriority: 1,
     };
   }

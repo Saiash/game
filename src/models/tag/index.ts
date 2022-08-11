@@ -65,11 +65,33 @@ export class TagSystem {
       const newTag = new Tag(tagProps, this.owner);
       this.all[newTag.getId()] = newTag;
       if (newTag.getConditionState()) {
-        this.active[newTag.getType()][newTag.getId()] = newTag;
+        this.activateTag(newTag);
       } else {
-        this.nonActive[newTag.getType()][newTag.getId()] = newTag;
+        this.deactivateTag(newTag);
       }
     });
+  }
+
+  activateTag(tag: Tag) {
+    delete this.nonActive[tag.getType()][tag.getId()];
+    this.active[tag.getType()][tag.getId()] = tag;
+    if (this.pairedToSystem) {
+      this.pairedToSystem.active[tag.getType()][tag.getId()] = tag;
+    }
+    if (tag.getType() === 'mod') {
+      this.addMod(tag);
+    }
+  }
+
+  deactivateTag(tag: Tag) {
+    delete this.active[tag.getType()][tag.getId()];
+    this.nonActive[tag.getType()][tag.getId()] = tag;
+    if (this.pairedToSystem) {
+      delete this.pairedToSystem.active[tag.getType()][tag.getId()];
+    }
+    if (tag.getType() === 'mod') {
+      this.removeMod(tag);
+    }
   }
 
   applyTagSystem(outerTagSystem: TagSystem) {
@@ -95,27 +117,65 @@ export class TagSystem {
       const tag = this.all[tagId];
       if (tag.checkIfHasCondition(condition)) {
         const prevState = tag.getConditionState();
-        const state = tag.checkConditions();
+        const state = tag.checkConditions({ outer: false });
         if (prevState !== state) {
           if (state) {
-            this.active[tag.getType()][tag.getId()] = tag;
-            delete this.nonActive[tag.getType()][tag.getId()];
-            if (this.pairedToSystem) {
-              this.pairedToSystem.active[tag.getType()][tag.getId()] = tag;
-            }
+            this.activateTag(tag);
           } else {
-            this.nonActive[tag.getType()][tag.getId()] = tag;
-            delete this.active[tag.getType()][tag.getId()];
-            if (this.pairedToSystem) {
-              delete this.pairedToSystem.active[tag.getType()][tag.getId()];
-            }
+            this.deactivateTag(tag);
           }
         }
       }
     });
   }
 
-  getActiveSkills(): { [index: string]: Tag } {
-    return this.active.skill;
+  getActiveSkills({ actor }: { actor?: Character }): { [index: string]: Tag } {
+    if (!actor) return this.active.skill;
+    const result: { [index: string]: Tag } = {};
+    Object.keys(this.active.skill).forEach(tagId => {
+      const tag = this.active.skill[tagId];
+      if (tag.checkConditions({ outer: true, actor })) {
+        result[tagId] = this.active.skill[tagId];
+      }
+    });
+    return result;
+  }
+
+  getActiveActions({ actor }: { actor?: Character }): { [index: string]: Tag } {
+    if (!actor) return this.active.action;
+    const result: { [index: string]: Tag } = {};
+    Object.keys(this.active.action).forEach(tagId => {
+      const tag = this.active.action[tagId];
+      if (tag.checkConditions({ outer: true, actor })) {
+        result[tagId] = this.active.action[tagId];
+      }
+    });
+    return result;
+  }
+
+  addMod(tag: Tag) {
+    const target = tag.getTarget();
+    const owner = this.pairedToSystem?.owner || this.owner;
+    if (!(owner instanceof Character)) return;
+    if (target.type === 'attribute') {
+      owner.attributes
+        .getByCode(target.name)
+        .props.modificatorManager.addMod(tag);
+    } else if (target.type === 'skill') {
+      owner.skills.getByCode(target.name).modificatorManager.addMod(tag);
+    }
+  }
+
+  removeMod(tag: Tag) {
+    const target = tag.getTarget();
+    const owner = this.pairedToSystem?.owner || this.owner;
+    if (!(owner instanceof Character)) return;
+    if (target.type === 'attribute') {
+      owner.attributes
+        .getByCode(target.name)
+        .props.modificatorManager.removeMod(tag);
+    } else if (target.type === 'skill') {
+      owner.skills.getByCode(target.name).modificatorManager.removeMod(tag);
+    }
   }
 }

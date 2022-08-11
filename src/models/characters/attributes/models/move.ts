@@ -51,7 +51,7 @@ export class Move extends Attribute {
       name: 'Move',
       code: 'move',
       rawValue: 0,
-      ModificatorManager: new ModificatorManager(),
+      modificatorManager: new ModificatorManager(),
       typePriority: 1,
     };
   }

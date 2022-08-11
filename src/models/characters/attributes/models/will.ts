@@ -40,7 +40,7 @@ export class Will extends Attribute {
       name: 'Will',
       code: 'will',
       rawValue: 0,
-      ModificatorManager: new ModificatorManager(),
+      modificatorManager: new ModificatorManager(),
       typePriority: 1,
     };
   }

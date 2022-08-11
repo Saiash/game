@@ -1,4 +1,4 @@
 {
-  "lore_1": {"description": "Сундук заминирован!"},
-  "lore_2": {"description": "Обычный сундук"}
+  "lore_1": {"title": "Сундук", "description": "Сундук заминирован!"},
+  "lore_2": {"title": "Сундук", "description": "Обычный сундук"}
 }

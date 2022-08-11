@@ -39,7 +39,7 @@ export class Hitpoints extends Attribute {
       name: 'Hitpoints',
       code: 'hp',
       rawValue: 0,
-      ModificatorManager: new ModificatorManager(),
+      modificatorManager: new ModificatorManager(),
       typePriority: 1,
     };
   }

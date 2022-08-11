@@ -15,6 +15,7 @@ export type TagInput = {
     name: string;
   };
   conditions: any;
+  outerConditions: any;
   onSuccess: any;
   onFail: any;
 };
@@ -45,11 +46,21 @@ export class Tag {
     this.onSuccess = input.onSuccess;
     this.onFail = input.onFail;
     this.owner = owner;
-    this.conditions = new Condition(input.conditions, owner);
+    this.conditions = new Condition(
+      input.conditions,
+      input.outerConditions,
+      owner
+    );
   }
 
-  checkConditions(actor?: Character) {
-    return this.conditions.checkConditions(actor);
+  checkConditions({
+    outer = false,
+    actor,
+  }: {
+    outer: boolean;
+    actor?: Character;
+  }) {
+    return this.conditions.checkConditions(outer, actor);
   }
 
   getConditionState() {
@@ -78,5 +89,9 @@ export class Tag {
 
   checkIfHasCondition(condition: string): boolean {
     return this.conditions.checkIfHasCondition(condition);
+  }
+
+  getTarget() {
+    return this.target;
   }
 }

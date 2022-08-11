@@ -9,7 +9,7 @@ export class Strength extends Attribute {
       name: 'Strength',
       code: 'str',
       rawValue: 10,
-      ModificatorManager: new ModificatorManager(),
+      modificatorManager: new ModificatorManager(),
       typePriority: 0,
     };
   }

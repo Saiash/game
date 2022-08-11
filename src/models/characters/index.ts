@@ -7,6 +7,7 @@ import { doll } from '../index';
 import { Location } from '../locations';
 import { TagSystem } from '../tag';
 import { Tag } from '../tag/models/tag';
+import { LoreManager } from './lore/loreManager';
 import { SecondaryAttributes } from './secondaryAttributes';
 
 let itemId = 0;
@@ -22,6 +23,7 @@ export class Character {
   ctx: CTX;
   id: number;
   location: Location;
+  lore: LoreManager;
   status: string[] = [];
 
   constructor({
@@ -67,6 +69,7 @@ export class Character {
       ctx,
       character: this,
     });
+    this.lore = new LoreManager({ ctx });
   }
 
   /**
@@ -76,19 +79,39 @@ export class Character {
     [index: string]: Tag[];
   } {
     const result: { [index: string]: Tag[] } = {};
-    const tags = this.tags.getActiveSkills();
+    const tags = this.tags.getActiveSkills({});
     Object.keys(tags).forEach(tagId => {
       if (!result[tags[tagId].getName()]) {
         result[tags[tagId].getName()] = [];
       }
       result[tags[tagId].getName()].push(tags[tagId]);
     });
+
+    const actionTags = this.tags.getActiveActions({});
+    Object.keys(actionTags).forEach(tagId => {
+      if (!result[actionTags[tagId].getName()]) {
+        result[actionTags[tagId].getName()] = [];
+      }
+      result[actionTags[tagId].getName()].push(actionTags[tagId]);
+    });
+
+    if (this.ctx.gameData.playerTarget) {
+      const targetTags = this.ctx.gameData.playerTarget.getAvaliableActons({
+        actor: this,
+      });
+      Object.keys(targetTags).forEach(targetTypeName => {
+        if (!result[targetTypeName]) {
+          result[targetTypeName] = [];
+        }
+        result[targetTypeName].push(...targetTags[targetTypeName]);
+      });
+    }
     return result;
   }
 
   hasStatus(status: string): boolean {
     return this.status.some(s => {
-      s === status;
+      return s === status;
     });
   }
 

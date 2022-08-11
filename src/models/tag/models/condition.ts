@@ -6,23 +6,27 @@ import { ObjectModel } from '../../locations/object';
 export class Condition {
   private state: boolean;
   private conditions: conditions[];
+  private outerConditions: conditions[];
   private existingConditions: string[];
   private owner: Character | Item | ObjectModel | Location;
 
   constructor(
     conditions: conditions[],
+    outerConditions: conditions[],
     owner: Character | Item | ObjectModel | Location
   ) {
     this.state = false;
     this.conditions = conditions || [];
+    this.outerConditions = outerConditions || [];
     this.owner = owner;
     this.existingConditions = [];
     this.checkConditions();
   }
 
-  checkConditions(actor?: Character): boolean {
+  checkConditions(outer: boolean = false, actor?: Character): boolean {
     this.existingConditions = [];
-    const results = this.conditions.map(conditionSet => {
+    const conditionsSet = outer ? this.outerConditions : this.conditions;
+    const results = conditionsSet.map(conditionSet => {
       if (conditionSet.and) {
         const conditionsResults = conditionSet.and.map(condition => {
           return this.testCondition(condition, actor);
@@ -39,20 +43,17 @@ export class Condition {
     return this.state;
   }
 
-  private testCondition(
-    condition: condition | innerCondition,
-    actor?: Character
-  ): boolean {
-    if (condition.outerCondition) {
-      return this.testCondition(
-        condition.outerCondition as innerCondition,
-        actor
-      );
-    }
+  private testCondition(condition: condition, actor?: Character): boolean {
     const [conditionType] = Object.keys(condition);
     if (conditionType === 'status') {
-      const conditionValue = (condition as innerCondition).status;
-      return this.testStatus(conditionValue);
+      const conditionValue = condition.status;
+      return this.testStatus(conditionValue, actor);
+    } else if (
+      conditionType === 'unknownLore' ||
+      conditionType === 'knownLore'
+    ) {
+      const conditionValue = condition[conditionType];
+      return this.testLore({ conditionType, conditionValue, actor });
     }
     return false;
   }
@@ -73,6 +74,23 @@ export class Condition {
     return result.every(r => r === true);
   }
 
+  private testLore({
+    conditionType,
+    conditionValue,
+    actor,
+  }: {
+    conditionType: string;
+    conditionValue: conditionValue;
+    actor?: Character | Item | ObjectModel | Location;
+  }): boolean {
+    if (!(actor instanceof Character)) return false;
+    const names = conditionValue as string[];
+    const lores = actor.lore.getLoreByNames(names);
+    return conditionType === 'knownLore'
+      ? lores.length === names.length
+      : lores.length === 0;
+  }
+
   getState() {
     return this.state;
   }
@@ -87,10 +105,6 @@ export type conditions = {
   or?: [condition];
 };
 
-export type condition = innerCondition | { outerCondition: innerCondition };
-
-export type innerCondition = {
-  [index: string]: conditionValue;
-};
+export type condition = { [index: string]: conditionValue };
 
 export type conditionValue = [string | number | { id?: string; name?: string }];

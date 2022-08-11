@@ -1,8 +1,10 @@
 import { Location } from '.';
 import { CTX } from '../../types';
+import { Character } from '../characters';
 import { Inventory } from '../characters/inventory';
 import { Item } from '../characters/inventory/item';
 import { TagSystem } from '../tag';
+import { Tag } from '../tag/models/tag';
 
 let itemId = 0;
 export class ObjectModel {
@@ -32,6 +34,7 @@ export class ObjectModel {
       tags: string;
       locked?: boolean;
       lockable?: boolean;
+      status?: string[];
       items?: { [index: number]: Item };
     };
   }) {
@@ -41,18 +44,20 @@ export class ObjectModel {
     this.code = data.code;
     this.name = data.name;
     this.description = data.description;
-    this.tags = new TagSystem({
-      ctx,
-      input: { props: data.tags },
-      owner: this,
-    });
+
     this.inventory = new Inventory({
       ctx,
       container: this,
       items: data.items,
     });
+    this.status = data?.status || [];
     this.locked = data.locked || false;
-    this.lockable = data.lockable || false;
+    this.lockable = data.lockable || data.locked || false;
+    this.tags = new TagSystem({
+      ctx,
+      input: { props: data.tags },
+      owner: this,
+    });
   }
 
   getId() {
@@ -65,7 +70,7 @@ export class ObjectModel {
 
   hasStatus(status: string): boolean {
     return this.status.some(s => {
-      s === status;
+      return s === status;
     });
   }
 
@@ -98,5 +103,26 @@ export class ObjectModel {
 
   isLocked() {
     return this.locked;
+  }
+
+  getAvaliableActons({ actor }: { actor?: Character }): {
+    [index: string]: Tag[];
+  } {
+    const result: { [index: string]: Tag[] } = {};
+    const skillTags = this.tags.getActiveSkills({ actor });
+    Object.keys(skillTags).forEach(tagId => {
+      if (!result[skillTags[tagId].getName()]) {
+        result[skillTags[tagId].getName()] = [];
+      }
+      result[skillTags[tagId].getName()].push(skillTags[tagId]);
+    });
+    const actionTags = this.tags.getActiveActions({ actor });
+    Object.keys(actionTags).forEach(tagId => {
+      if (!result[actionTags[tagId].getName()]) {
+        result[actionTags[tagId].getName()] = [];
+      }
+      result[actionTags[tagId].getName()].push(actionTags[tagId]);
+    });
+    return result;
   }
 }

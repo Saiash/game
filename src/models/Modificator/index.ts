@@ -1,12 +1,8 @@
-export type Mod = {
-  source: string;
-  value: number;
-  duration: number;
-};
+import { Tag } from '../tag/models/tag';
 
 export class ModificatorManager {
   modList: {
-    [index: number]: Mod;
+    [index: number]: Tag;
   };
   summary: number;
 
@@ -15,44 +11,26 @@ export class ModificatorManager {
     this.summary = 0;
   }
 
-  getFirstFreeSlot() {
-    let index = 0;
-    let freeSlot = false;
-    while (index < 1000 && !freeSlot) {
-      if (!this.modList[index]) {
-        freeSlot = true;
-      } else {
-        index++;
-      }
-    }
-    return index;
-  }
-
-  addMod(mod: Mod): boolean {
-    this.modList[this.getFirstFreeSlot()] = mod;
-    this.summary += mod.value;
+  addMod(mod: Tag): boolean {
+    this.modList[mod.getId()] = mod;
+    this.summary += mod.getValue();
     return true;
   }
 
-  removeMod(index: number): boolean {
-    const mod = this.modList[index];
-    if (mod) {
-      this.summary -= mod.value;
-      delete this.modList[index];
-      return true;
-    }
-    return false;
+  removeMod(mod: Tag): boolean {
+    delete this.modList[mod.getId()];
+    return true;
   }
 
   calculateSummary(): number {
     this.summary = 0;
     Object.values(this.modList).forEach(mod => {
-      this.summary += mod.value;
+      this.summary += mod.getValue();
     });
     return this.summary;
   }
 
-  getAsArray(): [number, Mod][] {
+  getAsArray(): [number, Tag][] {
     return Object.entries(this.modList).map(i => {
       return [parseInt(i[0]), i[1]];
     });

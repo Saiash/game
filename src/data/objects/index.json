@@ -11,10 +11,10 @@
                     "value": -1, 
                     "conditions": [
                         {"and": [
-                            {"status": ["trapped"]},
-                            {"outerCondition": {"knownLore": [{"id": "1", "name": "test_chect_lore"}]}}
+                            {"status": ["trapped"]}
                         ]}
                     ], 
+                    "outerConditions": [{"and": [{"knownLore": ["lore_1"]}]}],
                     "onSuccess": [
                         {"removeStatus": ["trapped"]}
                     ], 
@@ -27,7 +27,7 @@
                     "name": "open",
                     "value": 0, 
                     "conditions": [
-                        {"and": [{"status": ["closed", "locked"]}]}
+                        {"and": [{"status": ["closed"]}]}
                     ],
                     "onSuccess": [
                         {"removeStatus": ["closed"]}, {"addStatus": ["open"]},
@@ -38,17 +38,16 @@
                     "type": "action", 
                     "name": "look",
                     "value": 0,
-                    "conditions": [
-                        {"or": [
-                            {"outerCondition": {"unknownLore": [{"id": [1]}]}},
-                            {"outerCondition": {"unknownLore": [{"id": [2]}]}}
+                    "outerConditions": [
+                        {"and": [
+                            {"unknownLore": ["lore_1", "lore_2"]}
                         ]}
                     ],
                     "onSuccess": [
-                        {"addLore": [{"id": 1}]}
+                        {"addLore": [{"id": "lore_1"}]}
                     ],
                     "onFail": [
-                        {"addLore": [{"id": 2}]}
+                        {"addLore": [{"id": "lore_2"}]}
                     ]
                 }
             ]}
@@ -58,5 +57,6 @@
         "inventory": [
             {"name": "Нож"}
         ]
-    }
+    },
+    "chest_test_2": {"name": "Сундук #2", "description": "Совсем Обычный сундук"}
 }

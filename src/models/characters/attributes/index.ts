@@ -18,7 +18,7 @@ export type AttributeProps = {
   name: string;
   code: string;
   rawValue: number;
-  ModificatorManager: ModificatorManager;
+  modificatorManager: ModificatorManager;
   typePriority: number;
 };
 

@@ -8,7 +8,7 @@ export class Inteligence extends Attribute {
       name: 'Inteligence',
       code: 'int',
       rawValue: 10,
-      ModificatorManager: new ModificatorManager(),
+      modificatorManager: new ModificatorManager(),
       typePriority: 0,
     };
   }

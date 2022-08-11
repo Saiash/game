@@ -162,7 +162,7 @@ export class Item {
 
   hasStatus(status: string): boolean {
     return this.status.some(s => {
-      s === status;
+      return s === status;
     });
   }
 

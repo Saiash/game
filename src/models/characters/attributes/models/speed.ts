@@ -44,7 +44,7 @@ export class Speed extends Attribute {
       name: 'Speed',
       code: 'speed',
       rawValue: 0,
-      ModificatorManager: new ModificatorManager(),
+      modificatorManager: new ModificatorManager(),
       typePriority: 1,
     };
   }

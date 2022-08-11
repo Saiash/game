@@ -39,7 +39,7 @@ export class Fatigue extends Attribute {
       name: 'Fatigue',
       code: 'ft',
       rawValue: 0,
-      ModificatorManager: new ModificatorManager(),
+      modificatorManager: new ModificatorManager(),
       typePriority: 1,
     };
   }

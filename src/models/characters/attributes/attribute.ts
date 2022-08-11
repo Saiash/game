@@ -35,7 +35,7 @@ export class Attribute {
   }
 
   getModsValue(): number {
-    return this.props.ModificatorManager.getValue();
+    return this.props.modificatorManager.getValue();
   }
 
   getRawValue(): number {
@@ -55,7 +55,7 @@ export class Attribute {
       name: '',
       code: '',
       rawValue: 10,
-      ModificatorManager: new ModificatorManager(),
+      modificatorManager: new ModificatorManager(),
       typePriority: 0,
     };
   }
@@ -63,4 +63,40 @@ export class Attribute {
   getRaw() {}
 
   initFromRaw() {}
+
+  showValue() {
+    let text;
+    const attrValue = this.getValue();
+    switch (attrValue) {
+      case 1:
+      case 2:
+      case 3:
+      case 4:
+      case 5:
+      case 6:
+      case 7:
+      case 8:
+      case 9:
+      case 10:
+      case 11:
+      case 12:
+      case 13:
+      case 14:
+      case 15:
+      case 16:
+      case 17:
+      case 18:
+      case 19:
+      case 20:
+      case 21:
+      case 22:
+      case 23:
+      case 24:
+        break;
+
+      default:
+        break;
+    }
+    return text;
+  }
 }

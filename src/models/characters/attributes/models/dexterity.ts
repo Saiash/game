@@ -8,7 +8,7 @@ export class Dexterity extends Attribute {
       name: 'Dexterity',
       code: 'dex',
       rawValue: 10,
-      ModificatorManager: new ModificatorManager(),
+      modificatorManager: new ModificatorManager(),
       typePriority: 0,
     };
   }

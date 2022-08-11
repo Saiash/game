@@ -39,7 +39,7 @@ export class Perception extends Attribute {
       name: 'Perception',
       code: 'per',
       rawValue: 0,
-      ModificatorManager: new ModificatorManager(),
+      modificatorManager: new ModificatorManager(),
       typePriority: 1,
     };
   }

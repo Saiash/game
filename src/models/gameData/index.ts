@@ -9,9 +9,11 @@ import { Log } from './Log';
 import { Location } from '../locations';
 import { ObjectModel } from '../locations/object';
 import { TimeManager } from './timeManager';
+import { Lore } from '../characters/lore/lore';
 
 export class GameData {
   playerCharacter: Character;
+  playerTarget: Character | ObjectModel | null;
   actionConnector: ActionConnector;
   actionResolver: ActionResolver;
   dataloaders: CTX['dataloaders'];
@@ -36,6 +38,7 @@ export class GameData {
     this.objects = {};
     this.locations = {};
     this.characters = {};
+    this.playerTarget = null;
     this.dataloaders = dataloaders;
     this.playerCharacter = this.addCharacter(
       'Test test',
@@ -96,8 +99,16 @@ export class GameData {
       name: 'lockpicking',
       exp: 1,
     });
+    // await this.playerCharacter.lore.add({
+    //   dataloaders: this.dataloaders,
+    //   name: 'lore_1',
+    // });
     await this.addObject({
       name: 'chest_test',
+      location: this.locations.defaultLocation,
+    });
+    await this.addObject({
+      name: 'chest_test_2',
       location: this.locations.defaultLocation,
     });
   }
@@ -157,5 +168,13 @@ export class GameData {
 
   removeObject(code: string) {
     delete this.objects[code];
+  }
+
+  selectTarget(target: Character | ObjectModel) {
+    this.playerTarget = target;
+  }
+
+  getPlayerTarget() {
+    return this.playerTarget;
   }
 }

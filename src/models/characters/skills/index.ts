@@ -14,7 +14,7 @@ export type SkillInputProps = {
   code: string;
   parentAttrCode: string;
   difficulty: 'easy' | 'medium' | 'hard' | 'very hard';
-  ModificatorManager: ModificatorManager;
+  modificatorManager: ModificatorManager;
 };
 
 export type SkillProps = SkillInputProps & {
@@ -116,5 +116,9 @@ export class Skills {
     return Object.entries(this.collection).map(i => {
       return [i[0], i[1]];
     });
+  }
+
+  getByCode(code: string) {
+    return this.collection[code];
   }
 }
