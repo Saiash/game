@@ -55,13 +55,14 @@ export default function Interactions({
     setTargetSelected(event.target.value);
   };
 
-  const handleAction = () => {
-    const result = gameData.actionResolver.performAction({
+  const handleAction = async () => {
+    const result = await gameData.actionResolver.performAction({
       sourceActor: player,
       target: targets[targetSelected].getOwner(),
       payload: {
         type: 'useSkill',
         skill: skillSelected,
+        tag: actions[skillSelected][0],
         difficulty: targets[targetSelected].getValue(),
         timeMod: modOption,
       },

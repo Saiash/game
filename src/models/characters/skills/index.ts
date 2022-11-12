@@ -3,10 +3,15 @@ import { attributes, attribute, item } from '../../index';
 import { Skill } from './skill';
 import { characters } from '../../index';
 
-import type { CTX } from '../../../types/';
 import { Character } from '..';
 import { Item } from '../inventory/item';
 import { ActionPayload } from '../../actionConnector';
+
+import { LookResolver } from './resolvers/look';
+
+import type { CTX } from '../../../types/';
+import type { SkillResolver } from './resolvers';
+import { CommonActionResolver } from './resolvers/commonAction';
 
 export type SkillInputProps = {
   name: string;
@@ -46,6 +51,12 @@ export type ResolveResult = {
   message?: string;
 };
 
+export const commonResolvers: { [index: string]: typeof SkillResolver } = {
+  open: CommonActionResolver,
+  close: CommonActionResolver,
+  look: LookResolver,
+};
+
 export class Skills {
   collection: { [index: string]: Skill };
   character: characters.Character;
@@ -77,16 +88,28 @@ export class Skills {
     return this.collection[code].check(difficulty + timeMod);
   }
 
-  resolve(input: ActionPayload): boolean {
+  async resolve(input: ActionPayload): Promise<boolean> {
+    let result: ResolveResult = { executed: false };
     if (input.payload.type !== 'useSkill') return false;
-    const result = this.collection[input.payload.skill].resolve(input);
+    const skillName = input.payload.skill;
+
+    if (this.isCommonAction(skillName)) {
+      const resolver = new commonResolvers[skillName]({
+        ctx: this.ctx,
+        code: skillName,
+        name: skillName,
+      });
+      result = await resolver.resolve(input);
+    } else {
+      result = await this.collection[skillName].resolve(input);
+    }
     if (result.message) {
       this.ctx.gameData.log.addEvent({
         source: result.payload?.sourceActor,
         text: result.message,
       });
     }
-    return result.checkResult?.result || false;
+    return result.executed || result.checkResult?.result || false;
   }
 
   async add({
@@ -120,5 +143,9 @@ export class Skills {
 
   getByCode(code: string) {
     return this.collection[code];
+  }
+
+  isCommonAction(skillName: string): boolean {
+    return Object.keys(commonResolvers).some(s => s === skillName);
   }
 }

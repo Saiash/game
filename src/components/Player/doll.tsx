@@ -16,8 +16,8 @@ export default function Inventory({
   const character = gameData.getPlayerCharacter();
   const [items, setItems] = useState(character.doll.getEquippedItems());
 
-  const unequipItem = (index: number): boolean => {
-    const result = gameData.actionResolver.performAction({
+  const unequipItem = async (index: number): Promise<boolean> => {
+    const result = await gameData.actionResolver.performAction({
       sourceActor: character,
       target: character,
       payload: {
@@ -32,8 +32,8 @@ export default function Inventory({
     return result;
   };
 
-  const lockItem = (index: number): boolean => {
-    const result = gameData.actionResolver.performAction({
+  const lockItem = async (index: number): Promise<boolean> => {
+    const result = await gameData.actionResolver.performAction({
       sourceActor: character,
       target: character,
       payload: {

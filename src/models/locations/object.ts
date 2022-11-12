@@ -77,11 +77,13 @@ export class ObjectModel {
   addStatus(status: string): boolean {
     if (this.hasStatus(status)) return false;
     this.status.push(status);
+    this.tags.conditionChanged(status);
     return true;
   }
 
   removeStatus(status: string): boolean {
     this.status = this.status.filter(s => s !== status);
+    this.tags.conditionChanged(status);
     return true;
   }
 

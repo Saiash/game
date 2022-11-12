@@ -117,7 +117,7 @@ export class TagSystem {
       const tag = this.all[tagId];
       if (tag.checkIfHasCondition(condition)) {
         const prevState = tag.getConditionState();
-        const state = tag.checkConditions({ outer: false });
+        const state = tag.checkConditions({});
         if (prevState !== state) {
           if (state) {
             this.activateTag(tag);
@@ -134,7 +134,7 @@ export class TagSystem {
     const result: { [index: string]: Tag } = {};
     Object.keys(this.active.skill).forEach(tagId => {
       const tag = this.active.skill[tagId];
-      if (tag.checkConditions({ outer: true, actor })) {
+      if (tag.checkConditions({ actor })) {
         result[tagId] = this.active.skill[tagId];
       }
     });
@@ -146,7 +146,7 @@ export class TagSystem {
     const result: { [index: string]: Tag } = {};
     Object.keys(this.active.action).forEach(tagId => {
       const tag = this.active.action[tagId];
-      if (tag.checkConditions({ outer: true, actor })) {
+      if (tag.checkConditions({ actor })) {
         result[tagId] = this.active.action[tagId];
       }
     });

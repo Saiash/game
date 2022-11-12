@@ -1,3 +1,10 @@
+v. 0.0.18
+ActionEvents + trigger events calculations (and for effects aswell)
+Fixes for tag system - now could calculate properly both inner and outer conditions
+Negative conditions for tag system
+Renew tags on added / removed status
+Common actions + resolvers for common actions
+
 v. 0.0.17
 1. Учет модификаторов из тегов (должен корректно применяться штраф к ловкости от перчаток)
 2. Относительное отображение уровня навыков и характеристик (ужасно - нормально - хорошо - божественно)

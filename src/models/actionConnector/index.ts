@@ -4,9 +4,11 @@ import { Item } from '../characters/inventory/item';
 import { GameData } from '../gameData';
 import { Location } from '../locations';
 import { ObjectModel } from '../locations/object';
+import { Tag } from '../tag/models/tag';
 
 export type useSkillPayload = {
   type: 'useSkill';
+  tag: Tag;
   difficulty: number;
   timeMod: number;
   skill: string;
@@ -31,37 +33,34 @@ export type ActionPayload = {
 export class ActionConnector {
   gameData: GameData;
   ctx: CTX;
+  resolvers: { [index: string]: (input: ActionPayload) => Promise<boolean> };
 
   constructor({ ctx, gameData }: { ctx: CTX; gameData: GameData }) {
     this.ctx = ctx;
     this.gameData = gameData;
+    this.resolvers = {
+      useSkill: this.resolveSkillUsage,
+      equipItem: this.resolveEquipItem,
+      unequipItem: this.resolveUnequipItem,
+      lockItem: this.resolveLockItem,
+    };
   }
 
-  performAction(input: ActionPayload): boolean {
+  async performAction(input: ActionPayload): Promise<boolean> {
     const {
-      sourceActor,
       payload: { type },
     } = input;
-    if (type === 'useSkill' && sourceActor) {
-      return this.resolveSkillUsage(input);
-    } else if (type === 'equipItem' && sourceActor) {
-      return this.resolveEquipItem(input);
-    } else if (type === 'unequipItem' && sourceActor) {
-      return this.resolveUnequipItem(input);
-    } else if (type === 'lockItem' && sourceActor) {
-      return this.resolveLockItem(input);
-    }
-    return false;
+    return this.resolvers[type] ? this.resolvers[type](input) : false;
   }
 
-  resolveSkillUsage(input: ActionPayload): boolean {
+  async resolveSkillUsage(input: ActionPayload): Promise<boolean> {
     if (input.payload.type !== 'useSkill') return false;
     const { sourceActor } = input;
     if (!sourceActor) return false;
     return sourceActor.skills.resolve(input);
   }
 
-  resolveEquipItem(input: ActionPayload): boolean {
+  async resolveEquipItem(input: ActionPayload): Promise<boolean> {
     if (input.payload.type !== 'equipItem') return false;
     const {
       target,
@@ -75,7 +74,7 @@ export class ActionConnector {
     throw Error('Доделать использование предметов на других персонажей!');
   }
 
-  resolveLockItem(input: ActionPayload): boolean {
+  async resolveLockItem(input: ActionPayload): Promise<boolean> {
     if (input.payload.type !== 'lockItem') return false;
     const {
       target,
@@ -91,7 +90,7 @@ export class ActionConnector {
     throw Error('Доделать использование предметов на других персонажей!');
   }
 
-  resolveUnequipItem(input: ActionPayload): boolean {
+  async resolveUnequipItem(input: ActionPayload): Promise<boolean> {
     if (input.payload.type !== 'unequipItem') return false;
     const {
       target,

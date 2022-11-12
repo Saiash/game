@@ -14,7 +14,13 @@ export function getDataloaders() {
     getLore: async (loreName: string) => {
       return callAPIEndpoint({
         endpoint: 'getLore',
-        data: { loreName: loreName },
+        data: { loreName },
+      });
+    },
+    getEvent: async (eventName: string) => {
+      return callAPIEndpoint({
+        endpoint: 'getEvent',
+        data: { eventName },
       });
     },
     getObject: async (name: string) => {

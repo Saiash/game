@@ -2,6 +2,7 @@ import { Character } from '../../characters';
 import { Item } from '../../characters/inventory/item';
 import { Location } from '../../locations';
 import { ObjectModel } from '../../locations/object';
+import { Tag } from './tag';
 
 export class Condition {
   private state: boolean;
@@ -9,45 +10,65 @@ export class Condition {
   private outerConditions: conditions[];
   private existingConditions: string[];
   private owner: Character | Item | ObjectModel | Location;
+  private tag: Tag;
 
   constructor(
     conditions: conditions[],
     outerConditions: conditions[],
-    owner: Character | Item | ObjectModel | Location
+    owner: Character | Item | ObjectModel | Location,
+    tag: Tag
   ) {
     this.state = false;
     this.conditions = conditions || [];
     this.outerConditions = outerConditions || [];
     this.owner = owner;
+    this.tag = tag;
     this.existingConditions = [];
     this.checkConditions();
   }
 
-  checkConditions(outer: boolean = false, actor?: Character): boolean {
+  checkConditions(actor?: Character): boolean {
     this.existingConditions = [];
-    const conditionsSet = outer ? this.outerConditions : this.conditions;
-    const results = conditionsSet.map(conditionSet => {
-      if (conditionSet.and) {
-        const conditionsResults = conditionSet.and.map(condition => {
-          return this.testCondition(condition, actor);
+    const results = [
+      ...this.outerConditions.map(c => {
+        return { ...c, type: 'outer' };
+      }),
+      ...this.conditions.map(c => {
+        return { ...c, type: 'inner' };
+      }),
+    ].map(conditionSet => {
+      const arg = conditionSet.and ? 'and' : 'or';
+      const type = conditionSet.type;
+      if (type === 'outer' && !actor) return true;
+      const conditionsResults = conditionSet[arg]?.map(condition => {
+        return this.testCondition({
+          condition,
+          ...(type === 'inner' ? {} : { actor }),
         });
-        return conditionsResults.every(r => r === true);
-      } else if (conditionSet.or) {
-        const conditionsResults = conditionSet.or.map(condition => {
-          return this.testCondition(condition, actor);
-        });
-        return conditionsResults.some(r => r === true);
-      }
+      }) as boolean[];
+      return arg === 'and'
+        ? conditionsResults.every(r => r === true)
+        : conditionsResults.some(r => r === true);
     });
     this.state = results.every(r => r === true);
     return this.state;
   }
 
-  private testCondition(condition: condition, actor?: Character): boolean {
+  private testCondition({
+    condition,
+    actor,
+  }: {
+    condition: condition;
+    actor?: Character;
+  }): boolean {
     const [conditionType] = Object.keys(condition);
-    if (conditionType === 'status') {
-      const conditionValue = condition.status;
-      return this.testStatus(conditionValue, actor);
+    if (conditionType === 'status' || conditionType === 'notStatus') {
+      const conditionValue = condition[conditionType];
+      return this.testStatus(
+        conditionValue,
+        conditionType === 'notStatus' ? 'negation' : 'simple',
+        actor
+      );
     } else if (
       conditionType === 'unknownLore' ||
       conditionType === 'knownLore'
@@ -60,6 +81,7 @@ export class Condition {
 
   private testStatus(
     conditionValue: conditionValue,
+    mod: 'simple' | 'negation',
     actor?: Character | Item | ObjectModel | Location
   ): boolean {
     const source = actor || this.owner;
@@ -71,7 +93,9 @@ export class Condition {
         return source.hasStatus(value as string);
       }
     });
-    return result.every(r => r === true);
+    return mod === 'simple'
+      ? result.every(r => r === true)
+      : result.every(r => r === false);
   }
 
   private testLore({

@@ -1,62 +1,82 @@
 {
-    "chest_test": {"name": "Сундук", "description": "Обычный сундук", 
-        "tags": [
-            {"self": [
-                {
-                    "type": "skill", "name": "lockpicking", "value": -1, "conditions": [{"and": [{"status": ["locked"]}]}]
-                },
-                {
-                    "type": "skill", 
-                    "name": "disarm",
-                    "value": -1, 
-                    "conditions": [
-                        {"and": [
-                            {"status": ["trapped"]}
-                        ]}
-                    ], 
-                    "outerConditions": [{"and": [{"knownLore": ["lore_1"]}]}],
-                    "onSuccess": [
-                        {"removeStatus": ["trapped"]}
-                    ], 
-                    "onFail": [
-                        {"sendMessage": [{"id": [1]}]}
-                    ]
-                },
-                {
-                    "type": "action", 
-                    "name": "open",
-                    "value": 0, 
-                    "conditions": [
-                        {"and": [{"status": ["closed"]}]}
-                    ],
-                    "onSuccess": [
-                        {"removeStatus": ["closed"]}, {"addStatus": ["open"]},
-                        {"triggerEvent": [{"id": 1}], "conditions": [{"and": [{"status": ["trapped"]}]}]}
-                    ]
-                },
-                {
-                    "type": "action", 
-                    "name": "look",
-                    "value": 0,
-                    "outerConditions": [
-                        {"and": [
-                            {"unknownLore": ["lore_1", "lore_2"]}
-                        ]}
-                    ],
-                    "onSuccess": [
-                        {"addLore": [{"id": "lore_1"}]}
-                    ],
-                    "onFail": [
-                        {"addLore": [{"id": "lore_2"}]}
-                    ]
-                }
-            ]}
-        ],
-        "status": ["closed", "trapped"],
-        "locked": true,
-        "inventory": [
-            {"name": "Нож"}
+  "chest_test": {
+    "name": "Сундук",
+    "description": "Обычный сундук",
+    "tags": [
+      {
+        "self": [
+          {
+            "type": "skill",
+            "name": "lockpicking",
+            "value": 5,
+            "conditions": [{ "and": [{ "status": ["locked"] }] }]
+          },
+          {
+            "type": "skill",
+            "name": "disarm",
+            "value": -1,
+            "conditions": [{ "and": [{ "status": ["trapped"] }] }],
+            "outerConditions": [{ "and": [{ "knownLore": ["lore_1"] }] }],
+            "onSuccess": [{ "type": "removeStatus", "effect": ["trapped"] }],
+            "onFail": [{ "type": "sendMessage", "effect": [{ "id": [1] }] }]
+          },
+          {
+            "type": "action",
+            "name": "open",
+            "value": 0,
+            "conditions": [
+              { "and": [{ "status": ["closed"] }, { "notStatus": ["locked"] }] }
+            ],
+            "onSuccess": [
+              { "type": "removeSelfStatus", "effect": ["closed"] },
+              { "type": "addSelfStatus", "effect": ["open"] },
+              {
+                "type": "triggerEvent",
+                "effect": [{ "id": "event_1" }],
+                "conditions": [{ "and": [{ "status": ["trapped"] }] }]
+              },
+              {
+                "type": "removeSelfStatus",
+                "effect": ["trapped"],
+                "conditions": [{ "and": [{ "status": ["trapped"] }] }]
+              }
+            ]
+          },
+          {
+            "type": "action",
+            "name": "close",
+            "value": 0,
+            "conditions": [{ "and": [{ "status": ["open"] }] }],
+            "onSuccess": [
+              { "type": "removeSelfStatus", "effect": ["open"] },
+              { "type": "addSelfStatus", "effect": ["closed"] }
+            ]
+          },
+          {
+            "type": "action",
+            "name": "look",
+            "value": 0,
+            "outerConditions": [
+              { "and": [{ "unknownLore": ["lore_1", "lore_2"] }] }
+            ],
+            "conditions": [{ "and": [{ "status": ["closed"] }] }],
+            "onSuccess": [
+              {
+                "type": "triggerEvent",
+                "effect": [{ "id": "event_2" }]
+              }
+            ],
+            "onFail": [{ "type": "addLore", "effect": [{ "id": "lore_2" }] }]
+          }
         ]
-    },
-    "chest_test_2": {"name": "Сундук #2", "description": "Совсем Обычный сундук"}
+      }
+    ],
+    "status": ["closed", "trapped"],
+    "locked": true,
+    "inventory": [{ "name": "Нож" }]
+  },
+  "chest_test_2": {
+    "name": "Сундук #2",
+    "description": "Совсем Обычный сундук"
+  }
 }

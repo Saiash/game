@@ -21,7 +21,7 @@ export class ActionResolver {
     this.actionConnector = actionConnector;
   }
 
-  performAction(input: ActionPayload): boolean {
+  async performAction(input: ActionPayload): Promise<boolean> {
     return this.actionConnector.performAction(input);
   }
 }

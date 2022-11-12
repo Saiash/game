@@ -17,15 +17,9 @@ export class LoreManager {
     this.knownLore = knownLore || {};
   }
 
-  async add({
-    dataloaders,
-    name,
-  }: {
-    dataloaders: CTX['dataloaders'];
-    name: string;
-  }): Promise<boolean> {
+  async add(name: string): Promise<boolean> {
     if (this.knownLore[name]) return false;
-    const loreData = await dataloaders.getLore(name);
+    const loreData = await this.ctx.dataloaders.getLore(name);
 
     this.knownLore[name] = new Lore({
       ctx: this.ctx,

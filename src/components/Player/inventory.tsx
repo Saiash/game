@@ -15,9 +15,9 @@ export default function Inventory({
   const character = gameData.getPlayerCharacter();
   const [items, setItems] = useState(character.inventory.getAsArray());
 
-  const equipItem = (index: number): boolean => {
+  const equipItem = async (index: number): Promise<boolean> => {
     const character = gameData.getPlayerCharacter();
-    const result = gameData.actionResolver.performAction({
+    const result = await gameData.actionResolver.performAction({
       sourceActor: character,
       target: character,
       payload: {

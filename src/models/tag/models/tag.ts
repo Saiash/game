@@ -1,3 +1,4 @@
+import { ActionPayload } from '../../actionConnector';
 import { Character } from '../../characters';
 import { Item } from '../../characters/inventory/item';
 import { Location } from '../../locations';
@@ -49,18 +50,13 @@ export class Tag {
     this.conditions = new Condition(
       input.conditions,
       input.outerConditions,
-      owner
+      owner,
+      this
     );
   }
 
-  checkConditions({
-    outer = false,
-    actor,
-  }: {
-    outer: boolean;
-    actor?: Character;
-  }) {
-    return this.conditions.checkConditions(outer, actor);
+  checkConditions({ actor }: { actor?: Character }) {
+    return this.conditions.checkConditions(actor);
   }
 
   getConditionState() {
@@ -77,6 +73,14 @@ export class Tag {
 
   getName() {
     return this.name;
+  }
+
+  getOnSuccess() {
+    return this.onSuccess;
+  }
+
+  getOnFail() {
+    return this.onFail;
   }
 
   getOwner() {

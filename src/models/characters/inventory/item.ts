@@ -174,6 +174,7 @@ export class Item {
 
   removeStatus(status: string): boolean {
     this.status = this.status.filter(s => s !== status);
+    this.props.tags.conditionChanged(status);
     return true;
   }
 

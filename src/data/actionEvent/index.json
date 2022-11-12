@@ -1,0 +1,20 @@
+{
+  "event_1": {
+    "description": "Заминированный сундук",
+    "actions": [
+      {
+        "type": "sendMessage",
+        "effect": [
+          "Из сундука прямо вам в лицо с громким хлопком выстреливает облако дыма и пыли!"
+        ]
+      }
+    ]
+  },
+  "event_2": {
+    "description": "Осмотр сундука",
+    "actions": [
+      { "type": "sendMessage", "effect": ["Кажется, сундук заминирован!"] },
+      { "type": "addLore", "effect": [{ "id": "lore_1" }] }
+    ]
+  }
+}

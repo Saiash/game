@@ -112,14 +112,14 @@ export class Skill {
     };
   }
 
-  resolve(input: ActionPayload): ResolveResult {
+  async resolve(input: ActionPayload): Promise<ResolveResult> {
     const { sourceActor, payload, target } = input;
     if (payload.type !== 'useSkill') return { executed: false, payload: input };
     const { skill, difficulty, timeMod, options } = payload;
     if (!sourceActor) return { executed: false, payload: input };
     const optionsMod = this.calcOptionsMod(options);
     const skillCheckResult = this.check(difficulty + timeMod * 1 + optionsMod);
-    this.resolver.resolve({
+    this.resolver.commonResolve({
       result: skillCheckResult,
       sourceActor,
       target,
