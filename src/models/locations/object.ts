@@ -6,6 +6,17 @@ import { Item } from '../characters/inventory/item';
 import { TagSystem } from '../tag';
 import { Tag } from '../tag/models/tag';
 
+export type rawObjectModel = {
+  name: string;
+  code: string;
+  description: string;
+  tags: string;
+  locked?: boolean;
+  lockable?: boolean;
+  status?: string[];
+  items?: { [index: number]: Item };
+};
+
 let itemId = 0;
 export class ObjectModel {
   private id: number;
@@ -27,16 +38,7 @@ export class ObjectModel {
   }: {
     ctx: CTX;
     location: Location;
-    data: {
-      name: string;
-      code: string;
-      description: string;
-      tags: string;
-      locked?: boolean;
-      lockable?: boolean;
-      status?: string[];
-      items?: { [index: number]: Item };
-    };
+    data: rawObjectModel;
   }) {
     this.id = itemId++;
     this.location = location;

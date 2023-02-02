@@ -1,13 +1,13 @@
 import express from 'express';
 import resolveRequest from './resolver';
 
-const app = express(); //Line 2
+const app = express();
 app.use(
   express.json({
     type: ['application/json', 'text/plain'],
   })
 );
-const port = process.env.PORT || 5001; //Line 3
+const port = process.env.PORT || 5001;
 
 app.options('*', (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');

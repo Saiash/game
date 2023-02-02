@@ -5,7 +5,9 @@ import getLore from './getLore';
 import getObject from './getObject';
 import getEvent from './getEvent';
 import saveData from './saveData';
+import saveEditorData from './saveEditorData';
 import parseData from './parseData';
+import getEditorData from './getEditorData';
 
 export default {
   getCharacter,
@@ -14,6 +16,8 @@ export default {
   getLore,
   getEvent,
   saveData,
+  saveEditorData,
   parseData,
+  getEditorData,
   getObject,
 };

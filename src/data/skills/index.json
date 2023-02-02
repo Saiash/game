@@ -1,4 +1,37 @@
 {
-  "acrobatics": {"name": "Акробатика", "description": "описание", "code": "acrobatics", "parentAttr": "dex", "difficulty":"hard"},
-  "lockpicking": {"name": "Взлом", "description": "описание", "code": "lockpicking", "parentAttr": "int", "difficulty":"medium"}
+  "acrobatics": {
+    "name": "Акробатика",
+    "description": "Это умение выполнять акробатические или гимнастические трюки, сгибаться, правильно падать и т.д",
+    "code": "acrobatics",
+    "parentAttr": "dex",
+    "difficulty": "hard"
+  },
+  "lockpicking": {
+    "name": "Взлом",
+    "description": "описание",
+    "code": "lockpicking",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "acting": {
+    "name": "Артистизм",
+    "description": "Способность подделывать настроение, эмоции, голоса и убедительно лгать некоторое время",
+    "code": "acting",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "accounting": {
+    "name": "Бухгалтерский учет",
+    "description": "способности вести бухгалтерские книги, определять состояние бизнеса",
+    "code": "accounting",
+    "parentAttr": "int",
+    "difficulty": "hard"
+  },
+  "administration": {
+    "name": "Администрирование",
+    "description": "Это умение управлять крупной организацией",
+    "code": "administration",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  }
 }

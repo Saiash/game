@@ -1,6 +1,10 @@
 import { CTX } from '../../../types';
 
 let id = 0;
+export type rawLore = {
+  description: string;
+  title: string;
+};
 
 export class Lore {
   private ctx: CTX;

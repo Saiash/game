@@ -13,6 +13,8 @@ import type { CTX } from '../../../types/';
 import type { SkillResolver } from './resolvers';
 import { CommonActionResolver } from './resolvers/commonAction';
 
+export type rawSkill = SkillInputProps;
+
 export type SkillInputProps = {
   name: string;
   description: string;

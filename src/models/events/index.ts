@@ -4,6 +4,7 @@ import { POST_ACTIONS_RESOLVERS } from '../characters/skills/resolvers/postActio
 import type { ActionPayload } from '../actionConnector';
 
 export type EventAction = { type: string; effect: string[] | { id: string }[] };
+export type rawEvent = { description: string; actions: EventAction[] };
 
 let id = 0;
 
@@ -20,7 +21,7 @@ export class Event {
     inputAction,
   }: {
     ctx: CTX;
-    props: any;
+    props: rawEvent;
     inputAction: ActionPayload;
   }) {
     this.ctx = ctx;

@@ -4,7 +4,8 @@
     "description": "Обычный сундук",
     "tags": [
       {
-        "self": [
+        "type": "self",
+        "tags": [
           {
             "type": "skill",
             "name": "lockpicking",
@@ -17,8 +18,10 @@
             "value": -1,
             "conditions": [{ "and": [{ "status": ["trapped"] }] }],
             "outerConditions": [{ "and": [{ "knownLore": ["lore_1"] }] }],
-            "onSuccess": [{ "type": "removeStatus", "effect": ["trapped"] }],
-            "onFail": [{ "type": "sendMessage", "effect": [{ "id": [1] }] }]
+            "onSuccess": [
+              { "type": "removeSelfStatus", "effect": ["trapped"] }
+            ],
+            "onFail": [{ "type": "triggerEvent", "effect": ["event_1"] }]
           },
           {
             "type": "action",
@@ -32,7 +35,7 @@
               { "type": "addSelfStatus", "effect": ["open"] },
               {
                 "type": "triggerEvent",
-                "effect": [{ "id": "event_1" }],
+                "effect": ["event_1"],
                 "conditions": [{ "and": [{ "status": ["trapped"] }] }]
               },
               {
@@ -60,23 +63,42 @@
               { "and": [{ "unknownLore": ["lore_1", "lore_2"] }] }
             ],
             "conditions": [{ "and": [{ "status": ["closed"] }] }],
-            "onSuccess": [
-              {
-                "type": "triggerEvent",
-                "effect": [{ "id": "event_2" }]
-              }
-            ],
-            "onFail": [{ "type": "addLore", "effect": [{ "id": "lore_2" }] }]
+            "onSuccess": [{ "type": "triggerEvent", "effect": ["event_2"] }],
+            "onFail": [{ "type": "addLore", "effect": ["lore_2"] }]
           }
         ]
       }
     ],
-    "status": ["closed", "trapped"],
-    "locked": true,
-    "inventory": [{ "name": "Нож" }]
+    "status": ["closed", "trapped", "locked"]
   },
   "chest_test_2": {
-    "name": "Сундук #2",
-    "description": "Совсем Обычный сундук"
-  }
+    "name": "Сундук 2",
+    "description": "Совсем Обычный сундук",
+    "tags": [
+      {
+        "type": "self",
+        "tags": [
+          {
+            "type": "skill",
+            "name": "lockpicking",
+            "value": 5,
+            "conditions": [
+              { "and": [{ "status": ["locked", "open", "closed", "trapped"] }] }
+            ]
+          },
+          {
+            "type": "skill",
+            "name": "acting",
+            "value": 5,
+            "conditions": [
+              { "and": [{ "status": ["locked"] }] },
+              { "or": [{ "status": ["closed"] }] }
+            ]
+          }
+        ]
+      }
+    ],
+    "status": ["closed", "trapped", "locked"]
+  },
+  "new": { "name": "", "description": "", "status": [], "tags": "" }
 }

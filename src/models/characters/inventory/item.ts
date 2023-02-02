@@ -48,6 +48,7 @@ export const itemZones = [
 ];
 
 let itemId = 0;
+export type rawItem = ItemProps;
 
 export type ItemProps = {
   name: string;
