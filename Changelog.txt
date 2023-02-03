@@ -1,4 +1,4 @@
-v 0.018
+v 0.0.19
 First approach for content manager;
 Unification update to tag system
 
