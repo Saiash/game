@@ -53,8 +53,9 @@ export class ObjectModel {
       items: data.items,
     });
     this.status = data?.status || [];
-    this.locked = data.locked || false;
-    this.lockable = data.lockable || data.locked || false;
+    this.locked = this.status?.some(s => s === 'locked') || false;
+    this.lockable =
+      this.status?.some(s => s === 'lockable') || this.locked || false;
     this.tags = new TagSystem({
       ctx,
       input: { props: data.tags },
@@ -92,12 +93,14 @@ export class ObjectModel {
   lock() {
     this.locked = true;
     this.tags.conditionChanged('locked');
+    this.addStatus('locked');
     return true;
   }
 
   unlock() {
     this.locked = false;
     this.tags.conditionChanged('locked');
+    this.removeStatus('locked');
     return true;
   }
 

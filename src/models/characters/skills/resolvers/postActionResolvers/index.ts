@@ -24,11 +24,14 @@ async function removeSelfStatus(
   input: ActionPayload,
   effects: EventAction['effect']
 ): Promise<ResolveResult> {
-  if (input.payload.type !== 'useSkill') return { executed: false };
+  if (input.payload.type !== 'useSkill') return returnDefaultResult();
   const target = input.target;
-  if (!target) return { executed: false };
+  if (!target) return returnDefaultResult();
+  if (typeof effects === 'string') {
+    return returnDefaultResult();
+  }
   effects.forEach(e => {
-    if (typeof e === 'string') target.removeStatus(e);
+    target.removeStatus(e);
   });
   return { executed: true, checkResult: { result: true } };
 }
@@ -37,9 +40,12 @@ async function addSelfStatus(
   input: ActionPayload,
   effects: EventAction['effect']
 ): Promise<ResolveResult> {
-  if (input.payload.type !== 'useSkill') return { executed: false };
+  if (input.payload.type !== 'useSkill') return returnDefaultResult();
   const target = input.target;
-  if (!target) return { executed: false };
+  if (!target) return returnDefaultResult();
+  if (typeof effects === 'string') {
+    return returnDefaultResult();
+  }
   effects.forEach(e => {
     if (typeof e === 'string') target.addStatus(e);
   });
@@ -51,11 +57,11 @@ async function addLore(
   effect: EventAction['effect'],
   ctx: CTX
 ): Promise<ResolveResult> {
-  if (input.payload.type !== 'useSkill') return { executed: false };
+  if (input.payload.type !== 'useSkill') return returnDefaultResult();
   const actor = input.sourceActor;
   if (!actor) return { executed: false };
   for (const e of effect) {
-    if (typeof e !== 'string') await actor.lore.add(e.id);
+    await actor.lore.add(e);
   }
   return { executed: true, checkResult: { result: true } };
 }
@@ -65,14 +71,12 @@ async function triggerEvent(
   effects: EventAction['effect'],
   ctx: CTX
 ): Promise<ResolveResult> {
-  if (input.payload.type !== 'useSkill') return { executed: false };
+  if (input.payload.type !== 'useSkill') return returnDefaultResult();
   const target = input.target;
   if (!target) return { executed: false };
   for (const e of effects) {
-    if (typeof e !== 'string') {
-      const event = await Event.createNewEvent(e.id, ctx, input);
-      await event.execute();
-    }
+    const event = await Event.createNewEvent(e, ctx, input);
+    await event.execute();
   }
   return { executed: true, checkResult: { result: true } };
 }
@@ -82,10 +86,12 @@ async function sendMessage(
   effects: EventAction['effect'],
   ctx: CTX
 ): Promise<ResolveResult> {
-  for (const e of effects) {
-    if (typeof e === 'string') {
-      ctx.gameData.log.addEvent({ text: e });
-    }
+  if (typeof effects === 'string') {
+    ctx.gameData.log.addEvent({ text: effects });
   }
   return { executed: true, checkResult: { result: true } };
+}
+
+function returnDefaultResult(): ResolveResult {
+  return { executed: false };
 }

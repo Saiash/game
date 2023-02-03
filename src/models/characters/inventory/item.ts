@@ -61,7 +61,7 @@ export type ItemProps = {
 
   cost: number;
   mods: any;
-  options: any;
+  options: string[];
 };
 
 export class Item {
@@ -78,7 +78,7 @@ export class Item {
     this.id = itemId++;
     const tags = props.tags as any as string;
     this.props = props;
-    if (props.options?.lockable) {
+    if (props.options?.some(o => o === 'lockable')) {
       this.lockable = true;
     }
     this.props.zones = this.calculateZones(props.zones);

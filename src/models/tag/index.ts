@@ -53,11 +53,12 @@ export class TagSystem {
     const { props, target } = input;
     const allProps: any = [];
     props.forEach((prop: any) => {
-      if (prop.apply) {
-        allProps.push(...prop.apply);
+      const { type, tags } = prop;
+      if (type === 'apply') {
+        allProps.push(...tags);
       }
-      if (prop.self) {
-        allProps.push(...prop.self);
+      if (type === 'self') {
+        allProps.push(...tags);
       }
     });
     //пока идем по схеме, что тэги предметов применяются к персонажу, остальное само к себе
