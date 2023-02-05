@@ -10,6 +10,7 @@ import { Location } from '../locations';
 import { ObjectModel } from '../locations/object';
 import { TimeManager } from './timeManager';
 import { Lore } from '../characters/lore/lore';
+import { nodeId } from '../nodes';
 
 export class GameData {
   playerCharacter: Character;
@@ -23,6 +24,8 @@ export class GameData {
   locations: { [index: string]: Location };
   objects: { [index: string]: ObjectModel };
   timeManager: TimeManager;
+  currentScenes: nodeId[]; // самая актуальная - последняя;
+  currentNode?: nodeId;
   //время
   //локация
   //персонажи
@@ -57,6 +60,7 @@ export class GameData {
     });
     this.log = new Log(ctx);
     this.timeManager = new TimeManager({ ctx });
+    this.currentScenes = [];
   }
 
   getPlayerCharacter(): Character {

@@ -3,8 +3,7 @@ import { ResolveResult } from '../..';
 import { CTX } from '../../../../../types';
 import { ActionPayload } from '../../../../actionConnector';
 import { Event } from '../../../../events';
-
-import type { EventAction } from '../../../../events';
+import { EventAction } from '../../../../tag/models/tag';
 
 export const POST_ACTIONS_RESOLVERS: {
   [index: string]: (

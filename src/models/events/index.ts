@@ -2,8 +2,8 @@ import { CTX } from '../../types';
 import { POST_ACTIONS_RESOLVERS } from '../characters/skills/resolvers/postActionResolvers';
 
 import type { ActionPayload } from '../actionConnector';
+import { EventAction } from '../tag/models/tag';
 
-export type EventAction = { type: string; effect: string[] | string };
 export type rawEvent = { description: string; actions: EventAction[] };
 
 let id = 0;

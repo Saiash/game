@@ -125,10 +125,10 @@ export class Condition {
 }
 
 export type conditions = {
-  and?: [condition];
-  or?: [condition];
+  and?: condition[];
+  or?: condition[];
 };
 
 export type condition = { [index: string]: conditionValue };
 
-export type conditionValue = [string | number | { id?: string; name?: string }];
+export type conditionValue = string[];

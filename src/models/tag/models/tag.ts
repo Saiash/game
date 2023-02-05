@@ -3,9 +3,16 @@ import { Character } from '../../characters';
 import { Item } from '../../characters/inventory/item';
 import { Location } from '../../locations';
 import { ObjectModel } from '../../locations/object';
-import { Condition } from './condition';
+import { Condition, conditions } from './condition';
 
 let ID = 1;
+
+export type EventAction = {
+  type: string;
+  effect: string[] | string;
+  conditions?: conditions[];
+  outerConditions?: conditions[];
+};
 
 export type TagInput = {
   name: string;
@@ -15,10 +22,10 @@ export type TagInput = {
     type: string;
     name: string;
   };
-  conditions: any;
-  outerConditions: any;
-  onSuccess: any;
-  onFail: any;
+  conditions: conditions[];
+  outerConditions: conditions[];
+  onSuccess: EventAction[];
+  onFail: EventAction[];
 };
 
 export class Tag {
@@ -31,8 +38,8 @@ export class Tag {
     name: string;
   };
   private conditions: Condition;
-  private onSuccess: any;
-  private onFail: any;
+  private onSuccess: EventAction[];
+  private onFail: EventAction[];
   private owner: Character | Item | ObjectModel | Location;
 
   constructor(

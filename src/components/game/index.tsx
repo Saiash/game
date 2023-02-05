@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import Nodes from '../../components/Node/nodes';
 import PlayerTabs from '../../components/Player/playerTabs';
 import PlayerNode from '../../components/Player/playerNode';
 import Interactions from '../../components/Interactions';
 import { callAPIEndpoint } from '../../utils';
 
 import styles from '../../styles/Home.module.css';
-import { Context, GameData, getDataloaders } from '../../models';
+import { GameData, getDataloaders } from '../../models';
 import Log from '../../components/Log';
 import ViewTabs from '../../components/View/viewTabs';
 
@@ -74,7 +73,6 @@ export function Game() {
     const ctxGetter = function () {
       const ctx: CTX = {
         update: setCtx,
-        context: new Context(data),
         gameData: {} as GameData,
         dataloaders,
         setTextNodeId,
