@@ -5,11 +5,12 @@ import { Location } from '../../../locations';
 import { ObjectModel } from '../../../locations/object';
 import { Item } from '../../inventory/item';
 import { Lockpicking } from './lockpicking';
-import { Condition } from '../../../../models/tag/models/condition';
+import { Condition } from '../../../tag/models/condition';
 
 import type { CTX } from '../../../../types';
-import type { conditions } from '../../../../models/tag/models/condition';
+import type { conditions } from '../../../tag/models/condition';
 import { POST_ACTIONS_RESOLVERS } from './postActionResolvers';
+import { Event } from '../../../events';
 
 export class SkillResolver {
   code: string;
@@ -47,21 +48,13 @@ export class SkillResolver {
     const results = checkResult ? tag.getOnSuccess() : tag.getOnFail();
     const actionsResults = [];
     for (const r of results) {
-      const { type, effect, conditions, outerConditions } = r;
-      const condition = new Condition(
-        conditions || [],
-        outerConditions || [],
-        tag.getOwner(),
-        tag
-      );
-      if (condition.checkConditions()) {
-        const result = await POST_ACTIONS_RESOLVERS[type](
-          input,
-          effect,
-          this.ctx
-        );
-        actionsResults.push(result);
-      }
+      const result = await Event.execute({
+        data: r,
+        ctx: this.ctx,
+        input,
+        actor: tag.getOwner(),
+      });
+      actionsResults.push(result);
     }
     return { executed: actionsResults.every(r => r.executed) };
   }

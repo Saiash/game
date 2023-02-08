@@ -9,8 +9,7 @@ import { Log } from './Log';
 import { Location } from '../locations';
 import { ObjectModel } from '../locations/object';
 import { TimeManager } from './timeManager';
-import { Lore } from '../characters/lore/lore';
-import { nodeId } from '../nodes';
+import { SceneEngine } from '../SceneEngine';
 
 export class GameData {
   playerCharacter: Character;
@@ -24,8 +23,7 @@ export class GameData {
   locations: { [index: string]: Location };
   objects: { [index: string]: ObjectModel };
   timeManager: TimeManager;
-  currentScenes: nodeId[]; // самая актуальная - последняя;
-  currentNode?: nodeId;
+  sceneEngine: SceneEngine;
   //время
   //локация
   //персонажи
@@ -60,7 +58,7 @@ export class GameData {
     });
     this.log = new Log(ctx);
     this.timeManager = new TimeManager({ ctx });
-    this.currentScenes = [];
+    this.sceneEngine = new SceneEngine({ ctx });
   }
 
   getPlayerCharacter(): Character {
@@ -115,6 +113,7 @@ export class GameData {
       name: 'chest_test_2',
       location: this.locations.defaultLocation,
     });
+    await this.sceneEngine.initScene('scene_1');
   }
 
   addLocation({

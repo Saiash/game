@@ -19,6 +19,7 @@ export type useSkillPayload = {
 type equipItemPayload = { type: 'equipItem'; itemIndex: number };
 type lockItemPayload = { type: 'lockItem'; zoneIndex: number };
 type unequipItemPayload = { type: 'unequipItem'; zoneIndex: number };
+type systemEventPayload = { type: 'systemEvent' };
 
 export type ActionPayload = {
   sourceActor?: Character;
@@ -27,7 +28,8 @@ export type ActionPayload = {
     | useSkillPayload
     | equipItemPayload
     | lockItemPayload
-    | unequipItemPayload;
+    | unequipItemPayload
+    | systemEventPayload;
 };
 
 export class ActionConnector {

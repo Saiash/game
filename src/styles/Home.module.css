@@ -190,3 +190,10 @@
   border: 1px solid gray;
   cursor: pointer;
 }
+.logAction {
+  color: rgb(119, 157, 227);
+  cursor: pointer;
+}
+.logAction:hover {
+  text-decoration: underline;
+}

@@ -70,11 +70,10 @@ async function triggerEvent(
   effects: EventAction['effect'],
   ctx: CTX
 ): Promise<ResolveResult> {
-  if (input.payload.type !== 'useSkill') return returnDefaultResult();
   const target = input.target;
   if (!target) return { executed: false };
   for (const e of effects) {
-    const event = await Event.createNewEvent(e, ctx, input);
+    const event = await Event.getEventById(e, ctx, input);
     await event.execute();
   }
   return { executed: true, checkResult: { result: true } };

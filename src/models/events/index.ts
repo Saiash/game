@@ -3,6 +3,12 @@ import { POST_ACTIONS_RESOLVERS } from '../characters/skills/resolvers/postActio
 
 import type { ActionPayload } from '../actionConnector';
 import { EventAction } from '../tag/models/tag';
+import { Condition } from '../tag/models/condition';
+import { ObjectModel } from '../locations/object';
+import { Item } from '../characters/inventory/item';
+import { Character } from '../characters';
+import { Location } from '../locations';
+import { ResolveResult } from '../characters/skills';
 
 export type rawEvent = { description: string; actions: EventAction[] };
 
@@ -31,7 +37,7 @@ export class Event {
     this.inputAction = inputAction;
   }
 
-  static async createNewEvent(
+  static async getEventById(
     name: string,
     ctx: CTX,
     inputAction: ActionPayload
@@ -40,11 +46,41 @@ export class Event {
     return new Event({ ctx, props: eventData, inputAction });
   }
 
-  async execute() {
+  async execute(): Promise<ResolveResult[]> {
+    const result = [];
     for (const action of this.actions) {
-      const { type, effect } = action;
-      await POST_ACTIONS_RESOLVERS[type](this.inputAction, effect, this.ctx);
+      const r = await Event.execute({ data: action, ctx: this.ctx });
+      result.push(r);
     }
-    return;
+    return result;
+  }
+
+  static async execute({
+    data,
+    ctx,
+    input,
+    actor,
+  }: {
+    data: EventAction;
+    ctx: CTX;
+    input?: ActionPayload;
+    actor?: Character | Item | ObjectModel | Location;
+  }): Promise<ResolveResult> {
+    const { type, effect, conditions, outerConditions } = data;
+    const condition = new Condition({
+      conditions: conditions || [],
+      outerConditions: outerConditions,
+      owner: actor || ctx.gameData.getPlayerCharacter(),
+      ctx,
+    });
+    if (!condition.checkConditions()) return { executed: false };
+    return await POST_ACTIONS_RESOLVERS[type](
+      input || {
+        payload: { type: 'systemEvent' },
+        target: ctx.gameData.getPlayerCharacter(),
+      },
+      effect,
+      ctx
+    );
   }
 }

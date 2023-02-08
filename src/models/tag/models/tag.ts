@@ -1,3 +1,4 @@
+import { CTX } from '../../../types';
 import { ActionPayload } from '../../actionConnector';
 import { Character } from '../../characters';
 import { Item } from '../../characters/inventory/item';
@@ -41,10 +42,12 @@ export class Tag {
   private onSuccess: EventAction[];
   private onFail: EventAction[];
   private owner: Character | Item | ObjectModel | Location;
+  private ctx: CTX;
 
   constructor(
     input: TagInput,
-    owner: Character | Item | ObjectModel | Location
+    owner: Character | Item | ObjectModel | Location,
+    ctx: CTX
   ) {
     this.id = ID++;
     this.type = input.type;
@@ -54,23 +57,24 @@ export class Tag {
     this.onSuccess = input.onSuccess;
     this.onFail = input.onFail;
     this.owner = owner;
-    this.conditions = new Condition(
-      input.conditions,
-      input.outerConditions,
+    this.ctx = ctx;
+    this.conditions = new Condition({
+      conditions: input.conditions,
+      outerConditions: input.outerConditions,
       owner,
-      this
-    );
+      ctx,
+    });
   }
 
   checkConditions({ actor }: { actor?: Character }) {
     return this.conditions.checkConditions(actor);
   }
 
-  getConditionState() {
+  getConditionState(): boolean {
     return this.conditions.getState();
   }
 
-  getType() {
+  getType(): string {
     return this.type;
   }
 

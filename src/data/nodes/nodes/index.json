@@ -1,0 +1,62 @@
+{
+  "node_1": {
+    "name": "Первая нода",
+    "description": "Техническое описание",
+    "type": "node",
+    "content": [
+      { "type": "sendMessage", "effect": "Самый первый абзац" },
+      { "type": "sendMessage", "effect": "Какой-то второй абзац" }
+    ],
+    "actions": [
+      {
+        "conditions": [],
+        "description": "Перейти на ноду 2",
+        "resultingActions": []
+      },
+      {
+        "conditions": [],
+        "description": "Перейти на ноду 3",
+        "resultingActions": []
+      }
+    ],
+    "arrows": [
+      {
+        "conditions": [{ "and": [{ "lastAction": ["0"] }] }],
+        "nextNodeId": "node_2"
+      },
+      {
+        "conditions": [{ "and": [{ "lastAction": ["1"] }] }],
+        "nextNodeId": "node_3"
+      }
+    ]
+  },
+  "node_2": {
+    "name": "Вторая нода",
+    "description": "Техническое описание",
+    "type": "node",
+    "content": [{ "type": "sendMessage", "effect": "История из второй Ноды" }],
+    "actions": [
+      {
+        "conditions": [],
+        "description": "Перейти на ноду 1",
+        "resultingActions": []
+      }
+    ],
+    "arrows": [
+      {
+        "conditions": [{ "and": [{ "lastAction": ["0"] }] }],
+        "nextNodeId": "node_1"
+      }
+    ]
+  },
+  "node_3": {
+    "name": "Третья нода",
+    "description": "Техническое описание",
+    "type": "node",
+    "content": [
+      { "type": "sendMessage", "effect": "Описание из третьей ноды" }
+    ],
+    "actions": [],
+    "arrows": []
+  }
+}

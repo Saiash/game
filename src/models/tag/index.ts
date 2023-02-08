@@ -63,7 +63,7 @@ export class TagSystem {
     });
     //пока идем по схеме, что тэги предметов применяются к персонажу, остальное само к себе
     allProps.forEach((tagProps: TagInput) => {
-      const newTag = new Tag(tagProps, this.owner);
+      const newTag = new Tag(tagProps, this.owner, this.ctx);
       this.all[newTag.getId()] = newTag;
       if (newTag.getConditionState()) {
         this.activateTag(newTag);

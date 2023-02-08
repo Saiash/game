@@ -12,7 +12,11 @@ export async function callAPIEndpoint({
       'Content-Type': 'application/json',
       Accept: 'application/json',
     }),
-  }).then(async function (response) {
-    return response.json();
-  });
+  })
+    .then(async function (response) {
+      return response.json();
+    })
+    .catch(e => {
+      console.error(e, endpoint, data);
+    });
 }

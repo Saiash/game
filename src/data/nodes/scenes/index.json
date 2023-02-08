@@ -1,5 +1,10 @@
 {
   "scene_1": {
-    
+    "name": "Тестовая сцена",
+    "description": "Поле для технического описания-памятки",
+    "type": "scene",
+    "nodes": ["node_1", "node_2", "node_3"],
+    "initialNode": "node_1",
+    "arrows": []
   }
 }

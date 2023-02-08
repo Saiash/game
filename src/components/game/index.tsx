@@ -66,10 +66,6 @@ export function Game() {
 
   React.useMemo(async () => {
     const dataloaders = getDataloaders();
-    const data = await callAPIEndpoint({
-      endpoint: 'parseData',
-      data: { test: '1' },
-    });
     const ctxGetter = function () {
       const ctx: CTX = {
         update: setCtx,

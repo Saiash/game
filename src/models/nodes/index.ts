@@ -4,7 +4,7 @@ import { EventAction } from '../tag/models/tag';
 export type nodeId = string;
 
 export type NodeArrow = {
-  condition: conditions[];
+  conditions: conditions[];
   nextNodeId: nodeId;
 };
 

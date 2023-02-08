@@ -29,5 +29,17 @@ export function getDataloaders() {
         data: { objectName: name },
       });
     },
+    getScene: async (name: string) => {
+      return callAPIEndpoint({
+        endpoint: 'getScene',
+        data: { sceneName: name },
+      });
+    },
+    getNode: async (name: string) => {
+      return callAPIEndpoint({
+        endpoint: 'getNode',
+        data: { nodeName: name },
+      });
+    },
   };
 }

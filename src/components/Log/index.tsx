@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Character } from '../../models/characters';
-import { Item } from '../../models/characters/inventory/item';
 import styles from '../../styles/Home.module.css';
 
 import type { CTX } from '../../types';
+import LogEvents from './logEvents';
+import LogActions from './logActions';
 
 export default function Log({
   ctx,
@@ -15,31 +15,17 @@ export default function Log({
   stateManager: { [index: string]: () => void };
 }) {
   const [events, setEvents] = useState(ctx.gameData.log.getEvents());
-  const player = ctx.gameData.getPlayerCharacter();
+  const [actions, setActions] = useState(ctx.gameData.log.getActions());
 
   useEffect(() => {
     setEvents(ctx.gameData.log.getEvents());
+    setActions(ctx.gameData.log.getActions());
   }, [logState]);
 
   return (
     <div className={styles.logContainer}>
-      {events.map(event => {
-        let type: string = '';
-        if (event.source instanceof Character) {
-          const id = event.source.id;
-          type =
-            event.source.id === player.id
-              ? 'playerCharacterEvent'
-              : 'otherCharacterEvent';
-        } else {
-          type = 'systemEvent';
-        }
-        return (
-          <div className={(styles.eventMessage, styles[type])} key={event.id}>
-            {event.time}: {event.text}
-          </div>
-        );
-      })}
+      <LogEvents events={events} ctx={ctx} />
+      <LogActions actions={actions} ctx={ctx} stateManager={stateManager}/>
     </div>
   );
 }
