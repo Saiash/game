@@ -9,7 +9,7 @@ import { TypeSelector } from './components/TypeSelector';
 
 const paramsForDataEntitites: { [index: string]: { [index: string]: string } } =
   {
-    actionEvent: { description: 'text', actions: 'tags' },
+    actionEvent: { description: 'text', actions: 'event' },
     skills: {
       name: 'string',
       description: 'text',
@@ -35,9 +35,14 @@ const paramsForDataEntitites: { [index: string]: { [index: string]: string } } =
       tags: 'tags',
     },
     lore: { title: 'string', description: 'text' },
+    scenes: {
+      name: 'string',
+      type: 'nodeType',
+      initialNode: 'nodeSelect',
+      description: 'text',
+      nodes: 'nodes',
+    },
   };
-
-const test = 1;
 
 export function Editor() {
   const [data, setData] =
@@ -46,6 +51,9 @@ export function Editor() {
   const [selectedId, setSelectedId] = useState('');
   const [editedId, setEditedId] = useState('');
   const [selectedEntity, setSelectedEntity] = useState<{
+    [index: string]: any;
+  }>({});
+  const [nodes, setNodes] = useState<{
     [index: string]: any;
   }>({});
 
@@ -68,12 +76,18 @@ export function Editor() {
     }
     newData[selectedType][editedId] = selectedEntity;
     setSelectedId(editedId);
-    setData(newData);
 
-    const savedData = await callAPIEndpoint({
+    await callAPIEndpoint({
       endpoint: 'saveEditorData',
       data: { type: selectedType, _data: newData[selectedType] },
     });
+    if (selectedType === 'scenes') {
+      newData['nodes'] = nodes;
+      await callAPIEndpoint({
+        endpoint: 'saveEditorData',
+        data: { type: 'nodes', _data: data['nodes'] },
+      });
+    }
   };
 
   const onTypeSelect = (type: string) => {
@@ -102,7 +116,9 @@ export function Editor() {
         paramDefaultValue = {};
       } else if (pType === 'boolean') {
         paramDefaultValue = false;
-      } else if (['options', 'tag', 'status'].some(t => t === pType)) {
+      } else if (
+        ['options', 'tags', 'status', 'nodes', 'event'].some(t => t === pType)
+      ) {
         paramDefaultValue = [];
       }
       newObj[p] = paramDefaultValue;
@@ -116,6 +132,10 @@ export function Editor() {
 
   const onDataChanged = (type: string, value: any) => {
     setSelectedEntity({ ...selectedEntity, [type]: value });
+  };
+
+  const onNodesChanged = (_nodes: any) => {
+    setData({ ...data, nodes: { ..._nodes } });
   };
 
   const attrs = !selectedType
@@ -153,6 +173,7 @@ export function Editor() {
                 selectedEntity={selectedEntity}
                 selectedType={selectedType}
                 onDataChanged={onDataChanged}
+                onNodesChanged={onNodesChanged}
               ></AttrInput>
             );
           })}

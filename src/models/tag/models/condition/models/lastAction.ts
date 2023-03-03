@@ -5,7 +5,6 @@ export function testLastAction({
   ctx,
   conditionValue,
 }: testConditionData): boolean {
-  //последнее действие всегда одно
-  const [value] = conditionValue;
-  return ctx.gameData.sceneEngine.getLastAction() + '' === value;
+  const lastAction = ctx.gameData.sceneEngine.getLastAction() + '';
+  return conditionValue.some(value => value === lastAction);
 }

@@ -1,3 +1,4 @@
+import { filter } from 'lodash';
 import { Tag } from '../../../../models/tag/models/tag';
 
 type Props = {
@@ -19,7 +20,8 @@ export function TypeSelector(props: Props) {
     addEntity,
   } = props;
 
-  const types = Object.keys(data);
+  const types = Object.keys(data).filter(s => s !== "nodes");
+  
   const ids = selectedType ? Object.keys(data[selectedType]) : [];
 
   return (

@@ -1,10 +1,12 @@
 {
   "node_1": {
+    "x": 77,
+    "y": 143,
     "name": "Первая нода",
     "description": "Техническое описание",
     "type": "node",
     "content": [
-      { "type": "sendMessage", "effect": "Самый первый абзац" },
+      { "type": "sendMessage", "effect": "Самый первый абзац редактированный" },
       { "type": "sendMessage", "effect": "Какой-то второй абзац" }
     ],
     "actions": [
@@ -22,15 +24,17 @@
     "arrows": [
       {
         "conditions": [{ "and": [{ "lastAction": ["0"] }] }],
-        "nextNodeId": "node_2"
+        "nextNodeId": "node_4"
       },
       {
-        "conditions": [{ "and": [{ "lastAction": ["1"] }] }],
-        "nextNodeId": "node_3"
+        "nextNodeId": "node_3",
+        "conditions": [{ "and": [{ "lastAction": ["1"] }] }]
       }
     ]
   },
   "node_2": {
+    "x": 376,
+    "y": 16,
     "name": "Вторая нода",
     "description": "Техническое описание",
     "type": "node",
@@ -50,12 +54,29 @@
     ]
   },
   "node_3": {
-    "name": "Третья нода",
+    "x": 378,
+    "y": 225,
+    "name": "Третья нода_3",
     "description": "Техническое описание",
     "type": "node",
     "content": [
       { "type": "sendMessage", "effect": "Описание из третьей ноды" }
     ],
+    "actions": [],
+    "arrows": [
+      {
+        "conditions": [{ "and": [{ "lastAction": ["0"] }] }],
+        "nextNodeId": "node_2"
+      }
+    ]
+  },
+  "node_4": {
+    "x": 734,
+    "y": 85,
+    "name": "Нода №4",
+    "description": "Просто какое-то описание",
+    "type": "node",
+    "content": [],
     "actions": [],
     "arrows": []
   }
