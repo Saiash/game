@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import { Paper } from '@mui/material';
 import { tagInputsParams } from '../tags';
-import { conditions } from '../../../../models/tag/models/condition';
+import { conditions } from '../../../../core/managers/tag/models/condition';
 import { ConditionInput } from './condition';
 import IconButton from '@mui/material/Button';
 import { Remove } from '@mui/icons-material';

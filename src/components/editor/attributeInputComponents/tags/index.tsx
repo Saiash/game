@@ -3,7 +3,7 @@ import { SelectInput } from '../select';
 import IconButton from '@mui/material/Button';
 import Plus from '@mui/icons-material/Add';
 import Remove from '@mui/icons-material/Remove';
-import { TagInput as TagInputType } from '../../../../models/tag/models/tag';
+import { TagInput as TagInputType } from '../../../../core/managers/tag/models/tag';
 import { TagInput } from './tag';
 import { GLOBAL_TAG_TYPES_ENUM } from '../constants';
 

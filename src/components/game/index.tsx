@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import PlayerTabs from '../../components/Player/playerTabs';
 import PlayerNode from '../../components/Player/playerNode';
 import Interactions from '../../components/Interactions';
-import { callAPIEndpoint } from '../../utils';
 
 import styles from '../../styles/Home.module.css';
-import { GameData, getDataloaders } from '../../models';
+import { GameData } from '../../core/engine/gameData';
+import { getDataloaders } from '../../core/dataloaders';
 import Log from '../../components/Log';
 import ViewTabs from '../../components/View/viewTabs';
 

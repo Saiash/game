@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import { inventory } from '../../models/';
 
 import type { CTX } from '../../types';
-import styles from '../styles/Home.module.css';
 
 export default function Inventory({
   ctx,

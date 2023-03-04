@@ -1,4 +1,4 @@
-import {  GameData } from '../models';
+import { GameData } from '../core/engine/gameData';
 
 export type CTX = {
   update: (data: CTX) => void;

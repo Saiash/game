@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
-import { inventory } from '../../models/';
 
-import doll from '../../Assets/doll.png';
 import type { CTX } from '../../types';
-import styles from '../styles/Home.module.css';
 
 export default function Skills({
   ctx,

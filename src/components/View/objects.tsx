@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { inventory } from '../../models/';
-import { ObjectModel } from '../../models/locations/object';
+import { ObjectModel } from '../../core/models/locations/object';
 
 import type { CTX } from '../../types';
 import styles from '../../styles/Home.module.css';

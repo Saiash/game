@@ -10,7 +10,7 @@ import { SelectInput } from '../select';
 import { MultiSelectInput } from '../MultiSelect';
 import { Remove, AddLink } from '@mui/icons-material';
 import IconButton from '@mui/material/Button';
-import { EventAction } from '../../../../models/tag/models/tag';
+import { EventAction } from '../../../../core/managers/tag/models/tag';
 import { TextAreaInput } from '../textArea';
 import { ConditionsContainer } from '../conditions/conditionsContainer';
 

@@ -21,14 +21,15 @@ export function TextAreaInput(props: Props) {
   };
 
   return (
-    <FormControl sx={{ m: 1, minWidth: 350 }} size="small">
+    <FormControl sx={{ m: 1, minWidth: 550 }} size="small">
       <TextField
         value={_value}
         onChange={onChange}
         onBlur={handleChange}
         label={name}
         multiline
-        maxRows={6}
+        minRows={4}
+        maxRows={8}
         size={'small'}
       ></TextField>
     </FormControl>

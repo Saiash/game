@@ -1,5 +1,8 @@
 import { Paper } from '@mui/material';
-import { conditions, condition } from '../../../../models/tag/models/condition';
+import {
+  conditions,
+  condition,
+} from '../../../../core/managers/tag/models/condition';
 import { tagInputsParams } from '../tags';
 import {
   CONDITIONS_LORE_VALUES_ENUM,

@@ -1,4 +1,4 @@
-import { NodeData } from '../../../../models/nodes/node';
+import { NodeData } from '../../../../core/engine/SceneEngine/nodes/node';
 import { NODE_TYPE } from '../constants';
 import { SelectInput } from '../select';
 import { TextInput } from '../text';

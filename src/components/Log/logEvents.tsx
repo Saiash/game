@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Character } from '../../models/characters';
+import { Character } from '../../core/models/characters';
 import styles from '../../styles/Home.module.css';
 
 import type { CTX } from '../../types';
-import { LogEvent } from '../../models/gameData/Log';
+import { LogEvent } from '../../core/engine/gameData/Log';
 
 export default function LogEvents({
   ctx,
-  events
+  events,
 }: {
   ctx: CTX;
   events: LogEvent[];

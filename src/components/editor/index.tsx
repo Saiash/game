@@ -1,7 +1,5 @@
 import { map } from 'lodash';
 import React, { useState } from 'react';
-import { rawEvent } from '../../models/events';
-import { Tag } from '../../models/tag/models/tag';
 import { callAPIEndpoint } from '../../utils';
 import { AttrInput } from './attributeInputComponents';
 import { TextInput } from './attributeInputComponents/text';

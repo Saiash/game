@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import { Paper } from '@mui/material';
 import { tagInputsParams } from '../tags';
-import { EventAction } from '../../../../models/tag/models/tag';
+import { EventAction } from '../../../../core/managers/tag/models/tag';
 import { EventInput } from './event';
 import IconButton from '@mui/material/Button';
 import { Remove } from '@mui/icons-material';

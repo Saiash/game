@@ -1,4 +1,4 @@
-import { ATTRS_LIST } from '../../../models/characters/attributes';
+import { ATTRS_LIST } from '../../../core/models/characters/attributes';
 
 export const ATTRS_ENUM = ATTRS_LIST.map(a => a.code);
 

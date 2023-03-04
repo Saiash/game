@@ -1,6 +1,6 @@
 import { useState, useEffect, MutableRefObject } from 'react';
 import { Divider, IconButton, Paper } from '@mui/material';
-import { NodeData } from '../../../../models/nodes/node';
+import { NodeData } from '../../../../core/engine/SceneEngine/nodes/node';
 import { Settings } from '@mui/icons-material';
 
 export type NodeProps = {

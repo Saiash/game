@@ -1,6 +1,6 @@
 import { Paper } from '@mui/material';
 import { printTagsParams } from './';
-import { TagInput as TagInputType } from '../../../../models/tag/models/tag';
+import { TagInput as TagInputType } from '../../../../core/managers/tag/models/tag';
 import { ConditionsContainer } from '../conditions/conditionsContainer';
 import { EventsContainer } from '../events/eventsContainer';
 import { SelectInput } from '../select';
