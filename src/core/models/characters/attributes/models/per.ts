@@ -1,5 +1,5 @@
 import { ModificatorManager } from '../../../../../core/managers/ModificatorManager';
-import { AttributeProps, Attributes } from '..';
+import { AttributeProps, AttributeManager } from '..';
 import { Inteligence } from './inteligence';
 import { Attribute } from '../attribute';
 import { CTX } from '../../../../../types';
@@ -12,17 +12,17 @@ export class Perception extends Attribute {
     ctx,
     props,
     character,
-    attributes,
+    attributeManager,
   }: {
     ctx: CTX;
     props: AttributeProps;
     character: Character;
-    attributes?: Attributes;
+    attributeManager?: AttributeManager;
   }) {
-    super({ ctx, props, attributes, character });
-    if (!attributes?.collection['int'])
+    super({ ctx, props, attributeManager, character });
+    if (!attributeManager?.collection['int'])
       throw Error('Inteligence should be defined before per');
-    this.inteligence = attributes.collection['int'];
+    this.inteligence = attributeManager.collection['int'];
   }
 
   getValue(): number {

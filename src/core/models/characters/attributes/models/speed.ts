@@ -1,5 +1,5 @@
 import { ModificatorManager } from '../../../../../core/managers/ModificatorManager';
-import { AttributeProps, Attributes } from '..';
+import { AttributeProps, AttributeManager } from '..';
 import { Health } from './health';
 import { Dexterity } from './dexterity';
 import { Attribute } from '../attribute';
@@ -13,21 +13,21 @@ export class Speed extends Attribute {
   constructor({
     ctx,
     props,
-    attributes,
+    attributeManager,
     character,
   }: {
     ctx: CTX;
     props: AttributeProps;
     character: Character;
-    attributes?: Attributes;
+    attributeManager?: AttributeManager;
   }) {
-    super({ ctx, props, attributes, character });
-    if (!attributes?.collection['dex'])
+    super({ ctx, props, attributeManager, character });
+    if (!attributeManager?.collection['dex'])
       throw Error('Dex should be defined before speed');
-    if (!attributes?.collection['ht'])
+    if (!attributeManager?.collection['ht'])
       throw Error('Health should be defined before speed');
-    this.health = attributes.collection['ht'];
-    this.dexterity = attributes.collection['dex'];
+    this.health = attributeManager.collection['ht'];
+    this.dexterity = attributeManager.collection['dex'];
   }
 
   getValue(): number {

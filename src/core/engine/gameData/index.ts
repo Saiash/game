@@ -95,7 +95,7 @@ export class GameData {
     await this.playerCharacter.inventory.add(item2);
     await this.playerCharacter.inventory.add(item3);
     await this.playerCharacter.inventory.add(item4);
-    await this.playerCharacter.skills.add({
+    await this.playerCharacter.skillManager.add({
       dataloaders: this.dataloaders,
       name: 'lockpicking',
       exp: 1,

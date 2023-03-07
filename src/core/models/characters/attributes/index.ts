@@ -35,7 +35,7 @@ export const ATTRS_LIST = [
   { code: 'ft', model: Fatigue },
 ];
 
-export class Attributes {
+export class AttributeManager {
   collection: { [index: string]: Attribute };
   character: Character;
   ctx: CTX;
@@ -59,7 +59,7 @@ export class Attributes {
         ctx,
         props,
         character,
-        attributes: this,
+        attributeManager: this,
       });
     });
   }

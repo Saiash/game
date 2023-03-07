@@ -1,5 +1,5 @@
 import { ModificatorManager } from '../../../../core/managers/ModificatorManager';
-import { Attributes } from '../attributes';
+import { AttributeManager } from '../attributes';
 import { Attribute } from '../attributes/attribute';
 import { Skill } from './skill';
 import { Character } from '../index';
@@ -29,7 +29,7 @@ export type SkillProps = SkillInputProps & {
 };
 
 export type InputSkillsProps = {
-  attributes: Attributes;
+  attributes: AttributeManager;
   skills?: InputSkillProps[];
 };
 
@@ -58,7 +58,7 @@ export const commonResolvers: { [index: string]: typeof SkillResolver } = {
   look: LookResolver,
 };
 
-export class Skills {
+export class SkillManager {
   collection: { [index: string]: Skill };
   character: Character;
   ctx: CTX;
@@ -127,7 +127,7 @@ export class Skills {
     const { parentAttr: parentAttrCode } = skillData;
 
     let parentAttr: Attribute =
-      this.character.attributes.getByCode(parentAttrCode);
+      this.character.attributeManager.getByCode(parentAttrCode);
     const skill = new Skill({
       ctx: this.ctx,
       props: { ...skillData, parentAttr, exp },

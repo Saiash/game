@@ -27,6 +27,7 @@ export const INPUT_TYPES: {
   number: NumberInput,
   attr: SelectInput,
   diff: SelectInput,
+  itemZoneSelect: MultiSelectInput,
   boolean: SelectInput,
   status: MultiSelectInput,
   options: MultiSelectInput,
@@ -91,7 +92,9 @@ export function AttrInput(props: Props) {
   );
 }
 
-function getList(props: Props): string[] | boolean[] {
+function getList(
+  props: Props
+): string[] | boolean[] | { key: string; value: string }[] {
   const { type, selectedEntity, name } = props;
   if (type === 'nodeSelect') return selectedEntity['nodes'];
   return SELECT_ENUMS[type];

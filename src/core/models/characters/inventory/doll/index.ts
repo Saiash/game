@@ -1,6 +1,6 @@
-import { CTX } from '../../../../types';
-import { Character } from '../';
-import { Item } from './item';
+import { CTX } from '../../../../../types';
+import { Character } from '../..';
+import { Item } from '../item';
 
 export type zone = {
   item: Item;
@@ -121,3 +121,5 @@ export class Doll {
 
   initFromRaw() {}
 }
+
+//

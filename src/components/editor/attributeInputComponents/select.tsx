@@ -5,7 +5,7 @@ import FormControl from '@mui/material/FormControl';
 
 type Props = {
   name: string;
-  list: string[];
+  list: string[] | boolean[] | { key: string; value: string }[];
   value: string;
   onDataChanged: (type: string, value: any) => void;
 };
@@ -21,10 +21,16 @@ export function SelectInput(props: Props) {
       <InputLabel>{name}</InputLabel>
       <Select value={value} onChange={handleChange} label={name}>
         {list.map(val => {
-          const value = typeof val === 'string' ? val : val + '';
+          let value: { key: string; value: string };
+          if (typeof val === 'object') {
+            value = val;
+          } else {
+            const _value = typeof val === 'string' ? val : val + '';
+            value = { value: _value, key: _value };
+          }
           return (
-            <MenuItem key={value} value={value}>
-              {value}
+            <MenuItem key={value.key} value={value.value}>
+              {value.key}
             </MenuItem>
           );
         })}

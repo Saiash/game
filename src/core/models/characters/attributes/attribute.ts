@@ -2,10 +2,11 @@ import { Character } from '..';
 import { CTX } from '../../../../types';
 import { ModificatorManager } from '../../../../core/managers/ModificatorManager';
 import { CheckResults } from '../skills';
-import { Attributes, AttributeProps } from './';
+import { AttributeManager, AttributeProps } from './';
 
 export class Attribute {
   props: AttributeProps;
+  attributeManager: AttributeManager | null;
   character: Character;
   ctx: CTX;
 
@@ -13,13 +14,14 @@ export class Attribute {
     props,
     ctx,
     character,
-    attributes,
+    attributeManager,
   }: {
     props: AttributeProps;
     character: Character;
-    attributes?: Attributes;
+    attributeManager?: AttributeManager;
     ctx: CTX;
   }) {
+    this.attributeManager = attributeManager || null;
     this.props = props;
     this.ctx = ctx;
     this.character = character;

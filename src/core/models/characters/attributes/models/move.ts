@@ -1,5 +1,5 @@
 import { ModificatorManager } from '../../../../../core/managers/ModificatorManager';
-import { AttributeProps, Attributes } from '..';
+import { AttributeProps, AttributeManager } from '..';
 import { Speed } from './speed';
 import { Attribute } from '../attribute';
 import { CTX } from '../../../../../types';
@@ -13,20 +13,20 @@ export class Move extends Attribute {
     ctx,
     props,
     character,
-    attributes,
+    attributeManager,
   }: {
     ctx: CTX;
     props: AttributeProps;
     character: Character;
-    attributes?: Attributes;
+    attributeManager?: AttributeManager;
   }) {
-    super({ ctx, props, attributes, character });
+    super({ ctx, props, attributeManager, character });
     if (
-      !attributes?.collection['speed'] ||
-      !(attributes?.collection['speed']! instanceof Speed)
+      !attributeManager?.collection['speed'] ||
+      !(attributeManager?.collection['speed']! instanceof Speed)
     )
       throw Error('Speed should be defined before move');
-    this.speed = attributes.collection['speed'];
+    this.speed = attributeManager.collection['speed'];
   }
 
   getValue(): number {

@@ -110,7 +110,7 @@ export const EventInput = ({ params }: { params: props }) => {
 const getEventsList = (
   key: string,
   data: props['data']
-): string[] | boolean[] => {
+): string[] | boolean[] | { key: string; value: string }[] => {
   if (STATUS_TYPES_EFFECTS_ENUM.some(s => s === key)) {
     return SELECT_ENUMS['status'];
   }

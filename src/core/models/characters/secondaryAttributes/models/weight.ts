@@ -13,7 +13,7 @@ export class Weight extends SecondaryAttribute {
     super({ ctx, character });
     this.name = 'Weight';
     this.currentVal = 0;
-    this.strength = character.attributes.getByCode('str');
+    this.strength = character.attributeManager.getByCode('str');
     this.maxVal = this.calculateMaxVal();
   }
 

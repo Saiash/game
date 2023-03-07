@@ -11,7 +11,7 @@ export default function Skills({
 }) {
   const { gameData } = ctx;
   const character = gameData.getPlayerCharacter();
-  const [skills, setSkills] = useState(character.skills.getAsArray());
+  const [skills, setSkills] = useState(character.skillManager.getAsArray());
 
   return (
     <div>

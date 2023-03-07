@@ -159,11 +159,11 @@ export class TagSystem {
     const owner = this.pairedToSystem?.owner || this.owner;
     if (!(owner instanceof Character)) return;
     if (target.type === 'attribute') {
-      owner.attributes
+      owner.attributeManager
         .getByCode(target.name)
         .props.modificatorManager.addMod(tag);
     } else if (target.type === 'skill') {
-      owner.skills.getByCode(target.name).modificatorManager.addMod(tag);
+      owner.skillManager.getByCode(target.name).modificatorManager.addMod(tag);
     }
   }
 
@@ -172,11 +172,13 @@ export class TagSystem {
     const owner = this.pairedToSystem?.owner || this.owner;
     if (!(owner instanceof Character)) return;
     if (target.type === 'attribute') {
-      owner.attributes
+      owner.attributeManager
         .getByCode(target.name)
         .props.modificatorManager.removeMod(tag);
     } else if (target.type === 'skill') {
-      owner.skills.getByCode(target.name).modificatorManager.removeMod(tag);
+      owner.skillManager
+        .getByCode(target.name)
+        .modificatorManager.removeMod(tag);
     }
   }
 }

@@ -59,7 +59,7 @@ export class ActionConnector {
     if (input.payload.type !== 'useSkill') return false;
     const { sourceActor } = input;
     if (!sourceActor) return false;
-    return sourceActor.skills.resolve(input);
+    return sourceActor.skillManager.resolve(input);
   }
 
   async resolveEquipItem(input: ActionPayload): Promise<boolean> {

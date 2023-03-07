@@ -1,4 +1,5 @@
 import { ATTRS_LIST } from '../../../core/models/characters/attributes';
+import { itemZones } from '../../../core/models/characters/inventory/item';
 
 export const ATTRS_ENUM = ATTRS_LIST.map(a => a.code);
 
@@ -55,7 +56,12 @@ export const MOD_TYPES_ENUM = ['attribute', 'skill'];
 
 export const CORE_INPUT_NAME_ENUM = ['actions', 'tags'];
 
-export const SELECT_ENUMS: { [index: string]: string[] | boolean[] } = {
+export const SELECT_ENUMS: {
+  [index: string]: string[] | boolean[] | { key: string; value: string }[];
+} = {
+  itemZoneSelect: itemZones.map(zone => {
+    return { value: zone.zones + ``, key: zone.key };
+  }),
   nodeType: NODE_TYPE,
   status: STATUS_ENUM,
   attr: ATTRS_ENUM,

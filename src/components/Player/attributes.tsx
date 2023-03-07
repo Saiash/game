@@ -12,7 +12,7 @@ export default function Attributes({
   const { gameData } = ctx;
   const character = gameData.getPlayerCharacter();
   const [attributes, setAttributes] = useState(
-    character.attributes.getAsArray()
+    character.attributeManager.getAsArray()
   );
 
   return (

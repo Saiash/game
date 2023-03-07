@@ -1,5 +1,5 @@
 import { ModificatorManager } from '../../../../../core/managers/ModificatorManager';
-import { AttributeProps, Attributes } from '..';
+import { AttributeProps, AttributeManager } from '..';
 import { Strength } from './strength';
 import { Attribute } from '../attribute';
 import { CTX } from '../../../../../types';
@@ -12,17 +12,17 @@ export class Hitpoints extends Attribute {
     ctx,
     props,
     character,
-    attributes,
+    attributeManager,
   }: {
     ctx: CTX;
     props: AttributeProps;
     character: Character;
-    attributes?: Attributes;
+    attributeManager?: AttributeManager;
   }) {
-    super({ ctx, props, attributes, character });
-    if (!attributes?.collection['str'])
+    super({ ctx, props, attributeManager, character });
+    if (!attributeManager?.collection['str'])
       throw Error('Str should be defined before HP');
-    this.strength = attributes.collection['str'];
+    this.strength = attributeManager.collection['str'];
   }
 
   getValue(): number {

@@ -21,7 +21,7 @@ const paramsForDataEntitites: { [index: string]: { [index: string]: string } } =
       text: 'string',
       image: 'string',
       weight: 'number',
-      zones: 'string',
+      zones: 'itemZoneSelect',
       cost: 'number',
       options: 'options',
       tags: 'tags',

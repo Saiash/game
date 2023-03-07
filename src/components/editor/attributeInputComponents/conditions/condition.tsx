@@ -117,7 +117,7 @@ export const ConditionInput = ({ params }: { params: props }) => {
 const getConditionsList = (
   key: string,
   data: props['data']
-): string[] | boolean[] => {
+): string[] | boolean[] | { key: string; value: string }[] => {
   if (key === 'notStatus') key = 'status';
   if (SELECT_ENUMS[key]) return SELECT_ENUMS[key];
   if (CONDITIONS_LORE_VALUES_ENUM.some(s => s === key)) {

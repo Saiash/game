@@ -1,8 +1,8 @@
 import { CTX } from '../../../types';
-import { Attributes, AttributeProps } from './attributes';
+import { AttributeManager, AttributeProps } from './attributes';
 import { Inventory } from './inventory';
 import { Item } from './inventory/item';
-import { Skills, InputSkillProps } from './skills';
+import { SkillManager, InputSkillProps } from './skills';
 import { Doll } from './inventory/doll';
 import { Location } from '../../models/locations';
 import { TagSystem } from '../../managers/tag';
@@ -13,10 +13,10 @@ import { SecondaryAttributes } from './secondaryAttributes';
 let itemId = 0;
 
 export class Character {
-  attributes: Attributes;
+  attributeManager: AttributeManager;
   secondaryAttributes: SecondaryAttributes;
   inventory: Inventory;
-  skills: Skills;
+  skillManager: SkillManager;
   doll: Doll;
   name: string;
   tags: TagSystem;
@@ -45,7 +45,7 @@ export class Character {
     this.location = location;
     this.ctx = ctx;
     this.tags = new TagSystem({ ctx, owner: this });
-    this.attributes = new Attributes({
+    this.attributeManager = new AttributeManager({
       ctx,
       character: this,
       inputAttrs: attributeProps,
@@ -55,12 +55,12 @@ export class Character {
       character: this,
       items: inventoryProps,
     });
-    this.skills = new Skills({
+    this.skillManager = new SkillManager({
       ctx,
       character: this,
       input: {
         skills: skillProps,
-        attributes: this.attributes,
+        attributes: this.attributeManager,
       },
     });
     this.name = name;

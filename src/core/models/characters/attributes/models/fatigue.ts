@@ -1,5 +1,5 @@
 import { ModificatorManager } from '../../../../../core/managers/ModificatorManager';
-import { AttributeProps, Attributes } from '..';
+import { AttributeProps, AttributeManager } from '..';
 import { Attribute } from '../attribute';
 import { Health } from './health';
 import { CTX } from '../../../../../types';
@@ -11,18 +11,18 @@ export class Fatigue extends Attribute {
   constructor({
     ctx,
     props,
-    attributes,
+    attributeManager,
     character,
   }: {
     ctx: CTX;
     props: AttributeProps;
     character: Character;
-    attributes?: Attributes;
+    attributeManager?: AttributeManager;
   }) {
-    super({ ctx, props, attributes, character });
-    if (!attributes?.collection['ht'])
+    super({ ctx, props, attributeManager, character });
+    if (!attributeManager?.collection['ht'])
       throw Error('Health should be defined before fatigue');
-    this.health = attributes.collection['ht'];
+    this.health = attributeManager.collection['ht'];
   }
 
   getValue(): number {
