@@ -1,3 +1,4 @@
+import { TagSystem } from '..';
 import { CTX } from '../../../../types';
 import { ActionPayload } from '../../../engine/actionConnector';
 import { Character } from '../../../models/characters';
@@ -41,14 +42,10 @@ export class Tag {
   private conditions: Condition;
   private onSuccess: EventAction[];
   private onFail: EventAction[];
-  private owner: Character | Item | ObjectModel | Location;
+  private owner: TagSystem['owner'];
   private ctx: CTX;
 
-  constructor(
-    input: TagInput,
-    owner: Character | Item | ObjectModel | Location,
-    ctx: CTX
-  ) {
+  constructor(input: TagInput, owner: TagSystem['owner'], ctx: CTX) {
     this.id = ID++;
     this.type = input.type;
     this.name = input.name;

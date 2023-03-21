@@ -18,7 +18,8 @@ export class Dodge extends SecondaryAttribute {
           this.character.attributeManager.getByCode('speed').getValue()
         ) +
           3 -
-          encumbrance,
+          encumbrance +
+          this.getModsValue(),
         1,
       ]
     );

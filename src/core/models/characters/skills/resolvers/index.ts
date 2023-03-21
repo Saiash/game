@@ -7,6 +7,7 @@ import { Item } from '../../inventory/item';
 
 import type { CTX } from '../../../../../types';
 import { Event } from '../../../../models/events';
+import { TagSystem } from '../../../../managers/tag';
 
 export class SkillResolver {
   code: string;
@@ -26,7 +27,7 @@ export class SkillResolver {
   }: {
     result: CheckResults;
     sourceActor?: Character;
-    target?: Character | Item | ObjectModel | Location;
+    target?: TagSystem['owner'];
   }): boolean {
     return false;
   }

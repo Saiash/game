@@ -9,7 +9,7 @@ import { Health } from './models/health';
 import { Hitpoints } from './models/hitpoints';
 import { Inteligence } from './models/inteligence';
 import { Move } from './models/move';
-import { Perception } from './models/per';
+import { Perception } from './models/perception';
 import { Speed } from './models/speed';
 import { Strength } from './models/strength';
 import { Will } from './models/will';

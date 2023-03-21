@@ -14,7 +14,7 @@
           },
           {
             "type": "skill",
-            "name": "disarm", 
+            "name": "disarm",
             "value": -1,
             "conditions": [{ "and": [{ "status": ["trapped"] }] }],
             "outerConditions": [{ "and": [{ "knownLore": ["lore_1"] }] }],
@@ -99,6 +99,5 @@
       }
     ],
     "status": ["closed", "trapped", "locked"]
-  },
-  "new": { "name": "", "description": "", "status": [], "tags": "" }
+  }
 }

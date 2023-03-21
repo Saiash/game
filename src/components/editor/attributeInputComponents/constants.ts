@@ -1,7 +1,11 @@
 import { ATTRS_LIST } from '../../../core/models/characters/attributes';
 import { itemZones } from '../../../core/models/characters/inventory/item';
+import { ATTRS_LIST as ATTRS_LIST_SECONDARY } from '../../../core/models/characters/secondaryAttributes';
 
-export const ATTRS_ENUM = ATTRS_LIST.map(a => a.code);
+export const ATTRS_ENUM = [
+  ...ATTRS_LIST.map(a => a.code),
+  ...ATTRS_LIST_SECONDARY.map(a => a.code),
+];
 
 export const DIFF_ENUM = ['easy', 'medium', 'hard', 'very hard'];
 
@@ -9,7 +13,7 @@ export const STATUS_ENUM = ['closed', 'open', 'trapped', 'locked'];
 
 export const NODE_TYPE = ['node', 'scene'];
 
-export const ACTIONS_ENUM = ['open', 'close', 'look'];
+export const ACTIONS_ENUM = ['open', 'close', 'look', 'push'];
 
 export const EVENTS_ENUM = ['onSuccess', 'onFail'];
 
@@ -52,7 +56,7 @@ export const CONDITIONS_VALUES_ENUM = [
 
 export const OPTIONS_ENUM = ['lockable'];
 
-export const MOD_TYPES_ENUM = ['attribute', 'skill'];
+export const MOD_TYPES_ENUM = ['attribute', 'skill', 'action'];
 
 export const CORE_INPUT_NAME_ENUM = ['actions', 'tags'];
 

@@ -219,6 +219,7 @@ const getListByType = (
   if (key === 'modTarget') {
     if (tag['modType'] === 'attribute') return ATTRS_ENUM;
     if (tag['modType'] === 'skill') return Object.keys(data['skills']);
+    if (tag['modType'] === 'action') return ACTIONS_ENUM;
   }
   if (key === 'name') {
     if (tag['type'] === 'skill') return Object.keys(data['skills']);

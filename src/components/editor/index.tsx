@@ -40,6 +40,11 @@ const paramsForDataEntitites: { [index: string]: { [index: string]: string } } =
       description: 'text',
       nodes: 'nodes',
     },
+    perks: {
+      name: 'string',
+      description: 'text',
+      tags: 'tags',
+    },
   };
 
 export function Editor() {
@@ -158,6 +163,7 @@ export function Editor() {
                 value={editedId}
                 name={'Id'}
                 onDataChanged={handleIdChange}
+                outerValueSource={true}
               ></TextInput>
             </div>
           </div>
@@ -175,7 +181,7 @@ export function Editor() {
               ></AttrInput>
             );
           })}
-          <div style={{ paddingTop: 10 }}>
+          <div style={{ paddingTop: 10, paddingBottom: 20 }}>
             <button
               onClick={() => {
                 saveDate();

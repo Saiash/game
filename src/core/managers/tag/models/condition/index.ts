@@ -1,8 +1,6 @@
+import { TagSystem } from '../..';
 import { CTX } from '../../../../../types';
 import { Character } from '../../../../models/characters';
-import { Item } from '../../../../models/characters/inventory/item';
-import { Location } from '../../../../models/locations';
-import { ObjectModel } from '../../../../models/locations/object';
 import { conditionTestsVariants } from './models';
 
 export class Condition {
@@ -10,12 +8,12 @@ export class Condition {
   private conditions: conditions[];
   private outerConditions: conditions[];
   private existingConditions: string[];
-  private owner: Character | Item | ObjectModel | Location;
+  private owner: TagSystem['owner'];
   private ctx: CTX;
 
   constructor(data: {
     conditions: conditions[];
-    owner: Character | Item | ObjectModel | Location;
+    owner: TagSystem['owner'];
     ctx: CTX;
     outerConditions?: conditions[];
   }) {

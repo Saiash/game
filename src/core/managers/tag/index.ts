@@ -5,6 +5,7 @@ import { Tag, TagInput } from './models/tag';
 import { Character } from '../../models/characters';
 import { ObjectModel } from '../../models/locations/object';
 import { Location } from '../../models/locations';
+import { Perk } from '../../models/characters/perks';
 
 export class TagSystem {
   input: { props: any; target?: Item } | undefined;
@@ -12,7 +13,7 @@ export class TagSystem {
   active: { [index: string]: { [index: string]: Tag } };
   nonActive: { [index: string]: { [index: string]: Tag } };
   ctx: CTX;
-  owner: Character | Item | ObjectModel | Location;
+  owner: Character | Item | ObjectModel | Location | Perk;
   pairedToSystem?: TagSystem;
   //придумать, что делать со слоями
 
@@ -23,7 +24,7 @@ export class TagSystem {
   }: {
     ctx: CTX;
     input?: { props: any; target?: Item };
-    owner: Character | Item | ObjectModel | Location;
+    owner: TagSystem['owner'];
   }) {
     this.ctx = ctx;
     this.active = {

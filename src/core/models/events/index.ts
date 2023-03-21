@@ -9,6 +9,7 @@ import { Item } from '../characters/inventory/item';
 import { Character } from '../characters';
 import { Location } from '../locations';
 import { ResolveResult } from '../characters/skills';
+import { TagSystem } from '../../managers/tag';
 
 export type rawEvent = { description: string; actions: EventAction[] };
 
@@ -64,7 +65,7 @@ export class Event {
     data: EventAction;
     ctx: CTX;
     input?: ActionPayload;
-    actor?: Character | Item | ObjectModel | Location;
+    actor?: TagSystem['owner'];
   }): Promise<ResolveResult> {
     const { type, effect, conditions, outerConditions } = data;
     const condition = new Condition({

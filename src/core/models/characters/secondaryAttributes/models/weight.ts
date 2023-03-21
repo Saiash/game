@@ -1,5 +1,6 @@
 import { Character } from '../..';
 import { CTX } from '../../../../../types';
+import { BASE_TIME_PER_ACTION } from '../../../../engine/constants';
 import { Strength } from '../../attributes/models/strength';
 import { ResolveResult } from '../../skills';
 import { SecondaryAttribute } from '../attribute';
@@ -18,7 +19,7 @@ export class Weight extends SecondaryAttribute {
   }
 
   calculateMaxVal(): number {
-    return Math.pow(this.strength.getRawValue(), 2);
+    return Math.pow(this.strength.getValue(), 2) + this.getModsValue();
   }
 
   upliftWeight(weight: number): ResolveResult {

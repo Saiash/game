@@ -42,6 +42,10 @@ export class Move extends Attribute {
     );
   }
 
+  getSwimingValue(): number {
+    return Math.max(...[this.getValue() / 5, 1]);
+  }
+
   getRawValue(): number {
     return Math.floor(this.speed.getValue());
   }

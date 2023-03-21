@@ -1,4 +1,5 @@
 import { Condition, conditionValue } from '..';
+import { TagSystem } from '../../..';
 import { CTX } from '../../../../../../types';
 import { Character } from '../../../../../models/characters';
 import { Item } from '../../../../../models/characters/inventory/item';
@@ -12,7 +13,7 @@ export type testConditionData = {
   condition: Condition;
   conditionType: string;
   conditionValue: conditionValue;
-  actor: Character | Item | ObjectModel | Location;
+  actor: TagSystem['owner'];
   ctx: CTX;
 };
 

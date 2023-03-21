@@ -1,4 +1,4 @@
-import { ModificatorManager } from '../../../../../core/managers/ModificatorManager';
+import { ModificatorManager } from '../../../../managers/ModificatorManager';
 import { AttributeProps, AttributeManager } from '..';
 import { Inteligence } from './inteligence';
 import { Attribute } from '../attribute';

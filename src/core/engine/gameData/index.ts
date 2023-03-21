@@ -148,6 +148,7 @@ export class GameData {
       ctx: this.ctx,
       name,
       location,
+      gender: 'female',
     });
     this.characters[character.id] = character;
     location.addCharacter(character);

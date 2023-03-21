@@ -25,6 +25,7 @@ export class Character {
   location: Location;
   lore: LoreManager;
   status: string[] = [];
+  gender: 'male' | 'female';
 
   constructor({
     ctx,
@@ -32,6 +33,7 @@ export class Character {
     inventoryProps,
     skillProps,
     name,
+    gender,
     location,
   }: {
     ctx: CTX;
@@ -39,11 +41,13 @@ export class Character {
     inventoryProps?: { [index: number]: Item };
     skillProps?: InputSkillProps[];
     name: string;
+    gender: 'male' | 'female';
     location: Location;
   }) {
     this.id = itemId++;
     this.location = location;
     this.ctx = ctx;
+    this.gender = gender;
     this.tags = new TagSystem({ ctx, owner: this });
     this.attributeManager = new AttributeManager({
       ctx,

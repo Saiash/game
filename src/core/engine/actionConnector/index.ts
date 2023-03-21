@@ -5,6 +5,7 @@ import { GameData } from '../gameData';
 import { Location } from '../../models/locations';
 import { ObjectModel } from '../../models/locations/object';
 import { Tag } from '../../managers/tag/models/tag';
+import { TagSystem } from '../../managers/tag';
 
 export type useSkillPayload = {
   type: 'useSkill';
@@ -23,7 +24,7 @@ type systemEventPayload = { type: 'systemEvent' };
 
 export type ActionPayload = {
   sourceActor?: Character;
-  target?: Character | Item | Location | ObjectModel;
+  target?: TagSystem['owner'];
   payload:
     | useSkillPayload
     | equipItemPayload
