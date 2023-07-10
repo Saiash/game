@@ -1,3 +1,14 @@
+v 0.0.23
+* Added generators (MVP)
+* Added perks (usable)
+* Fixed modifications
+* Extended editor to include adding tags by tags
+* A bit of refactoring
+* time effects (and it even could expire over time!)
+
+v 0.0.22
+added perks and fixed modifications for skills/attrs
+
 v 0.0.21
 Refactored editor once more
 Editor for scenes and nodes

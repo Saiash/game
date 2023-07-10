@@ -8,6 +8,7 @@ import { Item } from '../../inventory/item';
 import type { CTX } from '../../../../../types';
 import { Event } from '../../../../models/events';
 import { TagSystem } from '../../../../managers/tag';
+import { ACTION_PAYLOAD_TYPE } from '../../../../engine/constants';
 
 export class SkillResolver {
   code: string;
@@ -40,16 +41,20 @@ export class SkillResolver {
     input: ActionPayload,
     checkResult: boolean
   ): Promise<ResolveResult> {
-    if (input.payload.type !== 'useSkill') return { executed: false };
-    const tag = input.payload.tag;
-    const results = checkResult ? tag.getOnSuccess() : tag.getOnFail();
+    if (input.payload.type !== ACTION_PAYLOAD_TYPE.USE_SKILL)
+      return { executed: false };
+    const results = checkResult
+      ? input.payload.onSuccsess
+      : input.payload.onFail;
+    if (!results) return { executed: true };
+
     const actionsResults = [];
     for (const r of results) {
       const result = await Event.execute({
         data: r,
         ctx: this.ctx,
         input,
-        actor: tag.getOwner(),
+        actor: input.target,
       });
       actionsResults.push(result);
     }

@@ -15,7 +15,7 @@ export class Dodge extends SecondaryAttribute {
     return Math.max(
       ...[
         Math.floor(
-          this.character.attributeManager.getByCode('speed').getValue()
+          this.character.attributeManager.getByCode('speed')?.getValue() || 0
         ) +
           3 -
           encumbrance +

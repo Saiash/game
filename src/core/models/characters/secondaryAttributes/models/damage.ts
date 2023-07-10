@@ -12,10 +12,10 @@ export class Damage extends SecondaryAttribute {
     super({ ctx, character });
     this.name = 'Damage';
     this.thrust = this.calculateThrustVal(
-      character.attributeManager.getByCode('str').getRawValue()
+      character.attributeManager.getByCode('str')?.getRawValue() || 0
     );
     this.swing = this.calculateSwingVal(
-      character.attributeManager.getByCode('str').getRawValue()
+      character.attributeManager.getByCode('str')?.getRawValue() || 0
     );
   }
 

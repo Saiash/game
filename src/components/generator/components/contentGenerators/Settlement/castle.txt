@@ -1,0 +1,1010 @@
+Number of Rooms per Level
+Level Number of
+rooms
+Basement Castle Size value
+x d6
+Ground floor (throne
+room etc)
+Castle Size value
+x d8
+Upper level 1 Castle Size value
+x d4
+Upper level 2 Castle Size value
+x d3
+Upper level 3 Castle Size value
+x d2
+
+d10 CASTLE LOCATION
+1 On a slight rise, surrounded by boulders.
+2 On the side of a river, with trees nearby.
+3 At the edge of a forest.
+4 In the middle of a wetland, reached by a causeway.
+5 On the far side of a ravine, reached by a bridge.
+6 Near an open area where you can see burial mounds.
+7 Beside a picturesque lake surrounded by forest.
+8 At the base of a towering cliff or mountain.
+9 Atop a high, rocky outcrop or hill, and perhaps surrounded by forest.
+10 Just outside a town, and surrounded by farmland.
+
+d4 /
+CSV
+CASTLE
+SIZE NOTES
+1 Small castle 1d2 watchtowers. Keep and bailey.
+2 Medium castle Keep and bailey, 1d4+1 watchtowers, 50% chance of a moat (if
+appropriate).
+3 Large castle Keep and bailey, 1d4+4 watchtowers, 75% chance of a moat (if
+appropriate).
+4 Very large
+castle
+Keep and bailey, 1d8+4 watchtowers, moat if appropriate. 25% chance
+of an inner bailey.
+
+
+d8 CASTLE
+CONDITION NOTES
+1 Utterly ruined
+This ancient structure (hundreds or thousands of years old) is in
+ruins. As you roll on these tables, keep in mind that each room will be
+partially destroyed, covered with dust etc.
+2 Partially ruined but
+still inhabited
+This ancient keep or castle is hundreds, perhaps even a thousand or
+more years old, but is still in use and inhabited. Many signs of wear,
+crumbling walls, structures fallen down etc.
+3 In use, but
+dilapidated
+Possibly as a result of a recent battle, or an older battle, but the
+inhabitants cannot afford or cannot be bothered to fix it.
+4 In the process of
+being repaired
+Roll a d100. On a 50 or less, there are workmen currently at work on
+the building. Regardless, there is scaffolding erected and work is
+going on. Quarried stone and timber sit ready to be used for repairs.
+5 In good condition,
+but loosely guarded
+This castle or keep is well maintained, but you can’t see many guards
+on the battlement, perhaps just a few
+6 In good condition,
+well-guarded
+This castle or keep is in good condition and patrols and guards seem
+diligent, happening regularly. Stealth checks or some kind of
+Charisma check (DC 17) will be required to sneak past the guards
+7
+In excellent
+condition, loosely
+guarded
+This castle or keep is impressive to behold, but you can’t see many
+guards on the battlement, perhaps just a few. Should be fairly easy to
+get in (DC 12 Stealth or Charisma-based checks)
+8
+In excellent
+condition, wellguarded
+This castle or keep is in outstanding condition and guards / patrols
+are diligent and regular. DC 18 Stealth or Charisma-based checks to
+sneak or talk your way in.
+
+
+CSV 1 (Small castle): Inside the Bailey Location Table
+Use these tables if your CSV = 1. Every time you move to a new area within the outer bailey of the castle, follow this
+procedure: First, roll a d4. Then, either choose the random location that your die roll produces, or if you prefer
+choose any one of the set locations, all of which are definitely present. Reroll for repeats.
+d4 Random
+Loc. NOTES Set Loc. NOTES
+1
+Servant’s
+quarters
+Cooks, kitchenhands, handmaidens, cleaners,
+footmen, pageboys and other staff live here. If
+not here, then perhaps they live in the lower or
+basement levels of the keep itself.
+Stables
+If the castle is inhabited, there is a 90%
+chance that the stables will be stocked with
+(Castle Size value) x (d6+2) mounts. Mounts
+could be horses, warhorses, mastiffs for
+halflings or other smaller humanoids to ride,
+whatever fits with the local flavour. Adjust
+stable size according to number of mounts.
+2
+Combat
+Practice
+Area
+If the castle is inhabited, and it is daytime, there
+is a 60% chance that soldiers and other castle
+inhabitants will be present and practicing their
+combat skills.
+Well A place to draw water for soldiers and horses.
+3 Barracks
+This is a building where the lord of the keep’s
+militia is housed. If inhabited, there will be
+(Castle Size value) x d10 men who live here. If it
+is night-time, they will be asleep in this building
+(apart from those on sentry duty). If it is
+daytime, they will probably be on other duties,
+unless a meal is being served If uninhabited,
+remnants of the militia, old weapons, maybe
+corpses, might be found.
+Inner
+courtyard
+This area would be perhaps opened to
+townsfolk from a nearby settlement for a
+market day where they could display their
+wares.
+4 Storeroom A place for storing food for castle inhabitants,
+militia and livestock.
+Guardhouse
+Usually stationed by the gate, this is a small
+structure where guards can monitor comings
+and goings, organize sentry rosters, and
+generally manage castle security.
+106
+CSV 1 (Small castle): Inside the Castle Tier 1 Location Table
+Use these tables if your CSV = 1. Every time you move to a new area within tier 1 of the castle, follow this
+procedure: First, roll a d4. Then, either choose the random location that your die roll produces, or if you prefer
+choose any one of the set locations, all of which are definitely present. Reroll for repeats.
+d4 Random Loc. NOTES Set Loc. NOTES
+1-2 Audience Chamber
+Used by the lord/lady of the castle to
+receive visitors. Roll on this table again
+when leaving.
+Throne
+Room
+When leaving, roll for a
+random location on this
+table.
+3-4 Banquet Hall /
+Great Hall
+Where grand dinners are held, and
+sometimes just everyday meals as well.
+50% chance of a staircase leading [d4]
+(1-2) Up (3-4) Down. When leaving,
+there is a 70% chance of changing to
+Tier 2 table.
+Antechamber
+A small chamber where
+visitors/petitioners wait
+until the lord of the castle
+is ready to receive them.
+Roll again on this table
+when leaving.
+CSV 1 (Small castle): Inside the Castle Tier 2 Location Table
+Use these tables if your CSV = 1. Every time you move to a new area within tier 2 of the castle, follow this
+procedure: First, roll a d8. Then, either choose the random location that your die roll produces, or if you prefer
+choose any one of the set locations. Reroll for repeats.
+d6 Random
+Loc. NOTES Set Loc. NOTES
+1-2 Barracks
+Used by elite guards. 50% chance of a staircase
+leading [d4] (1-2) Up (3-4) Down. If you stay
+on this floor, roll again on this table, or 70%
+chance of changing to [d4] (1-2) Tier 1 table
+(3-4) Tier 3 table.
+Kitchen
+For preparation of meals for castle inhabitants and
+guests. This room connects directly to the banquet
+room, dining room (Tier 1 table) and pantry (this
+table). When leaving, you can choose to go to any of
+those locations, or to roll again on this table (ignoring
+the kitchen.
+3-4
+Games
+Room
+For entertainment of visitors. When leaving,
+roll again on this table. Pantry
+Including cellar for wine or spirits. This room
+connects directly to the kitchen. When leaving, you
+can choose to go there, or to roll again on this table.
+5-6 Armory
+This room connects directly to either the
+barracks or guardroom (this table). When
+leaving, either go to one of those rooms, or roll
+again on this table. 50% chance of changing to
+[d4] (1-2) Tier 1 table (3-4) Tier 3 table.
+Guardroom
+50% chance of a staircase leading [d4] (1-2) Up (3-4)
+Down. If you stay on this floor, roll again on this
+table, or 70% chance of changing to [d4] (1-2) Tier 1
+table (3-4) Tier 3 table
+107
+CSV 1 (Small castle): Inside the Castle Tier 3 Location Table
+Use these tables if your CSV = 1. Every time you move to a new area within tier 3 of the castle, follow this
+procedure: First, roll a d6. Then, either choose the random location that your die roll produces, or if you prefer
+choose any one of the set locations. Reroll for repeats.
+d6 Random
+Loc. NOTES Set Loc. NOTES
+1-2
+Servants’ /
+Footmen’s
+quarters
+50% chance of a staircase leading [d4] (1-
+2) Up (3-4) Down. If you stay on this
+floor, roll again on this table, or 70%
+chance of changing to [d4] (1-2) Tier 1
+table (3-4) Tier 2 table.
+Bedroom
+For use of the lord/lady of the castle, or important
+guests. 50% chance of a staircase leading [d4] (1-2) Up
+(3-4) Down. If you stay on this floor, roll again on this
+table, or 70% chance of changing to [d4] (1-2) Tier 1
+table (3-4) Tier 2 table.
+3-4 Dressing
+room
+Featuring a number of wardrobes. When
+leaving, roll again on this table
+Extra
+bedroom
+For use by the master’s / mistress’s family or other
+important guests. Extra rooms for the lord / lady of the
+castle’s children, other relatives.
+5-6 Latrine or
+bath When leaving, roll again on this table. Bathroom Outfitted with a marble floor and other luxurious
+accoutrements. When leaving, roll again on this table
+108
+Castle Size Value 2 Tables
+CSV 2 (Medium castle): Inside the Bailey Location Table
+Use these tables if your CSV = 2. Every time you move to a new area within the outer bailey of the castle, follow
+this procedure: First, roll a d6. Then, either choose the random location that your die roll produces, or if you
+prefer choose any one of the set locations, all of which are definitely present. Reroll for repeats.
+d6 Random
+Loc. NOTES Set Loc. NOTES
+1
+Servant’s
+quarters
+Cooks, kitchenhands,
+handmaidens, cleaners, footmen,
+pageboys and other staff live here.
+If not here, then perhaps they live
+in the lower or basement levels of
+the keep itself.
+Stables
+If the castle is inhabited, there is a 90% chance that the
+stables will be stocked with (Castle Size value) x (d6+2)
+mounts. Mounts could be horses, warhorses, mastiffs for
+halflings or other smaller humanoids to ride, whatever fits
+with the local flavour. Adjust stable size according to
+number of mounts.
+2 Storeroom A place for storing food for castle
+inhabitants, militia and livestock.
+Well A place to draw water for soldiers and horses.
+3 Smithy
+Here weapons, horseshoes, tools
+and other implements essential in
+the maintenance of the castle and
+its assets are repaired.
+Inner
+courtyard
+This area would be perhaps opened to townsfolk from a
+nearby settlement for a market day where they could
+display their wares.
+4 Barbican
+This is an alleyway connected to
+the gatehouse, and funnels
+attackers through a deadly
+obstacle course, where they can be
+fired upon by archers through
+murder holes and the like.
+Guardhouse
+Usually stationed by the gate, this is a small structure
+where guards can monitor comings and goings, organize
+sentry rosters, and generally manage castle security.
+5 Temple
+Temple to the god or gods
+worshipped by the inhabitants of
+the castle.
+Barracks
+This is a building where the lord of the keep’s militia is
+housed. If inhabited, there will be (Castle Size value) x d10
+men who live here. If it is night-time, they will be asleep in
+this building (apart from those on sentry duty). If it is
+daytime, they will probably be on other duties, unless a
+meal is being served If uninhabited, remnants of the
+militia, old weapons, maybe corpses, might be found. .
+6 Casemates
+There are 1d4 + (Castle Size
+value) casemates visible. A
+casemate is a small room in the
+wall of a castle, with holes from
+which missiles can be fired on
+enemies outside.
+Combat
+Practice
+Area
+If the castle is inhabited, and it is daytime, there is a 60%
+chance that soldiers and other castle inhabitants will be
+present and practicing their combat skills.
+109
+CSV 2 (Medium castle): Inside the Castle Tier 1 Location Table
+Use these tables if your CSV = 2. Every time you move to a new area within tier 1 of the castle, follow this
+procedure: First, roll a d6. Then, either choose the random location that your die roll produces, or if you prefer
+choose any one of the set locations. Reroll for repeats.
+d6 Random
+Loc. NOTES Set Loc. NOTES
+1-2
+Banquet
+Hall /
+Great Hall
+Where grand dinners are held, and sometimes
+just everyday meals as well.
+50% chance of a staircase leading [d4] (1-2)
+Up (3-4) Down. If you stay on this floor, roll
+again on this table, or 70% chance of changing
+to Tier 2 table.
+Throne Room When leaving, roll for a random
+location on this table.
+3-4 Chapel
+Dedicated to a deity associated with the
+stronghold's master. 50% chance of a staircase
+leading [d4] (1-2) Up (3-4) Down. If you stay
+on this floor, roll again on this table, or 70%
+chance of changing to Tier 2 table.
+Antechamber
+A small chamber where
+visitors/petitioners wait until the lord
+of the castle is ready to receive them.
+Roll again on this table when leaving.
+5-6 Gallery
+For the display of expensive works of art and
+trophies. 50% chance of a staircase leading
+[d4] (1-2) Up (3-4) Down. If you stay on this
+floor, roll again on this table, or 50% chance of
+changing to Tier 2 table.
+Audience
+Chamber
+Used by the lord/lady of the castle to
+receive visitors. Roll on this table again
+when leaving.
+CSV 2 (Medium castle): Inside the Castle Tier 2 Location Table
+Use these tables if your CSV = 2. Every time you move to a new area within tier 2 of the castle, follow this
+procedure: First, roll a d8. Then, either choose the random location that your die roll produces, or if you prefer
+choose any one of the set locations, all of which are definitely present. Reroll for repeats.
+d8 Random
+Loc. NOTES Set Loc. NOTES
+1-2 Strong
+room
+Vault for protecting important treasures. 75%
+chance of being hidden behind a secret door.
+When leaving, roll again on this table. 70%
+chance of changing to [d4] (1-2) Tier 1 table (3-
+4) Tier 3 table
+Kitchen
+For preparation of meals for castle inhabitants and
+guests. This room connects directly to the banquet
+room, dining room (Tier 1 table) and pantry (this
+table). When leaving, you can choose to go to any of
+those locations, or to roll again on this table (ignoring
+the kitchen.
+3-4 Armory
+This room connects directly to either the
+barracks or guardroom (this table). When
+leaving, either go to one of those rooms, or roll
+again on this table. 50% chance of changing to
+[d4] (1-2) Tier 1 table (3-4) Tier 3 table.
+Pantry
+Including cellar for wine or spirits. This room
+connects directly to the kitchen. When leaving, you
+can choose to go there, or to roll again on this table.
+5-6 Games
+Room
+For entertainment of visitors. When leaving,
+roll again on this table.
+Guardroom
+50% chance of a staircase leading [d4] (1-2) Up (3-4)
+Down. If you stay on this floor, roll again on this table,
+or 70% chance of changing to [d4] (1-2) Tier 1 table
+(3-4) Tier 3 table
+7-8 Larder For cooling food. Barracks
+Used by elite guards. 50% chance of a staircase
+leading [d4] (1-2) Up (3-4) Down. If you stay on this
+floor, roll again on this table, or 70% chance of
+changing to [d4] (1-2) Tier 1 table (3-4) Tier 3 table.
+110
+CSV 2 (Medium castle): Inside the Castle Tier 3 Location Table
+Use these tables if your CSV = 2. Every time you move to a new area within tier 3 of the castle, follow this
+procedure: First, roll a d8. Then, either choose the random location that your die roll produces, or if you prefer
+choose any one of the set locations, all of which are definitely present. Reroll for repeats.
+d8 Random
+Loc. NOTES Set Loc. NOTES
+1-2 Dressing
+room
+Featuring a number of wardrobes. When
+leaving, roll again on this table
+Bedroom
+For use of the lord/lady of the castle, or
+important guests. 50% chance of a staircase
+leading [d4] (1-2) Up (3-4) Down. If you stay on
+this floor, roll again on this table, or 70% chance
+of changing to [d4] (1-2) Tier 1 table (3-4) Tier 2
+table.
+3-4
+Latrine or
+bath When leaving, roll again on this table.
+Extra
+bedroom
+For use by the master’s / mistress’s family or other
+important guests. Extra rooms for the lord / lady of
+the castle’s children, other relatives.
+5-6 Sitting
+room
+For family or intimate guests. 50% chance
+of a staircase leading [d4] (1-2) Up (3-4)
+Down. If you stay on this floor, roll again
+on this table, or 70% chance of changing to
+[d4] (1-2) Tier 1 table (3-4) Tier 2 table.
+Bathroom
+Outfitted with a marble floor and other luxurious
+accoutrements. When leaving, roll again on this
+table
+7-8
+Study,
+including a
+writing desk
+Includes a writing desk and some books.
+When leaving, roll again on this table.
+Servants’ /
+Footmen’s’
+quarters
+50% chance of a staircase leading [d4] (1-2) Up (3-
+4) Down. If you stay on this floor, roll again on this
+table, or 70% chance of changing to [d4] (1-2) Tier
+1 table (3-4) Tier 2 table.
+111
+Castle Size Value 3 Tables
+CSV 3 (Large castle): Inside the Bailey Location Table
+Use these tables if your CSV = 3. Every time you move to a new area within the outer bailey of the castle, follow
+this procedure: First, roll a d8. Then, either choose the random location that your die roll produces, or if you
+prefer choose any one of the set locations, all of which are definitely present. Reroll for repeats.
+d8 Random
+Loc. NOTES Set Loc. NOTES
+1 Smithy
+Here weapons, horseshoes, tools
+and other implements essential in
+the maintenance of the castle and
+its assets are repaired.
+Stables
+If the castle is inhabited, there is a 90% chance that the
+stables will be stocked with (Castle Size value) x (d6+2)
+mounts. Mounts could be horses, warhorses, mastiffs for
+halflings or other smaller humanoids to ride, whatever fits
+with the local flavour. Adjust stable size according to
+number of mounts.
+2 Barbican
+This is an alleyway connected to
+the gatehouse, and funnels
+attackers through a deadly
+obstacle course, where they can be
+fired upon by archers through
+murder holes and the like.
+Well A place to draw water for soldiers and horses.
+3 Temple
+Temple to the god or gods
+worshipped by the inhabitants of
+the castle.
+Inner
+courtyard
+This area would be perhaps opened to townsfolk from a
+nearby settlement for a market day where they could
+display their wares.
+4 Casemates
+There are 1d4 + (Castle Size
+value) casemates visible. A
+casemate is a small room in the
+wall of a castle, with holes from
+which missiles can be fired on
+enemies outside.
+Guardhouse
+Usually stationed by the gate, this is a small structure
+where guards can monitor comings and goings, organize
+sentry rosters, and generally manage castle security.
+5 Dungeon /
+Jail
+Accessed via a stair in the
+courtyard, this is where
+misbehaving soldiers, captured
+spies and other hostiles are kept.
+Barracks
+This is a building where the lord of the keep’s militia is
+housed. If inhabited, there will be (Castle Size value) x d10
+men who live here. If it is night-time, they will be asleep in
+this building (apart from those on sentry duty). If it is
+daytime, they will probably be on other duties, unless a
+meal is being served If uninhabited, remnants of the
+militia, old weapons, maybe corpses, might be found. .
+6 Livestock
+pens
+For keeping livestock such as pigs,
+cows, sheep etc.
+Combat
+Practice
+Area
+If the castle is inhabited, and it is daytime, there is a 60%
+chance that soldiers and other castle inhabitants will be
+present and practicing their combat skills.
+7 Kennels
+Where monsters or trained
+animals that protect the
+stronghold are kept. There may be
+wolves, hawks, crows for sending
+messages, any kind of creature
+that fits with the flavour of the
+castle.
+Servant’s
+quarters
+Cooks, kitchenhands, handmaidens, cleaners, footmen,
+pageboys and other staff live here. If not here, then perhaps
+they live in the lower or basement levels of the keep itself.
+8 Undercroft
+Cellar or storage room, often
+vaulted. Sometimes hired out as a
+shop to a local merchant.
+Storeroom A place for storing food for castle inhabitants, militia and
+livestock.
+112
+CSV 3 (Large castle): Inside the Castle Tier 1 Location Table
+Use these tables if your CSV = 3. Every time you move to a new area within tier 1 of the castle, follow this
+procedure: First, roll a d8. Then, either choose the random location that your die roll produces, or if you prefer
+choose any one of the set locations. Reroll for repeats.
+d8 Random
+Loc. NOTES Set Loc. NOTES
+1-2 Chapel
+Dedicated to a deity associated with the
+stronghold's master. 50% chance of a staircase
+leading [d4] (1-2) Up (3-4) Down. If you stay on
+this floor, roll again on this table, or 70%
+chance of changing to Tier 2 table.
+Throne Room When leaving, roll for a random
+location on this table.
+3-4 Gallery
+For the display of expensive works of art and
+trophies. 50% chance of a staircase leading [d4]
+(1-2) Up (3-4) Down. If you stay on this floor,
+roll again on this table, or 50% chance of
+changing to Tier 2 table.
+Antechamber
+A small chamber where
+visitors/petitioners wait until the lord
+of the castle is ready to receive them.
+Roll again on this table when leaving.
+5-6 Library With an extensive collection of rare books.
+When leaving, roll again on this table
+Audience
+Chamber
+Used by the lord/lady of the castle to
+receive visitors. Roll on this table again
+when leaving.
+7-8 Lounge
+Used to entertain guests. 50% chance of a
+staircase leading [d4] (1-2) Up (3-4) Down
+(switch to Tier 2 if going up, Tier 3 if going
+down). If you stay on this floor, roll again on
+this table, or 50% chance of changing to Tier 2
+table.
+Banquet Hall /
+Great Hall
+Where grand dinners are held, and
+sometimes just everyday meals as well.
+50% chance of a staircase leading [d4] (1-2)
+Up (3-4) Down. If you stay on this floor, roll
+again on this table, or 70% chance of
+changing to Tier 2 table.
+CSV 3 (Large castle): Inside the Castle Tier 2 Location Table
+Use these tables if your CSV = 3. Every time you move to a new area within tier 2 of the castle, follow this
+procedure: First, roll a d10. Then, either choose the random location that your die roll produces, or if you prefer
+choose one of the set locations, all of which are definitely present. Reroll for repeats.
+d10 Random
+Loc. NOTES Set Loc. NOTES
+1-2 Strong
+room
+Vault for protecting important treasures.
+75% chance of being hidden behind a
+secret door. When leaving, roll again on
+this table. 70% chance of changing to
+[d4] (1-2) Tier 1 table (3-4) Tier 3 table
+Kitchen
+For preparation of meals for castle inhabitants and
+guests. This room connects directly to the banquet
+room, dining room (Tier 1 table) and pantry (this table).
+When leaving, you can choose to go to any of those
+locations, or to roll again on this table (ignoring the
+kitchen.
+3-4
+Games
+Room
+For entertainment of visitors. When
+leaving, roll again on this table. Pantry
+Including cellar for wine or spirits. This room connects
+directly to the kitchen. When leaving, you can choose to
+go there, or to roll again on this table.
+5-6 Larder For cooling food. Guardroom
+50% chance of a staircase leading [d4] (1-2) Up (3-4)
+Down. If you stay on this floor, roll again on this table,
+or 70% chance of changing to [d4] (1-2) Tier 1 table (3-
+4) Tier 3 table
+7-8 Laundry
+For washing clothes of all inhabitants of
+the castle. Occupied by staff more or less
+all day.
+Barracks
+Used by elite guards. 50% chance of a staircase leading
+[d4] (1-2) Up (3-4) Down. If you stay on this floor, roll
+again on this table, or 70% chance of changing to [d4]
+(1-2) Tier 1 table (3-4) Tier 3 table.
+(table continues over page)
+113
+9-10 Buttery
+Part of the kitchen. Close to the Banquet
+Hall and traditionally the place from
+which the yeoman of the buttery served
+beer and candles to those lower
+members of the household not entitled
+to drink wine. The room takes its name
+from the beer butts (barrels) stored
+there. When leaving, roll again on this
+table.
+Armory
+This room connects directly to either the barracks or
+guardroom (this table). When leaving, either go to one
+of those rooms, or roll again on this table. 50% chance of
+changing to [d4] (1-2) Tier 1 table (3-4) Tier 3 table.
+CSV 3 (Large castle): Inside the Castle Tier 3 Location Table
+Use these tables if your CSV = 3. Every time you move to a new area within tier 3 of the castle, follow this
+procedure: First, roll a d10. Then, either choose the random location that your die roll produces, or if you prefer
+choose any one of the set locations, all of which are definitely present. Reroll for repeats.
+d10 Random
+Loc. NOTES Set Loc. NOTES
+1-2
+Latrine or
+bath When leaving, roll again on this table. Bedroom
+For use of the lord/lady of the castle, or
+important guests. 50% chance of a staircase
+leading [d4] (1-2) Up (3-4) Down. If you stay on
+this floor, roll again on this table, or 70% chance
+of changing to [d4] (1-2) Tier 1 table (3-4) Tier 2
+table.
+3-4 Sitting room
+For family or intimate guests. 50% chance
+of a staircase leading [d4] (1-2) Up (3-4)
+Down. If you stay on this floor, roll again
+on this table, or 70% chance of changing
+to [d4] (1-2) Tier 1 table (3-4) Tier 2 table.
+Extra
+bedroom
+For use by the master’s / mistress’s family or
+other important guests. Extra rooms for the lord
+/ lady of the castle’s children, other relatives.
+5-6
+Study,
+including a
+writing desk
+Includes a writing desk and some books.
+When leaving, roll again on this table.
+Bathroom
+Outfitted with a marble floor and other luxurious
+accoutrements. When leaving, roll again on this
+table
+7-8 Small
+Library
+Featuring tomes, some perhaps rare, on
+the local area or on the family history of
+the owner of the castle.
+Servants’ /
+Footmen’s’
+quarters
+50% chance of a staircase leading [d4] (1-2) Up (3-
+4) Down. If you stay on this floor, roll again on this
+table, or 70% chance of changing to [d4] (1-2) Tier
+1 table (3-4) Tier 2 table.
+9-
+10
+Cistern Provides drinking water. When leaving,
+roll again on this table.
+Dressing
+room
+Featuring a number of wardrobes. When leaving,
+roll again on this table
+114
+Castle Size Value 4 Tables
+CSV 4 (Very large castle): Inside the Bailey Location Table
+Use these tables if your CSV = 4. Every time you move to a new area within the outer bailey of the castle, follow
+this procedure: First, roll a d12. Then, either choose the random location that your die roll produces, or if you
+prefer choose any one of the set locations, all of which are definitely present. Reroll for repeats.
+d12 Random Loc. NOTES Set Loc. NOTES
+1 Brewery
+Ales and meads brewed here for
+the enjoyment of the lord of the
+castle and the soldiers.
+Stables
+If the castle is inhabited, there is a 90% chance that the
+stables will be stocked with (Castle Size value) x (d6+2)
+mounts. Mounts could be horses, warhorses, mastiffs
+for halflings or other smaller humanoids to ride,
+whatever fits with the local flavour. Adjust stable size
+according to number of mounts.
+2 Bakehouse Breads and other delights are
+baked here.
+Well A place to draw water for soldiers and horses.
+3 Fountain
+Purely decorative, this feature
+might show a famous former or
+current inhabitant of the castle
+or perhaps a scene from local
+myth.
+Inner
+courtyard
+This area would be perhaps opened to townsfolk from a
+nearby settlement for a market day where they could
+display their wares.
+4 Troop Muster
+Area
+In times of battle, this is where
+troops gather to await orders
+from their superior offers.
+Guardhouse
+Usually stationed by the gate, this is a small structure
+where guards can monitor comings and goings,
+organize sentry rosters, and generally manage castle
+security.
+5 Dungeon / Jail
+Accessed via a stair in the
+courtyard, this is where
+misbehaving soldiers, captured
+spies and other hostiles are
+kept.
+Barracks
+This is a building where the lord of the keep’s militia is
+housed. If inhabited, there will be (Castle Size value) x
+d10 men who live here. If it is night-time, they will be
+asleep in this building (apart from those on sentry
+duty). If it is daytime, they will probably be on other
+duties, unless a meal is being served If uninhabited,
+remnants of the militia, old weapons, maybe corpses,
+might be found. .
+6 Livestock pens For keeping livestock such as
+pigs, cows, sheep etc.
+Combat
+Practice
+Area
+If the castle is inhabited, and it is daytime, there is a
+60% chance that soldiers and other castle inhabitants
+will be present and practicing their combat skills.
+7 Kennels
+Where monsters or trained
+animals that protect the
+stronghold are kept. There may
+be wolves, hawks, crows for
+sending messages, any kind of
+creature that fits with the
+flavour of the castle.
+Servant’s
+quarters
+Cooks, kitchenhands, handmaidens, cleaners, footmen,
+pageboys and other staff live here. If not here, then
+perhaps they live in the lower or basement levels of the
+keep itself.
+8 Undercroft
+Cellar or storage room, often
+vaulted. Sometimes hired out as
+a shop to a local merchant.
+Storeroom A place for storing food for castle inhabitants, militia
+and livestock.
+9 Dovecote
+A building to house carrier
+pigeons and other necessary
+birds
+Smithy
+Here weapons, horseshoes, tools and other implements
+essential in the maintenance of the castle and its assets
+are repaired.
+115
+10 Statue
+A statue of the lord of the castle,
+or one of his ancestors (the
+founder of the castle perhaps).
+Perhaps there is more than one
+statue.
+Barbican
+This is an alleyway connected to the gatehouse, and
+funnels attackers through a deadly obstacle course,
+where they can be fired upon by archers through
+murder holes and the like.
+11
+Ornamental
+gardens
+Surrounding the outside of the
+keep. The gardens may include
+small courtyards where castle
+inhabitants can relax.
+Temple Temple to the god or gods worshipped by the
+inhabitants of the castle.
+12
+Aviary or zoo
+for keeping
+exotic
+creatures
+You can get quite creative here
+with what creatures are present.
+Perhaps a monster or two,
+brought back to the castle by an
+intrepid warrior who went on a
+dangerous expedition!
+Casemates
+There are 1d4 + (Castle Size value) casemates visible. A
+casemate is a small room in the wall of a castle, with
+holes from which missiles can be fired on enemies
+outside.
+CSV 4 (Large castle): Inside the Castle Tier 1 Location Table
+Use these tables if your CSV = 4. Every time you move to a new area within tier 1 of the castle, follow this
+procedure: First, roll a d10. Then, either choose the random location that your die roll produces, or if you prefer
+choose any one of the set locations. Reroll for repeats.
+d10
+Random
+Loc. NOTES Set Loc. NOTES
+1-2 Gallery
+For the display of expensive works of art
+and trophies. 50% chance of a staircase
+leading [d4] (1-2) Up (3-4) Down. If you
+stay on this floor, roll again on this table, or
+50% chance of changing to Tier 2 table.
+Throne Room When leaving, roll for a random location
+on this table.
+3-4 Library With an extensive collection of rare books.
+When leaving, roll again on this table Antechamber
+A small chamber where
+visitors/petitioners wait until the lord of
+the castle is ready to receive them. Roll
+again on this table when leaving.
+5-6 Lounge
+Used to entertain guests. 50% chance of a
+staircase leading [d4] (1-2) Up (3-4) Down
+(switch to Tier 2 if going up, Tier 3 if going
+down). If you stay on this floor, roll again
+on this table, or 50% chance of changing to
+Tier 2 table.
+Audience
+Chamber
+Used by the lord/lady of the castle to
+receive visitors. Roll on this table again
+when leaving.
+7-8 Oratory A private chapel for use of the master of the
+castle. Banquet Hall
+Where grand dinners are held, and sometimes just
+everyday meals as well.
+50% chance of a staircase leading [d4] (1-2) Up (3-
+4) Down. If you stay on this floor, roll again on this
+table, or 70% chance of changing to Tier 2 table.
+9-10
+Hidden
+Chamber Who knows what it’s for? It’s a secret. Chapel
+Dedicated to a deity associated with the
+stronghold's master. 50% chance of a staircase
+leading [d4] (1-2) Up (3-4) Down. If you stay on
+this floor, roll again on this table, or 70% chance of
+changing to Tier 2 table.
+116
+CSV 4 (Very large castle): Inside the Castle Tier 2 Location Table
+Use these tables if your CSV = 4. Every time you move to a new area within tier 2 of the castle,
+follow this procedure: First, roll a d6. Then, either choose the random location that your die roll
+produces, or if you prefer choose any one of the set locations, all of which are definitely present. Reroll
+for repeats.
+d6 Random
+Loc. NOTES Set Loc. NOTES
+1
+Games
+Room
+For entertainment of visitors. When
+leaving, roll again on this table.
+Kitchen
+For preparation of meals for castle inhabitants and guests. This
+room connects directly to the banquet room, dining room (Tier 1
+table) and pantry (this table). When leaving, you can choose to go
+to any of those locations, or to roll again on this table (ignoring
+the kitchen.
+2 Larder For cooling food. Pantry
+Including cellar for wine or spirits. This room connects directly
+to the kitchen. When leaving, you can choose to go there, or to
+roll again on this table.
+3 Laundry
+For washing clothes of all inhabitants of
+the castle. Occupied by staff more or less
+all day.
+Guardroom
+50% chance of a staircase leading [d4] (1-2) Up (3-4) Down. If
+you stay on this floor, roll again on this table, or 70% chance of
+changing to [d4] (1-2) Tier 1 table (3-4) Tier 3 table
+4 Buttery
+Part of the kitchen. Close to the Banquet
+Hall and traditionally the place from which
+the yeoman of the buttery served beer and
+candles to those lower members of the
+household not entitled to drink wine. The
+room takes its name from the beer butts
+(barrels) stored there. When leaving, roll
+again on this table.
+Barracks
+Used by elite guards. 50% chance of a staircase leading [d4] (1-2)
+Up (3-4) Down. If you stay on this floor, roll again on this table,
+or 70% chance of changing to [d4] (1-2) Tier 1 table (3-4) Tier 3
+table.
+5 Cellar
+Storing food, liquor, water, grains,
+anything necessary for the sustenance of
+the castle’s inhabitants. Generally accessed
+by a stair from above.
+Armory
+This room connects directly to either the barracks or guardroom
+(this table). When leaving, either go to one of those rooms, or roll
+again on this table. 50% chance of changing to [d4] (1-2) Tier 1
+table (3-4) Tier 3 table.
+6 Storage A miscellaneous room used for the storing
+of supplies.
+Strong
+room
+Vault for protecting important treasures. 75% chance of being
+hidden behind a secret door. When leaving, roll again on this
+table. 70% chance of changing to [d4] (1-2) Tier 1 table (3-4) Tier
+3 table
+117
+CSV 4 (Very large castle): Inside the Castle Tier 3 Location Table
+Use these tables if your CSV = 4. Every time you move to a new area within tier 3 of the castle,
+follow this procedure: First, roll a d6. Then, either choose the random location that your die roll
+produces, or if you prefer choose any one of the set locations, all of which are definitely present. Reroll
+for repeats.
+d6 Random
+Loc. NOTES Set Loc. NOTES
+1 Sitting room
+For family or intimate guests. 50% chance of a
+staircase leading [d4] (1-2) Up (3-4) Down. If
+you stay on this floor, roll again on this table,
+or 70% chance of changing to [d4] (1-2) Tier 1
+table (3-4) Tier 2 table.
+Bedroom
+For use of the lord/lady of the castle, or important
+guests. 50% chance of a staircase leading [d4] (1-2)
+Up (3-4) Down. If you stay on this floor, roll again
+on this table, or 70% chance of changing to [d4] (1-
+2) Tier 1 table (3-4) Tier 2 table.
+2
+Study,
+including a
+writing desk
+Includes a writing desk and some books. When
+leaving, roll again on this table.
+Extra
+bedroom
+For use by the master’s / mistress’s family or other
+important guests. Extra rooms for the lord / lady of
+the castle’s children, other relatives.
+3
+Small
+Library
+Featuring tomes, some perhaps rare, on the
+local area or on the family history of the owner
+of the castle.
+Bathroom
+Outfitted with a marble floor and other luxurious
+accoutrements. When leaving, roll again on this
+table
+4 Cistern Provides drinking water. When leaving, roll
+again on this table.
+Servants’ /
+Footmen’s’
+quarters
+50% chance of a staircase leading [d4] (1-2) Up (3-4)
+Down. If you stay on this floor, roll again on this
+table, or 70% chance of changing to [d4] (1-2) Tier 1
+table (3-4) Tier 2 table.
+5 Children’s
+play room
+Where the lord of the castle’s children while
+away the hours on rainy days.
+Dressing
+room
+Featuring a number of wardrobes. When leaving, roll
+again on this table
+6
+Hidden
+chamber
+Who knows what its use is? Use keywords
+perhaps?
+Latrine or
+bath When leaving, roll again on this table.

@@ -20,6 +20,7 @@ export type tagInputsParams = {
   path: string[];
   data: { [index: string]: { [index: string]: any } };
   onDataChanged: (path: string[], value: any) => void;
+  removeContainer?: () => void;
 };
 
 export type printTagsParams = tagInputsParams & {

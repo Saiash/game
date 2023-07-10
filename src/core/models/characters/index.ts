@@ -9,6 +9,7 @@ import { TagSystem } from '../../managers/tag';
 import { Tag } from '../../managers/tag/models/tag';
 import { LoreManager } from './lore/loreManager';
 import { SecondaryAttributes } from './secondaryAttributes';
+import { PerkManager } from './perks';
 
 let itemId = 0;
 
@@ -17,6 +18,7 @@ export class Character {
   secondaryAttributes: SecondaryAttributes;
   inventory: Inventory;
   skillManager: SkillManager;
+  perkManager: PerkManager;
   doll: Doll;
   name: string;
   tags: TagSystem;
@@ -48,7 +50,6 @@ export class Character {
     this.location = location;
     this.ctx = ctx;
     this.gender = gender;
-    this.tags = new TagSystem({ ctx, owner: this });
     this.attributeManager = new AttributeManager({
       ctx,
       character: this,
@@ -67,6 +68,12 @@ export class Character {
         attributes: this.attributeManager,
       },
     });
+    this.perkManager = new PerkManager({
+      ctx,
+      character: this,
+      input: {},
+    });
+    this.tags = new TagSystem({ ctx, owner: this });
     this.name = name;
     this.doll = new Doll({ ctx, character: this });
     this.secondaryAttributes = new SecondaryAttributes({
@@ -117,6 +124,10 @@ export class Character {
     return this.status.some(s => {
       return s === status;
     });
+  }
+
+  getGender(): string {
+    return this.gender;
   }
 
   addStatus(status: string): boolean {

@@ -95,7 +95,6 @@ export const ConditionInput = ({ params }: { params: props }) => {
               name={key}
               list={getConditionsList(key, data)}
               value={statement[key]}
-              type={operandValue}
               onDataChanged={(type: string, value: any) =>
                 onValueChange(type, value, index)
               }

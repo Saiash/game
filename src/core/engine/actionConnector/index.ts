@@ -1,32 +1,50 @@
 import { CTX } from '../../../types';
 import { Character } from '../../models/characters';
-import { Item } from '../../models/characters/inventory/item';
 import { GameData } from '../gameData';
-import { Location } from '../../models/locations';
-import { ObjectModel } from '../../models/locations/object';
-import { Tag } from '../../managers/tag/models/tag';
+import { EventAction } from '../../managers/tag/models/tag';
 import { TagSystem } from '../../managers/tag';
+import { ACTION_PAYLOAD_TYPE } from '../constants';
 
 export type useSkillPayload = {
-  type: 'useSkill';
-  tag: Tag;
+  type: ACTION_PAYLOAD_TYPE.USE_SKILL;
   difficulty: number;
   timeMod: number;
   skill: string;
+  onSuccsess?: EventAction[];
+  onFail?: EventAction[];
   options?: {
     offHand: boolean;
   };
 };
-type equipItemPayload = { type: 'equipItem'; itemIndex: number };
-type lockItemPayload = { type: 'lockItem'; zoneIndex: number };
-type unequipItemPayload = { type: 'unequipItem'; zoneIndex: number };
-type systemEventPayload = { type: 'systemEvent' };
+type usePerkPayload = {
+  type: ACTION_PAYLOAD_TYPE.USE_PERK;
+  perk: string;
+};
+type useActionPayload = {
+  type: ACTION_PAYLOAD_TYPE.USE_ACTION;
+  action: string;
+};
+type equipItemPayload = {
+  type: ACTION_PAYLOAD_TYPE.EQUIP_ITEM;
+  itemIndex: number;
+};
+type lockItemPayload = {
+  type: ACTION_PAYLOAD_TYPE.LOCK_ITEM;
+  zoneIndex: number;
+};
+type unequipItemPayload = {
+  type: ACTION_PAYLOAD_TYPE.UNEQUIP_ITEM;
+  zoneIndex: number;
+};
+type systemEventPayload = { type: ACTION_PAYLOAD_TYPE.SYSTEM_EVENT };
 
 export type ActionPayload = {
-  sourceActor?: Character;
+  sourceActor: Character;
   target?: TagSystem['owner'];
   payload:
     | useSkillPayload
+    | usePerkPayload
+    | useActionPayload
     | equipItemPayload
     | lockItemPayload
     | unequipItemPayload
@@ -43,6 +61,8 @@ export class ActionConnector {
     this.gameData = gameData;
     this.resolvers = {
       useSkill: this.resolveSkillUsage,
+      usePerk: this.resolvePerkUsage,
+      useAction: this.resolveActionUsage,
       equipItem: this.resolveEquipItem,
       unequipItem: this.resolveUnequipItem,
       lockItem: this.resolveLockItem,
@@ -56,15 +76,29 @@ export class ActionConnector {
     return this.resolvers[type] ? this.resolvers[type](input) : false;
   }
 
+  async resolvePerkUsage(input: ActionPayload): Promise<boolean> {
+    if (input.payload.type !== ACTION_PAYLOAD_TYPE.USE_PERK) return false;
+    const { sourceActor } = input;
+    if (!sourceActor) return false;
+    return sourceActor.perkManager.resolve(input);
+  }
+
+  async resolveActionUsage(input: ActionPayload): Promise<boolean> {
+    if (input.payload.type !== ACTION_PAYLOAD_TYPE.USE_SKILL) return false;
+    const { sourceActor } = input;
+    if (!sourceActor) return false;
+    return sourceActor.skillManager.resolve(input);
+  }
+
   async resolveSkillUsage(input: ActionPayload): Promise<boolean> {
-    if (input.payload.type !== 'useSkill') return false;
+    if (input.payload.type !== ACTION_PAYLOAD_TYPE.USE_SKILL) return false;
     const { sourceActor } = input;
     if (!sourceActor) return false;
     return sourceActor.skillManager.resolve(input);
   }
 
   async resolveEquipItem(input: ActionPayload): Promise<boolean> {
-    if (input.payload.type !== 'equipItem') return false;
+    if (input.payload.type !== ACTION_PAYLOAD_TYPE.EQUIP_ITEM) return false;
     const {
       target,
       sourceActor,
@@ -78,7 +112,7 @@ export class ActionConnector {
   }
 
   async resolveLockItem(input: ActionPayload): Promise<boolean> {
-    if (input.payload.type !== 'lockItem') return false;
+    if (input.payload.type !== ACTION_PAYLOAD_TYPE.LOCK_ITEM) return false;
     const {
       target,
       sourceActor,
@@ -94,7 +128,7 @@ export class ActionConnector {
   }
 
   async resolveUnequipItem(input: ActionPayload): Promise<boolean> {
-    if (input.payload.type !== 'unequipItem') return false;
+    if (input.payload.type !== ACTION_PAYLOAD_TYPE.UNEQUIP_ITEM) return false;
     const {
       target,
       sourceActor,

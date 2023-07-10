@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
-import PlayerTabs from '../../components/Player/playerTabs';
-import PlayerNode from '../../components/Player/playerNode';
-import Interactions from '../../components/Interactions';
+import PlayerTabs from './Player/playerTabs';
+import PlayerNode from './Player/playerNode';
+import Interactions from './Interactions';
 
 import styles from '../../styles/Home.module.css';
 import { GameData } from '../../core/engine/gameData';
 import { getDataloaders } from '../../core/dataloaders';
-import Log from '../../components/Log';
-import ViewTabs from '../../components/View/viewTabs';
+import Log from './Log';
+import ViewTabs from './View/viewTabs';
 
 import type { CTX } from '../../types/';
-import ViewNode from '../../components/View/viewNode';
+import ViewNode from './View/viewNode';
 
 export function Game() {
   const [init, setInit] = useState(0);

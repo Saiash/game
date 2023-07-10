@@ -1,0 +1,477 @@
+Cursed Sceptre of The Crimson Goddess
+3-4 Blessed Bowl of Desire Lightning
+5-6 Emerald Scroll of Enchanting Fire
+7-8 Illuminating Mirror of Merciful Fate
+9-10 Merciless Sword of Wrathful Rage
+11-12 All-seeing Stone of Pale Dawn
+13-14 Sheltering Casket of Endless Knowledge
+15-16 Dreaded Bell of Elemental Waters
+17-18 Immovable Chalice of Planar Music
+19-20 Mysterious Robe of Mighty Power
+21-22 Ever-changing Pipes of Joyous Peace
+23-24 Gilded Lamp of Exquisite Turmoil
+25-26 Many-coloured Idol of Cursed Illusion
+27-28 Heroic Tome of Opulent Morphing
+29-30 Wondrous Oil of Dimensional Secrets
+31-32 Boundless Drum of Temporal Navigation
+33-34 Depraved Chimes of Corrupt Fire
+35-36 Captivating Brazier of Omniscient Air
+204
+37-38 Unusual Candelabra of Freezing Demon
+39-40 Dark Lute of Burning Frost
+41-42 Mystical Crown of Invisible Prophecy
+43-44 Eldritch Bottle of Distant Binding
+45-46 Elegant Rod of Planar Death
+47-48 Scintillating Prism of Unrelenting Laughter
+49-50 Stupendous Cauldron of Dark Purity
+51-52 Strange Crucible of Illuminating Alchemy
+53-54 Extravagant Decanter of Forbidden Insults
+55-56 Macabre Quill of Temporary Poison
+57-58 Imperial Horn of Decaying Healing
+59-60 Bizarre Globe of Crippling Heroism
+61-62 Jewelled Lens of Deafening Strength
+63-64 Superior Coffer of Blinding Form
+65-66 Animated Vase of Enlightening Mind-reading
+67-68 Chromatic Belt of Bolstering Longevity
+69-70 Illusory Cup of Benevolent Influence
+71-72 Angelic Shield of Glowing Evasion
+73-74 Metaphysical Armour of Resilient Protection
+75-76 Robust Elixir of Curious Resistance
+77-78 Simple Ring of Awe-inspiring Vision
+79-80 Divine Staff of Will-crushing Regeneration
+81-82 Ancient Wand of Telepathic Command
+83-84 Elven Arrow of Repelling Turning
+85-86 Dwarvish Bow of Absorbing Absorption
+87-88 Orcish Cloak of Unbreakable Adornment
+89-90 Dragonborn Helm of Dispelling Melody
+91-92 Tiefling Key of Frightening Pyrotechnics
+93-94 Drow Gem Burning Detection
+95-96 Shapeshifting Cube of Mischievous Paralysis
+97-98 Regenerating Talisman of Reflective Disruption
+99-100 Exquisite Device of Hypnotic Wizardry
+
+Animated Shield DMG 151
+2 Armor, +2 DMG 152
+3 Demon Armor DMG 165
+4 Dragon Scale Mail DMG 165
+5 Dwarven Plate DMG 167
+6 Shield, +3 DMG 200
+7 Spellguard Shield DMG 201
+8 Ring of Regeneration DMG 191
+9 Ring of Shooting Stars DMG 192
+10 Ring of Telekinesis DMG 193
+11 Rod of Absorption DMG 195
+12 Rod of the Pact Keeper, +3 DMG 197
+13 Spell Scroll, 6th Level DMG 200
+14 Spell Scroll, 7th Level DMG 200
+15 Spell Scroll, 8th Level DMG 200
+16 Staff of Fire DMG 201
+17 Staff of Frost DMG 202
+18 Staff of Power DMG 202
+19 Staff of Striking DMG 203
+20 Staff of Thunder and Lightning DMG 204
+2
+1 Wand of Polymorph DMG 211
+2 Wand of the War Mage, +3 DMG 212
+3 Ammunition, +3 DMG 150
+4 Dancing Sword DMG 161
+5 Dwarven Thrower DMG 167
+6 Frost Brand DMG 171
+7 Moon Sickle, +3 TCE 133
+8 Nine Lives Stealer DMG 183
+9 Oathbow DMG 183
+188
+10 Scimitar of Speed DMG 199
+11 Sword of Sharpness DMG 206
+12 Weapon, +3 DMG 213
+13 Absorbing Tattoo TCE 119
+14 Amulet of the Devout, +3 TCE 119
+15 Amulet of the Planes DMG 150
+16 Arcane Grimoire, +3 TCE 120
+17 Bag of Devouring DMG 153
+18 Barrier Tattoo, AC 18 TCE 122
+19 Belt of Fire Giant Strength DMG 155
+20 Belt of Frost Giant Strength DMG 155
+3
+1 Belt of Stone Giant Strength DMG 155
+2 Bloodwell Vial, +3 TCE 122
+3 Candle of Invocation DMG 157
+4 Carpet of Flying DMG 157
+5 Cauldron of Rebirth TCE 122
+6 Cloak of Arachnida DMG 158
+7 Crystal Ball DMG 159
+8 Crystalline Chronicle TCE 124
+9 Efreeti Bottle DMG 167
+10 Figurine of Wondrous Power, Obsidian Steed DMG 170
+11 Ghost Step Tattoo TCE 128
+12 Helm of Brilliance DMG 173
+13 Horn of Valhalla, Bronze DMG 175
+14 Horseshoes of a Zephyr DMG 175
+15 Instrument of the Bards, Anstruth Harp DMG 176
+16 Ioun Stone, Absorption DMG 176
+17 Ioun Stone, Agility DMG 176
+18 Ioun Stone, Fortitude DMG 176
+19 Ioun Stone, Insight DMG 176
+20 Ioun Stone, Intellect DMG 176
+1 Ioun Stone, Leadership DMG 176
+189
+4
+2 Ioun Stone, Strength DMG 176
+3 Lifewell Tattoo TCE 129
+4 Manual of Golems DMG 180
+5 Manual of Quickness of Action DMG 181
+6 Mirror of Life Trapping DMG 181
+7 Nolzur's Marvelous Pigments DMG 183
+8 Rhythm-Maker's Drum, +3 TCE 134
+9 Robe of Stars DMG 194
+10 Tome of Clear Thought DMG 208
+11 Tome of Leadership and Influence DMG 208
+12 Tome of Understanding DMG 209
+13 Armor of Invulnerability DMG 152
+14 Armor, +3 DMG 152
+15 Efreeti Chain DMG 167
+16 Plate Armor of Etherealness DMG 185
+17 Potion of Storm Giant Strength DMG 187
+18 Ring of Air Elemental Command DMG 190
+19 Ring of Djinni Summoning DMG 190
+20 Ring of Earth Elemental Command DMG 190
+5
+1 Ring of Fire Elemental Command DMG 190
+2 Ring of Invisibility DMG 191
+3 Ring of Spell Turning DMG 193
+4 Ring of Three Wishes DMG 193
+5 Ring of Water Elemental Command DMG 190
+6 Rod of Lordly Might DMG 196
+7 Rod of Resurrection DMG 197
+8 Spell Scroll, 9th Level DMG 200
+9 Staff of the Magi DMG 203
+10 Defender DMG 164
+11 Hammer of Thunderbolts DMG 173
+12 Holy Avenger DMG 174
+13 Luck Blade DMG 179
+190
+14 Sword of Answering DMG 206
+15 Vorpal Sword DMG 209
+16 Belt of Cloud Giant Strength DMG 155
+17 Belt of Storm Giant Strength DMG 155
+18 Cloak of Invisibility DMG 158
+19 Crystal Ball of Mind Reading DMG 159
+20 Crystal Ball of Telepathy DMG 159
+6
+1 Cubic Gate DMG 160
+2 Deck of Many Things DMG 162
+3 Horn of Valhalla, Iron DMG 175
+4 Instrument of the Bards, Ollamh Harp DMG 176
+5 Ioun Stone, Mastery DMG 176
+6 Ioun Stone, Regeneration DMG 176
+7 Robe of the Archmagi DMG 194
+8 Scarab of Protection DMG 199
+9 Sphere of Annihilation DMG 201
+10 Talisman of Pure Good DMG 207
+11 Talisman of Ultimate Evil DMG 207
+12 Talisman of the Sphere DMG 207
+13 Tome of the Stilled Tongue DMG 208
+14 Well of Many Worlds DMG 213
+15 Baba Yaga's Mortar and Pestle TCE 121
+16 Crook of Rao TCE 123
+17 Demonomicon of Iggwilv TCE 125
+18 Luba's Tarokka of Souls TCE 129
+19 Mighty Servant of Leuk-o TCE 131
+20 Teeth of Dahlver-Nar TCE 135
+
+Armor of Resistance DMG 152
+2 Armor, +1 DMG 152
+3 Arrow-catching Shield DMG 152
+4 Elven Chain DMG 168
+5 Glamoured Studded Leather DMG 172
+6 Shield of Missile Attraction DMG 200
+7 Shield, +2 DMG 200
+8 Ring of Free Action DMG 191
+9 Ring of Protection DMG 191
+10 Ring of Resistance DMG 192
+11 Ring of Spell Storing DMG 192
+12 Rod of Rulership DMG 197
+13 Rod of the Pact Keeper, +2 DMG 197
+14 Tentacle Rod DMG 208
+15 Scroll of Protection DMG 199
+16 Spell Scroll, 4th Level DMG 200
+17 Spell Scroll, 5th Level DMG 200
+18 Staff of Charming DMG 201
+19 Staff of Healing DMG 202
+20 Staff of Swarming Insects DMG 203
+2
+1 Staff of Withering DMG 205
+2 Staff of the Woodlands DMG 204
+3 Wand of Binding DMG 209
+4 Wand of Enemy Detection DMG 210
+5 Wand of Fear DMG 210
+6 Wand of Fireballs DMG 210
+7 Wand of Lightning Bolts DMG 211
+8 Wand of Paralysis DMG 211
+9 Wand of Wonder DMG 212
+184
+10 Wand of the War Mage, +2 DMG 212
+11 Ammunition, +2 DMG 150
+12 Berserker Axe DMG 155
+13 Dragon Slayer DMG 166
+14 Flame Tongue DMG 170
+15 Giant Slayer DMG 172
+16 Mace of Disruption DMG 179
+17 Mace of Smiting DMG 179
+18 Mace of Terror DMG 180
+19 Moon Sickle, +2 TCE 133
+20 Sun Blade DMG 205
+3
+1 Sword of Life Stealing DMG 206
+2 Sword of Wounding DMG 207
+3 Vicious Weapon DMG 209
+4 Weapon, +2 DMG 213
+5 Alchemical Compendium TCE 119
+6 All-Purpose Tool, +2 TCE 119
+7 Amulet of Health DMG 150
+8 Amulet of the Devout, +2 TCE 119
+9 Arcane Grimoire, +2 TCE 120
+10 Astral Shard TCE 120
+11 Astromancy Archive TCE 120
+12 Atlas of Endless Horizons TCE 120
+13 Bag of Beans DMG 152
+14 Barrier Tattoo, AC 15 TCE 122
+15 Bell Branch TCE 122
+16 Belt of Dwarvenkind DMG 155
+17 Belt of Hill Giant Strength DMG 155
+18 Bloodwell Vial, +2 TCE 122
+19 Boots of Levitation DMG 155
+20 Boots of Speed DMG 155
+1 Bowl of Commanding Water Elementals DMG 156
+185
+4
+2 Bracers of Defense DMG 156
+3 Brazier of Commanding Fire Elementals DMG 156
+4 Cape of the Mountebank DMG 157
+5 Censer of Controlling Air Elementals DMG 158
+6 Cloak of Displacement DMG 158
+7 Cloak of the Bat DMG 159
+8 Cube of Force DMG 159
+9 Daern's Instant Fortress DMG 160
+10 Dimensional Shackles DMG 165
+11 Duplicitous Manuscript TCE 126
+12 Elemental Essence Shard, Air TCE 127
+13 Elemental Essence Shard, Earth TCE 127
+14 Elemental Essence Shard, Fire TCE 127
+15 Elemental Essence Shard, Water TCE 127
+16 Far Realm Shard TCE 127
+17 Figurine of Wondrous Power, Bronze Griffon DMG 169
+18 Figurine of Wondrous Power, Ebony Fly DMG 169
+19 Figurine of Wondrous Power, Golden Lions DMG 169
+20 Figurine of Wondrous Power, Ivory Goats DMG 169
+5
+1 Figurine of Wondrous Power, Marble Elephant DMG 170
+2 Figurine of Wondrous Power, Onyx Dog DMG 170
+3 Figurine of Wondrous Power, Serpentine Owl DMG 170
+4 Folding Boat DMG 170
+5 Fulminating Treatise TCE 128
+6 Heart Weaver's Primer TCE 128
+7 Helm of Teleportation DMG 174
+8 Heward's Handy Haversack DMG 174
+9 Horn of Blasting DMG 174
+10 Horn of Valhalla, Brass DMG 175
+11 Horn of Valhalla, Silver DMG 175
+12 Instrument of the Bards, Canaith Mandolin DMG 176
+13 Instrument of the Bards, Cli Lyre DMG 176
+186
+14 Ioun Stone, Awareness DMG 176
+15 Ioun Stone, Protection DMG 176
+16 Ioun Stone, Reserve DMG 176
+17 Ioun Stone, Sustenance DMG 176
+18 Iron Bands of Bilarro DMG 177
+19 Libram of Souls and Flesh TCE 129
+20 Mantle of Spell Resistance DMG 180
+6
+1 Necklace of Fireballs DMG 182
+2 Outer Essence Shard, Chaotic TCE 133
+3 Outer Essence Shard, Evil TCE 133
+4 Outer Essence Shard, Good TCE 133
+5 Outer Essence Shard, Lawful TCE 133
+6 Planecaller's Codex TCE 134
+7 Portable Hole DMG 185
+8 Protective Verses TCE 134
+9 Quaal's Feather Token DMG 188
+10 Reveler's Concertina TCE 134
+11 Rhythm-Maker's Drum, +2 TCE 134
+12 Robe of Eyes DMG 193
+13 Rope of Entanglement DMG 197
+14 Shadowfell Brand Tattoo TCE 134
+15 Shadowfell Shard TCE 135
+16 Spellwrought Tattoo, 4th Level TCE 135
+17 Spellwrought Tattoo, 5th Level TCE 135
+18 Stone of Controlling Earth Elementals DMG 205
+19 Wings of Flying DMG 214
+20 Dagger of Venom DMG 161
+
+Adamantine Armor DMG 150
+02 Mariner's Armor DMG 181
+03 Mithral Armor DMG 182
+04 Sentinel Shield DMG 199
+05 Shield, +1 DMG 200
+06 Oil of Slipperiness DMG 184
+07 Philter of Love DMG 184
+08 Potion of Greater Healing DMG 187
+09 Ring of Jumping DMG 191
+10 Ring of Mind Shielding DMG 191
+11 Ring of Swimming DMG 193
+12 Ring of Warmth DMG 193
+13 Ring of Water Walking DMG 193
+14 Immovable Rod DMG 175
+15 Rod of the Pact Keeper, +1 DMG 197
+16 Spell Scroll, 2nd Level DMG 200
+17 Spell Scroll, 3rd Level DMG 200
+18 Staff of the Adder DMG 203
+19 Staff of the Python DMG 204
+20 Wand of Magic Detection DMG 211
+21 Wand of Magic Missiles DMG 211
+22 Wand of Secrets DMG 211
+23 Wand of Web DMG 212
+24 Wand of the War Mage, +1 DMG 212
+25 Ammunition, +1 DMG 150
+26 Javelin of Lightning DMG 178
+27 Moon Sickle, +1 TCE 133
+28 Sword of Vengeance DMG 206
+29 Trident of Fish Command DMG 209
+30 Weapon of Warning DMG 213
+31 Weapon, +1 DMG 213
+32 Alchemy Jug DMG 150
+33 All-Purpose Tool, +1 TCE 119
+34 Amulet of Proof Against Detection and
+Location DMG 150
+35 Amulet of the Devout, +1 TCE 119
+181
+36 Arcane Grimoire, +1 TCE 120
+37 Bag of Holding DMG 153
+38 Bag of Tricks DMG 154
+39 Barrier Tattoo, AC 12 TCE 122
+40 Bloodwell Vial, +1 TCE 122
+41 Boots of Elvenkind DMG 155
+42 Boots of Striding and Springing DMG 156
+43 Boots of the Winterlands DMG 156
+44 Bracers of Archery DMG 156
+45 Brooch of Shielding DMG 156
+46 Broom of Flying DMG 156
+47 Cap of Water Breathing DMG 157
+48 Circlet of Blasting DMG 158
+49 Cloak of Elvenkind DMG 158
+50 Cloak of Protection DMG 159
+51 Cloak of the Manta Ray DMG 159
+52 Coiling Grasp Tattoo TCE 123
+53 Decanter of Endless Water DMG 161
+54 Deck of Illusions DMG 161
+55 Driftglobe DMG 166
+56 Dust of Disappearance DMG 166
+57 Dust of Dryness DMG 166
+58 Dust of Sneezing and Choking DMG 166
+59 Eldritch Claw Tattoo TCE 126
+60 Elemental Gem DMG 167
+61 Eversmoking Bottle DMG 168
+62 Eyes of Charming DMG 168
+63 Eyes of Minute Seeing DMG 168
+64 Eyes of the Eagle DMG 168
+65 Feywild Shard TCE 127
+66
+Figurine of Wondrous Power, Silver
+Raven DMG 170
+67 Gauntlets of Ogre Power DMG 171
+68 Gem of Brightness DMG 171
+69 Gloves of Missile Snaring DMG 172
+70 Gloves of Swimming and Climbing DMG 172
+71 Gloves of Thievery DMG 172
+72 Goggles of Night DMG 172
+182
+73 Guardian Emblem TCE 128
+74 Hat of Disguise DMG 173
+75 Headband of Intellect DMG 173
+76 Helm of Comprehending Languages DMG 173
+77 Helm of Telepathy DMG 174
+78 Instrument of the Bards, Doss Lute DMG 176
+79 Instrument of the Bards, Fochlucan
+Bandore
+DMG 176
+80 Instrument of the Bards, Mac-Fuirmidh
+Cittern DMG 176
+81 Keoghtom's Ointment DMG 179
+82 Lantern of Revealing DMG 179
+83 Medallion of Thoughts DMG 181
+84 Nature's Mantle TCE 133
+85 Necklace of Adaptation DMG 182
+86 Pearl of Power DMG 184
+87 Periapt of Health DMG 184
+88 Periapt of Wound Closure DMG 184
+89 Pipes of Haunting DMG 185
+90 Pipes of the Sewers DMG 185
+91 Quiver of Ehlonna DMG 189
+92 Rhythm-Maker's Drum, +1 TCE 134
+93 Robe of Useful Items DMG 195
+94 Rope of Climbing DMG 197
+95 Saddle of the Cavalier DMG 199
+96 Sending Stones DMG 199
+97 Slippers of Spider Climbing DMG 200
+98 Stone of Good Luck DMG 205
+99 Wind Fan DMG 213
+100 Winged Boots
+
+Armor of Gleaming XGE 136
+02-03 Cast-Off Armor XGE 136
+04-05 Shield of Expression XGE 139
+06 Smouldering Armor XGE 139
+07-08 Potion of Climbing DMG 187
+09-10 Potion of Healing DMG 187
+11 Spell Scroll, 1st Level DMG 200
+12-13 Spell Scroll, Cantrip DMG 200
+14-15 Staff of Adornment XGE 139
+16-17 Staff of Birdcalls XGE 139
+18-19 Staff of Flowers XGE 139
+20-21 Wand of Conducting XGE 140
+23-24 Wand of Pyrotechnics XGE 140
+25-26 Wand of Scowls XGE 140
+27-28 Wand of Smiles XGE 140
+29 Moon-Touched Sword XGE 138
+30-31 Unbreakable Arrow XGE 139
+32 Walloping Ammunition XGE 139
+33-34 Bead of Nourishment XGE 136
+35-36 Bead of Refreshment XGE 136
+37-38 Boots of False Tracks XGE 136
+39 Candle of the Deep XGE 136
+40-41 Charlatan's Die XGE 136
+42-43 Cloak of Billowing XGE 136
+44 Cloak of Many Fashions XGE 136
+45-46 Clockwork Amulet XGE 137
+47-48 Clothes of Mending XGE 137
+49-50 Dark Shard Amulet XGE 137
+179
+51-52 Dread Helm XGE 137
+53 Ear Horn of Hearing XGE 137
+54-55 Enduring Spellbook XGE 137
+56-57 Ersatz Eye XGE 137
+58-59 Hat of Vermin XGE 137
+60 Hat of Wizardry XGE 137
+61-62 Heward's Handy Spice Pouch XGE 137
+63-64 Horn of Silent Alarm XGE 137
+65-66 Illuminator's Tattoo TCE 129
+67 Instrument of Illusions XGE 137
+68-69 Instrument of Scribing XGE 138
+70-71 Lock of Trickery XGE 138
+72-73 Masquerade Tattoo TCE 131
+74 Mystery Key XGE 138
+75-76 Orb of Direction XGE 138
+77-78 Orb of Time XGE 138
+79-80 Perfume of Bewitching XGE 138
+81 Pipe of Smoke Monsters XGE 138
+82-83 Pole of Angling XGE 138
+84-85 Pole of Collapsing XGE 138
+86 Pot of Awakening XGE 138
+87-88 Prosthetic Limb TCE 134
+89-90 Rope of Mending XGE 138
+91 Ruby of the War Mage XGE 138
+92-93 Spellwrought Tattoo, 1st Level TCE 135
+94-95 Spellwrought Tattoo, Cantrip TCE 135
+96 Talking Doll XGE 139
+97-98 Tankard of Sobriety XGE 139
+99-100 Veteran’s Cane XGE 139

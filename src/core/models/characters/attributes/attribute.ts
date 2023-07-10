@@ -1,3 +1,4 @@
+import { random } from 'lodash';
 import { Character } from '..';
 import { CTX } from '../../../../types';
 import { ModificatorManager } from '../../../../core/managers/ModificatorManager';
@@ -45,9 +46,7 @@ export class Attribute {
   }
 
   check(difficulty: number): CheckResults {
-    const rand = Math.round(
-      Math.random() * 5 + Math.random() * 5 + Math.random() * 5 + 3
-    );
+    const rand = Math.round(random(1, 6) + random(1, 6) + random(1, 6));
     const result = rand <= this.getValue() - difficulty;
     return { rand, value: this.getValue(), result, difficulty };
   }

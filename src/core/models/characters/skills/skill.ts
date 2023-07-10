@@ -1,3 +1,4 @@
+import { random } from 'lodash';
 import { ModificatorManager } from '../../../../core/managers/ModificatorManager';
 import { SkillProps, SkillInputProps, CheckResults, ResolveResult } from './';
 import { Attribute } from '../attributes/attribute';
@@ -8,6 +9,7 @@ import {
 import { SkillResolver } from './resolvers';
 import { Lockpicking } from './resolvers/lockpicking';
 import { CTX } from '../../../../types';
+import { ACTION_PAYLOAD_TYPE } from '../../../engine/constants';
 
 export class Skill {
   exp: number;
@@ -36,7 +38,7 @@ export class Skill {
 
   check(difficulty: number): CheckResults {
     const value = this.getEffectiveValue();
-    const rand = Math.random() * 5 + Math.random() * 5 + Math.random() * 5 + 3;
+    const rand = Math.round(random(1, 6) + random(1, 6) + random(1, 6));
     const result = rand <= value + difficulty;
     const checkResults = { rand, value, difficulty, result };
     this.getExp(checkResults);
@@ -114,7 +116,8 @@ export class Skill {
 
   async resolve(input: ActionPayload): Promise<ResolveResult> {
     const { sourceActor, payload, target } = input;
-    if (payload.type !== 'useSkill') return { executed: false, payload: input };
+    if (payload.type !== ACTION_PAYLOAD_TYPE.USE_SKILL)
+      return { executed: false, payload: input };
     const { skill, difficulty, timeMod, options } = payload;
     if (!sourceActor) return { executed: false, payload: input };
     const optionsMod = this.calcOptionsMod(options);

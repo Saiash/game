@@ -5,7 +5,6 @@ import FormControl from '@mui/material/FormControl';
 
 type Props = {
   name: string;
-  type: string;
   list: string[] | boolean[] | { key: string; value: string }[];
   value: string[];
   onDataChanged: (type: string, value: any) => void;

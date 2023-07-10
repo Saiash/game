@@ -54,12 +54,15 @@ export const EventsContainer = ({ params }: { params: props }) => {
 };
 
 const Buttons = ({ params }: { params: props }) => {
-  const { path, events, onDataChanged } = params;
+  const { path, events, onDataChanged, removeContainer } = params;
   const addNewEvents = () => {
     onDataChanged(path, [...events, { type: '', effect: [] }]);
   };
 
-  const removeEvents = () => {};
+  const removeEvents = () => {
+    if (!removeContainer) return;
+    removeContainer();
+  };
 
   return (
     <>

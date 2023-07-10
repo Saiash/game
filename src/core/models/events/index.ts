@@ -4,12 +4,10 @@ import { POST_ACTIONS_RESOLVERS } from '../characters/skills/resolvers/postActio
 import type { ActionPayload } from '../../engine/actionConnector';
 import { EventAction } from '../../managers/tag/models/tag';
 import { Condition } from '../../managers/tag/models/condition';
-import { ObjectModel } from '../locations/object';
-import { Item } from '../characters/inventory/item';
-import { Character } from '../characters';
-import { Location } from '../locations';
 import { ResolveResult } from '../characters/skills';
 import { TagSystem } from '../../managers/tag';
+import { ACTION_PAYLOAD_TYPE } from '../../engine/constants';
+import { GameData } from '../../engine/gameData';
 
 export type rawEvent = { description: string; actions: EventAction[] };
 
@@ -77,7 +75,8 @@ export class Event {
     if (!condition.checkConditions()) return { executed: false };
     return await POST_ACTIONS_RESOLVERS[type](
       input || {
-        payload: { type: 'systemEvent' },
+        payload: { type: ACTION_PAYLOAD_TYPE.SYSTEM_EVENT },
+        sourceActor: ctx.gameData.getPlayerCharacter(),
         target: ctx.gameData.getPlayerCharacter(),
       },
       effect,

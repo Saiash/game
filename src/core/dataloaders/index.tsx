@@ -11,6 +11,12 @@ export function getDataloaders() {
         data: { skillName: name },
       });
     },
+    getPerk: async (name: string) => {
+      return callAPIEndpoint({
+        endpoint: 'getPerk',
+        data: { perkName: name },
+      });
+    },
     getLore: async (loreName: string) => {
       return callAPIEndpoint({
         endpoint: 'getLore',

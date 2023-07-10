@@ -46,12 +46,20 @@ export class Location {
     this.tags = new TagSystem({ ctx, owner: this });
   }
 
-  addObject(object: ObjectModel) {
+  addObject(object: ObjectModel): void {
     this.objects.push(object);
   }
 
-  addCharacter(character: Character) {
+  addCharacter(character: Character): void {
     this.characters.push(character);
+  }
+
+  removeObject(object: ObjectModel): void {
+    this.objects.filter(obj => obj.getId() === object.getId());
+  }
+
+  removeCharacter(character: Character): void {
+    this.characters.filter(chr => chr.getId() === character.getId());
   }
 
   hasStatus(status: string): boolean {

@@ -1,0 +1,2166 @@
+Crack in the ground. You encounter a wide gap, with an abyss below, and no way over
+except jumping. Make a DC 13 + tier Strength (Athletics) check to get across, or find some
+other method. (Fly spells, or use of a rope, tree log etc).
+2 You slip on a section of slippery ground. Make a DC 11 + tier Dexterity (Acrobatics) check
+or take 1d4-1 bludgeoning damage.
+3
+You come across a humanoid who has been wounded in battle. Make a DC 15 + tier
+Wisdom (Medicine) check to get them up and moving. If successful, you may gain 1
+sidekick who has a maximum of (tier) hd. For more information on tiers, see p.13.
+4
+Dungeon: You are passing through a huge colony of bats, which are all currently sleeping.
+Make a DC 13 + tier Dexterity (Stealth) check. If you fail, they all awaken and flap around
+you. Make a DC 18 + tier Dexterity saving throw. If you fail, take 2d6 piercing damage,
+half on a successful save.
+Wilderness: A herd of animals is crossing your path. Make a DC 13 + tier Wisdom
+(Animal Handling) check to successfully navigate your way through. If you fail, the
+panicked animals start a stampede, and you must make a DC 20 + tier Dexterity saving
+throw. If you fail, take 2d6 bludgeoning damage, half on a successful save.
+5
+Something is tracking you! Make a DC 14 + tier Wisdom (Nature) check, a DC 17 + tier
+Dexterity (Stealth) check or a DC 17 + tier Intelligence (Investigation) check. If you fail,
+you are surprised during the first round of your next combat encounter, and you cannot
+gain surprise at the start of this encounter either.
+6 The path here is blocked by some fallen obstacle. Make a DC 15 + tier Strength (Athletics)
+check to clear the obstacle, or choose a different path.
+7
+There is some sort of wild magic field here. Make a DC 15 + tier Intelligence (Arcana)
+check to determine the nature of it, otherwise any spells you cast in this area are subject to
+rolls on the wild magic table (PHB, p.104).
+140
+8
+You come across a historical account of the happenings here, either a mural or markings
+etched on rock. Make a DC 14 + tier Intelligence (History) check. If successful, you have
+advantage on all Intelligence- and Wisdom-based checks for the remainder of this quest.
+9
+Some kind of slaughter or battle has gone on in this area. Make a DC 14 + tier Intelligence
+(Investigation) or Wisdom (Perception) check to discern the nature of past events. If
+successful, gain an inspiration.
+10
+You find a shrine to a deity, although the statue is partially disfigured and it is hard to
+identify. Make a DC 14 + tier Intelligence (Religion) check. If successful, roll once on the
+Boon table (p.152).
+11
+A short pillar bears an interesting relic, but it appears that it is resting on a pressure plate.
+Nearby is a stone or similar object that looks like it could be roughly the same weight.
+Make a DC 17 + tier Dexterity (Sleight of Hand) check to replace the item. If successful,
+gain one common magic item.
+12
+A group of potentially hostile humanoids are resting in this area. They appear quite drunk
+and demand you regale them with song! Make a DC 11 + tier Charisma (Performance)
+check. If successful, they throw a bit of gold at you! Gain 1d20 gp. If unsuccessful,
+encounter 1d4+1 thugs (or other low-level humanoid of your choice, minimum CR ¼). Due
+to their drunkenness, their attack rolls are all -2.
+13
+A spectral figure appears before you. “You shall not pass this point, traveler! I invoke the
+power of an ancient curse and forbid your passage! Only the mightiest may pass beyond
+me.”
+Make a DC 14 + tier Charisma (Intimidation) check, or a DC 19 + tier Charisma
+(Persuasion) check. If successful, you may proceed, and you gain an inspiration. If you fail,
+you must find another way around, or encounter 1 undead creature of hard difficulty.
+14
+Markings on a wall or a nearby rock read: “No-one bearing weapons may enter here.” If
+anyone in your party is carrying weapons, perhaps you can try to hide them from whatever
+force is at work here. Make a DC 14 + tier Charisma (Deception) check. If successful, you
+may proceed with your weapons. Otherwise, you may find another way around. If you
+choose to ignore this warning, make a DC 17 + tier Wisdom save, otherwise you are
+afflicted by an ancient curse which causes 3d8 psychic damage!
+15
+You find strange tracks on the floor/ground, which leads you to think there may be
+enemies nearby. Make a DC 11 + tier Wisdom (Survival) check. If successful, your enemies
+are surprised during the first round of your next combat encounter.
+16
+You find evidence of the evil handiwork of your enemy (roll keywords to discern the nature
+of it). This reveals something about your enemy’s persona. Make a DC 14 + tier Wisdom
+(Insight) check. If successful, you gain the following boon.
+Enemy Insight: During the next BBEG encounter, when an attack from that BBEG would
+hit, you can choose to have it miss instead. You can only use this boon once.
+17
+You come across a large patch of fungi growing here. There are all kinds of colours and
+shapes here, and some of them seem almost to glow with a kind of volatile fluorescence.
+Make a DC 12 + tier Wisdom (Survival), or Intelligence (Nature) check. If successful, you
+are able to gather the equivalent of two vials of basic poison (PHB, p.153).
+18
+You find some ancient architecture which appears strange. But it reminds you of something
+you have seen before. Make a DC 11 + tier Intelligence (History) check. If successful, you
+have advantage on saving throws to avoid the next trap you encounter.
+141
+19
+You feel a hint of a magical aura coming from somewhere nearby. If you have any affiliation
+with magic (i.e., you are a caster or a being for whom magic has played a part in their life)
+make a DC 17 + tier Intelligence (Arcana) check. If you succeed, you have advantage on
+saving throws against spells for the rest of this quest.
+20
+Dungeon: A nearby door is locked, with no latch or apparent way to open it (if there is no
+door in your current area, you suddenly notice one). However, it appears that the lever to
+open it is high up on the wall, near the ceiling. By using the walls as springboards, a
+dexterous character might be able to propel themselves up to the lever to activate it. Make
+a DC 15 + tier Dexterity (Acrobatics) check. If successful, you make it to the lever and get
+the door open. Roll on Chamber Contents (DMG p.296 or TSAT2 p.36) to see what is
+behind this secret door.
+Wilderness: Storm Winds. A gust of powerful wind catches you by surprise, sending
+nearby objects into the air like missiles. Make a DC 12 +1d4 Dexterity saving throw to
+avoid the debris. On a failure you take 3d8 bludgeoning damage and are knocked prone. To
+continue you must succeed on a DC 12 + 1d4 Strength (Athletics) check or take shelter and
+wait out the storm winds.
+21
+You find a series of small niches in the wall where caskets could have been stowed. Some of
+them are broken open. Make a DC 17 + tier Intelligence (Religion) check. If successful, you
+sense the presence of undead creatures in the area, and your next combat encounter will
+feature undead creatures.
+If unsuccessful, the next combat encounter will feature undead, but your party will be
+surprised in the first round of combat.
+22
+Suddenly, from nowhere, a glowing, spectral blue rope appears, and begins wrapping
+around your hands and feet. Make a DC 14 + tier Dexterity (Sleight of Hand) check to
+attempt to get your hands free, and then your feet. If unsuccessful you are restrained for the
+next turn. You can use an action every turn to repeat this check, ending the effect as soon
+as you succeed on the check.
+23
+You encounter some low-level minions in the service of the BBEG. “Hello there,” they say,
+looking you up and down. “What brings you to our master’s domain, then?”
+There’s a chance you could get out of this situation. Make a DC 11 + tier Charisma
+(Deception) check. If successful, you may go on your way. If unsuccessful, roll a levelappropriate easy encounter featuring humanoids.
+24
+You find markings possibly left by henchmen of the enemy you pursue. They speak of their
+leader’s power, stating that “All who come near our master shall be destroyed!” But
+something seems a little off about these boasts. Make a DC 14 + tier Wisdom (Insight)
+check to discern the deeper meanings behind these. If successful, you have advantage on
+saving throws against being charmed or frightened during your next BBEG encounter.
+25
+An animal, trapped in a cage, is immediately friendly towards you. You may be able take it
+on as a companion, if your class allows it. What is required is a DC 12 + tier Dexterity
+(Sleight of Hand) or Thieves’ Tools check to unlock the cage and then a DC 13 Wisdom +
+tier (Animal Handling) check. If successful, you gain a beast companion up to the allowance
+for your class. For example, rangers have a limit on the CR of the beast they can choose to
+be their companion, which increases with their ranger level.
+26
+A far-off sound catches your attention. Make a DC 15 + tier Wisdom (Perception) check. If
+successful, you gain an insight into enemy movements. Take one inspiration or one Clue
+Point if playing the battlemap crawl/realm crawl method.
+27 A pool is before you, shimmering like silver, and within you fancy you can see images,
+moving, beyond your reflection.
+142
+Make a DC 15 + tier Wisdom (Perception) check. If successful, you gain an insight into
+what is happening in another nearby area. During this quest, you have advantage on
+Dexterity (Stealth) checks to sneak up on enemies and surprise them.
+28
+You notice a swarm of tiny, gnat-like creatures swarming in one area. Make a DC 14 + tier
+Wisdom (Animal Handling) check. If successful, and you have an empty glass vial or other
+breakable vessel, you are able to capture some of these creatures. As a bonus action, you can
+throw these at a creature so that the vessel shatters on impact (or, alternately, you can open
+a vessel beside the creature and then disengage and move away as an action). The gnats will
+buzz around the nearest creature, imposing disadvantage on its attacks for 1d4 rounds.
+29
+A nearby architectural wall has strange contours, leading you to think there might be a
+hidden door here. Make a DC 16 + tier Intelligence (Investigation) check. If successful, you
+discover a hidden room. Roll for a new room using dungeon generation tools (or any tools
+you want). If the rolls produce a monster encounter, you can ignore this if you wish to (as
+the room was hidden for a long time).
+30
+If an NPC or sidekick is present, all of a sudden, they take offence at something you’ve
+done, either recently or sometime in the past. They are threatening to leave the party. Or,
+perhaps, if there are two members in this party, one disagrees with the other.
+Make a DC 15 + tier Charisma (Persuasion) or Charisma (Intimidation) check. If
+unsuccessful, the NPC or sidekick leaves the party. If the disagreement involves two
+characters, then for the remainder of this quest neither character can take advantage of
+traits that rely on having an ally present. Take note whether you used Persuasion or
+Intimidation, as this will colour future interactions.
+If you feel this check is unfair and will affect balance adversely, feel free to reroll.
+31
+You find the satchel of an apothecary. Perhaps you have no idea what many of these items
+do, but you might be willing to experiment. Make a DC 14 + tier Wisdom (Medicine)
+check. If successful, you gain 1 Healer’s Kit.
+32
+Nearby, you see a high rock ledge which seems to have an object placed on it. You can only
+see part of the object, and can’t really tell what it is, but it looks to be man-made. Perhaps
+someone placed it up there for safe-keeping. Reaching it is going to take some brute
+strength or agility.
+Make a DC 17 + tier Dexterity (Acrobatics) or Strength (Athletics) check to reach this
+item. If successful, roll on the Items table (p.163). Reroll until you find something that
+makes sense given the context. If using the battlemap crawl method, gain 1 Clue Point.
+33
+You see large, looming statues ahead, that stand like sentinels, on either side of a narrow
+throughway. Their eyes glow red, and you sense a trap of some sort. Perhaps they simply
+act as alarms, letting nearby enemies know of the presence of trespassers. Make a DC 14 +
+tier Dexterity (Stealth) check to creep by these silent sentinels, or find another way around.
+If you fail the check, roll a d4. (1-2) The statues emit lightning from their eyes. Make a DC
+17 + tier Dexterity saving throw or take (tier) d6 lightning damage. (3-4) The statues
+begin to howl in an otherworldly dirge. You cannot gain surprise on enemies. Immediately
+initiate a medium-difficulty encounter.
+34
+You find evidence of a nearby small mining operation. Make a DC 14 + tier Intelligence
+(History) check. If successful, you know who was mining here, and what they were mining
+for. Make a DC 19 + tier Intelligence (Investigation) check. If successful, gain 1d4 x 100 gp
+gems.
+35
+You find a small natural rock alcove where slime covers every surface. Even coming near it
+causes you to gag and your breath to catch in your throat. It is clearly poisonous.
+Make a DC 11 + tier Intelligence (Nature) check. If successful, you have advantage on
+saving throws against poison while in this dungeon / wilderness area. Additionally, if you 
+143
+have something to gather it in, you can attempt a DC 18 + tier Dexterity (Sleight of Hand)
+check. Also gain 2 vials of basic poison (PHB p.153).
+If unsuccessful, make a DC 13 + tier Constitution save or take 3d6 poison damage.
+36
+You find evidence of cult-like, ritualistic activity. At some point in the recent past, it
+appears a cult has worshipped here.
+Make a DC 14 + tier Intelligence (Religion) check. If successful, gain your choice of an
+inspiration or 1 Clue Point.
+37
+Someone has erected a barrier here, to try and hamper the progress of anyone approaching.
+Make a DC 15 + tier Wisdom (Insight) check to try and discern who built this, and what
+their intentions might have been. If successful, roll a d4. (1-2) A possible ally erected this,
+who is still somewhere nearby. Make a DC 14 + tier Intelligence (Investigation) check. If
+successful, gain 1 sidekick. (3-4) An enemy erected this. Gain either an inspiration or 1 Clue
+Point.
+38
+You find a dead creature which died in a bizarre way, as a result of some magically inflicted
+disease, or possibly by poison. Make a DC 14 + tier Wisdom (Medicine) check. If successful,
+you are able to gain knowledge of how this creature died.
+For the rest of this quest, you have advantage on saving throws against one of the
+following (choose, based on what is most appropriate for your current quest and the
+monsters you have encountered): poison, acid or necrotic damage.
+If none of these are appropriate, gain an inspiration or a Clue Point instead.
+39
+You are aware that at some stage you are going to need to rest, and as you move through
+this area you begin scouting for potential campsites. Make a DC 11 + tier Wisdom
+(Survival) check. If successful, you find a campsite and will not be disturbed during your
+next rest. If unsuccessful, there is a 50% chance that you rest will be disturbed by a creature
+during your next rest. The next time you choose to rest, roll a d100. If 50 or under, roll for
+a monster encounter. Unless someone was on watch, the monster has advantage on
+Dexterity (Stealth) checks to surprise you.
+40
+You find a piece of graffiti on a wall. It reads “A message for my fellow travelers: The
+creatures in these parts love a song and dance. It saved my life when I was wandering
+through these parts. May it save yours too.”
+Save this for your next combat encounter. When you next encounter monsters, make a DC
+13 + tier Charisma (Performance) check. If successful, the creatures do not attack, and you
+may leave the area without further mishap. However, this effect will end if you cause
+damage to any of these creatures.
+41
+You encounter a fountain. An ancient plaque proclaims it to be a place of arcane restoration,
+for those who can discern its secrets.
+Any caster or character who possesses some sort of innate spellcasting ability, can make a
+DC 13 + tier Intelligence (Arcana) check. On a success, regain spell slots equivalent to your
+level divided by half. For example, if you are level 10, you gain 5 levels of spell slots. This
+could be a level 2 spells slot and a level 3 spell slot, or a level 2 slot and three level 1 slots,
+or any combination. If you are level 1, regain a level 1 spell slot. This boon cannot be used
+to gain extra spell slots. If all your spell slots are unused, restore your hp to max instead.
+42
+A strange series of runes painted on the floor (or a rock, if outdoors) are glowing, and
+represent symbols that have an evil look to them. Make a DC 14 + tier Intelligence
+(Religion) check. If successful, you sense the presence of fiends in the area. Fiends have been
+summoned to this area, and are possibly roaming nearby.
+Your next combat encounter will feature fiends. If your Religion check was unsuccessful,
+make a DC 13 + tier Wisdom (Perception) check at the start of the fiend encounter. If
+unsuccessful, you are surprised in the first round of combat.
+144
+43
+You suddenly get the feeling you are being watched, as if your enemy has eyes everywhere,
+magical or otherwise. Make a DC 14 + tier Dexterity (Stealth) check. If successful, gain
+either an inspiration or 1 Clue Point.
+44
+You suddenly remember hearing something in the last settlement about this place, a detail
+that has only just come back to you. Make a DC 11 + tier Intelligence (History) check. If
+successful, your character immediately learns the location of the BBEG, and their monster
+type. They have advantage on Stealth rolls to determine surprise at the start of the BBEG
+encounter.
+45
+After spending some time in this area, you are starting to get a feel for the lay of the place
+and your senses are heightened. Make a DC 11 + tier Wisdom (Survival) check. If
+successful, enemies have disadvantage on Dexterity (Stealth) checks to creep up on you.
+46
+You suspect you might have picked up a tail. It feels as if you are being followed. Nothing
+you can pin down, just a feeling of being watched.
+Make a DC 13 + tier Wisdom (Perception) or Wisdom (Survival) check. If successful, you
+sense the location of the tail and are able to lose them. If unsuccessful, encounter 1 monster
+of the type that fits with the theme of your current quest.
+47
+All of a sudden, the floor is flooded with a slippery substance that you think is oil. Make a
+DC 13 + tier Strength (Athletics) check or Dexterity saving throw to stay on your feet or
+become prone and take 1d4 bludgeoning from the fall. Perhaps this is the beginning of an
+ambush? If in wilderness, some other disorienting force has come into play, such as a
+log/pit trap or even the area being flooded with tar or something crazy like that.
+48
+The plant life in here is familiar to you, you think. Make a DC 11 + tier Wisdom (Nature)
+check. If successful, you find 1d6 healing berries. Each heals 3 hp and may be consumed as a
+bonus action.
+49
+“Traveler!” a disembodied voice suddenly addresses you. “The ancient goddess of mischief
+demands you entertain her with a song. Sing, little one! I have been bored for so long in this
+place. Entertain me!”
+Make a DC 14 + tier Charisma (Performance) check. If successful, you gain the Charm of
+Heroism (10 temporary hit points) for the remainder of your current quest. If you fail, make
+a roll on the [d4] (1-3) Bane table, p.157 (4) Boon table, p.152.
+50
+A tormented spirit appears to you, accusing you of trespassing here. “All who come here
+want only one thing: to raid the treasures within this sanctum. You shall not do the same!”
+Make a DC 14 + tier Charisma (Persuasion) check. If unsuccessful, the spirit will let you go
+on your way. If you fail, encounter one hard spectral undead creature (such as a ghost or a
+specter).
+51
+You come across a secret door which has jammed on opening. There is enough of a gap that
+you can see through, but not enough that you can fit. Make a DC 15 + tier Strength
+(Athletics) check to get it open wide enough, and then you can move through to the other
+side. Make a 6d12 table roll in either the Special Room Column or the Passage column,
+adding 2 to every d12.
+52
+There is an area here that is blocked by a huge portcullis, secured by a sturdy lock. If in
+wilderness, treat this as a tomb or some kind of gatehouse. If proficient with thieves’ tools,
+you may attempt a DC 15 + tier Dexterity (Sleight of Hand) or thieves’ tools check to get
+the door open. Otherwise, a DC 19 + tier Strength (Athletics) check will allow you to bash
+this portcullis in, but the noise might attract enemies!
+53 From some way ahead you hear voices! Make a DC 15 + tier Wisdom (Perception) or
+Intelligence (Investigation) check to discern who is speaking, and whether they are friendly 
+145
+or hostile (use oracle rolls). If hostile, make a Dexterity (Stealth) check (using their passive
+Perception as the DC) to sneak up on them.
+54
+An inquisitive beast is lurking nearby, and seems agitated, almost as if it is trying to tell
+you something, or warn you of something. Its behaviour seems odd.
+Make a DC 15 + tier Wisdom (Animal Handling) check. If successful gain one of the
+following boons of your choice: (1) Gain a clue point (2) Gain an inspiration (3) You cannot
+be surprised for the remainder of the quest (4) When the next combat encounter is
+triggered, treat it that your character already knew the location. Give them advantage on a
+Dexterity (Stealth) check vs the enemy’s passive Perception. If successful, the enemy is
+surprised in the first round of combat.
+55
+You discover a piece of arcane war machinery, but it is poised on the brink of selfdestruction. The only thing stopping it from going off is a bladed weapon, which has been
+stuck in the mechanism to jam it. The weapon is ornate and appears enchanted. The weapon
+type is one of the following [d4] (1) Shortsword (2) Longsword (3) Rapier (4) Greatsword.
+To retrieve this rare-looking weapon, make a DC 17 + tier Dexterity (Sleight of Hand) or
+thieves’ tools check to disable the war machine. If successful, gain a Vicious Weapon (DMG
+p.209). If unsuccessful, you inadvertently trigger the device, which explodes! Take (tier x 5)
+d6 bludgeoning damage from the explosion.
+56
+You see a door in a wall, with three bells positioned above the door. Each has a rope
+hanging from it. A plaque reads Play for me a tune to hear, and the way before you will be clear.
+Make a DC 13 + tier Charisma (Performance) check. If successful, you gain entry to this
+mysterious door. If unsuccessful, there is no extra effect.
+The door could open onto a previously undiscovered chamber, or one already present in
+your quest. Use standard generation tools to populate this chamber. If you are outdoors,
+treat it as a small shrine or wilderness tomb.
+57
+You are extremely on edge. Did you just hear something? A flicker of movement in the
+corner of your eye? Make a DC 13 + tier Wisdom (Survival) check. If successful, you have
+advantage on Dexterity saving throws to avoid traps while in this area.
+58
+From seemingly nowhere, a bolt of lightning streaks towards you! Make a DC 15 + tier
+Dexterity saving throw to avoid this arcane trap, taking 2d10 lightning damage on a failed
+save. Once you recover yourself, you see that up in a high spot is a relic of some sort which
+has been enchanted to fire lightning bolts at any who attempt to pass below (If outside, it is
+positioned up in a tree, if in a dungeon it is ensconced in the wall). However, vines lead up
+to where it is, making it possible to reach. Make a DC 14 + tier Dexterity (Acrobatics)
+check to get to the relic which is causing all this havoc, then remove it from its sconce,
+which will stop it functioning as a trap. Then, make a roll on one of the magic item tables to
+determine what the relic is (Chapter 4-6) [d10] (1-7) Common (8-9) Uncommon (10) Rare.
+59
+You think back to your last combat encounter, and it occurs to you that there was some
+design in how you and your allies were targeted. The creature which you seek has nefarious
+designs of some description on you, but you can’t discern exactly what those designs are.
+Make a DC 15 + tier Wisdom (Insight) check. If successful, gain your choice of one of the
+following (1) Inspiration for all party members (2) Roll once on the Boon table (p.152) and
+apply that to the character who rolled this result.
+60
+You come across a semi-conscious PC, on the brink of death. They seem eager to tell you
+something… Make a DC 15 + tier Wisdom (Medicine) check. If successful, you gain
+important knowledge regarding your quest. Use keywords and/or oracles to determine the
+nature of this knowledge. Also, if successful, gain your choice of one of the following (1)
+Inspiration for all party members (2) Roll once on the Boon table (p.152) and apply that to a 
+146
+character of your choice. From here, it is up to here whether you let this character
+peacefully depart or whether you nurse him back to health and gain a sidekick/NPC.
+61
+Your sidekick or NPC, if they are with the group, refuses to continue. “Something’s not
+right about this… I won’t walk willingly to my own demise!”
+You try your best to convince them to continue. Make a DC 11 + tier Charisma
+(Persuasion) check. If unsuccessful, choose one of the following: (1) Lose a Clue Point
+(Battlemap Crawl System) (2) Lose your sidekick or NPC (3) While you waste time
+conversing, a wandering monster or monsters discovers your location and attacks! Roll for
+1 Medium encounter.
+62
+Pick (or roll for) a random member of your party. They start to feel queasy, possibly as a
+result of something they ingested lately. Eventually they can’t go on and have to sit down.
+Trying to help them with this digestive ailment is going to require a DC 11 + tier Wisdom
+(Medicine) check. Alternatively, have them make a DC 14 + tier Constitution saving throw.
+If you fail either roll, that character takes the Poisoned condition.
+63
+Your adventuring partner (if you have one, or an NPC) begins insisting on a course of
+action that you thoroughly disagree with (roll keywords for details). Make a Charisma
+(Persuasion) check equal or above their Wisdom score to talk them out of it. Alternately,
+(or if the Persuasion check does not work) make a Charisma (Deception) check equal or
+above their Wisdom score to make it look like you are going along with their suggested
+course of action, when in truth you have no intention of doing so. If you choose the
+Deception route, be aware that this will have consequences later on when they discover
+your true intentions!
+64
+A monster appears and forbids you from proceeding. Consult your monster lists and make
+this a Medium - Hard level encounter, appropriate to your current environment. Make a
+Charisma (Intimidation) check equal or above this monster’s Wisdom score to avoid the
+encounter and pass unheeded. Otherwise, either backtrack or encounter the monster!
+65
+From out of nowhere, objects begin raining from the sky! These could be small rocks,
+hailstones, or any other object (perhaps this is the result of some magical effect). Make it
+appropriate to your story.
+Make a DC 14 + tier Dexterity (Acrobatics) check, or take (tier x 2) d10 damage of a type
+appropriate to the objects (e.g., bludgeoning damage for rocks).
+66
+You pass a wall that is decorated with a mural, but the humanoid and animal figures in it
+seem to be moving. Make a DC 14 + tier Intelligence (History) or Intelligence (Arcana)
+check to learn more about the nature of this mural, what it depicts and how it came to be
+here. Generate story using keywords.
+67
+You find a musical instrument on the ground.
+Roll a d6 to find out what it is. (1-2) Flute (3-4) Lute (5-6) Hand drum.
+Make a DC 17 + tier Charisma (Performance) check to play this instrument. If successful,
+you activate its arcane nature. This instrument transforms into an animal familiar which
+will be loyal to you for the remainder of this quest, and will appear whenever you use a
+bonus action to play a note or two on the instrument. You can dismiss the creature and
+have it transform back into an instrument as an action. The creature is a [d6] (1) Wolf (2)
+Boar (3) Giant Badger (4) Black Bear (5) Brown Bear (6) Dire Wolf. What you have in fact
+found, is a familiar instrument (homebrew magic item).
+68
+A strange sound is coming from somewhere (roll on the table found on DMG p.298 for
+details). To discover its origin, make a DC 11 + tier Intelligence (Investigation) check. If
+successful, roll a d4. The sound is (1) Near (2) Far (3-4) Wherever you are.
+147
+69
+This area is littered with the corpses of a particular type of animal. But what killed them
+all? Make a DC 13 + tier Wisdom (Nature) check to discover what caused the death of
+these poor creatures. If successful, use keywords or Mythic event meaning tables to
+generate details.
+70
+A holy (or unholy) symbol is marked on the wall in blood. Make a DC 13 + tier Intelligence
+(Religion) check to see if you can determine what deity this symbol represents. If successful,
+decide what the deity is based on the current quest context, or devise a dice roll to come up
+with a random god. This god will now form one of the threads of your solo adventure. The
+next time you roll for monsters with any system, roll twice and choose the result.
+71
+You see a potential mount nearby, roaming wild, complete with saddle. Obviously, this
+creature has lost its former master. The mount is a (1) Mastiff (2) Donkey (3) Pony (4)
+Draft Horse (5) Riding Horse (6) Warhorse. Make a Wisdom (Animal Handling) check.
+The DC is 10 + the result of the d6 roll. If successful, you gain this mount.
+72
+A random member of your adventuring party slips on some loose rubble and rolls their
+ankle! Make a DC 11 + tier Wisdom (Medicine) check to treat this sprain or the character’s
+move speed is reduced by half until they complete a long rest.
+73
+One character in the party seems very preoccupied, distracted by some thought. They are
+certainly not themselves, and you get the feeling that they may be wrestling with some
+internal struggle. Will this affect their ability to cope with stressful situations? Make a DC
+13 + tier Wisdom (Insight) check. If unsuccessful, the character makes their next 3 d20
+rolls with disadvantage. If successful, you talk with the character and attempt to get to the
+bottom of the problem. Make a DC 11 + tier Charisma (Persuasion) check. If successful,
+they are able to get over the problem and focus on the task at hand (use keywords to
+determine what the problem was, or roll on an event meaning or threads table if you have
+one). If unsuccessful, the character makes their next 2 d20 rolls at disadvantage.
+74
+A strong, rushing body of water courses through this area. You can see some object at the
+midway point, a statue or some other heavy object which the water cannot move. To
+inspect this object, make a DC 15 + tier Strength (Athletics) check. If successful, you
+successfully inspect the object. Roll on an event meaning or keywords table to provide you
+with some detail as to what it is and whether it appears to be connected to your quest (add a
+clue point if it does).
+75
+Strange plants grow here that appear to bear spores on their flowers. You have no idea
+what effect these spores will have if disturbed and dispersed into the air. Make a DC 15 +
+tier Dexterity (Stealth) check to move through this area. If you fail, you inadvertently
+knock one or more of the plants and disperse these spores into the air. Make a DC 15 + tier
+Constitution saving throw. If unsuccessful, take (tier x 2) d8 poison damage.
+76
+You arrive at a strange monument. It is a robed female who holds a priceless-looking gem
+in her hand, balanced on her fingertips. Examining the statue closely, you see that the arm
+appears to be weighted, a lever of some sort. Removing it (if you wish to do so) will be very
+tricky and might require replacing it with a stone or other object of similar weight. To
+attempt to do this make a DC 17 + tier Dexterity (Sleight of Hand) check.
+If successful, roll a d4 to discover what you have gained:
+(1) Garnet - 100gp
+(2) Topaz - 500 gp
+(3) Star ruby - 1000 gp
+(4) Diamond - 5000 gp.
+77
+You can hear a knocking sound coming from somewhere ahead. Is it the sound of someone
+hammering? Make a DC 11 + tier Wisdom (Perception) check to discern more about the
+nature of the sound. If successful, roll keywords to provide more information.
+148
+78
+You enter a strange area where a dark, bluish energy suffuses everything. If there are living
+things here, they are struggling for life, and you yourself feel lethargic, as if you are falling
+under some enchantment or curse.
+Make a DC 14 + tier Intelligence (Arcana) check to discern more about the nature of this
+phenomenon. If successful, you have advantage on a subsequent DC 14 + tier Constitution
+saving throw which you must make now. If unsuccessful, take one level of exhaustion.
+79
+You see an altar where a relic of some kind rests on a pedestal. Coming near, however, you
+find it difficult to proceed, to get near this relic. Then, painted on the floor at the base of the
+pedestal you see several runes. Make a DC 14 + tier Arcana check to discern the nature of
+these apparently protective runes. Perhaps, if you are able to recall some lore about them,
+you can find a way to deactivate this magical field.
+If you are successful in the Arcana check, and then you have a spell such as dispel magic, roll
+twice on the Uncommon Magic Items table (p.180) and choose the result.
+80
+You find strange markings here in a language you don’t understand. Did some ancient
+civilization live here at some stage in the distant past? Make a DC 14 + tier Intelligence
+(History) check. If successful, you have advantage on all Intelligence checks for the
+remainder of this quest.
+81
+You find an odd device embedded in the rock. It is unclear what this does, but it obviously
+has some purpose. Make a DC 14 + tier Intelligence (Investigation) check. If successful,
+choose one of the following effects, depending on the context of your quest. Or roll a d4.
+(1) You discover a secret door.
+(2) You discover the entrance to a dungeon.
+(3) A trap, locked door or other feature encountered somewhere nearby is disabled /
+opened.
+(4) Use keywords to determine the effect.
+82
+Outdoors: The terrain is strange in this area, as if some beast or natural phenomenon has
+altered it in some way. Make a DC 11 + tier Intelligence (Nature) check. If successful, use
+keywords to determine why the terrain here is the way it is.
+Indoors: Re-roll for a different skill challenge if you wish.
+83
+You discover a body dressed in strange ceremonial garb, as of a priest or acolyte. Make a
+DC 12 + tier Intelligence (Religion) check. If successful, you have advantage on
+Intelligence checks related to cults and religion for the rest of this quest, and you cannot be
+surprised by cultists or other enemies of a religious nature.
+84
+Your enemy, if you even know what they are, seems elusive. No matter how you search for
+them, the web they have woven is strange and at times hard to decipher. There are traces of
+their handiwork that you have found, but nothing that allows you to know their true
+motive. You take a moment to stop and consider what their master plan might be, based on
+all that you have seen so far.
+Make a DC 14 + tier Wisdom (Insight) check. If successful, gain an Inspiration.
+85
+You feel a twinge in your neck. For some reason, perhaps you have not been drinking
+enough water or have not eaten for a while, you feel a splitting headache coming on. It is so
+severe that you fear it might compromise your prowess in battle.
+Make a DC 12 + tier Wisdom (Medicine) check. If unsuccessful, make your next three
+attack rolls at disadvantage. You may make the Medicine check with advantage if you have
+an herbalism kit.
+86
+You have a strange feeling that you can’t shake. It’s as if eyes are watching you, from
+somewhere hidden perhaps.
+Make a DC 14 + tier Wisdom (Perception) check. If successful, roll a d4.
+(1) Someone is watching from a concealed place nearby, possibly a hidden room.
+149
+(2) Someone is observing you magically.
+(3) Someone is using a tiny creature as a familiar to spy on you.
+(4) A member of your party is carrying an object which someone has cast a spell on
+that enables them to track your movements.
+Decide what in-game effects this result has on your quest.
+87
+The rigours of travel and adventure are taking their toll and you and any companions you
+have with you. It might also be some sort of enchantment, but all of a sudden you are struck
+with a ravenous hunger and parched thirst. If you have not eaten today, you must
+immediately take rations. If you have no rations, you will have to forage. Make a Wisdom
+(Survival) check, DC 9 + tier if outdoors, DC 14 + tier if indoors. On a fail, take one level of
+exhaustion.
+88
+You reach a barrier where a spectral figure bars the way forward. “Stop, travelers!” it
+addresses you. “You shall go no further!”
+This spectral figure is blocking the way. You must either succeed on a DC 17 + tier
+Charisma (Intimidation) or Charisma (Persuasion) check. Otherwise, based on your PC tier,
+encounter the following:
+• Tier 1: 1 x shadow per character (if level 1, max 1 shadow per party)
+• Tier 2: 1 x wight per character
+• Tier 3: 1 x wraith per character
+• Tier 4: 1 x alhoon per character
+89
+Off to the side of your path, a glimmer catches your eye. You move closer and see small
+crystals that catch the light and appear to glow with a strange radiance. A DC 14 + tier
+Intelligence (Arcana) check reveals that these are arcane crystals. A spellcaster can take one
+of these, and cast 2 level 1 or 1 level 2 spell into it for later use, following the same rules as
+a ring of spell storing. You find 1d4 crystals. The crystal can only be used once in this way. If
+you fail the Arcana check, you are not privy to this knowledge and would not know the
+crystals can be used in this way. Each crystal can also be sold as a common magic item (if
+unused).
+90
+You hear a cracking sound, and look up to see a large rock or piece of masonry falling
+towards you! Make a DC 10 + tier Strength (Athletics) or Dexterity (Acrobatics) check,
+taking 2d6 bludgeoning damage on a failed save.
+91
+Your immediate area is a bit of a mess, with small to medium piles of detritus lying on the
+floor. A DC 12 + tier Intelligence (Investigation) check will reveal a small chest containing
+a CR 1 treasure hoard.
+92
+Is there an NPC with you? If not, reroll. If so, continue reading.
+You get the feeling (possibly as a result of certain recent events) that the NPC
+accompanying you is not telling you everything they know. Make a DC 12 + tier Wisdom
+(Insight) check. If successful, make an oracle roll (with the likelihood at “likely”) to
+determine if they do know something else (possibly related to your quest). If they do, roll
+for keywords to determine the nature of this information.
+93
+You encounter a shrine to an obscure god, surrounded by ritual offerings and several
+corpses. Make a DC 13 + tier Intelligence (Religion) check to discern the nature of this
+dark god, their name, and possibly the motives behind this horrific ritual. If successful, you
+will have advantage on checks to determine surprise against cultists or other beings
+engaged in similar rituals, for the rest of this quest.
+94
+Strange animals are dwelling a little way ahead, but are as yet unaware of your presence.
+They appear harmless, but could stampede if alarmed. Make a DC 15 + tier Dexterity
+(Stealth) or Wisdom (Animal Handling) check to move through this area. If you fail, the 
+150
+beasts panic and stampede, looking to escape. In that case, make a DC 16 + tier Dexterity
+(Acrobatics) or Strength (Athletics) check to get out of the way or take (tier x 3) d6
+bludgeoning damage.
+95
+You reach a door which has a magical talking mouth. It demands you tell it one truth and
+one lie, and it has to guess which is truth. It tells you, if you succeed in fooling it, it will
+open and reveal its secrets. If you are outdoors, you encounter a structure with this door as
+the entrance.
+Make a DC 15 + tier Charisma (Deception) check. If you succeed, you gain entrance
+through the door. Use keywords to determine what secrets you gain access to here -
+something directly relevant to your quest.
+96
+You find a flickering portal - a shimmering rip in the air. The image behind it stutters and
+changes from moment to moment. If you succeed on a DC 14 + tier Intelligence (Arcana)
+check you can stabilise the portal for a few seconds to travel anywhere you want within 100
+miles (If you fail the check by 5 or more, you end up in a random location 100 miles away).
+97
+You come across a small band of four men encamped around a cooking fire. On seeing you
+one of them calls out, “Greetings good friend! It has been a long time since we have been in
+a stranger’s company and have grown quite bored with each other. Please, come join us and
+tell us of your adventures.” Make a DC 11 + tier Charisma (Performance) check to entertain
+the men with stories of your exploits. On a success the group becomes friendly to you and
+gives you some information about a new or current quest (roll on keyword or event
+meaning tables). On a fail, one of the men draws his bandit’s scimitar and points it in your
+direction as the others circle around you. “Hmmm....not all that impressive I’m afraid. Now
+give us all your gold!” Encounter (tier x 1) thugs.
+98
+You feel an ancient force here, but cannot tell whether it is benign or malevolent. Make a
+DC 13 + tier Intelligence (Arcana) check. If successful, roll on the Boon table (p.152). If
+unsuccessful, roll a d4. (1-3) Roll on Bane table (p.157). (4) Roll on Boon table (p.152).
+99
+You find a ring. Make a DC 15 + tier Intelligence (Arcana) check to recognize that this is a
+ring of mind shielding. There is a random NPC's soul within the ring and If any character
+decides to put it on, the NPC's soul may interact telepathically with the mind of the
+character wearing it. If the character succeeded on the check, they will be aware that the
+ring is causing this, otherwise they will simply hear voices and may think they are losing
+their mind. This might continue until they come across someone (such as a mage) who can
+tell them why they are hearing these voices, and identify the ring.
+Once per day, the wearer may try a DC 19 + tier Persuasion check to convince the soul of
+the random NPC to depart for the afterlife and vacate the ring. Regardless of there being a
+soul or not in the ring, the character wearing it can benefit from all of its characteristics.
+The player can decide whether completing a side quest will be enough to convince the soul
+within the ring to depart for the afterlife.
+100
+Time passes, and you find you have nodded off and woken up inside some sort of dream
+world. Make a DC 19 + tier Wisdom saving throw to escape immediately and wake up in
+the real world. If you fail this saving throw, you must perform a minor quest within this
+world. All skills and rolls are based on your Charisma modifier. You have to find the way
+out of this world, which means making a new DC 19 + tier Wisdom saving throw at the
+beginning of each new scene or story point. Everything you see is strange, especially the
+monsters. The rules of science do not necessarily apply.
+
+You find a stricken individual, slumped against the wall of the room/passage and raving to
+themselves incoherently. They have obviously been involved in something highly
+traumatic which has robbed them of their wits.
+2 This area of the dungeon has fallen into disrepair. The passage ahead looks dangerous, like
+it could cave in at any moment. You will need to proceed with extreme caution.
+3 An almighty roar fills the passages, echoing around you. It seems to be coming from [d4]
+(1-2) Nearby (3-4) Far away.
+4
+A drunk dwarf is staggering down the passage towards you, arm in arm with a similarly
+drunk halfling. They are regaling each other with outlandish stories of their adventures,
+and do not initially notice you.
+5 You find an adventurer’s corpse (roll on NPC tables to discover details). They have an
+interesting [d6] (1-2) Note (3-4) Bounty (5-6) Map on their person.
+6 You find a humanoid child, hiding behind a pillar. They do not speak your language and
+you have no idea what they are doing here.
+7 Within a room, a floating orb sits atop a plinth. You approach… the orb is translucent, and
+many colours swirl within it… what do you see?
+8 You see what looks like a portal ahead. The air is stale here, however, and the walls drip
+with some foul contagion...
+9
+A magical darkness permeates this area, originating from a point you cannot see. Suddenly,
+a priest comes into view, smiling and holding forth a holy symbol. “Ah!” he cries. “You’ve
+come, at last!”
+10
+You discover a sinkhole in the floor of the passage. Peering down, you see several levels of
+dungeon passages below you, but the sinkhole (natural?) descends out of sight.
+11
+There is a celebration going on somewhere nearby… the sound of goblets being clinked,
+wine being poured, even a band of minstrels… but there is a smell hanging heavy in the
+air… the smell of rotting flesh. Of death… or undeath?
+134
+12 A notice is tacked onto a wall. “The fight for the prize begins soon. The victor will claim
+the symbol of our deity! You will be witness to a great contest…”
+13
+You come across a creature, which has been wounded. Roll a d8 to find out what type of
+wounded creature you have come across: (1) aberration (2) beast (3) elemental (4) fiend
+(5) humanoid (6) monstrosity (7) undead (8) dragon. It is not combative. Perhaps an
+intelligent creature capable of communication might negotiate with you if you can help to
+heal it. However, do so with care!
+14
+Huge fungi grow in this area, standing as tall as an ogre! Moving through, you must be
+careful not to bump them or they will release spores. Make a DC 13 Dexterity (Stealth)
+check. If you fail, roll three times on the Keywords table (p.167) to discover the nature of
+the effect the spores have on you.
+15 A sprite, or some sort of small creature, is down the end of a passageway, beckoning to you.
+“This way! Yes, come, follow!”
+16 You feel imbued with a heroic spirit. The god of courage has smiled on you, granting you a
+boon. Roll on the Boon table (p.152).
+17
+You happen upon an underground settlement of some kind. If this is in an established
+dungeon, perhaps it is a colony of tiny creatures, or an enclave of hermits. If in caverns, or
+the Underdark, it could be svirfneblin or duergar or drow perhaps. They are not initially
+aware of your presence and you have the opportunity of observing from afar until you
+decide to interact.
+18
+The ground begins to shudder, and dust falls from the roof. Perhaps even a chunk of
+masonry or two falls to the floor. Is this an earthquake, or some huge creature
+approaching? Either way, it’s seismic.
+19
+You meet a friendly NPC who immediately engages you in conversation. However, they
+are accompanied by a powerful stench which almost has you gagging. Make a DC 12
+Constitution saving throw. If you fail, you are violently ill.
+20 An adventuring party is ahead, you think. You can hear conversation, several different
+voices, and they speak in a mixture of Common, Dwarvish and Elvish.
+21
+Small alcoves in either wall house icons to a range of deities you have never seen before.
+The workmanship looks ancient.
+22 Within a room, atop a table, you find a fascinating object: an intricately crafted miniature
+version of a dungeon. This dungeon? Who crafted this and for what purpose?
+23 Rows of sarcophagi line either side of this room. Their plaques bear fascinating, and very
+old inscriptions.
+24
+You stop in your tracks. Ahead (in a room or passage, generate next bit of the dungeon to
+find out what) you see a mage of some kind deep in the performance of a ritual. But you
+have no way of knowing their nature, or the nature of the ritual.
+25 The sound of rushing water comes from nearby. An underground river?
+26-
+30 Roll a d4. (1-2) Roll on Skill Challenge table, p.139 (3-4) Level-appropriate easy encounter
+31
+A trio of gnome artificers are here, hard at work studying some phenomenon, device,
+construct or other thing. They are escorted by two hulking mercenary warriors. A
+scientific expedition, it would seem. Stealth roll, DC 14, to see if you are noticed, initially.
+135
+32
+A noxious, yellowish slime covers the walls and floor here. Moving through is going to
+require agility, and who knows what the effect could be if any of the stuff lands on you…
+(Use keywords to determine)
+33
+A small humanoid runs past and tosses an item into your hands. It is a [d6] (1) Ring (2)
+Rod (3) Scroll (4) Staff (5) Wand (6) Weapon. They are gone before you can respond,
+calling these words back over their shoulder. “Your problem now!”
+Is something pursuing them? Or have they just offloaded a potentially cursed item on you?
+34
+There is a lot of noise and hubbub coming from ahead. The clank of steel-shod boots, the
+shouting of commands. You appear to be approaching a barracks of some kind, and it
+sounds like they are mobilising for battle!
+35
+You find a room filled with cages. 1d6 of these cages have captives inside them. You find
+any combination of the following: [1d20] (1) Rich Noble (2) Charming thief (3) Talkative
+explorer (4) Whiny scientist (5) Gruff admiral (6) Innocent shapeshifter (7) Dishevelled
+navigator (8) Greedy priest (9) Apathetic immortal (10) Ignorant royal (11) Distracted
+artificer (12) Impatient engineer (13) Xenophobic artist (14) Sympathetic monk (15)
+Agitated cultist (16) Angry town guard (17) Affectionate merchant (18) Cursed aberration
+(19) Shrewd judge (20) Gloomy assassin.
+36
+Ahead, you see the passage seemingly dissolve into nothingness. A void opens up before
+you. Where a passage was before, now is a swirling, nondescript energy… a portal of some
+kind? You are hesitant to continue, but also intrigued… Should you back away and try
+another path, or throw yourself into this strange energy and see where it leads you?
+37
+At the side of the passage, a beautiful little font, ornately crafted with figures of benevolent,
+childlike gods, receives silvery water into its stone basin. It radiates a soft, healing energy.
+Drinking from this font will restore 4d4+8 hp to your character, but you can gain this
+benefit only once.
+38
+A magical darkness descends. And in this darkness, a voice starts whispering to you, about
+something from your past that no-one could possibly know about. When the darkness
+finally lifts, no-one is there… Is someone playing mind games with you, or are you going
+insane?
+39 If you have an NPC with you, they begin acting strangely… as if this place is getting to
+them, affecting them in some way.
+40
+An offensive smell reaches your nostrils… You come across a pit where all sorts of refuse
+have been dumped. There must be a humanoid settlement nearby that has seen fit to fill
+this area with their trash, with no consideration for the other inhabitants of this dungeon.
+Or, perhaps this is ancient refuse, left here by a group of creatures who have since departed.
+Either way, it smells utterly repulsive, and you suspect some foul rot-dweller may be
+lurking in there...
+41 You find a collection of items in a bag which you are trying hard to make sense of. Roll five
+times on the Items table (p.163). Who did this belong to?
+42
+Rounding a corner, you see a door hanging off its hinges, and a procession of creatures
+running in and out of a room carrying various looted items. A stash of some kind has been
+discovered, and it is a free-for-all. The stash consists of one of the following items [d10]
+(1-2) Food (3-4) Alcohol (5-6) Weapons (7-8) Wood for burning (9-10) Random
+assortment of all of the above.
+43 A fresh smell comes to you, as if there was an opening to the outside somewhere near, a
+vent of fresh air. Then, you round a corner, and see a tree, somehow magically growing in 
+136
+the middle of a widened section of passage. It is suffused with magical light, as if suspended
+in a bubble, and sits in the middle of a richly-carved dark stone circle which contains the
+soil it grows in.
+44
+Whoever your quarry is that you are stalking, the reason you entered this dungeon, you
+find a valuable clue relating to them. You receive this information in one of the following
+forms [d6] (1) Graffiti (2) Carved inscription (3) Note (4) Disembodied Voice (5) NPC (6)
+Overheard conversation.
+45 A small pebble hits you on the back of the head. Turning around, you cannot see who
+threw it.
+46 Entering a natural cavern, you happen upon a pile of gore and dead bodies. This looks like
+the food stash of some creature, but the smell coming off it is horrific. What lurks nearby?
+47
+Strange runes glow with an arcane energy, painted on the floor in this area. Make a DC 18
+Intelligence (Arcana) or Intelligence (Wisdom) check. If successful, you have seen these
+runes somewhere before and know something of their meaning.
+48
+A statue in the middle of this area looms high over you. Then, it opens its mouth and
+speaks to you! Roll on a keywords table or whatever tool you deem appropriate to
+determine its message.
+49
+An abyss runs across the passageway, dropping down out of sight. Looking down, you see
+the entrances to various other tunnels, as if peering down through the middle of a colony of
+insects. The only way across this expanse is a series of floating discs…
+50 Entering a chamber, you see a machine or contraption of some sort at its centre, whirring
+and clicking away. What is this device and what is its purpose?
+51-
+55 Roll a d4. (1-2) Roll on Boon table, p.152 (3-4) level-appropriate medium encounter
+56 Blood is pooled through this area, along with arrows, broken weapons, broken crates and
+other detritus. A pitched battle has gone on here, but you see no bodies… very strange.
+57 A lone humanoid is wandering the corridors, muttering to themself about how they have
+been exiled, and how they will get revenge on those that cast them out.
+58 Water drips from the ceiling above, forming pools here and there. Where is this water
+coming from… and is it indeed water at all?
+59
+You hear the sound of a waterfall from somewhere nearby, and also a mechanical noise of
+some kind, a machine-like sound… Then, above that, the chatter of voices, although due to
+the sound of the water you can’t make out what language they are speaking. What is going
+on up ahead?
+60
+This area contains ancient frescoes, some of them ruined, but some remarkably wellpreserved. They reveal important lore about the quest you are on, specifically in relation to
+important people related to that quest, and their history.
+61
+You find a mirror, a small hand-held mirror on the floor. Picking it up, you see that it
+appears some creature (monster? NPC?) is trapped inside it. How did they come to be here,
+and why was this artifact simply left lying on the floor?
+62
+A lever is in the left wall. There is no indication of what it controls, or that it controls
+anything at all. Perhaps it is defunct. But there is only one way to find out…
+137
+[d6] Pulling the lever (1) Opens a trapdoor (2) Releases acid rain into the corridor (3)
+Opens a dimensional portal (4) Opens a previously locked door in a nearby part of the
+dungeon (5) Triggers a spear trap (6) Opens a secret door nearby.
+63
+You suddenly emerge on a mezzanine-type floor overlooking a large chamber below.
+Something is going on down there. Creatures are congregating, but they haven’t seen you
+yet.
+[d6] (1) Gladiatorial battle (2) Summoning ritual (3) Court trial (4) Meeting of cultists or
+other group around a large table (5) Battle between monster factions (6) Leader addressing
+a large group.
+64
+The relentless rhythmic thud of large drums is vibrating from somewhere distant. Is it
+coming from underneath you? You can feel the pounding through the floor.
+65
+A broken construct lies wrecked in this area. It has been partially, but not wholly, looted
+for parts. [d6] (1) Retriever (2) Iron Golem (3) d4 Iron Cobras (4) Oaken Bolter (5)
+Animated Armour (6) Hellfire Engine.
+66
+You enter a chamber which appears to be a wizard’s or artificer’s laboratory. Plenty of
+interesting artifacts, and quite a few blueprints and other things as well. Roll a d100. If
+under 20, you find a common magic item. If under 10, you find an uncommon magic item.
+67 Several boiling cauldrons are in this area, giving off bizarre fumes.
+68
+You emerge in a chamber which is split into two levels, lower and higher. Two groups of
+humanoids are battling each other, one on the lower ground and one on the higher ground.
+Neither have noticed you as yet.
+69 A strange field of coloured light is ahead, dancing hypnotically. Make a DC 14 Wisdom
+save or you are entranced by this. Who set up this magical trap, and why?
+70
+You come across several humanoid (or possibly giant) creatures, rolling around on the
+floor laughing. Something has amused them, but what? Perhaps this is some magic, and
+you are in danger of falling under it also…
+71 A series of huge pillars line both sides of this corridor, which is good as you can hear a
+creature of quite some size approaching! Might be time to hide…
+72
+Make a DC 16 Wisdom (Perception) check. If unsuccessful, you fail to notice a skulk deftly
+relieving you of wealth. Choose either a random item or 2d100 gp to remove from your
+inventory. If successful, you catch him in the act, and he immediately flees. Make one
+opportunity attack and then pursue if you wish, encountering 1 skulk.
+73
+There are shallow channels in the floor here, in an interesting, symmetrical pattern. You
+can find no clue as to their purpose, but a DC 14 Intelligence (Investigation) check might
+reveal something. If successful, roll on Keywords table (p.167).
+74
+A room containing chests full of mundane items. Roll ad20 times on the Items table (p.163),
+discarding inappropriate results like rubble, broken wood etc. All results should be things
+that have reasonably belonged to someone at some stage.
+75 The smell of food cooking comes to you, making your mouth water.
+76-
+80 Roll a d4. (1-2) Roll on Bane table, p.157 (3-4) level-appropriate hard encounter
+81 A group of creatures is ahead, working on renovating a section of the tunnel. What are
+they doing, and what are their motivations? [d6] (1) Clearing an obstruction (2) 
+138
+Constructing a trap (3) Tunnelling a new passage into the rock (4) Decorating this area of
+the tunnel with a mural or runes (5) Mining for minerals (6) Forcing slaves to do their
+work (roll again to determine what that work is).
+82 You hear the sound of musical instruments, many playing together, but discordant, and
+well out-of-tune with each other.
+83 Within a pool, a flawless gem shimmers.
+84
+A burning energy begins to take hold of everything… flammable objects nearby burst into
+flame, metal objects like torch sconces and doorknobs begin to glow red hot, and
+everything is suffused with heat. What creature or curse is causing this?
+85 Concealed from prying eyes, you stumble somehow across a small library of rare tomes.
+What strange volumes do you find in here?
+86
+Conscription patrol. A band of humanoids is approaching. They are searching for recruits
+for their army in an upcoming battle against an enemy force. Are you allied with their
+cause?
+87 A haunting moan, as of many tormented voices together, begins to come to you, quietly, on
+the air. It is impossible to determine the source of this disturbing noise.
+88 A bridge extends over (1) Natural geysers (2) Acid pools (3) Lava (4) Dimensional rift.
+89
+In the middle of a room, a pendulum swings from side to side, accompanied by a loud
+ticking noise. Runes are inscribed around all the walls; every surface is covered with
+writing in... [d6]
+(1) Dwarvish (2) Abyssal (3) Infernal (4) Undercommon (5-6) Whatever is most relevant to
+your adventure. What is the purpose of this device?
+90
+An idol on a pedestal speaks to you as you pass. “You have forgotten something of your
+past, traveller. I know all secrets… do you wish me to tell it to you?” If your PC has
+wishes, this Idol of Memory will reveal a hidden fact about their past.
+91 As you progress through this area, a succession of ghostly apparitions appear on either side
+of you, telling you to turn back, that you are entering an area of ancient evil.
+92
+A huge, beautifully-crafted fountain depicts a magical beast and a greenish water spouts
+from its mouth, filling the pool below the fountain. 50% chance this area is inhabited by
+humanoids.
+93
+A portal, swirling with planar energy, stands in this area. On the steps leading up to it, you
+see a note held in place by a stone. It reads. “I waited, but you did not come. Now I go to do
+the deed. Come find me if you have the courage.”
+94 A huge cage, like a birdcage, is suspended from the roof in this area. However, several of
+the bars are bent open as if what was in it has escaped.
+95 Ahead, a group of humanoids is towing a large cart carrying [d6] (1) Junk (2) Minerals (3)
+Prisoners (4) Military supplies (5) Food supplies (6) A captive and angry monster.
+96-
+100 Level appropriate deadly encounter
+
+You hear rumours of a nomadic cult that has taken up residence in an abandoned building
+in a deserted part of town. Who knows what they are planning, but there are strange
+sounds and lights coming from that area.
+2
+A strongman is exhibiting a show of strength at the side of the street, and has drawn a
+large crowd. However, this burly character looks dejected, exhausted, and the announcer
+who is narrating his feats appears to be the one in control. Does he have the poor brute
+magically enslaved? Or is some other form of duress going on here?
+3 A guard patrol suddenly runs past you. “To the gates, to the gates!” they are yelling. “We
+are being attacked!”
+4 You pass a market stall. The stallholder is being harassed by someone in a loud voice. “I
+know you have it, you liar! Give it to me now!”
+5 Looking down an alleyway, you can see a figure being set upon by three larger individuals -
+this definitely does not seem to be a fair fight...
+6 Some sort of coloured smoke is billowing out of the windows of a nearby building! Some
+sort of alchemical chaos perhaps? Or something else...
+7
+“Accepting all comers!” a huge bugbear yells as he walks down the street, ringing a hand
+bell. “Tonight, at the Ancient Chalice! Pit fights, only the dirtiest, meanest fighters will
+survive. 500 gold prize money! We’ll take anyone!”
+8 You pass a row of abandoned multi-storey buildings, each one with parchment nailed to the
+front door. They all read the same: Condemned. Do not enter.
+9 A large, walled urban garden is here. The sign outside informs you that the garden holds
+some extremely rare and exotic species.
+10
+An old man telling a story has gathered a large group of children and adults around him,
+entranced by his narration. It seems he was a former adventurer and has some enthralling
+tales to tell.
+127
+11
+A streetside merchant is selling baubles, inside which strange colours and scenes are
+swirling. He tells you that at the right phase of the moon, you can enter one of these
+baubles as a small pocket dimension, which you can shape to your liking. He’s asking 500gp
+for each of them. But there is an element of shadiness to this merchant and you perhaps
+don’t trust him...
+12
+A local artist is exhibiting works in a gallery. Visitors have reported that his images are so
+dark and evocative that he must have had some horrific experiences. It’s even said that
+some descend into madness after viewing these works. Whatever the case, the exhibition
+seems to be attracting a lot of attention.
+13
+A cart passes by, built of wood and metal, with bars over the windows. Passers-by remark
+that it is an infamous criminal, finally caught, who is being transported to the town jail.
+“They never thought they’d catch him,” someone says. “He’s been eluding them for years!”
+14
+Someone is tolling the alarm bell nearby. Has a fire broken out? Magical chaos? Some sort
+of catastrophe has occurred that is serious enough to call the town guard over.
+15
+You pass a huge, sprawling graveyard, covering a large area. All the town’s dead are buried
+here, and it’s said that some tombs connect to a deeper network of catacombs. Currently,
+however, a crowd is gathered around a freshly-dug grave where a recently-deceased local
+identity is being interred. This person, you hear someone nearby remark, died in extremely
+mysterious circumstances. There are many unanswered questions...
+16
+You pass a magician’s guildhall. It is very active at the moment - a steady stream of mages
+is coming and going from the door. Inquiring of one of them, you are informed that this
+guildhall is currently hosting the annual general meeting to discuss the state of magic in
+the realm.
+17
+A royal procession is about to begin. The Queen/King/Emperor/Empress is due to pass
+along the street you are on with their entourage very shortly. You see the town guard
+doing a preliminary sweep of buildings, checking for potential assassins or evil-doers.
+“Make way!” someone shouts. “Make way for our glorious ruler!” Adults and children alike
+are beginning to throng either side of the street in anticipation of the regal parade.
+18
+Striking up a conversation with a local, you are told of the old town, a deserted, partially
+ruined quarter that was recently overrun by monsters. Much slaughter and devastation
+happened there. “No-one ventures there now,” the local informs you. “It’s said that there
+are still horrors lurking there, waiting for the foolish to venture in.”
+19
+You catch a snatch of conversation from two passing locals. “I overheard them talking
+about it in The Gobbling Gander. Yes, a heist, planned for tonight! The Guild of
+Scoundrels has never been so daring as to attempt something like this!”
+20
+A small temple is having a festival which involves a bizarre tradition. [d4] (1) Feeding all
+passers-by, regardless of religion, until they are so full, they can barely move (2) Treating
+all visitors to the temple like royalty, washing their feet, massaging their shoulders and
+generally pampering them (3) Hurling insults at people passing by the temple (4) Allowing
+the children to order the adults about and treat them like slaves for a day.
+After this tradition is observed, it is customary for a high-ranking priest to tell a story
+about their god or goddess’s mythology.
+21
+You pass a grand building under construction. Teams of dwarven stonemasons are crafting
+this building, working many intricate details into the masonry. Each of the carvings has a
+story behind it, as the foreman is only too eager to inform you. This building is going to be
+[d4] (1) An embassy for the dwarven kingdom of _____ (2) An urban residence for a 
+128
+dwarven ruler (3) a temple to a prominent dwarven god (4) A grand tomb, commissioned
+by the devoted followers of a noted dwarven priest or mage.
+22 You begin seeing a poster issuing a reward for a notorious criminal. The thing is, this
+criminal bears a striking resemblance to a member of your adventuring party!
+23 A duel is about to take place, in the middle of the street / town square / market between
+two rival mages. By all indications, it’s going to get ugly!
+24
+There is a commodity shortage in this part of town (e.g., food/water/building supplies).
+Perhaps the local government has placed restrictions on this area because of perceived
+unlawful behaviour, but whatever the case, the citizenry is on the brink of rioting.
+25 Since you’ve been in this town, you’ve noticed quite a few suspicious-looking individuals
+all sporting the same tattoo. You wonder what it could signify.
+26-
+30 Roll a d4. (1-2) Roll on Skill Challenge table, p.139 (3-4) Level-appropriate easy encounter
+31
+A noble passes in a litter carried by servants. “Get out of the way, filthy peasants!” the
+noble rudely shouts as the litter jostles past.
+32
+You hear that a huge ship has just arrived in port from a foreign land. No-one has ever
+encountered these peoples before, and they are looking to make contact with locals to learn
+more about local customs and culture. They also brought some fascinating items with them
+to trade.
+33
+A violent gang conflict (perhaps between two rival thieves’ guilds or other factions) has
+spilled out into the streets. It’s open warfare out here, with abductions and assassinations
+happening in broad daylight.
+34
+From a second-story window, you hear a halfling woman singing a pretty song about an
+ancient hero and their conquests. The story is very descriptive, and you are perhaps
+overcome with a desire to know more about this legend.
+35
+A worried-looking novice mage is making their way down the street carrying an armful of
+scrolls. “Can’t be late!” she is saying to herself. “Mistress will kill me if I’m late! If only I
+had someone to help me with these scrolls!”
+36 You see an agile figure bounding across rooftops, carrying something. From quite a way
+behind, pursuers are yelling at them to stop.
+37
+An eviction is in progress. You see the town guard forcibly removing a family and their
+grandfather from their house. A woman is screaming: “This is a disgrace! Do you know
+who my father is? You have no respect! Wait till the duke hears about this, he’ll have your
+heads!”
+38
+There is a crack of thunder and rain begins falling very heavily. Stall holders and other
+vendors begin packing up, and citizens doing their business about town begin running for
+cover. It is an absolute downpour. You see a nearby tavern which looks cosy and inviting.
+39
+This area of the town is deserted… every house barred, condemned. Then you see them,
+piled up in the middle of a square. Bodies. A tolling bell catches your attention. “Bring out
+yer dead!”
+40
+You see a man running, looking terrified, clutching a relic of some kind. Then, some
+distance behind him, a mob of well-armed female priests.
+129
+41 A desperate-looking half-elf peasant clutching a pitchfork asks you if you’ve seen anyone
+who looks like him pass by recently. He refuses to explain or give his name.
+42 A guard checkpoint stops everyone except a noble and his entourage.
+43
+You hear word that a ship’s captain is sitting in a nearby tavern, looking for adventurers to
+accompany him as protection on his next expedition to the outer islands. The pay is terrible
+and the food worse, but he promises one thing: it won’t be boring.
+44 An exhibition is in town featuring artifacts from far-flung countries that most people have
+never heard of.
+45
+Passing an open doorway, you catch a strange scent, and cannot help but glimpse several
+drowsy-looking people stumbling between rooms. A female, seated by the door, notices
+your interest. “Fancy a taste?” she asks. “Go see Delren in the back room, he’ll sort you
+out.”
+46
+A warrior stumbles out of an alleyway into the middle of the street, a sword impaling him
+from front to back. “Stop… him…” he manages to say before collapsing onto his knees. He
+is alive, but only barely.
+47 A wizard is casting divination spells at passers-by and then tossing off idle remarks about
+the person’s future.
+48 “Be on the lookout,” a small company of guards is announcing loudly as they patrol the
+streets. “Prisoners escaped from the tower!”
+49
+You see a poster. The local library is getting overstocked and is having a sale of some of its
+books. Some old books of redundant maps that no-one uses anymore (as they refer to the
+ancient kingdom, not the current one) and other potentially interesting but obscure tomes
+are being sold for a fairly reasonable price (100-300 gp per book. depending on rarity).
+50
+You spy a large building ahead which is subject to some strange metaphysical anomaly.
+[d4] (1) The building floats (2) The building is covered by a dark shroud resembling
+night-time (3) The building is surrounded by light patterns (4) The building is partially
+spectral (transparent) and you can see its interior.
+51-
+55 Roll a d4. (1-2) Roll on Boon table, p.152 (3-4) Level-appropriate medium encounter.
+56 A young woman is passing out wooden tokens for a free drink at a local tavern.
+57
+A boat is passing in a nearby canal. It is [d4] (1) A royal barge (2) A goods freighter (3) A
+pirate or explorer vessel of some description (4) A mage’s ship. If the city is landlocked,
+make it an airship instead.
+58
+If you have an NPC or sidekick, they are potentially kidnapped by a group of thugs while
+you are distracted. You could choose this to happen to your PC instead, or your party could
+witness a kidnapping.
+59
+You see workers loading a huge shipment into boats, or into carts if your settlement is
+landlocked. You wonder what this shipment is, where it might be going, what it is, who it’s
+for and whether they have protection on the journey.
+60
+A section of street has fallen into a sinkhole deep below, taking several houses with it. Who
+knows why this happened, but it is unlikely that the inhabitants of the houses survived.
+130
+61
+You pass a place of business where many vehicles are parked outside. (These could be any
+sort of vehicle that fits with the lore of your world, from an oxcart to an airship). They are
+offering passage to most major settlements in the realm. Fares start at 50 gp.
+62
+The panicked news comes to you through the city grapevine, and people are fleeing to
+safety as a result. A famous local wizard, finally driven insane through his dabblings in
+obscure subject areas, is on a rampage through the city, destroying everything in his path.
+Authorities are unsure how to deal with him.
+63
+A stranger runs quickly past you, dropping a random item in your path. [d4] (1) Mundane
+Item (Roll on Item table, p.163, until you get something that fits context) [2] Weapon [3]
+Gems and money (roll on CR 1 hoard table, DMG or TSAT) [4] Common magic item.
+64 The street suddenly goes empty but for one or two people, and in the next moment even
+they are gone. You are alone… Where did everyone go? Then you hear it...
+65 A poster announces the public reading of an obscure and arcane scroll recently discovered
+by an eminent archaeologist in a forgotten tomb near to the city.
+66
+A huge team of workers is busy fixing this part of town. It turns out that this area of the
+city houses catacombs which connect to the Underdark, through long networks of twisting
+passages. Somehow, a purple worm found its way up here and burst through the surface,
+destroying huge amounts of masonry, businesses, residences, ploughing through several
+blocks of buildings. The damage was immeasurable and will take months to repair. Also, a
+small company of men-at-arms is stationed there in case any other nasties come up from
+below...
+67 News comes to you of beggars and homeless being killed by some unknown terror...
+68
+A creature begins following you. [d10] (1-8) Beast, (9) Construct (10) Other. Choose a
+level-appropriate creature familiar from SRD Monsters, Monster Manual or other
+resource.
+69
+A large government building has a crowd protesting outside of it. They could be from a
+peoples who have been mistreated by the ruling elite. But this is a situation that you know
+of and has been going on in the realm for years. Decades, even.
+70 This part of town bears some interesting ancient hieroglyphs etched on various historical
+walls. Some of them are in a language that no-one has been able to decipher.
+71 To their great surprise, one of your PCs sees someone from their old home town. This
+NPC shares news of their hometown, as well as gibing access to some local networks.
+72 You run into an NPC from a previous adventure. Perhaps they were evil and mended their
+ways (or perhaps not), but anyway they have some interesting stories to tell.
+73 You see an artisan sitting outside their workshop, finishing off some incredibly detailed
+work while an apprentice looks on.
+74
+Two expert swordmasters are duelling it out in a public place. The exhibition has drawn a
+crowd, but no mistake - this is a fight to the death, as evidenced by the expressions of
+determination on the faces of the competitors.
+75
+You hear a voice in your head. “Do not be alarmed. I speak to you because I can, and
+because I have seen you before. I do so through magic, but also because I need your
+services. Come to me at the Inn of the Three Wands. It is hard to find, but you shall know
+the way. If you do not wish to, forget I have spoken to you and continue on your way. I
+shall not bother you again. But I promise you, it will be worth your while.”
+131
+76-
+80 Roll a d4. (1-2) Roll on Bane table, p.157 (3-4) level-appropriate hard encounter
+81
+You encounter a circus performing in a large plaza. Acrobats, jesters, storytellers,
+puppeteers, illusionists, all manner of entertainers are here, and many interesting market
+stalls to boot.
+82 A trio of interesting-looking individuals - adventurers perhaps - blinks into view right in
+front of you. “What… where are we?” one of them stammers.
+83
+Two halfling women, one old and one young, are walking past you. “It’s all right mother,”
+the young one says. “It’s only for a little while. The locket should get us a nice purse of
+gold, then we can be back under a roof before nightfall.”
+The older one sobs. “That heartless wretch! Casting us out on the street like stray dogs!
+That locket belonged to my grandmother!”
+84
+The local botanic gardens are a fascinating place. There is a section of the garden where
+the foliage grows exceptionally thick, and some of the plants there are known to be quite
+dangerous to walk near. The supposed reason is that there is a series of tunnels beneath the
+gardens, and a powerful relic is hidden under that spot. No-one has ever been able to find
+the entrance to this alleged dungeon however, and no-one knows if it is a relic that is
+causing this verdant growth, or some other cause.
+85
+You notice guards stationed on the battlements around the city walls. Asking a passing
+citizen why they are so vigilant, the citizen replies, “There were rumours that a nearby
+giant colony was planning an attack… so, naturally, that’s got everyone worried.”
+86
+You pass a building which bears a plaque: “Alyssa Ibold, Scholar of the Realms. Detailed
+knowledge on all countries and settlements within the known world. Consultations 10 sp
+per hour.”
+87
+If one of your PCs worships a god, they see a festival in progress honouring their god. This
+might be weird if their god is a rare one, but in that case, this is a rare sighting of public
+practice of that religion. If it is a major religion, then this is a festival holiday. If this
+doesn’t fit with your character, reroll.
+88 Many guards are stationed on street corners, preventing access to several city blocks.
+“Don’t go in there,” one of them tells you. “Trust me, you don’t want to go in there.”
+89
+You pass a high wall, overrun with creepers. Reaching the gate of this large compound, you
+peer in to see a huge, dilapidated building, probably once glorious. A sign on the gate reads
+Compassionate Asylum for Victims of Mind Magic.
+90
+There is a loud crack, and lightning strikes the ground mere feet away from you, filling the
+air with a strange, burnt smell. Looking up, you see that it is a clear sky, not a cloud. So
+where did that come from? Does someone powerful have designs on you?
+91
+Two friendly old wizards are using mage hand to put on a puppet show for local children.
+The story, however, seems almost too fantastical to be true, and you find yourself drawn in.
+Does this outlandish tale come from the wizards’ own experience?
+92 A gnarled old streetside merchant, who looks like he’s seen some things in his time, is
+selling pieces of monster anatomy and items made from said anatomy.
+93
+Some young apprentice mages are being bullied by some young warriors-in-training. A
+classic jocks vs nerds scenario. As you watch, you see that one of the young mages is
+quietly forming a spell between his hands… You have to see how this turns out!
+132
+94
+A cartload of prisoners rumbles past. You see all sorts of faces in there, male and female,
+human, orc, elf, halfling, but all having the look of professional soldiers.
+“Heading to the prisoner of war camp, three miles out of town,” a passer-by remarks,
+noticing your interest. “Enemy soldiers transported back here after the latest conflict. A
+rebellion which the Empire just stamped out. Why they don’t just put them out of their
+misery is beyond me.”
+95
+Camped out on the steps of city hall, a tribe of nomadic warriors has erected tents,
+including a chief’s tent, has made campfires and are roasting a large dead animal on a spit.
+The town guard are standing around, hesitant to ask these rugged-looking barbarians to
+move on. Why have they travelled here, you wonder, so far from their homelands? Do they
+have some issue with the ruling power?
+96-
+100
+Level-appropriate deadly encounter
+
+You find an assortment of personal possessions in this area. Roll 5 times on the Items table
+(p.163), ignoring natural results such as rubble, leaves etc. Only things that would have
+reasonably been possessions.
+2
+A large number of birds have amassed in an area ahead. Enough to make you wonder why
+they are all there, filling every tree branch, perched on every boulder and available
+surface...
+3 You meet a local hunter setting traps in the area. She has some interesting information to
+relate regarding things she has seen in her travels.
+4
+A malevolent, treacherous energy lurks in this area. The god of trickery is worming his
+way into the minds of all. If you have any sidekicks with you, or if there is more than one
+PC in your party, then have either a sidekick, PC or NPC make a Wisdom saving throw. If
+they fail, they turn on your main character, attacking them with their most powerful attack.
+The effect ceases as soon as this sidekick, PC or NPC either takes damage, or has a spell
+such as remove curse cast on them. You could also play it like this: have your main PC make
+a Wisdom save, and if they fail, they attack the NPC/sidekick.
+5
+An NPC (roll on NPC tables if you desire, or simply decide their characteristics) catches up
+with you and begins asking all sorts of questions. “Where are you coming from? Have you
+any tales to tell? What is your profession?” They come across as very eager and interested.
+You’re not sure if they have any motives… perhaps they have just been without company
+for some time.
+6
+You come across a section of forest that has been destroyed. A druid is in the process of
+casting plant growth on various small plants to re-vegetate the area.
+7 You come across an abandoned cabin, its door hanging off the hinges. Belongings are
+scattered everywhere. There are traces of blood to be found, but no creatures in sight.
+8 You pass a small inn. A wealthy noblewoman, just passing through, has stopped here and is
+buying everyone drinks. It seems she has had great luck in business recently.
+120
+9
+A local wizard is accepting visitors to his tower - a group of apprentices from a local
+alchemy school, who have come to hear a lecture from him on the creation of exotic
+potions.
+10
+A cart passes, being driven by a figure in a hood who does not address you in any way or
+even look up from the reins. In the back are various cages and crates. Two of them are
+covered with thick canvasses, and from within you hear a strange, feral barking and
+yowling. There are creatures of some kind in there, but you don’t know exactly what
+species.
+11
+A group of pilgrims are on a walking journey towards a temple no-one in the party has
+heard of. They have been walking for some months already, picking up people along the
+way.
+12 You see a wanted poster. A notorious criminal is in the area. 10% chance it is someone you
+know (NPC or even someone in the party).
+13
+You come across an ancient fortress that has been inhabited by a group of opportunistic
+humanoids. They are currently practicing combat manoeuvres and preparing for
+something. You are a little way off and they have not seen you (yet) but it appears
+preparations are underway for some kind of combat action.
+14
+Roll a d4. (1) The air crackles with some unknown energy (2) The ground shakes (3) An
+ominous peal of thunder resounds in the sky (4) The sun turns a dark shade of red.
+Ominous portents all point towards some cataclysmic event. You don’t know what it is, but
+in your soul, you feel as if something momentous has just happened or is about to happen.
+15
+Make a DC 16 Wisdom (Perception) check. If unsuccessful, you fail to notice a [d6] (1-2)
+Rope trap (3-4) Net trap (5-6) Pit trap which you blunder into. Moments later, cultists
+emerge from the undergrowth and secure you in ropes. They will try to convert you to
+their beliefs as part of an aggressive recruitment drive! They have already captured a dozen
+or so people in this way. You will be subject to enchantment spells and may actually
+succumb to believing their philosophy, at least for a while.
+16 You see [d4] rangers who look like they are hot on the trial of something or someone.
+They stop, crouching to the ground and examining signs in the dirt.
+17
+The smell of yeast and hops is heavy in the air. You emerge in a smallish open area where a
+neatly-kept building stands beside a babbling brook. Dwarves and halflings are hard at
+work, milling about this building and performing various jobs. A sign on the outside reads
+“Stoutfolk Brewery.” (Or perhaps you’d rather come up with your own name!)
+18
+A shooting pain stabs through your head, nay, your very soul! You feel as though someone
+is trying to control your mind with magic, or targeting you with some kind of psychic
+attack.
+19
+You come across a merchant who is deep in haggling with a nobleman. The nobleman is
+demanding that the merchant sell him some rare item the merchant has in their possession,
+but the merchant is not budging, insisting that it is not for sale. The nobleman is getting
+rather hot under the collar. What is this item that has them so fired up?
+20
+You enter an area where a gallows has been erected. A small crowd has gathered to witness
+the execution of a monk who has been accused of spying on the local authorities for some
+rival nation or faction.
+21 A robbery has been foiled! Highwaymen are lying prone and bound at the side of the road,
+and a group of passengers have disembarked from an ornate-looking carriage and are 
+121
+preparing to dispense some brutal justice to these unfortunate criminals. The carriage
+driver and a slightly-dishevelled looking nobleman, bearing cudgels, have somehow got the
+upper hand.
+22
+Something is approaching. You hear [d6] (1-2) The tread of many feet, as of an army (3-4)
+A heavy tread, as of a large creature (5-6) The patter of many tiny feet, a large group of
+smaller creatures. You will have time to hide and watch them go by with a successful DC
+10 Dexterity (Stealth) check.
+23
+You chance upon a network of caves that look like they could have once been inhabited by a
+tribe of humanoids.
+24
+You come across two carts which have collided badly. One of the carts overturned and
+spilled its contents across the road, and now the owner of the goods is having a tantrum
+and demanding the other cart driver pay for the ruined goods. However, as this is
+happening, their argument is interrupted by a dull roar from something nearby...
+25 A ruined hut is here, with its roof partially caved in.
+26-
+30 Roll a d4. (1-2) Roll on Skill Challenge table (p.139) (3-4) Level-appropriate easy encounter
+31
+A piece of parchment is stuck into a tree with a dagger. The parchment is scrawled with
+messy writing that looks like it was written by a child. It reads: “You are entering the
+republic of the Forsaken Ones. All who wander in here without proper consent are
+trespassing and will be dealt with harshly.”
+32 You come across an ancient cemetery. All the gravestones are neglected bar one which has
+had the weeds cleared from around it and fresh flowers placed before it.
+33 Perched on the edge of a cliff overlooking a small lake, a dilapidated castle, its walls
+crumbling in places, lies ahead.
+34
+A patrol from a nearby town is halted by the road, their cart having gotten stuck in a
+muddy rut. They impolitely demand that you assist them in getting the stuck vehicle free.
+“As a citizen of this realm, it is your civic duty to assist us!”
+35
+A rustle in some bushes ahead and some easily overheard conversation gives away the
+position of some juvenile criminals (from a nearby village/town?) planning to ambush a
+passing cart.
+36
+You come to the top of a gully, thick with vegetation. The sound of drums drifts up to you
+and smoke from numerous fires rises in plumes above the forest canopy below. Every now
+and then you hear chanting, different songs, sometimes a dozen or so voices joined as one.
+37
+Making your way through a patch of dense undergrowth, you find a concealed tomb,
+covered in vines and creepers. Nature has begun reclaiming this forgotten structure, and all
+signs of who previously inhabited it are gone. Ripping away foliage, you find a stone door.
+38
+You are approaching a grove of trees (or a clearing if you are in a forest) and can see a
+group of people assembled there. One figure in robes stands before them, and appears to be
+chanting a litany of some kind. The others repeat the words in a ritualistic fashion.
+39
+Several wizards are here, surrounding a swirling field of energy, attempting to control it.
+They do not notice your presence, too busy are they with this desperate work! This is some
+sort of extra-dimensional energy, trying to enter this world...
+122
+40 You are approaching a large castle or fortress of some kind. It appears a small military
+force is arrayed outside its walls, laying siege to the place.
+41
+A band of clerics and monks is tending to what appears to be a huge throng of displaced
+refugees. Food is being served from huge pots to an endless queue of people. What is their
+story, how were they forced out of their home, and where will they go from here?
+42 High above you see a flying craft, either magical or created using some unknown
+technology, pass overhead. Where is it heading?
+43
+Suddenly a group of humanoids passes you. Halflings or gnomes, intent on something and
+all bearing weapons, are marching purposefully towards some unknown destination. Every
+now and then, one particularly angry one at the head of the party yells “Come on boys,
+time for some payback eh?” To which the others all roar in approval.
+44 You are approached by a group of fey creatures. “Please, we need your help, we’re at our
+wits end! Our village is being attacked!”
+45
+A patch of large fungi is ahead. These strange growths appear to be dripping with a violet
+sap. Looking closer, you see that where this sap has landed on the ground, it has killed
+everything growing there. It appears to be a virulent poison.
+46
+You come across an enchanted glade, an oasis of some kind. Clear blue water falls from
+above into a serene pond with a sound like the tinkling of crystals, and trees bearing sweetsmelling flowers arc out over the water, occasionally dropping delicate blooms onto the
+water’s surface. It is almost too beautiful to be believed...
+47
+A huge boom, like an explosion, comes from somewhere ahead, perhaps a few miles. It is so
+massive that you feel the vibration through the earth. What is it? A meteor? A volcano? A
+powerful spell? The only way to find out is to go and investigate.
+48 A mansion, the estate of some noble who apparently likes to be away from civilisation, lies
+ahead. The gates to the place are guarded.
+49
+The moon is high in the sky (whether day or night) but does not appear as normal. Roll a
+d4. (1) It is a different colour (2) A huge chunk has been blasted off by a comet or
+something similar, which looks epic but is rather worrying (3) It appears closer than
+normal (4) It is in a phase that it shouldn’t be.
+50 A group of soldiers and nobles are supervising a book burning.
+51-
+55 Roll a d4. (1-2) Roll on Boon table (p.152) (3-4) Level-appropriate medium encounter
+56
+You enter a copse of trees. Then, in the midst of this small, dense wood, you come across
+several carved symbols of various gods, some festooned with cobwebs, others kept clean
+and orderly with fresh offerings before them.
+57
+You come across a travelling salesman who deals exclusively in exotic beasts that he keeps
+in cages. His cart is loaded with them! Perhaps you think him cruel, and no doubt there is
+an element of cruelty here. But more worrying is the fact that he has gathered all these
+strange animals together in one place. What would happen if one or more of them were to
+somehow get free?
+58
+“Friend!” a voice addresses you from somewhere. “Want to make some money? I need a
+hand with something. I promise it will be worth your while...” This ragged-looking
+individual has a story to tell. Use random keywords or event meaning tables (or both) to
+determine what work he is proposing.
+123
+59
+A pair of warriors, utterly spent and bloodied, lie panting after a ferocious duel. They
+appear to have been fighting each other all day but are too evenly matched, and neither can
+get the upper hand. Perhaps you can mediate in this situation. But first, you’ll need to
+understand their dispute. Keywords!
+60 A wide river is ahead, and a large band of workers (probably from a nearby settlement) are
+creating a dam wall.
+61 A garishly-coloured bird alights in a nearby tree and regards you with a gaze that is
+distinctly un-birdlike. “Hmm,” it says, looking you up and down. “Intriguing.”
+62
+You arrive at a rope bridge which extends over a narrow but deep canyon. However, you
+are hesitant. The rope looks old and frayed, and you are unsure if it will hold.
+63 A lone figure is slumped against a tree sobbing. “My master is dead,” they sob.
+64
+You reach the top of a low cliff where you are looking down into what appears to be a
+quarry. Several ogres are here, bearing whips and other weapons, and are putting a variety
+of humanoids to work, using them as slaves to mine this area.
+65 You hear a chorus of soft, melodious voices calling to you from nearby, beckoning you to
+come closer. The words are almost formed as a song.
+66
+You meet an adventurer, on their way to explore a famed local ruins. Roll on NPC tables
+(or choose a random, level-appropriate sidekick) and generate a dungeon-based quest using
+either Chapter 7 of TSAT 1 or any of the quest generation tools in this book. If you wish to
+pursue this thread, you must take this NPC with you as they are the one who is on this
+quest. You are accompanying them.
+67 The foliage suddenly becomes lush and thick in this area. It is a little out of place, and
+seems to have sprung up unnaturally, as if the result of some kind of natural magic.
+68 You pass a cave in a low cliff. Someone has fitted a door over the entrance. Has it been
+turned into a dwelling of some sort? Or, perhaps they merely wanted to restrict entrance.
+69
+You pass rocks that have strange markings on them, that look to be from the earliest
+humanoid civilization that populated these lands. A DC 14 History check will enable you to
+determine their basic meaning. Otherwise, who knows what they speak of...
+70
+A storm approaches from the [d4] (1) Northern (2) Southern (3) Eastern (4) Western
+horizon. You fancy you can see the shapes of various creatures within it. Ominous, dark
+grey and laced with lightning, it is approaching fast!
+71 The sound of fighting nearby, the vibration of heavy footfalls felt through the ground - it
+seems like two huge creatures of some description are going at it, fighting to the death!
+72 A disembodied voice speaks to you directly. Roll on event meaning tables or keywords list
+to discover what this supernatural voice says to you.
+73
+An absolutely vile smell reaches your nostrils, coming from the [d4] (1) North (2) South
+(3) East (4) West. It smells like [d4] (1) Rotting corpses (2) Unwashed bodies (3) Spoiled
+Food (4) Excrement.
+74
+As you watch, you see something shimmer into view, as if teleported from somewhere else.
+What is it that you see? [d10]
+(1-2) Interesting natural landscape feature (3-4) NPC (5-6) Structure (7-8) Vehicle (9-10)
+Something else (roll on Keywords table, p.167).
+124
+75 Ancient, ruined fortifications lie ahead, although what is behind them is anyone’s guess.
+76-
+80 Roll a d4. (1-2) Roll on Bane table. p.157 (3-4) level-appropriate hard encounter
+81
+A marked change in elevation is causing the land to slope upwards towards a plateau.
+Several tracks wind their way up towards the summit of this elevation, which should afford
+a good view of the surrounding terrain.
+82 A travelling apothecary is offering strange herbal remedies with a variety of outlandish
+effects. Use keywords to determine the nature of these effects.
+83 The landscape on the side of a gently-sloping hill has been marked with white chalk to
+resemble the outline of a beast. This land carving may have been here for millennia.
+84 Steam is rising from a hot springs ahead. You hear conversation also. (Roll for 1d4+1
+NPCs relaxing here, using the NPC tables in TSAT 1).
+85
+More and more, you notice that the wildlife in this area - birds, deer, insects, small
+creatures of all descriptions - appear to have been magically altered. At first it starts with
+differences in colouration, but then progresses to mismatched body parts and then totally
+hybrid creatures. What is causing this anomaly?
+86
+You reach a low hill - or is it a structure of some kind - which appears to be entirely formed
+of [d4] (1) Glass (2) Steel (3) Gemstone (too hard to mine) (4) Some other non-precious
+mineral.
+87
+These rocks look strange here, out of place, and not fitting with the geology of the area.
+Not only that, there is a curious pattern of spirals covering them which you cannot initially
+see the purpose of.
+88
+A geyser is erupting clouds of poisonous steam into the air. You may want to avoid this
+area. However, you see activity going on there… are there creatures living here, even
+subsisting off these fumes?
+89 A patrol from a nearby town is set up here in a roadside booth. Several carts are pulled up
+and are being inspected for stolen or smuggled goods and contraband.
+90
+You meet a lone NPC on your route. They are a bit confused and keep repeating the same
+phrase over and over again. “It must never be allowed to happen. It must never be allowed
+to happen.” Over and over.
+91
+Overhead, you see some sort of astronomical portent. [d4] (1) Comet (2) Meteor shower
+(3) Eclipse (4) Day or night suddenly appears, no matter what the time. The
+scriptures/prophecies of old spoke of this, and what it signified...
+92
+Ahead, you see what appears to be a large walled garden of some kind. A construct stands
+guard outside it, unmoving. What type of construct is it? [d6] (1) Animated armour (2)
+Stone defender (3) Shield guardian (4) Clay golem (5) Stone golem (6) Iron golem.
+93
+A crow flies overhead, and drops a scroll in your path, then turns and departs in an eastern
+direction. The scroll bears a different message relevant to the quest you are on.
+Or, if you prefer, the scroll reads as follows:
+Adventurer! Heed my call! I am in need of your services. Head east, until you see a great tower, with
+a sigil marking in its door. That is where I reside. I have a proposition for you.
+94 You come across a large rock. The top half of this rock has been carved into the likeness of
+a local renowned deity, but the carving is only half-finished and the bottom half of the rock 
+125
+is still in its natural state. It appears this work was abandoned halfway through. Coming
+closer, you notice that the carver’s tools are still there, scattered on the ground amidst rock
+chippings.
+95
+You encounter an open-air forge in the middle of this wilderness. There is a hut nearby,
+and 1d4 burly blacksmiths are forging weapons, domestic items, building materials,
+smelting iron, copper, many different metals, and generally just doing blacksmith stuff.
+96-
+100
+Level-appropriate deadly encounter
+
+Shortage of commodities such as metals is hampering
+weapons and armour trade. Possible deliberate sabotage.
+PCs take a contract to locate new source of
+commodities.
+2
+Local militia have bought out all stock and many shops
+are empty. They demanded the weapons at a reduced
+price.
+Perhaps there is a war on? Anyway, merchants are
+not doing well.
+3 A mysterious rust has affected many weapons. Many weapons are useless. Is this normal rust, or
+some other cause?
+4 Organized crime collecting levies.
+Merchants are hurting. If someone could sort this
+particular disturbance out for them, they would be
+rewarded.
+5 Merchant unions are causing strife, demanding better
+pay for labour working in smiths’ etc.
+Production of goods has halted until a solution can be
+found.
+6 Adventurer’s Guild favouring one particular weapons
+merchant. Others are suffering.
+Possibly not much to be done, unless the party has
+some affiliation with the weapons merchant.
+7 Adventurers buying everything out, none left for militia. Militia looking down on / harassing adventurers.
+8 Local militia are on the lookout for a band of particularly
+troublesome adventurers.
+Due to some poorly-behaved individuals visiting the
+area recently! Or… is it you, perhaps?
+9
+A wild magic field has sprung up in the area, causing
+havoc in various businesses, and occasionally, out on the
+streets!
+PCs to investigate and quell the disturbance?
+10 Fire in a shop is causing havoc. PCs help to put it out, get possible discount!
+Arcane District Disturbance Table
+d8 Disturbance Possible outcomes / Seeds
+1 A mage meddling with planar spells has unwittingly opened a
+portal into another plane.
+What plane? And perhaps adventurers are
+hired to rescue someone who has gone missing
+within the plane, or to figure out a way to close
+it.
+2 Wild magic field has sprung up.
+All sorts of craziness going on, disrupting
+business. Use keywords, or Wild Magic Surge
+table (DMG) to provide flavour.
+3 Supply issues with rare magic spell components.
+Adventurers hired to travel to distant lands /
+interesting locations to procure strange spell
+components.
+4 A huge arcane explosion in a wizard’s laboratory has set several
+adjacent buildings on fire. Possibly started by an apprentice.
+Party might gain some renown by putting out
+fire and rescuing wizard’s apprentice.
+5 An evil faction practicing secret magic has moved into the
+neighbourhood, so the rumours go. Adventurers hired to gather information.
+6
+People are being driven mad by a particular spell that was cast a
+few weeks ago and has taken on a life of its own. It is some form
+of illusion or enchantment, and it has people losing their minds.
+Party hired to investigate or perhaps procure
+an item that will bring an end to this spell. Or,
+figure out some other solution.
+7 Creatures from below are attracted to the arcane energy in the
+area.
+Adventurers hired to quell these creatures and
+uncover exactly what it is that is attracting
+them.
+8 A prominent local mage has died and a huge ceremony is in
+progress.
+The festivities are very interesting for all and
+may lead to some interesting leads / adventure
+seeds.
+75
+Artisan District Disturbance Table
+d8 Disturbance Possible outcomes / Seeds
+1 Shortage of raw materials due to repeated hijackings of
+supply trains en route to the city. PCs offer services to escort / remove obstacles?
+2 Workers striking. PCs mistaken for “scabs” and mobbed by angry
+workers
+3 Shopkeepers harassed by local thugs. PCs offer to remove thug disturbance.
+4 Major organized crime disturbance. Local thieves’ guild responsible? Adventurers
+hired to investigate.
+5 Different smiths are arguing about water supply and how
+particular businesses are taking more than their fair share.
+Who is going to sort out this dispute? Could erupt
+into violence.
+6 Someone has adopted a controversial hiring policy.
+Competitors are not pleased.
+One group being discriminated against? Or
+perhaps the method of interview is controversial.
+7 Bound elementals causing havoc. Adventurers hired to fix the problem.
+8 Prices are hugely inflated due to scarcity of resources Can new resources be sourced elsewhere?
+Commerce District Disturbance Table
+d8 Disturbance Possible outcomes / Seeds
+1 District in an uproar after a recent heist relieved one bank of
+most of its gold and gems! Adventurers hired to track down the thieves.
+2 Security extra tight after a huge shipment of treasure is
+scheduled to be transported here from a dead noble’s estate.
+Possibility of a heist? Or, adventurers hired as
+security, and for good money too.
+3 A prominent local financier or other moneyed person has been
+murdered. There are a few suspects.
+What was this person doing that caused them to
+become a target?
+4
+Poverty-stricken citizens are protesting outside a large
+merchant bank, saying that the bank has been acting
+unscrupulously.
+It looks like it could kick off into a riot at any
+stage!
+5
+There is an exhibition of extremely valuable art on right now
+at a gallery in this district, although some of the paintings
+are… evocative to say the least.
+Several people have reported having strange
+hallucinations after viewing the exhibition. The
+artist themself has not been seen in a number of
+days.
+6
+Authorities have just discovered a network of tunnels running
+underneath the financial district, although their purpose is
+unknown.
+Someone needs to get to the bottom of this!
+7
+A religious group has stored an ancient artifact in a bank here,
+made of a pure precious mineral. It was recently discovered and
+they are unsure where to house it. Perhaps a new temple must
+be built.
+There are strange goings-on around this idol.
+The bank itself is exhibiting some strange
+phenomena, as are the staff who work there.
+8
+High ranking financial dignitaries are visiting from out of
+town. There are rumours that some of them make their money
+in less than scrupulous ways.
+Adventurers hired for protection? Or
+assassination perhaps?
+76
+Commodities District Disturbance Table
+d8 Disturbance Possible outcomes / Seeds
+1 Workers are striking and demanding better pay. Rioting in streets, general unrest.
+2
+There is a trade issue with a neighbouring realm who supplies a basic
+material (such as iron or timber) to this realm. Ambassadors from that
+nation are in town, but will they ever be able to get along?
+What is the issue at heart here? This
+could form an interesting
+background to your current quest.
+3
+A warrant is out for a particularly brazen thief who is conducting robberies
+against transports to and from the commodities district. This thief has been
+at large for months now.
+A large bounty is being offered for
+their capture and/or death.
+4 A vacant building has become infested with all kinds of vermin. Rumour
+suggests that the basement is connected to some catacombs beneath.
+Adventurers could be hired to go in
+and investigate, possibly venturing
+into the catacombs below.
+5
+An engineer resident in this area is known for his remarkable buildings, all
+of which seem to planar anomalies. Is it the design of these buildings that
+causes this?
+Adventurers to interview this man
+and get to the bottom of why he is
+doing this.
+6
+There is a condemned, boarded-up building that no-one seems to know
+anything about, but that everyone avoids. No-one even knows who owns
+the place.
+Adventurers to investigate city
+records to find out the building’s
+history, and/or explore the building.
+7
+A boatbuilder is restoring an historically significant ship and has
+discovered hidden treasure, including a map which shows directions to an
+island previously thought undiscovered!
+The boatbuilder is looking for an
+adventuring party to follow up on
+these leads.
+8
+Building supplies are short due to a newly-landed noble constructing a
+castle just outside of town. The thing is, no-one has ever met this noble, or
+even seen them about. He seems to be a recluse. However, they are
+monopolising and building materials in town!
+Look into this lord’s background
+perhaps, or find another source
+where timber and stone can be
+sourced from.
+Divine District Disturbance Table
+d8 Disturbance Possible Outcomes/Seeds
+1 Rival religious factions are warring here. Violent clashes are frequent. Mediate between factions.
+2 Aggressive recruitment drive by a particular cult. Violence / Clashes
+3 The worshippers of a particular god are the target of religious hate crimes. Find out what the perpetrators are.
+4 Hardship in a particular part of the city (or area outside the city) has drawn
+many refugees and impoverished people to the area.
+Petition local government to act
+on this situation.
+5 Temples have been vandalised and idols destroyed. Who is behind this?
+6 Supplies for worship and offerings are in scant supply and devotees are
+worried their god or gods will become displeased.
+Where can these supplies be
+sourced from?
+7 Disease is causing hospitals and poor-houses to be overwhelmed What is causing the disease?
+8
+A miracle of some sort is happening in one of the temples. Perhaps an idol is
+crying blood or a planar rift has opened beneath a temple. Adventurers to investigate
+77
+Entertainment / Illicit Industries District Disturbance Table
+d8 Disturbance Possible outcomes / Seeds
+1 A playwright has written a new work that a rival claims steals ideas
+from a tome of black magic.
+Where did this writer find this tome?
+They shouldn’t possess such a book! `
+2
+Visitors to dens of iniquity are waking up groggy, with all their
+belongings gone - and sometimes other things - vital organs perhaps,
+or their sanity...
+Who is trapping these hapless wretches
+and stealing their most precious
+belongings?
+3
+A noted gangster’s family has been kidnapped. The kidnappers are
+demanding a ransom. His foot soldiers don’t have the finesse required
+to deal with this situation.
+Adventurers hired to track down the
+kidnappers and rescue the family.
+4 A local rogue has been training street urchins as pickpockets. By all
+reports their efforts have been very fruitful!
+Either stop this miscreant or maybe join
+forces!
+5 A potent new drug is doing the rounds and is turning addicts into
+zombies… literally!
+Adventurers to look into this. Who is
+behind it?
+6
+A local tavern is hosting a drinking contest of epic proportions. Those
+who can take their ale are encouraged to enter!
+Sounds like the beginnings of a great
+night’s entertainment!
+7
+There is a warrant out for the arrest of a notorious criminal who is
+said to be hiding amongst the taverns, theatres, brothels and drug
+dens in this area.
+A large bounty is at stake! But beware -
+this criminal is said to have many
+accomplices.
+8
+A notable musician and composer has invited the public to come
+witness the premier of his latest piece, which he promises will be
+“unlike anything you’ve seen before!”
+Dare you attend?
+Government District Disturbance Table
+d8 Disturbance Possible outcomes / Seeds
+1 Common folk picketing for better living conditions / change of
+something
+PCs join their cause? Or, PCs are paid by
+governmental officials to move the peasants on?
+2 Election of some sort (major / minor) is causing chaos and
+violent exchanges in the street. PCs caught in the middle.
+3 Visiting dignitary has the place in a tight security lockdown. PCs hired for security / PCs questioned as to
+their presence there.
+4
+Corrupt officials are hampering proper running of government.
+Tampering with judicial / electoral / other administrative
+processes.
+PCs hired to investigate.
+5
+A coup by a powerful cult has ousted / killed the previous
+ruling body and is now holding possession of major
+administrative buildings / Town Hall etc.
+PCs hired to rout out these revolutionaries. But
+who here fights the good fight?
+6
+Sectors of the government are being mismanaged and it
+shows. Corrupt local politicians accepting bribes etc. Corruption is rife, from the town guard up.
+7 Government is preparing for potential war with another nation
+and have no time for any other concerns.
+Military are massing, officers are consulting with
+higher dignitaries - things are heating up. Where
+do you stand in this fight?
+8 A high-ranking politician/noble/public figure has been
+kidnapped. Revolutionaries are suspected.
+Who is in the right here? Party hired to
+investigate.
+78
+Home & Hospitality District Disturbance Table
+d8 Disturbance Possible outcomes / Seeds
+1 A plague of rats is decimating many warehouses, causing grains and
+many other food sources to become spoiled. Where are these vermin coming from?
+2
+A local trap merchant is rushed off his feet making traps for a mage
+who lives somewhere out of town. It is said that this mage is
+constructing a deathtrap dungeon to test worthy champions.
+Sounds intriguing! When will the mage
+announce the contest?
+3 A fishmonger has returned from his most recent catch with disturbing
+tales of monsters terrorizing the harbour.
+What foul denizens of the deep are out
+there?
+4
+People will pay anything for this particular rare ingredient, and a local
+rare edibles specialist will reward anyone who can find the source of
+this delicacy well.
+What is this strange food and where can
+it be found?
+5
+It’s said that this restaurant was once the best in the city, but now
+something has made their dishes taste awful, and the chefs can’t
+discover what it is. Has someone cursed them?
+Adventurers hired to investigate.
+6 A local noble is planning a huge banquet to honour a local retired
+adventurer, and the food businesses are rushed off their feet.
+How hard would it be to get an invite to
+this banquet? You’re sure to pick up
+some interesting information if you
+attend.
+7
+A seller of rare wines and liquors has been robbed, cleaned out of all
+their stock. Amongst their vaults were also some vintages said to
+possess magical properties. The owner seems very perturbed by the
+disappearance of these bottles.
+What is the owner not telling you?
+There’s something about these bottles...
+8
+Strange noises have been coming from beneath the streets here.
+Possibly all the rich food has created a ‘fatberg’ in the sewers? Or
+perhaps it is something even more disgusting than that...
+Adventurers with strong stomachs hired
+to investigate. Hopefully this problem is
+only wafer-thin, as they say.
+Military District Disturbance Table
+d8 Disturbance Possible Outcomes/ Seeds
+1 A drunken soldier tells you that revolution is in the air. The local militia are
+tired of the poor treatment and are planning on staging a coup.
+Adventurers either sit back and
+watch it happen, or alert the
+authorities.
+2 Combat drills are taking place in the streets, putting local vendors on edge.
+What is all the fuss about?
+Is there an invasion coming that
+the locals don’t know about?
+3
+A shortage of steel means that many local weaponsmiths are struggling to
+produce stock. This has made the local militia tetchy and on edge. Tensions are
+high.
+Might be best to move on
+quickly.
+4 The militia has their sights set on a local bandit camp. Anyone looking vaguely
+suspicious is stopped and interrogated without warning.
+Adventurers could be hired to
+go and rout the bandits and
+retrieve stolen booty.
+5
+The guards are nervous, due to a spate of troll/giant/ogre (pick your monster)
+attacks that have happened in the last few months. It seems that with every
+assault, the creatures are becoming more co-ordinated in their efforts.
+Who knows when the next
+attack on the gates of this
+settlement will come?
+6
+The militia are down to a skeleton crew. Several garrisons have left to take care
+of a nearby incursion threatening the town, inadvertently leaving the town
+vulnerable to other threats.
+The remaining guards are
+nervous, and will probably
+welcome any help the
+adventurers can offer.
+7
+The local militia have had numbers bolstered by a visiting army allied with the
+ruler of the city / realm. However, this has meant there are a lot more
+professional soldiers out and about, which is stretching the town’s resources,
+and the tempers of the local townsfolk, to breaking point.
+Anything could kick off!
+8 A tournament of knights and warriors, aiming to test martial ability, is
+currently in progress, attracting all comers.
+The adventurers could try their
+hand in these tests of martial
+prowess.
+79
+Personal Services District Disturbance Table
+d8 Disturbance Possible outcomes / Seeds
+1
+There has been a spate of disappearances in this area. Many people
+suspect the local barber, but regardless, the undertaker doesn’t seem
+too concerned.
+Adventurers hired to investigate.
+2
+A local dealer in pets has just come into possession of the most bizarre
+creature. Word has spread, and crowds have gathered outside the petdealer’s shop, hoping to get a glimpse of the strange creature.
+This merchant might have bitten off a bit
+more than she can chew… or maybe it’s
+the creature that’s going to be doing some
+chewing.
+3 A bounty hunter who has his offices in this area has gone missing. It
+is uncertain what his last job was, but someone is certain to know.
+A bounty for those who can find the
+missing bounty hunter?
+4
+A local doctor cannot explain a spate of strange illnesses that she has
+seen recently. Patients come in with strange markings on their bodies,
+then a matter of days later are speaking absolute gibberish and
+exhibiting extremely violent behaviour.
+Perhaps the good doctor has some
+theories about what is causing this illness.
+5
+An urban mage is said to be trapped in his tower. Something has
+imprisoned him in there. Passers-by say that it is something he
+summoned, or perhaps his arcane patron. Others say that his magic
+trinkets have taken on a life of their own.
+Adventurers hired to investigate.
+6
+Someone has been convicted of a crime they did not commit and is
+sentenced to be executed. A lawyer in this area is appealing for help in
+uncovering the truth.
+This lawyer has a theory about who did it
+and needs the investigators to check it
+out.
+7
+The local undertaker is swamped with recently deceased clients and
+their families. Where are all these corpses coming from? Most of them
+he doesn’t even recognize and they all have one strange trait in
+common...
+Are these people even from this town?
+8
+A local guide is recruiting adventurers to help with an expedition into
+nearby dangerous territory. A noble is convinced that a map he
+inherited leads to treasure, and has hired the guide to help him look
+for it.
+Is the party interested? The reward is
+quite good!
+Residential District Disturbance Table
+d20 Disturbance Possible Outcomes / Seeds
+1 Slum lords hiking rents sky high. Residents are on the verge of
+rioting!
+PCs take the disturbance to the local slum
+lord, who is potentially connected with
+organized crime.
+2 Giant rat (or other nastier) infestation!
+PCs investigate. Probably originating from
+the sewers or catacombs. What else is down
+there?
+3 A particular group (religious/cult?) has moved into the area.
+Certain narrow-minded residents are not happy.
+PCs move in to mediate? Surely we can all
+get along.
+4 Brothel setting up shop. Certain narrow-minded residents are
+not happy.
+Frequent spats between residents and brothel
+employees / managers. Also organized crime
+may be involved, strong-arming residents.
+5 Tavern moving into the area. The resident’s association is
+worried about this attracting “the wrong sort of people”.
+Residents picketing outside tavern,
+sometimes violence erupts.
+6
+Town planning has determined that a new street or road needs
+to run right through this area. They are compulsorily acquiring
+houses.
+Residents in an uproar. Perhaps PCs can take
+this to city hall, acting as representatives?
+Will definitely increase renown in the
+settlement.
+7 Burglaries have been happening in various houses around here. PCs apprehend the villain? Might take some
+staking out.
+8 Lively block party getting a little too lively. The town guard is trying to disband it but it
+looks like a nasty confrontation is imminent.
+9 A fire has ravaged / is ravaging several houses. Does anyone need saving?
+80
+10 Major graffiti / vandalism disturbance. Who is perpetrating this, and what does the
+graffiti say?
+11 Squatters in abandoned houses. And they may not be humanoid! Adventurers hired to get to the bottom of
+this situation.
+12
+A sorcerer moved into the area recently, and the smells and
+sounds coming from his house have been alarming residents. He
+hasn’t been seen for several days.
+What is he up to in there?
+13
+A team of archaeologists has found something in the middle of
+someone’s courtyard and are now digging large holes, to the
+dismay of residents. They have the permission of the local ruler.
+What have they found?
+Some sort of ancient tomb, or perhaps
+something that should perhaps be left buried?
+14 Natural gas, under the streets, is causing explosions. PCs investigate cause? Does an explosion
+happen as they are passing through?
+15 Bodies found in the wall of a particular house, or buried in the
+garden. Historical, or recent? Investigators looking into it. This could be the result of an ancient crime.
+16 A local group of bards is practicing their songs till all hours,
+annoying local residents
+OK guys, we know you love to jam, but this is
+getting ridiculous!
+17 Gangs of armed thugs, roaming the streets at night, terrorising
+local residents. These thugs need to be taught a lesson.
+18
+Local authorities believe that a large building housing many
+tenants in fact connects to a system of tunnels below and is being
+used to ferry criminals and possibly other more dangerous
+individuals to and from the city.
+Adventurers hired to investigate.
+19 Bizarre smells are coming from a local restaurant. What are they cooking in there? Smells
+nasty!
+20 A wealthy noble has just purchased the entire district from its
+slum-lord owners and is the process of evicting everyone. Who does this noble think she is?
+Scribes District Disturbance Table
+d8 Disturbance Possible outcomes / Seeds
+1 Shortage of ink is making doing business difficult!
+Adventurers contracted to
+go and search for giant
+squid.
+2 A map vendor has come into possession of a rare map. He can’t really understand it
+as the markings are rather strange.
+Adventurers hired to look
+into it.
+3
+A scribe is offering a reward of 500 gold pieces to the brave soul who can pluck a
+feather from a living roc. They are said to live in a nearby mountain range, and he
+needs a roc feather to serve as a quill in drafting a magical contract.
+Adventurers hired to quest
+into the mountains and
+retrieve a roc feather.
+4
+A local bookseller has come into possession of a disturbing occult tome. Many
+believe it to prophesize a coming doom, and this merchant has cultists protesting
+outside the bookshop. The book is being kept under lock and key, but it’s obvious
+that it is attracting a lot of attention.
+Can you aid this poor
+merchant? They appear to be
+in way over their head.
+5 Carts carrying wood to the town/city for conversion into paper have been waylaid
+by an army of angry treants. As a result, there is a paper shortage.
+Adventurers asked to
+mediate.
+6
+There is a huge dispute between government officials, the militia and local
+townsfolk. Due to military activity, the armed forces have said they need all
+available paper for the purpose of sending dispatches between encampments. This
+has everyone else who uses paper (government officials, mages, scribes etc) up in
+arms. A black market in paper has emerged.
+Adventurers to look into
+securing another source of
+paper?
+7
+A fanatic local religion is advocating the burning of what they call “profane texts.”
+Certain booksellers are being targeted, and there are mass book burnings taking
+place. A lot of valuable knowledge is being lost, and tensions are high.
+What can the adventurers do
+to quell this fanaticism and
+stop this madness?
+8 A fire has broken out and threatens to consume several well-loved bookstores.
+If the party can help rescue
+these stores, then they may
+be rewarded with a valuable
+tome or two.
+81
+Smith’s District Disturbance Table
+d8 Disturbance Possible Outcomes
+1 Shortage of commodities such as metals is halting local industry and causing
+strife amongst workers and businesses.
+PCs take on contract to locate
+new source of commodities.
+2 Oversupply / harsh taxes / disturbances with military funding and local
+economy have caused quite a few smiths to close. Adventurers asked to mediate.
+3 Organized crime is trying to muscle their way into the area, offering
+“protection” and trying to control various blacksmithing businesses.
+Sounds like some thugs need a
+beatdown! Or at least a stern
+talking-to.
+4
+The creation of a large dwarven artifact is causing one forge to emit a huge
+amount of heat from its forges. This is causing inconvenience to other
+businesses, but the owners of this forge are never visible, and no-one has been
+able to even get inside this smithing operation to complain.
+Adventurers asked to
+investigate.
+5 Workers are being mistreated in several smiths and smelting factories. You
+hear rumours that there might be some worker exploitation going on.
+Some particularly vulnerable
+people are being mistreated.
+What are you going to do about
+it?
+6
+One industry (weaponry? transport) is taking all the metal products and other
+industries are suffering and unable to operate business. This is causing anger
+which could bubble over into street violence.
+This conflict is impinging on
+peaceful life within this
+settlement!
+7
+Fire has broken out, started from one of the forges. If not controlled, there
+could be huge damage, but what is it specifically that was being forged at the
+time?
+Adventurers to the rescue!
+8 A bound elemental controlling a forge has escaped and is causing havoc.
+You may encounter this
+elemental on the street, or you
+may hear about i

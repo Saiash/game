@@ -43,6 +43,7 @@ const paramsForDataEntitites: { [index: string]: { [index: string]: string } } =
     perks: {
       name: 'string',
       description: 'text',
+      points: 'number',
       tags: 'tags',
     },
   };
@@ -181,7 +182,19 @@ export function Editor() {
               ></AttrInput>
             );
           })}
-          <div style={{ paddingTop: 10, paddingBottom: 20 }}>
+          <div style={{ height: 300 }} />
+          <div
+            style={{
+              paddingTop: 10,
+              paddingBottom: 20,
+              position: 'fixed',
+              bottom: 0,
+              background: '#ffffff',
+              width: '100%',
+              paddingLeft: 100,
+              zIndex: 10000,
+            }}
+          >
             <button
               onClick={() => {
                 saveDate();

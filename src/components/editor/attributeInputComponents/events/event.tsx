@@ -1,5 +1,4 @@
 import _ from 'lodash';
-import { Paper } from '@mui/material';
 import { tagInputsParams } from '../tags';
 import {
   EFFECTS_TAG_TYPES_ENUM,
@@ -10,9 +9,13 @@ import { SelectInput } from '../select';
 import { MultiSelectInput } from '../MultiSelect';
 import { Remove, AddLink } from '@mui/icons-material';
 import IconButton from '@mui/material/Button';
-import { EventAction } from '../../../../core/managers/tag/models/tag';
+import {
+  EventAction,
+  TagInput,
+} from '../../../../core/managers/tag/models/tag';
 import { TextAreaInput } from '../textArea';
 import { ConditionsContainer } from '../conditions/conditionsContainer';
+import { TagInput as TagInputComponent } from '../tags/tag';
 
 type props = tagInputsParams & {
   event: EventAction;
@@ -23,8 +26,11 @@ export const EventInput = ({ params }: { params: props }) => {
   const { path, event, onDataChanged, data, removeEvent } = params;
 
   const onTypeChange = (type: string, value: any) => {
-    const currentValue = event;
-    onDataChanged(path, { type: value, effect: [] });
+    let effect: any = [];
+    if (value === 'addTag') {
+      effect = { type: 'mod' };
+    }
+    onDataChanged(path, { type: value, effect });
   };
 
   const onValueChange = (type: string, value: any) => {
@@ -48,12 +54,11 @@ export const EventInput = ({ params }: { params: props }) => {
             onTypeChange(type, value)
           }
         />
-        {event.type !== 'sendMessage' && (
+        {['sendMessage', 'addTag'].every(type => type !== event.type) && (
           <MultiSelectInput
             name={event.type}
             list={getEventsList(event.type, data)}
             value={event.effect as string[]}
-            type={event.type}
             onDataChanged={(type: string, value: any) =>
               onValueChange(type, value)
             }
@@ -67,6 +72,21 @@ export const EventInput = ({ params }: { params: props }) => {
               onValueChange(type, value)
             }
           ></TextAreaInput>
+        )}
+        {event.type === 'addTag' && (
+          <TagInputComponent
+            key={`addTag_tag_`}
+            props={{
+              removeTag: () => {},
+              path: path,
+              data,
+              onDataChanged: (path: string[], value: any) => {
+                onValueChange('path', value);
+              },
+              handleAddNewTag: () => {},
+              tag: event.effect as TagInput,
+            }}
+          ></TagInputComponent>
         )}
         <IconButton
           onClick={() => removeEvent()}

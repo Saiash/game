@@ -1,54 +1,87 @@
-import { CTX } from '../../../../types';
-import { TagSystem } from '../../../managers/tag';
+import { ModificatorManager } from '../../../../core/managers/ModificatorManager';
+import { AttributeManager } from '../attributes';
+import { Attribute } from '../attributes/attribute';
+import { Perk, rawPerkModel } from './perk';
+import { Character } from '../index';
 
-let perkId = 0;
+import { ActionPayload } from '../../../engine/actionConnector';
 
-export type rawPerkModel = {
-  name: string;
-  description: string;
-  tags: string;
+import type { CTX } from '../../../../types/';
+import { ACTION_PAYLOAD_TYPE } from '../../../engine/constants';
+
+export type CheckResults = {
+  rand?: number;
+  value?: number;
+  result: boolean;
+  difficulty?: number;
 };
 
-export class Perk {
-  id: number;
-  tags: TagSystem;
-  name: string;
-  description?: string;
+export type ResolveResult = {
+  executed: boolean;
+  payload?: ActionPayload;
+  checkResult?: CheckResults;
+  message?: string;
+};
+
+export class PerkManager {
+  collection: { [index: string]: Perk };
+  character: Character;
   ctx: CTX;
 
-  constructor({ ctx, data }: { ctx: CTX; data: rawPerkModel }) {
-    this.id = perkId++;
+  constructor({
+    ctx,
+    character,
+    input,
+  }: {
+    ctx: CTX;
+    character: Character;
+    input?: any;
+  }) {
     this.ctx = ctx;
-    this.name = data.name;
-    this.description = data.description;
-    this.tags = new TagSystem({
-      ctx,
-      input: { props: data.tags },
-      owner: this,
+    this.collection = {};
+    this.character = character;
+  }
+
+  async add({
+    dataloaders,
+    name,
+  }: {
+    dataloaders: CTX['dataloaders'];
+    name: string;
+  }): Promise<boolean> {
+    if (this.collection[name]) return false;
+    const perkData = (await dataloaders.getPerk(name)) as rawPerkModel;
+
+    const perk = new Perk({
+      ctx: this.ctx,
+      data: { ...perkData },
+    });
+    this.collection[name] = perk;
+    return true;
+  }
+
+  getAsArray(): [string, Perk][] {
+    return Object.entries(this.collection).map(i => {
+      return [i[0], i[1]];
     });
   }
 
-  hasStatus(value: string): boolean {
-    return false;
+  getByCode(code: string) {
+    return this.collection[code];
   }
 
-  addStatus(value: string): boolean {
-    return false;
-  }
+  async resolve(input: ActionPayload): Promise<boolean> {
+    let result: ResolveResult = { executed: false };
+    if (input.payload.type !== ACTION_PAYLOAD_TYPE.USE_PERK) return false;
+    const perk = this.getByCode(input.payload.perk);
+    result = await perk.resolve(input);
 
-  removeStatus(value: string): boolean {
-    return false;
-  }
-
-  isLocked(): boolean {
-    return this.hasStatus('locked');
-  }
-
-  getName() {
-    return this.name;
-  }
-
-  getId() {
-    return this.id;
+    if (result.message) {
+      this.ctx.gameData.log.addEvent({
+        source: result.payload?.sourceActor,
+        text: result.message,
+      });
+    }
+    return result.executed || result.checkResult?.result || false;
   }
 }

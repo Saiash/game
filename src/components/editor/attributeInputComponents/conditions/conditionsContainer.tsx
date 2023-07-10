@@ -55,12 +55,15 @@ export const ConditionsContainer = ({ params }: { params: props }) => {
 };
 
 const Buttons = ({ params }: { params: props }) => {
-  const { path, conditions, onDataChanged } = params;
+  const { path, conditions, onDataChanged, removeContainer } = params;
   const addNewConditions = () => {
     onDataChanged(path, [...conditions, { and: [] }]);
   };
 
-  const removeConditions = () => {};
+  const removeConditions = () => {
+    if (!removeContainer) return;
+    removeContainer();
+  };
 
   return (
     <>

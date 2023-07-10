@@ -1,6 +1,7 @@
 import getCharacter from './getCharacter';
 import getItem from './getItem';
 import getSkill from './getSkill';
+import getPerk from './getPerk';
 import getLore from './getLore';
 import getObject from './getObject';
 import getScene from './getScene';
@@ -13,6 +14,7 @@ export default {
   getCharacter,
   getItem,
   getSkill,
+  getPerk,
   getLore,
   getEvent,
   saveEditorData,

@@ -5,7 +5,7 @@ import { Tag, TagInput } from './models/tag';
 import { Character } from '../../models/characters';
 import { ObjectModel } from '../../models/locations/object';
 import { Location } from '../../models/locations';
-import { Perk } from '../../models/characters/perks';
+import { Perk } from '../../models/characters/perks/perk';
 
 export class TagSystem {
   input: { props: any; target?: Item } | undefined;
@@ -33,6 +33,7 @@ export class TagSystem {
       mod: {},
       perk: {},
       flaw: {},
+      usable: {},
     };
     this.nonActive = {
       action: {},
@@ -40,6 +41,7 @@ export class TagSystem {
       mod: {},
       perk: {},
       flaw: {},
+      usable: {},
     };
     this.all = {};
     this.input = input;
@@ -143,6 +145,20 @@ export class TagSystem {
     return result;
   }
 
+  getActiveUsablePerks({ actor }: { actor?: Character }): {
+    [index: string]: Tag;
+  } {
+    if (!actor) return this.active.usable;
+    const result: { [index: string]: Tag } = {};
+    Object.keys(this.active.usable).forEach(tagId => {
+      const tag = this.active.usable[tagId];
+      if (tag.checkConditions({ actor })) {
+        result[tagId] = this.active.usable[tagId];
+      }
+    });
+    return result;
+  }
+
   getActiveActions({ actor }: { actor?: Character }): { [index: string]: Tag } {
     if (!actor) return this.active.action;
     const result: { [index: string]: Tag } = {};
@@ -156,30 +172,36 @@ export class TagSystem {
   }
 
   addMod(tag: Tag) {
-    const target = tag.getTarget();
+    const target = tag.getModTarget();
+    const type = tag.getModType();
     const owner = this.pairedToSystem?.owner || this.owner;
     if (!(owner instanceof Character)) return;
-    if (target.type === 'attribute') {
-      owner.attributeManager
-        .getByCode(target.name)
-        .props.modificatorManager.addMod(tag);
-    } else if (target.type === 'skill') {
-      owner.skillManager.getByCode(target.name).modificatorManager.addMod(tag);
+    if (type === 'attribute') {
+      let attr: any = owner.attributeManager.getByCode(target);
+      if (!attr) {
+        attr = owner.secondaryAttributes.getByCode(target);
+      }
+      attr.modificatorManager.addMod(tag);
+    } else if (type === 'skill') {
+      owner.skillManager.getByCode(target)?.modificatorManager.addMod(tag);
     }
   }
 
   removeMod(tag: Tag) {
-    const target = tag.getTarget();
+    const target = tag.getTarget<{
+      type: string;
+      name: string;
+    }>();
     const owner = this.pairedToSystem?.owner || this.owner;
     if (!(owner instanceof Character)) return;
     if (target.type === 'attribute') {
       owner.attributeManager
         .getByCode(target.name)
-        .props.modificatorManager.removeMod(tag);
+        ?.props.modificatorManager.removeMod(tag);
     } else if (target.type === 'skill') {
       owner.skillManager
         .getByCode(target.name)
-        .modificatorManager.removeMod(tag);
+        ?.modificatorManager.removeMod(tag);
     }
   }
 }

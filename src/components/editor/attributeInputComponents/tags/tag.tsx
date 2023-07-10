@@ -11,12 +11,14 @@ import {
   EVENTS_ENUM,
   GENERAL_TAG_TYPES_ENUM,
   MOD_TYPES_ENUM,
+  TARGETS_ENUM,
 } from '../constants';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import { NumberInput } from '../number';
 import { Remove } from '@mui/icons-material';
 import IconButton from '@mui/material/Button';
+import { MultiSelectInput } from '../MultiSelect';
 
 export type props = printTagsParams & {
   tag: TagInputType;
@@ -25,8 +27,9 @@ export type props = printTagsParams & {
 
 const tagCoreFields = {
   action: ['name', 'value'],
-  mod: ['modType', 'modTarget', 'value'],
+  mod: ['modType', 'modTarget', 'length', 'value'],
   skill: ['name', 'value'],
+  usable: ['target'],
 };
 
 const additionalContainers = {
@@ -47,7 +50,9 @@ export const TagInput = ({ props }: { props: props }) => {
       _tag[_field] = tag[_field];
     });
     if (value === 'mod') {
-      _tag = { ..._tag, modType: '', modTarget: '', value: 0 };
+      _tag = { ..._tag, modType: '', modTarget: '', length: 0, value: 0 };
+    } else if (value === 'usable') {
+      _tag = { ..._tag, target: ['self'] };
     } else {
       _tag = { ..._tag, name: '', value: 0 };
     }
@@ -94,6 +99,7 @@ export const TagInput = ({ props }: { props: props }) => {
           />
         </div>
         {Object.keys(additionalContainers).map((key, innderIndex) => {
+          //const _key = key as keyof typeof additionalContainers;
           const _key = key as 'conditions';
           if (!tag[_key]) return;
           return (
@@ -102,9 +108,14 @@ export const TagInput = ({ props }: { props: props }) => {
                 params: {
                   ...props,
                   ...(['conditions', 'outerConditions'].some(k => k === _key)
-                    ? { conditions: tag[_key] }
-                    : { events: tag[_key], conditions: [] }),
+                    ? { conditions: tag[_key] || [] }
+                    : { events: tag[_key] || [], conditions: [] }),
                   path: [...props.path, _key],
+                  removeContainer: () => {
+                    const _tag = { ...tag };
+                    delete _tag[_key];
+                    onDataChanged(props.path, _tag);
+                  },
                   name: _key,
                 },
               })}
@@ -172,7 +183,7 @@ const PrintCoreFields = ({
   path: string[];
   data: any;
 }) => {
-  const tagType = tag['type'] as 'action';
+  const tagType = tag['type'] as keyof typeof tagCoreFields;
   const keyFields = tagCoreFields[tagType];
 
   const handleInputChange = (key: string, value: string | number) => {
@@ -183,11 +194,11 @@ const PrintCoreFields = ({
     <div key={`tag_input_${path.join('_')}`}>
       {keyFields.map((key, keyIndex) => {
         const value = tag[key as 'value'];
-        if (key === 'value') {
+        if (key === 'value' || key === 'length') {
           return (
             <div key={`tag_input_${path.join('_')}_${keyIndex}`}>
               <NumberInput
-                value={value}
+                value={parseInt(value)}
                 name={key}
                 onDataChanged={(type, value) => handleInputChange(key, value)}
               />
@@ -195,6 +206,18 @@ const PrintCoreFields = ({
           );
         }
         const list = getListByType(key, tag, data);
+        if (key === 'target') {
+          return (
+            <div key={`tag_input_${path.join('_')}_${keyIndex}`}>
+              <MultiSelectInput
+                onDataChanged={(type, value) => handleInputChange(key, value)}
+                value={[...(value as unknown as string)]}
+                name={key}
+                list={list}
+              />
+            </div>
+          );
+        }
         return (
           <div key={`tag_input_${path.join('_')}_${keyIndex}`}>
             <SelectInput
@@ -224,6 +247,9 @@ const getListByType = (
   if (key === 'name') {
     if (tag['type'] === 'skill') return Object.keys(data['skills']);
     if (tag['type'] === 'action') return ACTIONS_ENUM;
+  }
+  if (key === 'target') {
+    return TARGETS_ENUM;
   }
   return [];
 };

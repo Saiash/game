@@ -1,11 +1,8 @@
 import { Condition, conditionValue } from '..';
 import { TagSystem } from '../../..';
 import { CTX } from '../../../../../../types';
-import { Character } from '../../../../../models/characters';
-import { Item } from '../../../../../models/characters/inventory/item';
-import { Location } from '../../../../../models/locations';
-import { ObjectModel } from '../../../../../models/locations/object';
 import { testLastAction } from './lastAction';
+import { testGender } from './gender';
 import { testLore } from './lore';
 import { testStatus } from './status';
 
@@ -14,6 +11,7 @@ export type testConditionData = {
   conditionType: string;
   conditionValue: conditionValue;
   actor: TagSystem['owner'];
+  owner: TagSystem['owner'];
   ctx: CTX;
 };
 
@@ -25,4 +23,5 @@ export const conditionTestsVariants: {
   status: testStatus,
   notStatus: testStatus,
   lastAction: testLastAction,
+  gender: testGender,
 };

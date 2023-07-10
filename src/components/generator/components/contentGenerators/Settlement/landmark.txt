@@ -1,0 +1,203 @@
+Urban Landmark Table
+d100 LANDMARK
+1-4 Market Square
+5-8 Town square / place of local gatherings
+9-12 Statue
+13-16 Other monument such as a sculpture, children’s park,
+17-20 Major religious temple / Cathedral
+21-24 City Hall / Major administrative building
+25-28 Fountain
+29-32
+Important / Historical building. Choose a Important / Historical building. Choose a building building from this list, but add the characteristic from this list, but add the characteristic that it is ancient that it is ancient
+and historically significant. What event happened here? Use keywords.
+33-36 Significant bridge
+37-40 Historical great wall
+41-44 Historical ruins / Ancient temple
+45-48 Unknown relic or Unknown relic or monument from ancient civilization monument from ancient civilization
+49-52
+Huge natural monument. Could be a sacred hill that has been has been left intact in the middle of the city. A g left intact in the middle of the city. A giant
+tree. A sinkhole. Perhaps the city has a massive lake in the centre of it. Let keywords or oracle ques e in the centre of it. Let keywords or oracle questions
+decide.
+53-56 Grand palace / Opulent house / Castle
+57-60 Botanic gardens / Sculpted gardens
+61-64 Coliseum
+65-68 Ancient / Famous House
+69-72 Beautiful man-made canal
+73-76 Monument of religious prophet / Deity
+77-80 Place of religious pilgrimage / touchstone / blessed relic or pl d relic or place. Massively important historical ace. Massively important historical
+monument or site.
+81-84 Trade Academy / University / Library. You choose. Or roll a d6.
+85-88 Mausoleum
+89-92 Prison
+93-96 Graveyard / Tomb
+97-
+100
+Observatory
+
+Market Square Table
+d8 MARKET SQUARE DESCRIPTION NOTES
+1
+Standard peasants’ market, with an added feature: this area is
+inhabited by a travelling circus / troupe of actors who are
+entertaining the locals with a performance
+30% of a Random Urban encounter (Chapter 3-2 of
+this book or Chapter 5 of TSAT1). 50% chance of
+an urban landmark (roll on Urban Landmark  table).
+2
+Market is set up and in Market is set up and in full swing, this is a mixtu full swing, this is a mixture of
+artisanal wares and basic goods for peasants
+35% of a Random Urban encounter (Chapter 3-2 of
+this book or Chapter 5 of TSAT1). 50% chance of
+an urban landmark (roll on Urban Landmark  table).
+3
+Farmer’s market. Lots of fresh produce, possibly a good place
+to pick up rumours about activity in the surrounding
+countryside.
+Generate 1d4 rumours (see Chapter 10, Chapter 3
+of TSAT1). 50% chance of an urban landmark (roll
+on Urban Landmark  table).
+4
+Artisanal market - high quality goods at quite respectable
+prices.
+10% of a Random Urban encounter (Chapter 3-2 of
+this book or Chapter 5 of TSAT1). 50% chance of
+an urban landmark (roll on Urban Landmark  table).
+5
+A market has been set up A market has been set up here, but local businesses here, but local businesses are not are not
+happy. This area is not sanctioned as a market space and they
+are taking away customers.
+40% of a Random Urban encounter (Chapter 3-2 of
+this book or Chapter 5 of TSAT1). 50% chance of
+an urban landmark (roll on Urban Landmark  table).
+6
+This market is shabby. The goods are second rate and the
+whole place is messy, littered with garbage, with animals roaming free. It’s a wonder it hasn’t been roaming free. It’s a wonder it hasn’t been shut dow shut down.
+40% of a Random Urban encounter (Chapter 3-2 of
+this book or Chapter 5 of TSAT1). 50% chance of an urban landmark (roll on Urban Landmark  table).
+7
+This area is very busy - This area is very busy - the press of people is int the press of people is intense in this ense in this
+market. Keep a close eye on y market. Keep a close eye on your belongings here! our belongings here!
+50% of a Random Urban encounter (Chapter 3-2 of
+this book or Chapter 5 of TSAT1). 50% chance of
+an urban landmark (roll on Urban Landmark  table).
+8
+This market is in a state of (d4) 1-2: This market is in a state of (d4) 1-2: Just setting Just setting up, 3-4: Just up, 3-4: Just
+packing down.
+30% of a Random Urban encounter (Chapter 3-2 of
+this book or Chapter 5 of TSAT1). 50% chance of
+an urban landmark (roll on Urban Landmark  table).
+Public Square Table
+d12 PUBLIC SQUARE DESCRIPTION NOTES
+1
+An expansive, neatly-paved square serves An expansive, neatly-paved square serves as the ent as the entrance point to a rance point to a
+grand building (possibly a temple?) Several other impressive buildings
+surround this area, and there are notable other features present.
+Roll twice on Urban Landmark table.
+2
+This green square is a peaceful oasis, This green square is a peaceful oasis, where trees where trees provide shade and provide shade and
+shelter from the elements. Citizens laze about on the grass, conversing,
+eating, playing music or reading tomes.
+Roll once on Urban Landmark table.
+3
+This windswept square is rather bleak, and p This windswept square is rather bleak, and people h eople hurry to and fro with urry to and fro with
+heads down. A garrison of soldiers is practicing forming ranks over one
+side, and several brutal-looking buildings surround this public square.
+Roll once on Urban Landmark table.
+4
+This busy, chaotic square seems to be a point of departure and arrival for
+the town. Many carriages are arrayed, all displaying different different
+destinations across the realm on hand-painted signs. Various deals are
+being struck with farmers, miners and other new arrivals to the ivals to the city.
+Roll once on Street Event table.
+5
+This square serves as a large courtyard for a royal or administrative
+building of some kind. There is a large building of some kind. There is a large podium set podium set up with chairs up with chairs
+arrayed. Is there a festival or something similar g perhaps? oing on right now
+Roll once on Street Event table, once
+on Urban Landmark table.
+86
+6
+This square is stepped, as in there ar This square is stepped, as in there are different l e different levels, and beautiful water evels, and beautiful water
+features decorate each area. The engineering of these is i se is interesting. nteresting.
+There are many other features here too. It almost forms a kind of outdoor
+art exhibition.
+Roll once on Urban Landmark table.
+7
+This old square is in disrepair. Several This old square is in disrepair. Several ruined bui ruined buildings stand around its ldings stand around its
+edge, and the square itself has many p edge, and the square itself has many places where t laces where the rubble is crumbling he rubble is crumbling
+What’s lurking in those ruined
+buildings? Some of them might even
+be condemned.
+ 
+and potholes have appeared. Perhaps this was the scene of a ene of a disaster of disaster of
+some kind.
+8
+There is a street that runs around the outside of this square, b his square, but the
+middle is a garden/common where creatures roam. It is [d4] (1-2)
+Overgrown (3-4) Neatly kept.
+What’s lurking in that garden?
+9
+This large square features a sunken This large square features a sunken amphitheatre at amphitheatre at its centre where its centre where
+dramas are performed, night and day.
+What play is currently being
+performed? Some local legend, or
+perhaps a mythological tale of gods
+and fearsome beasts!
+10
+This large grassy square has a sizable pond This large grassy square has a sizable pond at its centre. People throw centre. People throw
+coins in and make wishes. Some say that it’s quite deep and opens deep and opens to a
+system of catacombs through a hidden cave.
+Roll once on Urban Landmark table.
+11
+A large, vast square with a temple, government buildings, and numerous and numerous
+prominent merchants. Adjust size according to settlement. If this is a
+metropolis, it could be massive, whereas if it’s a town it could measure
+four square blocks.
+Roll four times on Urban Landmark
+Table. For the businesses around the
+edge of this square, roll twice for each
+result and choose your preference.
+12
+A major, historically and culturally significant memorial / morial / structure / structure /
+landmark.
+Roll on Urban Landmark Table, but
+when generating results for this site
+keep in mind that it is a place keep in mind that it is a place of huge of huge
+cultural importance. Perhaps use
+keywords and oracle rolls to
+determine the exact nature.
+Alleyway Table
+d8 ALLEYWAY DESCRIPTION NOTES
+1 A back entrance to a den of il A back entrance to a den of illicit activity. licit activity.
+Roll on the Entertainment / Illicit industries table to find out
+the nature of this the nature of this establishment.10% chance of a co establishment.10% chance of a combat
+encounter with humanoids
+2
+This alleyway is a haven This alleyway is a haven for thieves, for thieves,
+pickpockets and assassins. It’s very likely
+there is a thieves’ guild nearby.
+30% chance of being pickpocketed, 20% chance of a random
+encounter with humanoids.
+3
+This is the back of a business se This is the back of a business selling food or lling food or
+meat, or a restaurant.
+You might be able to scavenge some food if you’re hungry.
+4 Adjacent to residences. Reasonably well-kept. You see laundry strung out between
+porches and other domestic scenes.
+5 Adjacent to a tavern Stumbling drunks, the occasional fight, people sleeping in the
+shadows.
+6 Dilapidated, dark and wet.
+Is something sinister going on down here? Something hiding
+that’s escaped from the sewers? 10% chance of a combat
+encounter with a monstrosity or aberration.
+87
+7
+Well-paved and maintained, a simple
+throughway between two streets.
+Possibly leading to a Commerce, Divine, Government or
+Scribes District.
+8
+A beautiful alleyway, architecturally
+constructed.
+Possibly with a notable feature such as a statue, fountain, shrine
+etc.

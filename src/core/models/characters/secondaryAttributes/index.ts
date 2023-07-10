@@ -3,15 +3,17 @@ import { CTX } from '../../../../types';
 import { Weight } from './models/weight';
 import { Damage } from './models/damage';
 import { Dodge } from './models/dodge';
+import { Reaction } from './models/reaction';
 import { Size } from './models/size';
 
-export type SecondaryAttributesList = Weight | Damage | Dodge;
+export type SecondaryAttributesList = Weight | Damage | Dodge | Size | Reaction;
 
 export const ATTRS_LIST = [
   { code: 'weight', model: Weight },
   { code: 'dmg', model: Damage },
   { code: 'dodge', model: Dodge },
   { code: 'size', model: Size },
+  { code: 'reaction', model: Reaction },
 ];
 
 export class SecondaryAttributes {
@@ -29,7 +31,7 @@ export class SecondaryAttributes {
     });
   }
 
-  getByCode(code: string): SecondaryAttributesList {
+  getByCode(code: string): SecondaryAttributesList | undefined {
     return this.collection[code];
   }
 }

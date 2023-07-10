@@ -1,5 +1,4 @@
 import { Character } from '../../models/characters';
-import { Item } from '../../models/characters/inventory/item';
 
 import type { CTX } from '../../../types';
 import { ActionConnector } from '../../engine/actionConnector';
@@ -9,9 +8,10 @@ import { Location } from '../../models/locations';
 import { ObjectModel } from '../../models/locations/object';
 import { TimeManager } from './timeManager';
 import { SceneEngine } from '../../engine/SceneEngine';
+import { initGame } from '../../script/initGame';
 
 export class GameData {
-  playerCharacter: Character;
+  private playerCharacter: Character | null;
   playerTarget: Character | ObjectModel | null;
   actionConnector: ActionConnector;
   actionResolver: ActionResolver;
@@ -40,15 +40,7 @@ export class GameData {
     this.characters = {};
     this.playerTarget = null;
     this.dataloaders = dataloaders;
-    this.playerCharacter = this.addCharacter(
-      'Test test',
-      this.addLocation({
-        name: 'defaultLocation',
-        description: 'defaultLocation',
-        code: 'defaultLocation',
-        connections: ['defaultLocation_2'],
-      })
-    );
+    this.playerCharacter = null;
     this.actionConnector = new ActionConnector({ ctx, gameData: this });
     this.actionResolver = new ActionResolver({
       ctx,
@@ -61,58 +53,17 @@ export class GameData {
   }
 
   getPlayerCharacter(): Character {
+    if (!this.playerCharacter) {
+      this.playerCharacter = this.addCharacter(
+        'Test test',
+        this.getLocation('defaultLocation')
+      );
+    }
     return this.playerCharacter;
   }
 
-  async initialLoading() {
-    this.addLocation({
-      name: 'defaultLocation_2',
-      description: 'defaultLocation_2',
-      code: 'defaultLocation_2',
-      connections: ['defaultLocation'],
-    });
-    const item = await Item.initByName({
-      ctx: this.ctx,
-      dataloaders: this.dataloaders,
-      name: 'padded_mittens',
-    });
-    const item2 = await Item.initByName({
-      ctx: this.ctx,
-      dataloaders: this.dataloaders,
-      name: 'leather_gloves',
-    });
-    const item3 = await Item.initByName({
-      ctx: this.ctx,
-      dataloaders: this.dataloaders,
-      name: 'hand_cuffs',
-    });
-    const item4 = await Item.initByName({
-      ctx: this.ctx,
-      dataloaders: this.dataloaders,
-      name: 'knife',
-    });
-    await this.playerCharacter.inventory.add(item);
-    await this.playerCharacter.inventory.add(item2);
-    await this.playerCharacter.inventory.add(item3);
-    await this.playerCharacter.inventory.add(item4);
-    await this.playerCharacter.skillManager.add({
-      dataloaders: this.dataloaders,
-      name: 'lockpicking',
-      exp: 1,
-    });
-    // await this.playerCharacter.lore.add({
-    //   dataloaders: this.dataloaders,
-    //   name: 'lore_1',
-    // });
-    await this.addObject({
-      name: 'chest_test',
-      location: this.locations.defaultLocation,
-    });
-    await this.addObject({
-      name: 'chest_test_2',
-      location: this.locations.defaultLocation,
-    });
-    await this.sceneEngine.initScene('scene_1');
+  setPlayerCharacter(character: Character) {
+    this.playerCharacter = character;
   }
 
   addLocation({
@@ -137,6 +88,10 @@ export class GameData {
     });
     this.locations[code] = location;
     return location;
+  }
+
+  getLocation(code: string) {
+    return this.locations[code];
   }
 
   removeLocation(code: string) {
@@ -179,5 +134,9 @@ export class GameData {
 
   getPlayerTarget() {
     return this.playerTarget;
+  }
+
+  async initialLoading() {
+    await initGame(this);
   }
 }

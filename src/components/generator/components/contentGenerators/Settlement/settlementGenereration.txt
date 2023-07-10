@@ -1,0 +1,39 @@
+d20 TYPE OF RULER Type of law enforcement Disorder
+Mod
+1-2 Lawless, order barely maintained. A figurehead
+leader who barely makes his presence felt Corrupt guard or constabulary force +4
+3-5 Relaxed, benign leader
+Laid back, perhaps ineffectual town guard.
+Chance that the leader is seen as a laughing
+stock.
++2
+6-8 Functional leader
+Normal guard force. Will stop the most
+heinous crimes but let populace sort most of
+their problems out
++1
+9-13 Pragmatic leader. Gets the job done Town guard that does their job properly, if
+occasionally begrudgingly 0
+14-
+17
+Reasonably strict, strong leader. Passionate
+about maintaining order in the city
+Well-paid, committed town guard who are
+always vigilant and on the lookout for
+trouble
+-1
+18-
+19
+Very strict leader. Will not tolerate anyone
+stepping out of line in their town. Imprisonment
+is the order of the day for even minor offences.
+Town guard who do their job very well,
+perhaps out of fear of retribution -3
+20
+Despotic leader. Rules with a ruthless iron fist.
+Executions for small offenses. Draconian to the
+extreme.
+Town guard who operate vengefully, beat
+first and ask questions later. Ruthless
+animals given license by a corrupt tyrant.
+-5

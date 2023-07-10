@@ -11,6 +11,7 @@ import { LookResolver } from './resolvers/look';
 import type { CTX } from '../../../../types/';
 import type { SkillResolver } from './resolvers';
 import { CommonActionResolver } from './resolvers/commonAction';
+import { ACTION_PAYLOAD_TYPE } from '../../../engine/constants';
 
 export type rawSkill = SkillInputProps;
 
@@ -91,7 +92,7 @@ export class SkillManager {
 
   async resolve(input: ActionPayload): Promise<boolean> {
     let result: ResolveResult = { executed: false };
-    if (input.payload.type !== 'useSkill') return false;
+    if (input.payload.type !== ACTION_PAYLOAD_TYPE.USE_SKILL) return false;
     const skillName = input.payload.skill;
 
     if (this.isCommonAction(skillName)) {
@@ -126,8 +127,7 @@ export class SkillManager {
     const skillData = await dataloaders.getSkill(name);
     const { parentAttr: parentAttrCode } = skillData;
 
-    let parentAttr: Attribute =
-      this.character.attributeManager.getByCode(parentAttrCode);
+    let parentAttr = this.character.attributeManager.getByCode(parentAttrCode);
     const skill = new Skill({
       ctx: this.ctx,
       props: { ...skillData, parentAttr, exp },
@@ -142,7 +142,7 @@ export class SkillManager {
     });
   }
 
-  getByCode(code: string) {
+  getByCode(code: string): Skill | undefined {
     return this.collection[code];
   }
 

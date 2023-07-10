@@ -1,0 +1,1079 @@
+. Against the Insane Gem
+2. Trove of the Evil King
+3. Key of the Undead Amulet
+4. Festival of the Dangerous Slave Lords
+5. Mystery of the Midnight Warrior
+6. Prisoners of the Secret God
+7. Barrow of the Mad Assassin
+8. Rescue of the Forbidden Depths
+9. Storm of the Foolish Island
+10. Revenge of the Dimensional Crystal
+11. Labyrinth of the Endless Festival
+12. Prisoners of the Corrupted Maelstrom
+13. Pit of the Corrupted Beastman
+14. Key of the Corrupted Plague
+15. Key of the Ice Assassin
+16. Shrine of the Immortal Mage
+17. Battle of the Ghost Assassin
+18. Test of the Enchanted Terror
+19. Fortress of the Depraved Aberration
+20. Tale of the Dwarven Mage
+21. Barrow of the Arcane Wilderness
+22. Fortress of the Abyssal Tree
+23. Harbinger of the Shadow Society
+24. Voyage of the Dangerous Sea
+25. Key of the Immortal Sea
+26. Return to the Demonic Dragon
+27. Fortress of the Cursed Undercity
+28. Prince of the Vicious Princess
+29. Riddle of the Drow Amulet
+30. Descent of the Decaying Sword
+31. Race for the Midnight Amulet
+32. Beacon of the Cursed God
+33. Voyage of the Cursed Mountain
+34. Test of the Invisible Tower
+35. Servant of the Mad Warrior
+36. Curse of the Midnight Plague
+37. Stone of the Shattered Horror
+38. Night of the Deathly Rift
+39. Relic of the Lost Throne
+40. Festival of the Dangerous Aberration
+41. Secret of the Mad Sea
+42. Prisoners of the Spider Demon
+43. Rescue of the Planar Sceptre
+44. Mines of the Abyssal Queen
+45. Descent of the Abyssal Society
+46. Mines of the Arcane Aberration
+47. Discovery of the Endless Festival
+48. Kingdom of the Invisible Beastman
+49. Tomb of the Dimensional Demon
+50. Tournament of the Impossible Crystal
+51. Revenge of the Bitter Spire
+52. Curse of the Depraved Wilderness
+53. Labyrinth of the Demonic Beastman
+54. Beacon of the Shapeshifting Island
+55. Fortress of the Burning Demon
+56. Tomb of the Forsaken Invention
+57. Horde of the Undead Throne
+58. Hunt for the Monstrous Crystal
+59. Stone of the Dragon Portal
+60. Return to the Giant Magic Tome
+61. Night of the Forgotten Tower
+62. Horror of the Animated Terror
+63. Rescue of the Ancient Mage
+64. Search for the Dangerous Dragon
+65. Relic of the Captivating Priest
+66. Barrow of the Ghost Depths
+67. Barrow of the Bitter Society
+68. Mystery of the Immortal Festival
+69. Night of the Midnight Depths
+70. Haunting of the Unknown Magic
+71. Barrow of the Orc Princess
+72. Fortress of the Dimensional Cult
+73. Battle of the Planar King
+74. Prisoners of the Forsaken Mage
+75. Storm of the Ghost Slave Lords
+76. Battle of the Corrupted Crystal
+77. Prince of the Secret Maelstrom
+78. Return to the Abyssal Spire
+79. Voyage of the Enchanted Depths
+80. Stone of the Giant Kingdom
+81. Hunt for the Spider Wilderness
+82. Tournament of the Monstrous Rift
+83. Trove of the Drow Inn
+84. Barrow of the Undead Castle
+85. Haunting of the Deathly Warlord
+86. Tale of the Endless Gem
+87. Descent of the Forsaken Wilderness
+88. Curse of the Ice Castle
+89. Return to the Arcane Terror
+90. Servant of the Ice Slave Lords
+91. Birth of the Forbidden Sword
+92. Mines of the Abyssal Island
+93. Riddle of the Dangerous Ship
+94. Rescue of the Ice Princess
+95. Prisoners of the Dragon Gem
+96. Search for the Endless Amulet
+97. Contest for the Evil Inn
+98. Against the Mad Society
+194
+99. Mines of the Drow Kingdom
+100. Search for the Elven God
+101. Descent of the Demonic Tree
+102. Mines of the Ninth (or other number) God
+103. Trove of the Endless Plague
+104. Shrine of the Immortal Plague
+105. Tournament of the Monstrous Dragon
+106. Prisoners of the Endless Princess
+107. Voyage of the Vicious Sea
+108. Barrow of the Unknown Sea
+109. Voyage of the Enchanted Aberration
+110. Fortress of the Giant Tower
+111. Riddle of the Monstrous Maelstrom
+112. Battle of the Dimensional God
+113. Escape from the Decaying Priest
+114. Fortress of the Dimensional Priest
+115. Shrine of the Dragon Horror
+116. Riddle of the Evil Terror
+117. Harbinger of the Elven Ship
+118. Shrine of the Vicious Ship
+119. Against the Forbidden Assassin
+120. Labyrinth of the Ninth (or other number)
+Inn
+121. Investigation of the Corrupted Castle
+122. Secret of the Dwarven Portal
+123. Mystery of the Corrupted Maelstrom
+124. Mystery of the Abyssal Spire
+125. Revenge of the Arcane Ship
+126. Against the Giant Island
+127. Curse of the Secret Plague
+128. Tournament of the Foolish Slave Lords
+129. Labyrinth of the Ninth (or other number)
+Mountain
+130. Whispers of the Drow Cult
+131. Treasure of the Foolish Terror
+132. Voyage of the Insane Portal
+133. Trove of the Secret Assassin
+134. Prince of the Curious Wilderness
+135. Beacon of the Forsaken Depths
+136. Festival of the Planar Crystal
+137. Labyrinth of the Shapeshifting Terror
+138. Mystery of the Planar Invention
+139. Trove of the Immortal Castle
+140. Curse of the Orc Gem
+141. Tale of the Impossible Cult
+142. Storm of the Monstrous Plague
+143. Escape from the Drow Magic Tome
+144. Servant of the Demonic Artificer
+145. Voyage of the Ghost Terror
+146. Haunting of the Shapeshifting Legion
+147. Kingdom of the Corrupted Ship
+148. Quest for the Spider Amulet
+149. Test of the Impossible Slave Lords
+150. Key of the Forbidden Amulet
+151. Tomb of the Forgotten Artificer
+152. Pit of the Dimensional Mage
+153. Treasure of the Vicious Assassin
+154. Contest for the Lost Artificer
+155. Labyrinth of the Dimensional Warrior
+156. Contest for the Shattered Princess
+157. Key of the Spider Mountain
+158. Battle of the Enchanted Castle
+159. Search for the Shapeshifting Slave Lords
+160. Haunting of the Enchanted Priest
+161. Haunting of the Arcane Mage
+162. Mystery of the Midnight Aberration
+163. Key of the Giant Priest
+164. Investigation of the Midnight Demon
+165. League of the Immortal Dragon
+166. Labyrinth of the Forgotten Cult
+167. Storm of the Forsaken Wilderness
+168. Return to the Deathly God
+169. Pit of the Ice Crystal
+170. Pit of the Forsaken Castle
+171. Return to the Insane Magic
+172. Race for the Monstrous Magic
+173. Mystery of the Orc Sceptre
+174. Curse of the Shattered Dungeon
+175. Whispers of the Elven Cult
+176. Mines of the Elven Mage
+177. Horror of the Shattered Beastman
+178. Investigation of the Deathly Magic
+179. Riddle of the Shattered Sword
+180. Relic of the Decaying Depths
+181. Contest for the Monstrous Festival
+182. Whispers of the Secret Land
+183. Race for the Endless Sceptre
+184. Prisoners of the Arcane Maelstrom
+185. Revenge of the Lost Dragon
+186. Quest for the Captivating Sceptre
+187. Fortress of the Planar Maelstrom
+188. Barrow of the Animated Legion
+189. Hunt for the Ninth (or other number)
+Spire
+190. Tomb of the Evil Slave Lords
+191. Voyage of the Abyssal Gem
+192. Servant of the Spider Amulet
+193. Festival of the Midnight Warrior
+194. Hunt for the Dwarven Cult
+195. Return to the Demonic Sceptre
+196. Labyrinth of the Depraved Undercity
+197. Voyage of the Dimensional Gem
+198. Riddle of the Ghost Queen
+199. Tournament of the Dwarven Inn
+200. Discovery of the Bitter Artificer
+201. Night of the Curious Warlord
+202. Festival of the Cursed Festival
+203. Voyage of the Burning God
+204. Pit of the Giant Society
+205. Quest for the Impossible Aberration
+206. Trove of the Shadow Dungeon
+207. Contest for the Monstrous Warlord
+195
+208. Servant of the Monstrous Festival
+209. Secret of the Animated City
+210. Tale of the Demonic Warlord
+211. Night of the Decaying Invention
+212. Revenge of the Forsaken Mage
+213. Mystery of the Secret Mage
+214. Arena of the Demonic Wilderness
+215. Treasure of the Foolish Sword
+216. Night of the Ice Island
+217. Shrine of the Forsaken Castle
+218. Beacon of the Burning Rift
+219. Tale of the Forgotten Dragon
+220. Barrow of the Midnight Princess
+221. Curse of the Dimensional Ship
+222. Stone of the Ghost Sea
+223. Trove of the Deathly Sceptre
+224. Storm of the Ghost Land
+225. Curse of the Dimensional Throne
+226. Discovery of the Dimensional Princess
+227. Treasure of the Drow Cult
+228. Tomb of the Bitter Princess
+229. Search for the Arcane Warrior
+230. Battle of the Ice Portal
+231. Against the Immortal Rift
+232. Haunting of the Arcane Dungeon
+233. Secret of the Mad God
+234. Prisoners of the Foolish Castle
+235. Trove of the Enchanted Sword
+236. Hunt for the Spider Kingdom
+237. Festival of the Dragon Plague
+238. Fortress of the Spider Legion
+239. Fortress of the Invisible Undercity
+240. Investigation of the Forsaken Assassin
+241. Beacon of the Dimensional Gem
+242. Relic of the Drow Queen
+243. Birth of the Insane Land
+244. Trove of the Underground Sceptre
+245. Contest for the Ice Spire
+246. Shrine of the Evil Mountain
+247. Tomb of the Elven Island
+248. Night of the Corrupted Wilderness
+249. Hunt for the Forgotten Ship
+250. Harbinger of the Animated King
+251. Revenge of the Corrupted King
+252. Test of the Planar City
+253. Key of the Ice Sea
+254. Storm of the Underground Artificer
+255. Servant of the Lost Dragon
+256. Pit of the Ninth (or other number)
+Warlord
+257. Barrow of the Drow Horror
+258. Labyrinth of the Curious Aberration
+259. Race for the Burning Magic Tome
+260. League of the Dimensional Cult
+261. Kingdom of the Forsaken Land
+262. Descent of the Ghost Demon
+263. Barrow of the Dangerous Magic Tome
+264. Labyrinth of the Foolish Gem
+265. Labyrinth of the Endless Castle
+266. Tomb of the Midnight Undercity
+267. Tomb of the Burning Magic Tome
+268. Tale of the Midnight Gem
+269. Curse of the Dangerous Castle
+270. Search for the Forbidden Warlord
+271. Fortress of the Immortal Inn
+272. Horde of the Shadow Terror
+273. Race for the Dragon Kingdom
+274. Horde of the Ninth (or other number)
+Sword
+275. Quest for the Depraved Magic Tome
+276. Whispers of the Immortal Spire
+277. League of the Ice Throne
+278. Curse of the Immortal Undercity
+279. League of the Invisible Inn
+280. Barrow of the Immortal Ship
+281. Relic of the Demonic Queen
+282. League of the Cursed Tower
+283. Kingdom of the Dragon Throne
+284. Secret of the Enchanted Society
+285. Test of the Mad Dragon
+286. Quest for the Drow Depths
+287. Discovery of the Curious Society
+288. Race for the Foolish Throne
+289. Tale of the Insane Cult
+290. Servant of the Forbidden Castle
+291. Prince of the Abyssal Society
+292. Quest for the Shapeshifting Beastman
+293. Kingdom of the Elven Undercity
+294. Storm of the Mad Wilderness
+295. Storm of the Cursed Wilderness
+296. Horror of the Captivating Warrior
+297. Arena of the Ice Crystal
+298. Test of the Cursed Magic
+299. Mines of the Drow Beastman
+300. Discovery of the Giant Gem
+301. Night of the Decaying Festival
+302. Quest for the Planar Artificer
+303. League of the Bitter Horror
+304. Discovery of the Captivating Kingdom
+305. Stone of the Elven Warlord
+306. Race for the Shadow Warlord
+307. Tournament of the Curious Kingdom
+308. Curse of the Dimensional Priest
+309. Discovery of the Mad Priest
+310. Kingdom of the Decaying Sea
+311. Curse of the Dangerous Tower
+312. Voyage of the Burning Demon
+313. Barrow of the Depraved Horror
+314. Haunting of the Dimensional King
+315. Night of the Lost Island
+316. Festival of the Mad Magic Tome
+317. Horde of the Immortal Priest
+196
+318. Voyage of the Captivating Mountain
+319. Prisoners of the Midnight Magic
+320. Harbinger of the Bitter Land
+321. Pit of the Curious King
+322. Birth of the Insane Warrior
+323. Secret of the Evil Kingdom
+324. Labyrinth of the Forsaken Castle
+325. Tournament of the Dragon Spire
+326. Whispers of the Ninth (or other number)
+Maelstrom
+327. Festival of the Underground Island
+328. Hunt for the Bitter Dragon
+329. Investigation of the Bitter Maelstrom
+330. Discovery of the Planar Society
+331. Race for the Decaying Ship
+332. Birth of the Unknown Magic Tome
+333. Prince of the Curious Horror
+334. Contest for the Curious Beastman
+335. Tale of the Immortal Horror
+336. Horror of the Captivating Tree
+337. Descent of the Dangerous Magic Tome
+338. Horde of the Mad Horror
+339. Tomb of the Midnight Island
+340. Battle of the Depraved Mage
+341. Haunting of the Mad God
+342. Investigation of the Forgotten Plague
+343. Battle of the Dimensional Terror
+344. Pit of the Immortal Magic Tome
+345. Contest for the Animated Festival
+346. Discovery of the Midnight Kingdom
+347. Festival of the Enchanted Demon
+348. Battle of the Foolish Sea
+349. Pit of the Forsaken Warrior
+350. Prisoners of the Forgotten Terror
+351. Secret of the Burning Magic
+352. Investigation of the Ancient Gem
+353. Beacon of the Immortal Terror
+354. Storm of the Ninth (or other number) God
+355. Tale of the Decaying Ship
+356. Barrow of the Spider Land
+357. Horror of the Burning Tower
+358. Shrine of the Giant Gem
+359. Discovery of the Invisible Princess
+360. Stone of the Arcane Warlord
+361. Mines of the Cursed Warrior
+362. Night of the Corrupted Beastman
+363. League of the Shapeshifting Magic
+364. Rescue of the Dimensional Kingdom
+365. Trove of the Spider Crystal
+366. Horde of the Lost Terror
+367. Test of the Decaying Castle
+368. Hunt for the Ice Cult
+369. Hunt for the Shadow Priest
+370. Test of the Ninth (or other number) Sword
+371. Contest for the Invisible Cult
+372. Quest for the Dimensional King
+373. Test of the Ancient Aberration
+374. Key of the Foolish Crystal
+375. Haunting of the Impossible Beastman
+376. Contest for the Forgotten Wilderness
+377. Tale of the Forgotten Aberration
+378. Birth of the Curious Plague
+379. League of the Dragon Inn
+380. Horde of the Shadow Slave Lords
+381. Shrine of the Dangerous Invention
+382. Beacon of the Invisible Artificer
+383. Hunt for the Animated Rift
+384. Night of the Dragon Land
+385. Riddle of the Shapeshifting City
+386. Discovery of the Shattered Sea
+387. Escape from the Curious Warlord
+388. Curse of the Monstrous Mountain
+389. Escape from the Impossible Undercity
+390. Night of the Cursed Priest
+391. Horror of the Lost Dragon
+392. Kingdom of the Demonic Wilderness
+393. Kingdom of the Impossible Island
+394. Battle of the Elven Society
+395. Key of the Endless Warlord
+396. Treasure of the Monstrous Tree
+397. Harbinger of the Underground
+Wilderness
+398. Curse of the Animated Horror
+399. Horror of the Burning Sea
+400. Race for the Ninth (or other number)
+Warlord
+401. Descent of the Spider Amulet
+402. Prince of the Orc Plague
+403. Test of the Undead Queen
+404. Voyage of the Abyssal Portal
+405. Revenge of the Drow Cult
+406. Servant of the Ninth (or other number)
+Demon
+407. Relic of the Ice Artificer
+408. Shrine of the Dimensional Invention
+409. Relic of the Giant Priest
+410. Kingdom of the Enchanted God
+411. Mystery of the Endless Undercity
+412. Treasure of the Drow Wilderness
+413. League of the Lost Throne
+414. Escape from the Endless Rift
+415. Voyage of the Vicious Cult
+416. Prisoners of the Corrupted Assassin
+417. Prisoners of the Vicious Priest
+418. Shrine of the Shattered Tower
+419. Servant of the Impossible Portal
+420. Tale of the Ancient Crystal
+421. Trove of the Planar Sea
+422. Mines of the Giant God
+423. Harbinger of the Ice Castle
+424. Festival of the Curious Magic
+425. Kingdom of the Corrupted Society
+197
+426. Fortress of the Ghost Beastman
+427. Quest for the Enchanted Spire
+428. Discovery of the Ancient Demon
+429. Race for the Underground Magic
+430. Quest for the Burning Undercity
+431. Revenge of the Evil Magic Tome
+432. Return to the Shadow Wilderness
+433. Storm of the Bitter Amulet
+434. Rescue of the Depraved Ship
+435. Storm of the Ancient City
+436. Mines of the Dangerous Gem
+437. Search for the Forsaken Queen
+438. Storm of the Dragon Priest
+439. Discovery of the Shapeshifting Dungeon
+440. Fortress of the Secret Beastman
+441. Escape from the Dimensional Dragon
+442. Horror of the Underground Priest
+443. Storm of the Vicious Legion
+444. Kingdom of the Spider Magic Tome
+445. Discovery of the Enchanted Kingdom
+446. Horde of the Dimensional Festival
+447. Treasure of the Immortal Tree
+448. Test of the Dangerous Inn
+449. Arena of the Orc Island
+450. Stone of the Undead Amulet
+451. Mines of the Shadow Warrior
+452. Battle of the Foolish Dungeon
+453. Contest for the Cursed Plague
+454. Investigation of the Drow Magic
+455. Prisoners of the Cursed Wilderness
+456. Labyrinth of the Immortal Island
+457. Curse of the Foolish Cult
+458. Stone of the Vicious Wilderness
+459. Contest for the Ninth (or other number)
+Magic Tome
+460. Hunt for the Ghost Legion
+461. Beacon of the Evil Inn
+462. Birth of the Vicious Slave Lords
+463. Hunt for the Mad Undercity
+464. Kingdom of the Drow God
+465. Pit of the Spider Inn
+466. Trove of the Underground Princess
+467. Battle of the Dangerous Inn
+468. Escape from the Ghost Sceptre
+469. Search for the Forbidden Assassin
+470. Shrine of the Orc Demon
+471. Riddle of the Shadow Kingdom
+472. Mystery of the Vicious Maelstrom
+473. Labyrinth of the Foolish Gem
+474. Discovery of the Ninth (or other number)
+Priest
+475. Stone of the Mad Demon
+476. Relic of the Forsaken Princess
+477. Revenge of the Mad Rift
+478. Trove of the Immortal Invention
+479. Labyrinth of the Ice Festival
+480. Night of the Secret Dragon
+481. Prisoners of the Dimensional Dungeon
+482. Contest for the Cursed Maelstrom
+483. Night of the Ancient Warrior
+484. Horror of the Shapeshifting Terror
+485. Shrine of the Giant Assassin
+486. Mystery of the Curious Invention
+487. League of the Monstrous Throne
+488. Against the Ghost Festival
+489. Race for the Endless Castle
+490. Descent of the Bitter Assassin
+491. Discovery of the Drow Society
+492. Servant of the Abyssal Gem
+493. Haunting of the Monstrous Plague
+494. Secret of the Deathly Beastman
+495. Against the Captivating Terror
+496. Prince of the Depraved Kingdom
+497. Night of the Undead Horror
+498. Haunting of the Foolish Warlord
+499. Beacon of the Spider Spire
+500. Quest for the Elven King
+501. Tale of the Decaying Artificer
+502. Shrine of the Dangerous Magic
+503. Treasure of the Cursed Maelstrom
+504. Fortress of the Impossible Artificer
+505. Against the Curious Kingdom
+506. Prince of the Impossible Society
+507. Birth of the Foolish Sword
+508. Escape from the Undead Magic
+509. Tale of the Dragon Aberration
+510. Prisoners of the Abyssal Plague
+511. Barrow of the Lost Beastman
+512. League of the Dragon King
+513. Revenge of the Endless Amulet
+514. Investigation of the Immortal Terror
+515. Relic of the Dimensional Terror
+516. Tournament of the Shapeshifting Throne
+517. Horde of the Monstrous Society
+518. Horror of the Impossible Beastman
+519. Birth of the Corrupted Invention
+520. Festival of the Underground Rift
+521. Haunting of the Abyssal Sword
+522. Trove of the Elven Horror
+523. Horror of the Dragon Sceptre
+524. Festival of the Demonic Kingdom
+525. Race for the Shapeshifting Horror
+526. Horror of the Curious Sea
+527. Labyrinth of the Decaying Princess
+528. Against the Shapeshifting Mage
+529. Revenge of the Lost Island
+530. Shrine of the Shattered Amulet
+531. Horror of the Undead Dungeon
+532. Horror of the Abyssal Kingdom
+533. League of the Immortal Horror
+534. Mystery of the Spider Beastman
+535. Descent of the Demonic Beastman
+198
+536. Treasure of the Giant Tree
+537. Against the Burning Warlord
+538. Shrine of the Shadow King
+539. Curse of the Monstrous Mage
+540. Horde of the Deathly Festival
+541. Voyage of the Abyssal Assassin
+542. Treasure of the Demonic Magic
+543. Discovery of the Depraved Society
+544. Against the Ghost Throne
+545. Whispers of the Drow Assassin
+546. Tournament of the Curious Beastman
+547. Treasure of the Shadow Queen
+548. Fortress of the Ice Mountain
+549. Stone of the Corrupted Inn
+550. Fortress of the Midnight Legion
+551. Labyrinth of the Shapeshifting Cult
+552. Battle of the Midnight Invention
+553. Haunting of the Drow Warlord
+554. Prince of the Immortal Inn
+555. Pit of the Giant Mountain
+556. Arena of the Vicious Wilderness
+557. Tomb of the Orc City
+558. Hunt for the Cursed Island
+559. Rescue of the Depraved City
+560. Revenge of the Corrupted Tree
+561. Relic of the Spider Sceptre
+562. Discovery of the Planar God
+563. Harbinger of the Lost Amulet
+564. Hunt for the Ghost Warlord
+565. Return to the Cursed Demon
+566. Horde of the Foolish Tree
+567. Kingdom of the Enchanted Tower
+568. Festival of the Monstrous Crystal
+569. Relic of the Captivating Amulet
+570. Search for the Captivating Priest
+571. Kingdom of the Cursed Aberration
+572. Quest for the Corrupted Mage
+573. Riddle of the Endless Inn
+574. Arena of the Drow Priest
+575. Hunt for the Shattered Dragon
+576. Harbinger of the Evil Artificer
+577. Race for the Dimensional Depths
+578. Servant of the Curious Sword
+579. Search for the Shapeshifting Sceptre
+580. Whispers of the Ninth (or other number)
+Warlord
+581. Fortress of the Curious Depths
+582. Mystery of the Abyssal Tree
+583. Voyage of the Depraved Depths
+584. Hunt for the Shattered Portal
+585. Race for the Spider God
+586. Tournament of the Immortal Ship
+587. Against the Dimensional Mountain
+588. Stone of the Monstrous King
+589. Kingdom of the Dragon Festival
+590. Race for the Ninth (or other number) King
+591. Battle of the Dimensional Invention
+592. Night of the Enchanted Magic Tome
+593. Mystery of the Shapeshifting Rift
+594. Tale of the Shapeshifting Spire
+595. Haunting of the Decaying Land
+596. Voyage of the Dangerous Amulet
+597. Mystery of the Insane Kingdom
+598. Search for the Lost Rift
+599. Discovery of the Ghost Kingdom
+600. Quest for the Ghost Sword
+601. Mines of the Curious God
+602. Descent of the Depraved Depths
+603. Beacon of the Mad Horror
+604. Haunting of the Enchanted Kingdom
+605. Escape from the Monstrous Aberration
+606. Haunting of the Cursed Maelstrom
+607. Race for the Immortal Demon
+608. Treasure of the Curious Legion
+609. League of the Lost Island
+610. Battle of the Evil Portal
+611. Festival of the Arcane Legion
+612. Treasure of the Spider Aberration
+613. Horror of the Corrupted Mountain
+614. Race for the Captivating Mountain
+615. Mines of the Midnight Invention
+616. Search for the Evil Plague
+617. Prisoners of the Burning Magic
+618. Pit of the Captivating Princess
+619. Descent of the Foolish Inn
+620. Key of the Captivating Tower
+621. Prisoners of the Ghost Artificer
+622. Descent of the Demonic Tree
+623. Shrine of the Invisible Terror
+624. Key of the Dimensional Undercity
+625. Tournament of the Spider Warrior
+626. Pit of the Foolish Undercity
+627. Tournament of the Lost Gem
+628. Barrow of the Unknown Sea
+629. Barrow of the Decaying Plague
+630. Beacon of the Unknown Aberration
+631. Trove of the Evil Ship
+632. Kingdom of the Bitter Sword
+633. Hunt for the Orc Cult
+634. Riddle of the Animated Cult
+635. Servant of the Dimensional Ship
+636. Investigation of the Undead Aberration
+637. League of the Shapeshifting Assassin
+638. Tournament of the Ninth (or other
+number) Legion
+639. Arena of the Depraved Society
+640. Voyage of the Dragon Inn
+641. Stone of the Deathly Dungeon
+642. Prince of the Animated Rift
+643. Horror of the Invisible Portal
+644. Relic of the Enchanted Dragon
+645. Escape from the Shapeshifting Invention
+199
+646. Battle of the Ice Magic
+647. Treasure of the Immortal Festival
+648. Curse of the Forgotten God
+649. Tale of the Dragon Spire
+650. Trove of the Deathly Queen
+651. Relic of the Midnight Sea
+652. Revenge of the Cursed Priest
+653. League of the Ancient Sceptre
+654. Festival of the Shapeshifting God
+655. Horde of the Decaying Dungeon
+656. Relic of the Spider Priest
+657. Prisoners of the Forbidden Invention
+658. Harbinger of the Endless Rift
+659. Revenge of the Immortal Wilderness
+660. Haunting of the Shattered Portal
+661. Discovery of the Elven Society
+662. Horror of the Cursed Terror
+663. Tournament of the Dangerous Spire
+664. Kingdom of the Undead Sword
+665. Against the Burning Island
+666. Birth of the Drow Land
+667. Storm of the Ghost City
+668. Contest for the Shattered City
+669. Tale of the Lost Artificer
+670. Horde of the Ice Dungeon
+671. Prisoners of the Orc Warrior
+672. Curse of the Shadow Cult
+673. Voyage of the Demonic Maelstrom
+674. Beacon of the Orc Kingdom
+675. Arena of the Giant God
+676. Relic of the Monstrous Sceptre
+677. Stone of the Ice Beastman
+678. Whispers of the Orc Ship
+679. Barrow of the Decaying Warlord
+680. Shrine of the Ninth (or other number)
+Maelstrom
+681. Mines of the Insane Ship
+682. Relic of the Corrupted Assassin
+683. Tomb of the Planar God
+684. Discovery of the Dwarven Magic
+685. Prisoners of the Spider King
+686. Voyage of the Burning Ship
+687. Discovery of the Captivating Undercity
+688. Race for the Captivating Beastman
+689. Investigation of the Midnight God
+690. Horde of the Animated God
+691. Revenge of the Decaying Cult
+692. Curse of the Dimensional Depths
+693. Fortress of the Foolish Crystal
+694. League of the Giant Inn
+695. Servant of the Forbidden Castle
+696. Revenge of the Spider Land
+697. Tale of the Shapeshifting Invention
+698. Mystery of the Bitter Depths
+699. Voyage of the Orc Sceptre
+700. Descent of the Elven Assassin
+701. Escape from the Dimensional Dragon
+702. Hunt for the Elven Artificer
+703. Hunt for the Burning King
+704. Revenge of the Forgotten Undercity
+705. Voyage of the Spider God
+706. Revenge of the Vicious Warlord
+707. Investigation of the Captivating Priest
+708. Labyrinth of the Ancient Invention
+709. Servant of the Ice Tree
+710. Shrine of the Foolish Tree
+711. Quest for the Shapeshifting Mage
+712. Treasure of the Spider Sceptre
+713. Search for the Corrupted Island
+714. Beacon of the Lost Throne
+715. Whispers of the Dimensional Cult
+716. Escape from the Deathly God
+717. Barrow of the Undead Crystal
+718. Hunt for the Vicious Invention
+719. Mystery of the Curious Maelstrom
+720. Arena of the Deathly Island
+721. Against the Captivating Beastman
+722. Relic of the Shattered Artificer
+723. Beacon of the Decaying Sword
+724. Fortress of the Dragon Assassin
+725. Beacon of the Undead Princess
+726. Prisoners of the Decaying Crystal
+727. Haunting of the Ghost Horror
+728. Trove of the Unknown Legion
+729. Prince of the Endless Amulet
+730. Mines of the Foolish Society
+731. Curse of the Dangerous Legion
+732. Revenge of the Ninth (or other number)
+Sword
+733. Key of the Abyssal Priest
+734. Mines of the Evil Rift
+735. Investigation of the Monstrous Mage
+736. Race for the Forsaken Sceptre
+737. Secret of the Lost Kingdom
+738. Whispers of the Cursed Plague
+739. Discovery of the Monstrous Spire
+740. Battle of the Evil Land
+741. Race for the Deathly Slave Lords
+742. Fortress of the Lost Island
+743. Shrine of the Decaying City
+744. Mines of the Dragon Princess
+745. Fortress of the Immortal Warrior
+746. Treasure of the Shapeshifting Assassin
+747. Key of the Impossible Magic
+748. Prince of the Secret Maelstrom
+749. Fortress of the Abyssal Ship
+750. Return to the Ghost King
+751. Servant of the Orc Society
+752. Key of the Shadow Inn
+753. Servant of the Forgotten Priest
+754. Whispers of the Mad Dungeon
+755. Horror of the Animated Mountain
+200
+756. Servant of the Curious Kingdom
+757. Kingdom of the Insane Depths
+758. Harbinger of the Unknown Castle
+759. Horde of the Decaying Demon
+760. Prisoners of the Endless Portal
+761. Whispers of the Orc Festival
+762. Search for the Planar Dragon
+763. Stone of the Forgotten Legion
+764. Birth of the Endless Plague
+765. Barrow of the Abyssal Castle
+766. Hunt for the Deathly Beastman
+767. Labyrinth of the Burning Beastman
+768. Tale of the Decaying Gem
+769. Curse of the Abyssal Legion
+770. Pit of the Corrupted Land
+771. Whispers of the Mad Spire
+772. Mines of the Lost Tree
+773. Harbinger of the Depraved Land
+774. Mystery of the Invisible Magic
+775. Night of the Giant Warrior
+776. Birth of the Curious Tree
+777. Search for the Demonic Amulet
+778. Horror of the Burning Princess
+779. Secret of the Corrupted Crystal
+780. Haunting of the Ancient Terror
+781. Tale of the Captivating Dungeon
+782. Return to the Ice Gem
+783. Haunting of the Ice Artificer
+784. Secret of the Forbidden King
+785. Pit of the Bitter Magic
+786. Prince of the Ancient Society
+787. Labyrinth of the Enchanted Terror
+788. Arena of the Elven Amulet
+789. Arena of the Forbidden Queen
+790. Storm of the Insane Priest
+791. Key of the Underground Sea
+792. Fortress of the Evil Throne
+793. Tournament of the Captivating Spire
+794. Servant of the Immortal Island
+795. Haunting of the Shadow Beastman
+796. League of the Arcane Plague
+797. Horde of the Undead Dragon
+798. Beacon of the Unknown Slave Lords
+799. Barrow of the Dangerous Artificer
+800. Hunt for the Abyssal Sea
+801. Shrine of the Underground Mage
+802. Storm of the Lost Slave Lords
+803. Secret of the Endless Cult
+804. Relic of the Animated Undercity
+805. Race for the Midnight City
+806. Treasure of the Impossible Crystal
+807. Whispers of the Forgotten Throne
+808. Arena of the Demonic Island
+809. Barrow of the Monstrous Princess
+810. Mystery of the Drow Magic Tome
+811. Mines of the Shadow Warlord
+812. Test of the Elven Legion
+813. Barrow of the Captivating Warrior
+814. Voyage of the Insane Horror
+815. Investigation of the Invisible City
+816. Stone of the Shadow Spire
+817. Riddle of the Secret Magic Tome
+818. Return to the Lost Castle
+819. Search for the Dragon Land
+820. Servant of the Dwarven Kingdom
+821. Horror of the Mad Tree
+822. Beacon of the Secret Society
+823. Horror of the Dragon Queen
+824. Treasure of the Curious Artificer
+825. Kingdom of the Secret Cult
+826. Servant of the Bitter Tree
+827. Mines of the Lost Dungeon
+828. Horror of the Cursed Tower
+829. Quest for the Dragon Queen
+830. Quest for the Ninth (or other number)
+Mountain
+831. Descent of the Ancient Spire
+832. Search for the Planar Amulet
+833. Tournament of the Midnight Queen
+834. Escape from the Ancient Spire
+835. Race for the Giant Warlord
+836. Tournament of the Ancient Sceptre
+837. Test of the Corrupted Warrior
+838. Voyage of the Lost Beastman
+839. Tale of the Invisible King
+840. Tournament of the Animated Slave Lords
+841. Relic of the Corrupted Sea
+842. Fortress of the Undead Horror
+843. Discovery of the Mad Kingdom
+844. Race for the Dangerous Mage
+845. Relic of the Insane Festival
+846. Investigation of the Ice Queen
+847. Harbinger of the Dimensional Horror
+848. Revenge of the Lost Beastman
+849. Beacon of the Shattered Horror
+850. Race for the Impossible Amulet
+851. Battle of the Bitter Portal
+852. Voyage of the Giant Gem
+853. Riddle of the Endless Aberration
+854. Descent of the Dangerous Wilderness
+855. Fortress of the Monstrous Tree
+856. Storm of the Demonic Island
+857. Voyage of the Captivating Legion
+858. Curse of the Elven Warlord
+859. Rescue of the Vicious Inn
+860. Fortress of the Spider Princess
+861. Contest for the Captivating King
+862. Secret of the Undead Society
+863. Key of the Underground Portal
+864. Mines of the Demonic Crystal
+865. Kingdom of the Elven Portal
+866. Barrow of the Demonic Beastman
+201
+867. Festival of the Endless Wilderness
+868. Discovery of the Elven Mage
+869. Against the Forsaken Magic Tome
+870. Prince of the Deathly Mountain
+871. Tomb of the Underground Cult
+872. Battle of the Immortal Sceptre
+873. Treasure of the Dimensional Warrior
+874. Battle of the Corrupted Kingdom
+875. Battle of the Undead Legion
+876. Descent of the Foolish Aberration
+877. Hunt for the Captivating Plague
+878. Investigation of the Vicious Ship
+879. Discovery of the Orc Rift
+880. Barrow of the Forsaken Warlord
+881. Key of the Immortal Slave Lords
+882. Horror of the Unknown Festival
+883. Kingdom of the Ghost Undercity
+884. Discovery of the Demonic God
+885. Investigation of the Planar Artificer
+886. Fortress of the Planar Plague
+887. Barrow of the Dwarven Aberration
+888. Birth of the Arcane Aberration
+889. Fortress of the Mad God
+890. Escape from the Planar Aberration
+891. Arena of the Planar Mage
+892. Night of the Planar Festival
+893. Prince of the Immortal Legion
+894. Night of the Invisible God
+895. Stone of the Burning Mountain
+896. Riddle of the Cursed Magic Tome
+897. Investigation of the Mad Inn
+898. Prince of the Ice Magic Tome
+899. Barrow of the Unknown Slave Lords
+900. Return to the Elven Invention
+901. Relic of the Undead Warrior
+902. Riddle of the Shattered Wilderness
+903. Investigation of the Evil Amulet
+904. Harbinger of the Demonic Artificer
+905. Mystery of the Decaying Warrior
+906. Tournament of the Deathly Society
+907. Horde of the Forgotten Society
+908. Horror of the Spider Queen
+909. Pit of the Forbidden Magic Tome
+910. Haunting of the Secret Warrior
+911. Descent of the Undead Invention
+912. Investigation of the Ninth (or other
+number) Ship
+913. League of the Arcane Princess
+914. Contest for the Giant Magic
+915. Investigation of the Decaying Sceptre
+916. Arena of the Burning Dragon
+917. Revenge of the Bitter Festival
+918. Hunt for the Deathly Princess
+919. Beacon of the Forgotten Depths
+920. Riddle of the Endless Mountain
+921. Birth of the Drow Sea
+922. Against the Elven Sceptre
+923. Investigation of the Evil Slave Lords
+924. Key of the Elven Tower
+925. Voyage of the Monstrous Aberration
+926. Voyage of the Cursed Terror
+927. Mines of the Bitter Gem
+928. Discovery of the Lost Demon
+929. Race for the Lost Undercity
+930. Rescue of the Cursed Wilderness
+931. Beacon of the Dangerous Priest
+932. Voyage of the Immortal Magic Tome
+933. Pit of the Shattered Land
+934. Investigation of the Animated Invention
+935. Revenge of the Demonic Assassin
+936. League of the Arcane Horror
+937. Festival of the Dimensional Sceptre
+938. Horror of the Secret Sceptre
+939. Barrow of the Enchanted Magic Tome
+940. Stone of the Ninth (or other number)
+Horror
+941. Barrow of the Deathly Tower
+942. Prince of the Giant Priest
+943. Storm of the Decaying Inn
+944. Test of the Ancient Sceptre
+945. Labyrinth of the Spider Castle
+946. Mystery of the Dimensional Princess
+947. Whispers of the Giant Warrior
+948. Against the Vicious Princess
+949. Beacon of the Lost Island
+950. Curse of the Dwarven Magic
+951. Fortress of the Dwarven Island
+952. Trove of the Dangerous Dungeon
+953. League of the Enchanted Terror
+954. Prince of the Animated Queen
+955. Night of the Ancient Assassin
+956. Against the Lost City
+957. Hunt for the Monstrous Warrior
+958. Servant of the Evil Magic
+959. Haunting of the Impossible Warrior
+960. Fortress of the Shapeshifting City
+961. Return to the Elven God
+962. Mystery of the Lost Queen
+963. Tournament of the Abyssal Sea
+964. League of the Midnight Wilderness
+965. Treasure of the Forgotten Crystal
+966. Horror of the Orc Land
+967. Voyage of the Undead Terror
+968. Horde of the Forbidden Crystal
+969. Trove of the Decaying Mountain
+970. Pit of the Unknown Portal
+971. Search for the Curious Portal
+972. Horror of the Vicious Mountain
+973. Prince of the Midnight Slave Lords
+974. Labyrinth of the Shadow Mountain
+975. Festival of the Shattered Portal
+976. Birth of the Immortal Warlord
+202
+977. Labyrinth of the Bitter Sea
+978. Tale of the Corrupted Magic Tome
+979. Birth of the Shapeshifting Queen
+980. Treasure of the Invisible King
+981. Servant of the Ancient Sceptre
+982. Curse of the Planar Cult
+983. Treasure of the Corrupted Land
+984. Hunt for the Arcane Dungeon
+985. Harbinger of the Curious Crystal
+986. Beacon of the Cursed Aberration
+987. Shrine of the Dragon Tree
+988. Battle of the Animated Magic Tome
+989. Prisoners of the Impossible Depths
+990. Barrow of the Midnight Wilderness
+991. Curse of the Insane Maelstrom
+992. Against the Depraved Sword
+993. Whispers of the Lost Ship
+994. Curse of the Invisible Legion
+995. Contest for the Secret City
+996. Arena of the Forgotten King
+997. Fortress of the Orc Priest
+998. Contest for the Evil Sea
+999. Trove of the Decaying Rift
+1000. Pit of the Shattered Rift
+
+Rescue of the Ancient Crystal
+3-4 Hunt for the Corrupted Beastman
+5-6 Contest for the Captivating Princess
+7-8 Quest for the Enchanted Undercity
+9-10 Revenge of the Insane Slave Lords
+11-12 Search for the Curious Inn
+13-14 Investigation of the Evil Magic Tome
+15-16 Night of the Burning Invention
+17-18 Festival of the Secret City
+19-20 Race for the Underground Society
+21-22 Battle of the Planar Festival
+23-24 Haunting of the Foolish Castle
+25-26 Discovery of the Dangerous Terror
+27-28 Descent of the Vicious Aberration
+29-30 Test of the Impossible Dragon
+31-32 Mystery of the Forgotten Tower
+33-34 Shrine of the Monstrous Island
+35-36 Birth of the Endless Sword
+37-38 League of the Dwarven King
+39-40 Trove of the Elven Queen
+192
+41-42 Escape from the Drow Mage
+43-44 Against the Dragon Priest
+45-46 Servant of the Orc Dungeon
+47-48 Prisoners of the Arcane Tree
+49-50 Tale of the Ice Warlord
+51-52 Kingdom of the Giant Amulet
+53-54 Mines of the Spider God
+55-56 Tomb of the Forbidden Magic
+57-58 Storm of the Undead Land
+59-60 Curse of the Demonic Sea
+61-62 Beacon of the Immortal Mountain
+63-64 Secret of the Shattered Assassin
+65-66 Prince of the Shadow Maelstrom
+67-68 Treasure of the Ghost Portal
+69-70 Relic of the Deathly Cult
+71-72 Pit of the Abyssal Gem
+73-74 Harbinger of the Dimensional Warrior
+75-76 Horror of the Invisible Spire
+77-78 Riddle of the Depraved Plague
+79-80 Key of the Cursed Demon
+81-82 Arena of the Animated Ship
+83-84 Horde of the Lost Horror
+85-86 Barrow of the Decaying Artificer
+87-88 Return to the Bitter Depths
+89-90 Whispers of the Forsaken Wilderness
+91-92 Voyage of the Ninth (or other number) Kingdom
+93-94 Fortress of the Midnight Legion
+95-96 Stone of the Shapeshifting Rift
+97-98 Labyrinth of the Mad Throne
+99-100 Tournament of the Unknown Sceptre

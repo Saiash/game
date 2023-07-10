@@ -15,11 +15,25 @@ export const NODE_TYPE = ['node', 'scene'];
 
 export const ACTIONS_ENUM = ['open', 'close', 'look', 'push'];
 
+export const TARGETS_ENUM = [
+  'self',
+  'characters',
+  'objects',
+  'place',
+  'location',
+];
+
 export const EVENTS_ENUM = ['onSuccess', 'onFail'];
 
 export const GLOBAL_TAG_TYPES_ENUM = ['self', 'apply'];
-export const GENERAL_TAG_TYPES_ENUM = ['skill', 'action', 'mod'];
-export const GENERAL_OPTIONS_ENUM = ['name', 'value', 'modType', 'modTarget'];
+export const GENERAL_TAG_TYPES_ENUM = ['skill', 'action', 'mod', 'usable'];
+export const GENERAL_OPTIONS_ENUM = [
+  'name',
+  'value',
+  'modType',
+  'modTarget',
+  'length',
+];
 
 export const STATUS_TYPES_EFFECTS_ENUM = [
   'addSelfStatus',
@@ -32,6 +46,7 @@ export const NON_STATUS_TYPES_EFFECTS_ENUM = [
   'triggerEvent',
   'addLore',
   'sendMessage',
+  'addTag',
 ];
 
 export const EFFECTS_TAG_TYPES_ENUM = [
@@ -52,6 +67,7 @@ export const CONDITIONS_VALUES_ENUM = [
   ...CONDITIONS_STATUS_OPTIONS_ENUM,
   ...CONDITIONS_LORE_VALUES_ENUM,
   'lastAction',
+  'gender',
 ];
 
 export const OPTIONS_ENUM = ['lockable'];
@@ -72,4 +88,5 @@ export const SELECT_ENUMS: {
   diff: DIFF_ENUM,
   boolean: [true, false],
   options: OPTIONS_ENUM,
+  gender: ['female', 'male', 'opposite', 'same'],
 };

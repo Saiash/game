@@ -12,7 +12,7 @@ export class Condition {
   private ctx: CTX;
 
   constructor(data: {
-    conditions: conditions[];
+    conditions?: conditions[];
     owner: TagSystem['owner'];
     ctx: CTX;
     outerConditions?: conditions[];
@@ -72,6 +72,7 @@ export class Condition {
       conditionValue,
       conditionType,
       actor: actor || this.owner,
+      owner: this.owner,
       ctx: this.ctx,
     });
   }

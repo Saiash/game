@@ -1,7 +1,6 @@
 import { Character } from '../..';
 import { CTX } from '../../../../../types';
 import { SecondaryAttribute } from '../attribute';
-import { Weight } from './weight';
 
 export class Size extends SecondaryAttribute {
   constructor({ ctx, character }: { character: Character; ctx: CTX }) {
