@@ -41,6 +41,7 @@ type systemEventPayload = { type: ACTION_PAYLOAD_TYPE.SYSTEM_EVENT };
 export type ActionPayload = {
   sourceActor: Character;
   target?: TagSystem['owner'];
+  time?: number;
   payload:
     | useSkillPayload
     | usePerkPayload

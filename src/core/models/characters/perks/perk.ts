@@ -96,4 +96,8 @@ export class Perk {
     }
     return { executed: actionsResults.every(r => r.executed) };
   }
+
+  getCultures(): string[] {
+    return [];
+  }
 }

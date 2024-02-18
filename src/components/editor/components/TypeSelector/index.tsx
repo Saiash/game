@@ -34,6 +34,7 @@ export function TypeSelector(props: Props) {
         border: '1px solid black',
         paddingTop: 10,
         paddingLeft: 10,
+        overflow: 'scroll',
       }}
     >
       {types.map(type => {

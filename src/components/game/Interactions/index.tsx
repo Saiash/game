@@ -63,7 +63,7 @@ export default function Interactions({
       payload: {
         type: ACTION_PAYLOAD_TYPE.USE_SKILL,
         skill: skillSelected,
-        difficulty: targets[targetSelected].getValue() * 1,
+        difficulty: parseInt(targets[targetSelected].getValue()),
         timeMod: modOption,
         onSuccsess: targets[targetSelected].getOnSuccess(),
         onFail: targets[targetSelected].getOnFail(),

@@ -3,6 +3,17 @@ import MenuItem from '@mui/material/MenuItem';
 import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 
+const ITEM_HEIGHT = 48;
+const ITEM_PADDING_TOP = 8;
+const MenuProps = {
+  PaperProps: {
+    style: {
+      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+      width: 250,
+    },
+  },
+};
+
 type Props = {
   name: string;
   list: string[] | boolean[] | { key: string; value: string }[];
@@ -19,7 +30,12 @@ export function SelectInput(props: Props) {
   return (
     <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
       <InputLabel>{name}</InputLabel>
-      <Select value={value} onChange={handleChange} label={name}>
+      <Select
+        value={value}
+        onChange={handleChange}
+        label={name}
+        MenuProps={MenuProps}
+      >
         {list.map(val => {
           let value: { key: string; value: string };
           if (typeof val === 'object') {

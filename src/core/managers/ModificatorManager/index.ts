@@ -14,7 +14,7 @@ export class ModificatorManager {
 
   addMod(mod: Tag): boolean {
     this.modList[mod.getId()] = mod;
-    this.summary += mod.getValue();
+    this.summary += parseInt(mod.getValue());
     return true;
   }
 
@@ -26,7 +26,7 @@ export class ModificatorManager {
   calculateSummary(): number {
     this.summary = 0;
     Object.values(this.modList).forEach(mod => {
-      this.summary += mod.getValue();
+      this.summary += parseInt(mod.getValue());
     });
     return this.summary;
   }

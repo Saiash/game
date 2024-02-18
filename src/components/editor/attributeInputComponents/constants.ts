@@ -26,7 +26,13 @@ export const TARGETS_ENUM = [
 export const EVENTS_ENUM = ['onSuccess', 'onFail'];
 
 export const GLOBAL_TAG_TYPES_ENUM = ['self', 'apply'];
-export const GENERAL_TAG_TYPES_ENUM = ['skill', 'action', 'mod', 'usable'];
+export const GENERAL_TAG_TYPES_ENUM = [
+  'skill',
+  'action',
+  'mod',
+  'usable',
+  'keyword',
+];
 export const GENERAL_OPTIONS_ENUM = [
   'name',
   'value',
@@ -68,6 +74,7 @@ export const CONDITIONS_VALUES_ENUM = [
   ...CONDITIONS_LORE_VALUES_ENUM,
   'lastAction',
   'gender',
+  'socialGroup',
 ];
 
 export const OPTIONS_ENUM = ['lockable'];
@@ -86,7 +93,7 @@ export const SELECT_ENUMS: {
   status: STATUS_ENUM,
   attr: ATTRS_ENUM,
   diff: DIFF_ENUM,
-  boolean: [true, false],
+  boolean: [false, true],
   options: OPTIONS_ENUM,
   gender: ['female', 'male', 'opposite', 'same'],
 };

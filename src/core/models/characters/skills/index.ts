@@ -8,10 +8,11 @@ import { ActionPayload } from '../../../engine/actionConnector';
 
 import { LookResolver } from './resolvers/look';
 
-import type { CTX } from '../../../../types/';
+import type { CTX, PartialRecord } from '../../../../types/';
 import type { SkillResolver } from './resolvers';
 import { CommonActionResolver } from './resolvers/commonAction';
 import { ACTION_PAYLOAD_TYPE } from '../../../engine/constants';
+import { SKILL_LIST, skillList } from '../../skills';
 
 export type rawSkill = SkillInputProps;
 
@@ -20,13 +21,17 @@ export type SkillInputProps = {
   description: string;
   code: string;
   parentAttrCode: string;
+  cultureBased?: boolean;
+  defaultSkillTime?: number;
+  resolver?: SkillResolver;
+  relativeSkills?: PartialRecord<skillList, number>;
   difficulty: 'easy' | 'medium' | 'hard' | 'very hard';
-  modificatorManager: ModificatorManager;
 };
 
 export type SkillProps = SkillInputProps & {
   exp: number;
   parentAttr: Attribute;
+  skillManager: SkillManager;
 };
 
 export type InputSkillsProps = {
@@ -87,7 +92,8 @@ export class SkillManager {
     difficulty: number;
     timeMod: number;
   }): CheckResults {
-    return this.collection[code].check(difficulty + timeMod);
+    const skill = this.collection[code];
+    return skill.check(difficulty + timeMod);
   }
 
   async resolve(input: ActionPayload): Promise<boolean> {
@@ -120,19 +126,15 @@ export class SkillManager {
     exp = 0,
   }: {
     dataloaders: CTX['dataloaders'];
-    name: string;
+    name: skillList;
     exp?: number;
   }): Promise<boolean> {
     if (this.collection[name]) return false;
-    const skillData = await dataloaders.getSkill(name);
-    const { parentAttr: parentAttrCode } = skillData;
-
-    let parentAttr = this.character.attributeManager.getByCode(parentAttrCode);
-    const skill = new Skill({
+    this.collection[name] = SKILL_LIST[name]({
       ctx: this.ctx,
-      props: { ...skillData, parentAttr, exp },
+      character: this.character,
+      skillManager: this,
     });
-    this.collection[name] = skill;
     return true;
   }
 

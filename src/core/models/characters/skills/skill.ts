@@ -1,6 +1,12 @@
-import { random } from 'lodash';
+import _, { random } from 'lodash';
 import { ModificatorManager } from '../../../../core/managers/ModificatorManager';
-import { SkillProps, SkillInputProps, CheckResults, ResolveResult } from './';
+import {
+  SkillProps,
+  SkillInputProps,
+  CheckResults,
+  ResolveResult,
+  SkillManager,
+} from './';
 import { Attribute } from '../attributes/attribute';
 import {
   ActionPayload,
@@ -12,15 +18,20 @@ import { CTX } from '../../../../types';
 import { ACTION_PAYLOAD_TYPE } from '../../../engine/constants';
 
 export class Skill {
-  exp: number;
-  attribute: Attribute;
-  difficulty: string;
-  name: string;
-  code: string;
-  description: string;
+  protected exp: number;
   resolver: SkillResolver;
   modificatorManager: ModificatorManager;
-  ctx: CTX;
+  private skillManager: SkillManager;
+  private ctx: CTX;
+
+  private attribute: Attribute;
+  protected difficulty: string;
+  private name: string;
+  private code: string;
+  private description: string;
+  private cultureBased: boolean;
+  private defaultSkillTime: number;
+  private relativeSkills: { [index: string]: number };
 
   constructor({ ctx, props }: { props: SkillProps; ctx: CTX }) {
     this.ctx = ctx;
@@ -30,10 +41,14 @@ export class Skill {
     this.name = props.name;
     this.code = props.code;
     this.description = props.description;
+    this.cultureBased = props.cultureBased || false;
+    this.relativeSkills = props.relativeSkills || {};
+    this.skillManager = props.skillManager;
+    this.defaultSkillTime = props.defaultSkillTime || 60;
     this.modificatorManager = new ModificatorManager();
-    this.resolver = SKILLS_LIST[this.code]
-      ? SKILLS_LIST[this.code]({ ctx, name: this.name, code: this.code })
-      : new SkillResolver({ ctx, name: this.name, code: this.code });
+    this.resolver =
+      props.resolver ||
+      new SkillResolver({ ctx, name: this.name, code: this.code });
   }
 
   check(difficulty: number): CheckResults {
@@ -49,8 +64,33 @@ export class Skill {
     return this.getRawValue() + this.getExpMod() + this.getModsValue();
   }
 
+  getBaseRawValue(): number {
+    const attrValue = this.attribute.getValue();
+    return attrValue > 20 ? 20 : attrValue - this.diffMod().value;
+  }
+
   getRawValue(): number {
-    return this.attribute.getValue() - this.diffMod().value;
+    const relativeSkillsList = Object.keys(this.relativeSkills);
+    const thisExp = this.getExpMod();
+    const relativeSkillValue = relativeSkillsList.reduce((value, skillCode) => {
+      const skillExp = this.skillManager.getByCode(skillCode)?.getExpMod() || 0;
+      const newValue =
+        skillExp > thisExp
+          ? this.skillManager.getByCode(skillCode)?.getBaseRawValue() ||
+            0 - this.relativeSkills[skillCode]
+          : 0;
+      return newValue > value ? newValue : value;
+    }, 0);
+    const _attrValue = this.attribute.getValue();
+    const attrValue = _attrValue > 20 ? 20 : _attrValue;
+    const baseValue =
+      attrValue > relativeSkillValue ? attrValue : relativeSkillValue;
+
+    return baseValue - this.diffMod().value;
+  }
+
+  getDefaultSkillTime() {
+    return this.defaultSkillTime;
   }
 
   getExpMod(): number {
@@ -110,7 +150,6 @@ export class Skill {
       code: 'def',
       parentAttrCode: 'dex',
       difficulty: 'easy',
-      modificatorManager: new ModificatorManager(),
     };
   }
 
@@ -121,7 +160,20 @@ export class Skill {
     const { skill, difficulty, timeMod, options } = payload;
     if (!sourceActor) return { executed: false, payload: input };
     const optionsMod = this.calcOptionsMod(options);
-    const skillCheckResult = this.check(difficulty + timeMod * 1 + optionsMod);
+
+    let diffMod = 0;
+    if (this.isCultureBased()) {
+      const target = input.target?.getCultures();
+      const sourceCulture = input.sourceActor.getCultures();
+      //сравнить между собой культуры источника и локации (если цели нет или цель локация/объект) или персонажа (если есть персонаж-цель)
+      if (!!_.intersection(target, sourceCulture).length) {
+        diffMod = 3;
+      }
+    }
+
+    const skillCheckResult = this.check(
+      difficulty + diffMod + timeMod * 1 + optionsMod
+    );
     this.resolver.commonResolve({
       result: skillCheckResult,
       sourceActor,
@@ -145,47 +197,32 @@ export class Skill {
 
   initFromRaw() {}
 
-  showValue() {
-    let text;
+  showValue(): string {
+    let text = 'Забытые / редко используемые';
     const skillValue = Math.floor(this.getEffectiveValue());
     switch (skillValue) {
-      case -12:
-      case -11:
-      case -10:
-      case -9:
-      case -8:
-      case -7:
-      case -6:
-      case -5:
-      case -4:
-      case -3:
-      case -2:
-      case -1:
-      case 0:
-      case 1:
-      case 2:
-      case 3:
-      case 4:
-      case 5:
-      case 6:
-      case 7:
-      case 8:
-      case 9:
       case 10:
       case 11:
       case 12:
       case 13:
+        text = 'Обычный навык';
+        break;
+
       case 14:
       case 15:
       case 16:
       case 17:
       case 18:
+        text = 'Эксперт';
+        break;
+
       case 19:
       case 20:
       case 21:
       case 22:
       case 23:
       case 24:
+        text = 'Мастер';
         break;
 
       default:
@@ -193,14 +230,8 @@ export class Skill {
     }
     return text;
   }
-}
 
-const SKILLS_LIST: {
-  [index: string]: (args: {
-    code: string;
-    name: string;
-    ctx: CTX;
-  }) => SkillResolver;
-} = {
-  lockpicking: args => new Lockpicking(args),
-};
+  isCultureBased() {
+    return this.cultureBased;
+  }
+}

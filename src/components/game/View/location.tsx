@@ -10,6 +10,6 @@ export default function Location({
   stateManager: { [index: string]: () => void };
 }) {
   const { gameData } = ctx;
-  const currentLocation = gameData.getPlayerCharacter().location;
+  const currentLocation = gameData.getPlayerCharacter().getLocation();
   return <div>{currentLocation.getDescription()}</div>;
 }

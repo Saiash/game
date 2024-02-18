@@ -3,7 +3,7 @@ import Location from './location';
 
 import styles from '../../../styles/Home.module.css';
 import type { CTX } from '../../../types';
-import MapSchema from './ mapSchema';
+import MapSchema from './mapSchema';
 import Objects from './objects';
 
 export default function ViewNode({

@@ -74,7 +74,7 @@ export class AttributeManager {
     });
   }
 
-  getByCode(code: string): Attribute | undefined {
+  getByCode(code: string): Attribute {
     return this.collection[code];
   }
 }

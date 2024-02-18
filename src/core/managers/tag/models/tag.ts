@@ -17,6 +17,7 @@ export type TagInput = {
   name: string;
   type: string;
   value: string;
+  word?: string;
   target: {
     type: string;
     name: string;
@@ -37,7 +38,7 @@ export class Tag {
   private modType?: string;
   private length: number;
   private modTarget?: string;
-  private value: number;
+  private value: string;
   private target:
     | {
         type: string;
@@ -57,7 +58,7 @@ export class Tag {
     this.modTarget = input.modTarget;
     this.length = parseInt(input.length || '0');
     this.name = input.name;
-    this.value = parseInt(input.value);
+    this.value = input.value || input.word || '';
     this.target = input.target;
     this.onSuccess = input.onSuccess;
     this.onFail = input.onFail;
@@ -108,7 +109,7 @@ export class Tag {
     return this.owner;
   }
 
-  getValue() {
+  getValue(): string {
     return this.value;
   }
 

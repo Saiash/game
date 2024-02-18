@@ -1,1 +1,1938 @@
-{"acrobatics":{"name":"Акробатика","description":"Это умение выполнять акробатические или гимнастические трюки, сгибаться, правильно падать и т.д","code":"acrobatics","parentAttr":"dex","difficulty":"hard"},"lockpicking":{"name":"Взлом","description":"описание","code":"lockpicking","parentAttr":"int","difficulty":"medium"},"acting":{"name":"Артистизм","description":"Способность подделывать настроение, эмоции, голоса и убедительно лгать некоторое время","code":"acting","parentAttr":"int","difficulty":"medium"},"accounting":{"name":"Бухгалтерский учет","description":"способности вести бухгалтерские книги, определять состояние бизнеса","code":"accounting","parentAttr":"int","difficulty":"hard"},"administration":{"name":"Администрирование","description":"Это умение управлять крупной организацией","code":"administration","parentAttr":"int","difficulty":"medium"},"swimming":{"name":"Плавание","description":"Это умение используется и для плаванья (по собственной\nволе или при падении в воду) и для спасения утопающих. Во\nвремя плавания для бросков усталости и избежание водных\nопасностей бросается высшее из значений ЗД и Плавания. Во\nвремя состязания с кем-либо, имеющим такую же скорость,\nиспользуется быстрое состязание по умению Плавания для\nопределения победителя (см. Плавание, с.354).\nНе включает умение прыжков с вышки (для этого используется соответствующая специализация умения Спорт).","code":"swimming","parentAttr":"ht","difficulty":"easy"},"disguise":{"name":"Изменение внешности","description":"Это способность стать похожим на кого-то еще с помощью одежды, грима и т.д. ","code":"disguise","parentAttr":"int","difficulty":"medium"},"shadowing":{"name":"Слежка","description":"Это способность преследовать человека в толпе, не будучи замеченным.","code":"shadowing","parentAttr":"int","difficulty":"medium"}}
+{
+  "acrobatics": {
+    "name": "Акробатика",
+    "description": "Это умение выполнять акробатические или гимнастические трюки, сгибаться, правильно падать и т.д",
+    "code": "acrobatics",
+    "parentAttr": "dex",
+    "difficulty": "hard"
+  },
+  "alchemy": {
+    "name": "Алхимия",
+    "description": "Алхимия - это наука магической трансформации и трансмутации. В магических мирах, алхимик может идентифицировать составы с магическим эффектом («эликсиры», такие как приворотные зелья и целительные мази), и создавать их из подходящих ингредиентов.",
+    "code": "alchemy",
+    "parentAttr": "int",
+    "relativeSkills": [],
+    "relativeSkillsDiff": "",
+    "cultureBased": false,
+    "difficulty": "very hard"
+  },
+  "animalHandling": {
+    "name": "Обращение с животными",
+    "description": "Это умение характеризует вашу способность дрессировать животных и работать с ними.",
+    "code": "animalHandling",
+    "parentAttr": "int",
+    "relativeSkills": [],
+    "relativeSkillsDiff": "",
+    "cultureBased": false,
+    "difficulty": "medium"
+  },
+  "acting": {
+    "name": "Артистизм",
+    "description": "Способность подделывать настроение, эмоции, голоса и убедительно лгать некоторое время",
+    "code": "acting",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "accounting": {
+    "name": "Бухгалтерский учет",
+    "description": "Это способности вести бухгалтерские книги, определять состояние бизнеса и т.д. Успешный бросок Бухучета (требуется приблизительно два часа исследований, но может занять месяцы для крупных корпораций) может сообщить вам, правильны ли бухгалтерские записи – и, возможно, открыть факт подделки, подлога или подобной криминальной активности",
+    "code": "accounting",
+    "parentAttr": "int",
+    "difficulty": "hard",
+    "relativeSkillsDiff": "-5",
+    "relativeSkills": ["mathematics", "finance"]
+  },
+  "administration": {
+    "name": "Администрирование",
+    "description": "Это умение управлять крупной организацией",
+    "code": "administration",
+    "parentAttr": "int",
+    "difficulty": "medium",
+    "cultureBased": "true",
+    "relativeSkills": ["Merchant"],
+    "relativeSkillsDiff": "-3"
+  },
+  "antopology": {
+    "name": "Антропология",
+    "description": "Это наука об эволюции человека и культуры",
+    "code": "antopology",
+    "parentAttr": "int",
+    "relativeSkills": ["paleontology"],
+    "relativeSkillsDiff": "-2",
+    "cultureBased": false,
+    "difficulty": "hard"
+  },
+  "archaeology": {
+    "name": "Археология",
+    "description": "Это наука о древних цивилизациях. Археолог чувствует себя как дома на раскопках, рядом с древними черепками, надписями и т.д. При успешном броске археолог сможет ответить на вопросы относительно древней истории, идентифицировать находки, мертвые языки и так далее. Иногда археолог обладает информацией, касающейся оккультизма - например это Древние секреты и Вещи, о которых человек не должен знать...",
+    "code": "archaeology",
+    "parentAttr": "int",
+    "relativeSkills": [],
+    "relativeSkillsDiff": "",
+    "cultureBased": false,
+    "difficulty": "hard"
+  },
+  "artist": {
+    "name": "Изобразительное искусство",
+    "description": "Определяет таланты в визуальном искусстве. Успешный бро- сок этого умения позволит вам, создать узнаваемый портрет кого-либо, карту, по которой будет легко идти, или предмет искусства, который можно будет продать",
+    "code": "artist",
+    "parentAttr": "int",
+    "difficulty": "hard"
+  },
+  "autohypnosis": {
+    "name": "Самогипноз",
+    "description": "Позволяет подключать резервы внутренней силы, входя в трансоподобное состояние. Вхождение в транс требует периода концентрации в течение (20-умение) секунд, минимум 1 секунды. ",
+    "code": "autohypnosis",
+    "parentAttr": "will",
+    "difficulty": "hard",
+    "relativeSkills": ["meditation"],
+    "relativeSkillsDiff": "-4"
+  },
+  "astronomy": {
+    "name": "Астрономия",
+    "description": "Это наука о звездах и других космических объектах. Астроном может ответить на вопросы, касающиеся Солнца, планет Солнечной системы, метеоритов и так далее.",
+    "code": "astronomy",
+    "parentAttr": "int",
+    "difficulty": "hard"
+  },
+  "anthropology": {
+    "name": "",
+    "description": "",
+    "code": "anthropology",
+    "parentAttr": "int",
+    "difficulty": "hard"
+  },
+  "airshipman": {
+    "name": "",
+    "description": "",
+    "code": "airshipman",
+    "parentAttr": "int",
+    "difficulty": "easy"
+  },
+  "axe/Mace": {
+    "name": "",
+    "description": "",
+    "code": "axe/Mace",
+    "parentAttr": "dex",
+    "difficulty": "medium"
+  },
+  "artillery": {
+    "name": "Артиллерия",
+    "description": "Способность использовать тяжелое оружие наподобие требушета или катапульты, стреляющее по навесной траектории",
+    "code": "artillery",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "architecture": {
+    "name": "Архитектура",
+    "description": "Это способность проектировать здания и вычислять проекты зданий, зная об их функциях, и наоборот. Успешный бросок Архитектуры позволит вам узнать что-либо о странном здании, найти секретную комнату или дверь и т.д.",
+    "code": "architecture",
+    "parentAttr": "int",
+    "difficulty": "medium",
+    "cultureBased": "true",
+    "relativeSkills": ["engineer"],
+    "relativeSkillsDiff": "-4"
+  },
+  "areaKnowledge": {
+    "name": "Знание местности",
+    "description": "Это умение отражает знакомство с населением, политикой и географией определенной местности. ",
+    "code": "areaKnowledge",
+    "parentAttr": "int",
+    "difficulty": "easy",
+    "relativeSkills": ["geography"],
+    "relativeSkillsDiff": "-3"
+  },
+  "armoury": {
+    "name": "Оружейник",
+    "description": "Это способность делать и ремонтировать оружие и броню. соответствующего технологического уровня. умение не предполагает умения проектировать новые виды снаряжения – этим занимаются Инженеры",
+    "code": "armoury",
+    "parentAttr": "int",
+    "difficulty": "medium",
+    "relativeSkills": ["engineer"],
+    "relativeSkillsDiff": "-4"
+  },
+  "bodySense": {
+    "name": "Чувство тела",
+    "description": "Это способность быстро прийти в себя после телепортации или любого подобного магического или телепатического «мгновенного перемещения».",
+    "code": "bodySense",
+    "parentAttr": "dex",
+    "difficulty": "hard",
+    "relativeSkills": ["acrobatics"],
+    "relativeSkillsDiff": "-3"
+  },
+  "breathControl": {
+    "name": "Управление дыханием",
+    "description": "то умение дышать максимально эффективно. ",
+    "code": "breathControl",
+    "parentAttr": "ht",
+    "difficulty": "hard"
+  },
+  "boxing": {
+    "name": "Бокс",
+    "description": "Хотя на западе его и не считают боевым искусством, бокс -это научная техника безоружного боя",
+    "code": "boxing",
+    "parentAttr": "dex",
+    "difficulty": "medium"
+  },
+  "brawling": {
+    "name": "Драка",
+    "description": "Это непрофессиональное умение безоружного боя. ",
+    "code": "brawling",
+    "parentAttr": "dex",
+    "difficulty": "easy"
+  },
+  "broadsword": {
+    "name": "",
+    "description": "",
+    "code": "broadsword",
+    "parentAttr": "dex",
+    "difficulty": "medium"
+  },
+  "beamWeapons": {
+    "name": "Лучевое Оружие",
+    "description": "Это умение использовать ручное лучевое оружие, включая бластеры, лазеры, станнеры и т.д",
+    "code": "beamWeapons",
+    "parentAttr": "dex",
+    "difficulty": "easy"
+  },
+  "blowpipe": {
+    "name": "Духовая трубка",
+    "description": "Это умение стрелять из духовой трубки маленькими (обычно отравленными) стрелами",
+    "code": "blowpipe",
+    "parentAttr": "dex",
+    "difficulty": "hard"
+  },
+  "bolas": {
+    "name": "Болас",
+    "description": "Болас - это метательное оружие, представляющее собой два или более грузов, соединенных между собой веревкой, предназначенное преимущественно для обездвиживания противника",
+    "code": "bolas",
+    "parentAttr": "dex",
+    "difficulty": "medium"
+  },
+  "bow": {
+    "name": "Лук",
+    "description": "Это умение пользоваться длинным или коротким луком и всеми подобными типами луков",
+    "code": "bow",
+    "parentAttr": "dex",
+    "difficulty": "medium"
+  },
+  "BoneCarving": {
+    "name": "",
+    "description": "",
+    "code": "BoneCarving",
+    "parentAttr": "dex",
+    "difficulty": "medium"
+  },
+  "blindFighting": {
+    "name": "Бой вслепую",
+    "description": "Вы изучили тайны боя в полной темноте. В результате, вы можете чувствовать вашу цель, не видя ее. Успешный бросок умения позволяет одну контактную атаку или защиту без любых штрафов за освещение, слепоту и невидимость врага",
+    "code": "blindFighting",
+    "parentAttr": "per",
+    "difficulty": "very hard"
+  },
+  "bodyControl": {
+    "name": "Контроль тела",
+    "description": "Эта способность позволяет контролировать непроизвольные функции тела, такие, как сердцебиение, кровоток и пищеварение.",
+    "code": "bodyControl",
+    "parentAttr": "ht",
+    "difficulty": "very hard"
+  },
+  "breakingBlow": {
+    "name": "Сокрушительный удар",
+    "description": "Позволяет вам бить голыми руками по слабейшим точкам предметов.",
+    "code": "breakingBlow",
+    "parentAttr": "int",
+    "difficulty": "hard"
+  },
+  "bioengineering": {
+    "name": "Биоинженерия",
+    "description": "Способность разрабатывать живые организмы с заданными характеристиками, или создавать продукты биотехнологии",
+    "code": "bioengineering",
+    "parentAttr": "int",
+    "difficulty": "hard",
+    "relativeSkills": ["biology"],
+    "relativeSkillsDiff": "-5"
+  },
+  "biology": {
+    "name": "Биология",
+    "description": "Наука о структуре, привычках и обитании живых организмов.",
+    "code": "biology",
+    "parentAttr": "int",
+    "difficulty": "very hard",
+    "relativeSkills": ["naturalist"],
+    "relativeSkillsDiff": "-6"
+  },
+  "bodyLanguage": {
+    "name": "Язык тела",
+    "description": "Это способность интерпретировать выражение лица персоны и ее движения, для предугадывания ее чувств.",
+    "code": "bodyLanguage",
+    "parentAttr": "per",
+    "difficulty": "medium",
+    "relativeSkills": ["detectLies", "psychology"],
+    "relativeSkillsDiff": "-4"
+  },
+  "battlesuit": {
+    "name": "",
+    "description": "",
+    "code": "battlesuit",
+    "parentAttr": "dex",
+    "difficulty": "medium"
+  },
+  "bicycling": {
+    "name": "Велосипед",
+    "description": "Способность ездить на велосипеде на дальние дистанции, с высокой скоростью и т.д. ",
+    "code": "bicycling",
+    "parentAttr": "dex",
+    "difficulty": "easy",
+    "relativeSkills": ["driving"],
+    "relativeSkillsDiff": "-4"
+  },
+  "boating": {
+    "name": "Малые корабли",
+    "description": "Способность управлять определенным типом небольших судов. ",
+    "code": "boating",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "brainwashing": {
+    "name": "Промывка сознания",
+    "description": "Темное искусство технологического контроля разума и изменения личности.",
+    "code": "brainwashing",
+    "parentAttr": "int",
+    "difficulty": "hard"
+  },
+  "crossbow": {
+    "name": "Арбалет",
+    "description": "Это умение использовать различные Арбалеты, включая шаро- и камнестрельные арбалеты. Если вы владеете этим умением, то понимаете, как использовать осадные орудия арбалетного типа, но не имеете опыта в стрельбе из них.",
+    "code": "crossbow",
+    "parentAttr": "dex",
+    "difficulty": "easy"
+  },
+  "carpentry": {
+    "name": "Плотник",
+    "description": "Это способность делать предметы из дерева. Успешный бросок позволит вам профессионально выполнять работу по дереву в течение одного часа. ",
+    "code": "carpentry",
+    "parentAttr": "int",
+    "difficulty": "easy"
+  },
+  "captivate": {
+    "name": "",
+    "description": "",
+    "code": "captivate",
+    "parentAttr": "will",
+    "difficulty": "hard"
+  },
+  "cooking": {
+    "name": "Повар",
+    "description": "Это умение шеф-повара, вы не должны сами все делать, и он не нужен для приготовления простых продуктов.",
+    "code": "cooking",
+    "parentAttr": "int",
+    "difficulty": "medium",
+    "relativeSkills": ["housekeeping"],
+    "relativeSkillsDiff": "-5"
+  },
+  "chemistry": {
+    "name": "Химия",
+    "description": "Это наука о веществах. Химик сможет идентифицировать химические элементы и простые вещества (но не обязательно лекарства и волшебные зелья и т.д.). Располагая необходимым оборудованием, он сможет анализировать и синтезировать сложные вещества.",
+    "code": "chemistry",
+    "parentAttr": "int",
+    "difficulty": "hard",
+    "relativeSkills": ["alchemy"],
+    "relativeSkillsDiff": "-3"
+  },
+  "camouflage": {
+    "name": "Маскировка",
+    "description": "Это способность использовать натуральные вещества и/или краски для того, чтобы замаскировать себя, свою позицию, сна- ряжение и т.д.",
+    "code": "camouflage",
+    "parentAttr": "int",
+    "difficulty": "easy",
+    "relativeSkills": ["survival"],
+    "relativeSkillsDiff": "-2"
+  },
+  "cartography": {
+    "name": "Картография",
+    "description": "Это умение создавать и читать карты и схемы",
+    "code": "cartography",
+    "parentAttr": "int",
+    "difficulty": "medium",
+    "relativeSkills": ["geography", "mathematics", "navigation"],
+    "relativeSkillsDiff": "-2"
+  },
+  "climbing": {
+    "name": "Лазание",
+    "description": "Это умение лазать по горам, каменным стенам, деревьям, зданиям и т.д.",
+    "code": "climbing",
+    "parentAttr": "dex",
+    "difficulty": "easy"
+  },
+  "carousing": {
+    "name": "Пирушки",
+    "description": "Это умение общаться, участвовать в вечеринках и т.д. Успешный бросок умения, сделанный в под- ходящих обстоятельствах, даст вам премию +2 при попытке добиться помощи или информации либо просто к общей реакции. ",
+    "code": "carousing",
+    "parentAttr": "ht",
+    "difficulty": "easy"
+  },
+  "connoisseur": {
+    "name": "Знаток",
+    "description": "Это умение отражает образованное понимание искусства и предметов. Это очень важное умение для людей искусства, критиков, воров и всех, кто хо- чет казаться культурным",
+    "code": "connoisseur",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "currentAffairs": {
+    "name": "Свежие новости",
+    "description": "Это способность быстро собирать и анализировать все, что в вашем мире определяется как новости, и вспоминать их при необходимости.",
+    "code": "currentAffairs",
+    "parentAttr": "int",
+    "difficulty": "easy",
+    "relativeSkillsDiff": "-4",
+    "relativeSkills": ["research"],
+    "cultureBased": "true"
+  },
+  "criminology": {
+    "name": "Криминология",
+    "description": "Это наука о преступлениях и мышлении преступников. Используя свое умение, криминалист сможет найти необходимые улики, выдвинуть предположение насчет действий преступников и т.д",
+    "code": "criminology",
+    "parentAttr": "int",
+    "difficulty": "medium",
+    "relativeSkills": ["psychology"],
+    "relativeSkillsDiff": "-4"
+  },
+  "computerHacking": {
+    "name": "Компьютерный взлом",
+    "description": "Это умение получения нелегального доступа к компьютерной системе – обычно с использованием другого компьютера через сеть. ",
+    "code": "computerHacking",
+    "parentAttr": "int",
+    "difficulty": "very hard"
+  },
+  "cryptography": {
+    "name": "Криптография",
+    "description": "Это умение позволяет кодировать и расшифровывать информацию, включает в себя использование различных систем шифрования, кодов и шифров. ",
+    "code": "cryptography",
+    "parentAttr": "int",
+    "difficulty": "hard",
+    "relativeSkills": ["mathematics"],
+    "relativeSkillsDiff": "-5"
+  },
+  "computerOperation": {
+    "name": "Использование компьютера",
+    "description": "Это способность пользоваться компьютером, вызывать данные, пользоваться соответствующими программами, играть в видеоигры и т.д.",
+    "code": "computerOperation",
+    "parentAttr": "int",
+    "difficulty": "easy"
+  },
+  "crewman": {
+    "name": "Член экипажа",
+    "description": "Это способность работать в команде на борту определенного типа крупного вида транспорта. Включает знакомство с бытом, знание техники безопасности и тренированность предотвращать и ремонтировать повреждения.",
+    "code": "crewman",
+    "parentAttr": "int",
+    "difficulty": "easy"
+  },
+  "cloak": {
+    "name": "Плащ",
+    "description": "Это умение использования плаща или накидки в качестве оружия.",
+    "code": "cloak",
+    "parentAttr": "dex",
+    "difficulty": "medium",
+    "relativeSkills": ["shield", "net"],
+    "relativeSkillsDiff": "-4"
+  },
+  "counterfeiting": {
+    "name": "Фальшивомонетчик",
+    "description": "Искусство подделки банк- нот и монет. Доступно только криминальному миру и правительственным агентствам.",
+    "code": "counterfeiting",
+    "parentAttr": "int",
+    "difficulty": "hard",
+    "relativeSkillsDiff": "-2",
+    "relativeSkills": ["forgery"]
+  },
+  "computerProgramming": {
+    "name": "",
+    "description": "",
+    "code": "computerProgramming",
+    "parentAttr": "int",
+    "difficulty": "hard"
+  },
+  "disguise": {
+    "name": "Изменение внешности",
+    "description": "Это способность стать похожим на кого-то еще с помощью одежды, грима и т.д. ",
+    "code": "disguise",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "dancing": {
+    "name": "Танцы",
+    "description": "Это умение танцевать так, как принято в вашей культуре и быстро обучаться новым танцам.",
+    "code": "dancing",
+    "parentAttr": "dex",
+    "difficulty": "medium",
+    "cultureBased": "true"
+  },
+  "diagnosis": {
+    "name": "Диагностика",
+    "description": "Это умение понять, что случилось с больным или раненым, а также установить причину смерти погибшего или умершего человека",
+    "code": "diagnosis",
+    "parentAttr": "int",
+    "difficulty": "hard",
+    "relativeSkills": ["physician"],
+    "relativeSkillsDiff": "-4"
+  },
+  "detectLies": {
+    "name": "Определение лжи",
+    "description": "Это способность сказать, врет вам кто-либо или нет. ",
+    "code": "detectLies",
+    "parentAttr": "per",
+    "difficulty": "hard",
+    "relativeSkillsDiff": "-4",
+    "relativeSkills": ["psychology", "bodyLanguage"]
+  },
+  "diplomacy": {
+    "name": "Дипломатия",
+    "description": "Это умение вести переговоры, достигать компромиссов и ладить с другими. Бросок Дипломатии может заменить любой бросок реакции в небоевой ситуации",
+    "code": "diplomacy",
+    "parentAttr": "int",
+    "difficulty": "hard",
+    "relativeSkills": ["politics"],
+    "relativeSkillsDiff": "-6"
+  },
+  "divingSuit": {
+    "name": "Водолазный скафандр",
+    "description": "",
+    "code": "divingSuit",
+    "parentAttr": "dex",
+    "difficulty": "medium"
+  },
+  "driving": {
+    "name": "Вождение",
+    "description": "Способность водить определенный вид наземного транспорта.",
+    "code": "driving",
+    "parentAttr": "dex",
+    "difficulty": "medium"
+  },
+  "dreaming": {
+    "name": "Ясный сон",
+    "description": "Это умение контролирования\nи запоминания снов. Успешный бросок умения позволяет вам пережить яркий реалистичный сон на выбранную тему.",
+    "code": "dreaming",
+    "parentAttr": "will",
+    "difficulty": "hard"
+  },
+  "dropping": {
+    "name": "Сбрасывание",
+    "description": "Это умение сбрасывать тяжелые предметы на врагов во время полета.",
+    "code": "dropping",
+    "parentAttr": "dex",
+    "difficulty": "medium",
+    "relativeSkills": ["throwing"],
+    "relativeSkillsDiff": "-4"
+  },
+  "electronicsOperation": {
+    "name": "Использование электроники",
+    "description": "Это умение позволяет использовать все электронные устройства в пределах известной специальности.",
+    "code": "electronicsOperation",
+    "parentAttr": "int",
+    "difficulty": "medium",
+    "relativeSkills": ["electronicsRepair", "engineer"],
+    "relativeSkillsDiff": "-5"
+  },
+  "explosives": {
+    "name": "",
+    "description": "",
+    "code": "explosives",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "enthrallment": {
+    "name": "",
+    "description": "",
+    "code": "enthrallment",
+    "parentAttr": "will",
+    "difficulty": "hard"
+  },
+  "engineer": {
+    "name": "Инженерия",
+    "description": "Это умение разрабатывать и создавать сложные механизмы. Успешный бросок позволит вам, например, определить назначение непонятного устройства; определить неполадку в электрическом или механическом устройстве; произвести ремонт; разработать новый механизм; придумать устройство для решения определенной проблемы. ",
+    "code": "engineer",
+    "parentAttr": "int",
+    "difficulty": "hard",
+    "relativeSkills": ["mathematics"],
+    "relativeSkillsDiff": "-5"
+  },
+  "esotericMedicine": {
+    "name": "",
+    "description": "",
+    "code": "esotericMedicine",
+    "parentAttr": "per",
+    "difficulty": "hard"
+  },
+  "exorcism": {
+    "name": "",
+    "description": "",
+    "code": "exorcism",
+    "parentAttr": "will",
+    "difficulty": "hard"
+  },
+  "electrician": {
+    "name": "Электрик",
+    "description": "Это умение создания, поддержания и ремонта электрических\nсистем. Бросок умения необходим для диагностики неисправности или создания проводки. В приключениях используют для повреждения и восстановления систем управления и, например, отрезания от электроснабжения построек. ",
+    "code": "electrician",
+    "parentAttr": "int",
+    "difficulty": "medium",
+    "relativeSkills": ["engineer"],
+    "relativeSkillsDiff": "-3"
+  },
+  "electronicsRepair": {
+    "name": "Ремонт электроники",
+    "description": "Способность обнаруживать и устранять неполадки в электронном оборудовании. ",
+    "code": "electronicsRepair",
+    "parentAttr": "int",
+    "difficulty": "medium",
+    "relativeSkills": ["electronicsOperation", "engineer"],
+    "relativeSkillsDiff": "-3"
+  },
+  "eroticArt": {
+    "name": "",
+    "description": "",
+    "code": "eroticArt",
+    "parentAttr": "dex",
+    "difficulty": "medium"
+  },
+  "economics": {
+    "name": "Экономика",
+    "description": "Это наука о деньгах, биржевых операциях и банковском деле. Экономист может ответить на вопросы об инвестициях, экономической политике и т.д. Он также может предсказать локальные эффекты экономических изменений при появлении нового материала или технологии, разрушения электростанции или торгового дома и в других подобных ситуациях.",
+    "code": "economics",
+    "parentAttr": "int",
+    "difficulty": "hard",
+    "relativeSkills": ["merchant", "finance", "marketAnalysis"],
+    "relativeSkillsDiff": "-5"
+  },
+  "escape": {
+    "name": "",
+    "description": "",
+    "code": "escape",
+    "parentAttr": "dex",
+    "difficulty": "hard"
+  },
+  "finance": {
+    "name": "",
+    "description": "",
+    "code": "finance",
+    "parentAttr": "int",
+    "difficulty": "hard"
+  },
+  "falconry": {
+    "name": "",
+    "description": "",
+    "code": "falconry",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "fireEating": {
+    "name": "",
+    "description": "",
+    "code": "fireEating",
+    "parentAttr": "dex",
+    "difficulty": "medium"
+  },
+  "flight": {
+    "name": "",
+    "description": "",
+    "code": "flight",
+    "parentAttr": "ht",
+    "difficulty": "medium"
+  },
+  "freeFall": {
+    "name": "",
+    "description": "",
+    "code": "freeFall",
+    "parentAttr": "dex",
+    "difficulty": "medium"
+  },
+  "fastDraw": {
+    "name": "",
+    "description": "",
+    "code": "fastDraw",
+    "parentAttr": "dex",
+    "difficulty": "easy"
+  },
+  "flail": {
+    "name": "",
+    "description": "",
+    "code": "flail",
+    "parentAttr": "dex",
+    "difficulty": "hard"
+  },
+  "forceSword": {
+    "name": "",
+    "description": "",
+    "code": "forceSword",
+    "parentAttr": "dex",
+    "difficulty": "medium"
+  },
+  "forceWhip": {
+    "name": "",
+    "description": "",
+    "code": "forceWhip",
+    "parentAttr": "dex",
+    "difficulty": "medium"
+  },
+  "flyingLeap": {
+    "name": "",
+    "description": "",
+    "code": "flyingLeap",
+    "parentAttr": "int",
+    "difficulty": "hard"
+  },
+  "firstAid": {
+    "name": "",
+    "description": "",
+    "code": "firstAid",
+    "parentAttr": "int",
+    "difficulty": "easy"
+  },
+  "forwardObserver": {
+    "name": "",
+    "description": "",
+    "code": "forwardObserver",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "fishing": {
+    "name": "",
+    "description": "",
+    "code": "fishing",
+    "parentAttr": "per",
+    "difficulty": "easy"
+  },
+  "farming": {
+    "name": "",
+    "description": "",
+    "code": "farming",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "forcedEntry": {
+    "name": "",
+    "description": "",
+    "code": "forcedEntry",
+    "parentAttr": "dex",
+    "difficulty": "easy"
+  },
+  "forensics": {
+    "name": "",
+    "description": "",
+    "code": "forensics",
+    "parentAttr": "int",
+    "difficulty": "hard"
+  },
+  "fortuneTelling": {
+    "name": "",
+    "description": "",
+    "code": "fortuneTelling",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "fastTalk": {
+    "name": "",
+    "description": "",
+    "code": "fastTalk",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "filch": {
+    "name": "",
+    "description": "",
+    "code": "filch",
+    "parentAttr": "dex",
+    "difficulty": "medium"
+  },
+  "forgery": {
+    "name": "",
+    "description": "",
+    "code": "forgery",
+    "parentAttr": "int",
+    "difficulty": "hard"
+  },
+  "freightHandling": {
+    "name": "",
+    "description": "",
+    "code": "freightHandling",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "groupPerformance": {
+    "name": "",
+    "description": "",
+    "code": "groupPerformance",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "garrote": {
+    "name": "",
+    "description": "",
+    "code": "garrote",
+    "parentAttr": "dex",
+    "difficulty": "easy"
+  },
+  "gunner": {
+    "name": "",
+    "description": "",
+    "code": "gunner",
+    "parentAttr": "dex",
+    "difficulty": "easy"
+  },
+  "guns": {
+    "name": "",
+    "description": "",
+    "code": "guns",
+    "parentAttr": "dex",
+    "difficulty": "easy"
+  },
+  "games": {
+    "name": "",
+    "description": "",
+    "code": "games",
+    "parentAttr": "int",
+    "difficulty": "easy"
+  },
+  "geology": {
+    "name": "",
+    "description": "",
+    "code": "geology",
+    "parentAttr": "int",
+    "difficulty": "hard"
+  },
+  "gardening": {
+    "name": "",
+    "description": "",
+    "code": "gardening",
+    "parentAttr": "int",
+    "difficulty": "easy"
+  },
+  "gambling": {
+    "name": "",
+    "description": "",
+    "code": "gambling",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "gesture": {
+    "name": "",
+    "description": "",
+    "code": "gesture",
+    "parentAttr": "int",
+    "difficulty": "easy"
+  },
+  "geography": {
+    "name": "",
+    "description": "",
+    "code": "geography",
+    "parentAttr": "int",
+    "difficulty": "hard"
+  },
+  "heraldry": {
+    "name": "",
+    "description": "",
+    "code": "heraldry",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "history": {
+    "name": "",
+    "description": "",
+    "code": "history",
+    "parentAttr": "int",
+    "difficulty": "hard"
+  },
+  "herbLore": {
+    "name": "",
+    "description": "",
+    "code": "herbLore",
+    "parentAttr": "int",
+    "difficulty": "very hard"
+  },
+  "hypnotism": {
+    "name": "",
+    "description": "",
+    "code": "hypnotism",
+    "parentAttr": "int",
+    "difficulty": "hard"
+  },
+  "housekeeping": {
+    "name": "",
+    "description": "",
+    "code": "housekeeping",
+    "parentAttr": "int",
+    "difficulty": "easy"
+  },
+  "hiddenLore": {
+    "name": "",
+    "description": "",
+    "code": "hiddenLore",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "hiking": {
+    "name": "",
+    "description": "",
+    "code": "hiking",
+    "parentAttr": "ht",
+    "difficulty": "medium"
+  },
+  "holdout": {
+    "name": "",
+    "description": "",
+    "code": "holdout",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "hazardousMaterials": {
+    "name": "",
+    "description": "",
+    "code": "hazardousMaterials",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "innateAttack": {
+    "name": "",
+    "description": "",
+    "code": "innateAttack",
+    "parentAttr": "dex",
+    "difficulty": "easy"
+  },
+  "immovableStance": {
+    "name": "",
+    "description": "",
+    "code": "immovableStance",
+    "parentAttr": "dex",
+    "difficulty": "hard"
+  },
+  "invisibilityArt": {
+    "name": "",
+    "description": "",
+    "code": "invisibilityArt",
+    "parentAttr": "int",
+    "difficulty": "very hard"
+  },
+  "intimidation": {
+    "name": "",
+    "description": "",
+    "code": "intimidation",
+    "parentAttr": "will",
+    "difficulty": "medium"
+  },
+  "intelligenceAnalysis": {
+    "name": "",
+    "description": "",
+    "code": "intelligenceAnalysis",
+    "parentAttr": "int",
+    "difficulty": "hard"
+  },
+  "interrogation": {
+    "name": "",
+    "description": "",
+    "code": "interrogation",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "jumping": {
+    "name": "",
+    "description": "",
+    "code": "jumping",
+    "parentAttr": "dex",
+    "difficulty": "easy"
+  },
+  "jitte/Sai": {
+    "name": "",
+    "description": "",
+    "code": "jitte/Sai",
+    "parentAttr": "dex",
+    "difficulty": "medium"
+  },
+  "judo": {
+    "name": "",
+    "description": "",
+    "code": "judo",
+    "parentAttr": "dex",
+    "difficulty": "hard"
+  },
+  "jeweler": {
+    "name": "",
+    "description": "",
+    "code": "jeweler",
+    "parentAttr": "int",
+    "difficulty": "hard"
+  },
+  "karate": {
+    "name": "",
+    "description": "",
+    "code": "karate",
+    "parentAttr": "dex",
+    "difficulty": "hard"
+  },
+  "knife": {
+    "name": "",
+    "description": "",
+    "code": "knife",
+    "parentAttr": "dex",
+    "difficulty": "easy"
+  },
+  "kusari": {
+    "name": "",
+    "description": "",
+    "code": "kusari",
+    "parentAttr": "dex",
+    "difficulty": "hard"
+  },
+  "kiai": {
+    "name": "",
+    "description": "",
+    "code": "kiai",
+    "parentAttr": "ht",
+    "difficulty": "hard"
+  },
+  "knotTying": {
+    "name": "",
+    "description": "",
+    "code": "knot-Tying",
+    "parentAttr": "dex",
+    "difficulty": "easy"
+  },
+  "lockpicking": {
+    "name": "Взлом",
+    "description": "описание",
+    "code": "lockpicking",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "lifting": {
+    "name": "",
+    "description": "",
+    "code": "lifting",
+    "parentAttr": "ht",
+    "difficulty": "medium"
+  },
+  "lance": {
+    "name": "",
+    "description": "",
+    "code": "lance",
+    "parentAttr": "dex",
+    "difficulty": "medium"
+  },
+  "lasso": {
+    "name": "",
+    "description": "",
+    "code": "lasso",
+    "parentAttr": "dex",
+    "difficulty": "medium"
+  },
+  "liquidProjector": {
+    "name": "",
+    "description": "",
+    "code": "liquidProjector",
+    "parentAttr": "dex",
+    "difficulty": "easy"
+  },
+  "leatherworking": {
+    "name": "",
+    "description": "",
+    "code": "leatherworking",
+    "parentAttr": "dex",
+    "difficulty": "easy"
+  },
+  "lightWalk": {
+    "name": "",
+    "description": "",
+    "code": "lightWalk",
+    "parentAttr": "dex",
+    "difficulty": "hard"
+  },
+  "leadership": {
+    "name": "",
+    "description": "",
+    "code": "leadership",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "law": {
+    "name": "",
+    "description": "",
+    "code": "law",
+    "parentAttr": "int",
+    "difficulty": "hard"
+  },
+  "linguistics": {
+    "name": "",
+    "description": "",
+    "code": "linguistics",
+    "parentAttr": "int",
+    "difficulty": "hard"
+  },
+  "literature": {
+    "name": "",
+    "description": "",
+    "code": "literature",
+    "parentAttr": "int",
+    "difficulty": "hard"
+  },
+  "lipReading": {
+    "name": "",
+    "description": "",
+    "code": "lipReading",
+    "parentAttr": "per",
+    "difficulty": "medium"
+  },
+  "mathematics": {
+    "name": "",
+    "description": "",
+    "code": "mathematics",
+    "parentAttr": "int",
+    "difficulty": "hard"
+  },
+  "makeup": {
+    "name": "",
+    "description": "",
+    "code": "makeup",
+    "parentAttr": "int",
+    "difficulty": "easy"
+  },
+  "merchant": {
+    "name": "",
+    "description": "",
+    "code": "merchant",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "mimicry": {
+    "name": "",
+    "description": "",
+    "code": "mimicry",
+    "parentAttr": "int",
+    "difficulty": "hard"
+  },
+  "musicalComposition": {
+    "name": "",
+    "description": "",
+    "code": "musicalComposition",
+    "parentAttr": "int",
+    "difficulty": "hard"
+  },
+  "musicalInstrument": {
+    "name": "",
+    "description": "",
+    "code": "musicalInstrument",
+    "parentAttr": "int",
+    "difficulty": "hard"
+  },
+  "mount": {
+    "name": "",
+    "description": "",
+    "code": "mount",
+    "parentAttr": "dex",
+    "difficulty": "medium"
+  },
+  "marketAnalysis": {
+    "name": "",
+    "description": "",
+    "code": "marketAnalysis",
+    "parentAttr": "int",
+    "difficulty": "hard"
+  },
+  "mainGauche": {
+    "name": "",
+    "description": "",
+    "code": "main-Gauche",
+    "parentAttr": "dex",
+    "difficulty": "medium"
+  },
+  "MonowireWhip": {
+    "name": "",
+    "description": "",
+    "code": "MonowireWhip",
+    "parentAttr": "dex",
+    "difficulty": "hard"
+  },
+  "masonry": {
+    "name": "",
+    "description": "",
+    "code": "masonry",
+    "parentAttr": "int",
+    "difficulty": "easy"
+  },
+  "meditation": {
+    "name": "",
+    "description": "",
+    "code": "meditation",
+    "parentAttr": "will",
+    "difficulty": "hard"
+  },
+  "mentalStrength": {
+    "name": "",
+    "description": "",
+    "code": "mentalStrength",
+    "parentAttr": "will",
+    "difficulty": "easy"
+  },
+  "mindBlock": {
+    "name": "",
+    "description": "",
+    "code": "mindBlock",
+    "parentAttr": "will",
+    "difficulty": "medium"
+  },
+  "musicalInfluence": {
+    "name": "",
+    "description": "",
+    "code": "musicalInfluence",
+    "parentAttr": "int",
+    "difficulty": "very hard"
+  },
+  "metallurgy": {
+    "name": "",
+    "description": "",
+    "code": "metallurgy",
+    "parentAttr": "int",
+    "difficulty": "hard"
+  },
+  "meteorology": {
+    "name": "",
+    "description": "",
+    "code": "meteorology",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "machinist": {
+    "name": "",
+    "description": "",
+    "code": "machinist",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "mechanic": {
+    "name": "",
+    "description": "",
+    "code": "mechanic",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "net": {
+    "name": "",
+    "description": "",
+    "code": "net",
+    "parentAttr": "dex",
+    "difficulty": "hard"
+  },
+  "navigation": {
+    "name": "",
+    "description": "",
+    "code": "navigation",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "naturalist": {
+    "name": "",
+    "description": "",
+    "code": "naturalist",
+    "parentAttr": "int",
+    "difficulty": "hard"
+  },
+  "occultism": {
+    "name": "",
+    "description": "",
+    "code": "occultism",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "observation": {
+    "name": "",
+    "description": "",
+    "code": "observation",
+    "parentAttr": "per",
+    "difficulty": "medium"
+  },
+  "performance": {
+    "name": "",
+    "description": "",
+    "code": "performance",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "packing": {
+    "name": "",
+    "description": "",
+    "code": "packing",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "poetry": {
+    "name": "",
+    "description": "",
+    "code": "poetry",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "parryMissile Weapons": {
+    "name": "",
+    "description": "",
+    "code": "parryMissileWeapons",
+    "parentAttr": "dex",
+    "difficulty": "hard"
+  },
+  "polearm": {
+    "name": "",
+    "description": "",
+    "code": "polearm",
+    "parentAttr": "dex",
+    "difficulty": "medium"
+  },
+  "pickpocket": {
+    "name": "",
+    "description": "",
+    "code": "pickpocket",
+    "parentAttr": "dex",
+    "difficulty": "hard"
+  },
+  "persuade": {
+    "name": "",
+    "description": "",
+    "code": "persuade",
+    "parentAttr": "will",
+    "difficulty": "hard"
+  },
+  "powerBlow": {
+    "name": "",
+    "description": "",
+    "code": "powerBlow",
+    "parentAttr": "will",
+    "difficulty": "hard"
+  },
+  "pressurePoints": {
+    "name": "",
+    "description": "",
+    "code": "pressurePoints",
+    "parentAttr": "int",
+    "difficulty": "hard"
+  },
+  "pressureSecrets": {
+    "name": "",
+    "description": "",
+    "code": "pressureSecrets",
+    "parentAttr": "int",
+    "difficulty": "very hard"
+  },
+  "push": {
+    "name": "",
+    "description": "",
+    "code": "push",
+    "parentAttr": "dex",
+    "difficulty": "hard"
+  },
+  "physician": {
+    "name": "",
+    "description": "",
+    "code": "physician",
+    "parentAttr": "int",
+    "difficulty": "hard"
+  },
+  "physics": {
+    "name": "",
+    "description": "",
+    "code": "physics",
+    "parentAttr": "int",
+    "difficulty": "very hard"
+  },
+  "physiology": {
+    "name": "",
+    "description": "",
+    "code": "physiology",
+    "parentAttr": "int",
+    "difficulty": "hard"
+  },
+  "prospecting": {
+    "name": "",
+    "description": "",
+    "code": "prospecting",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "paleontology": {
+    "name": "",
+    "description": "",
+    "code": "paleontology",
+    "parentAttr": "int",
+    "difficulty": "hard"
+  },
+  "pharmacy": {
+    "name": "",
+    "description": "",
+    "code": "pharmacy",
+    "parentAttr": "int",
+    "difficulty": "hard"
+  },
+  "panhandling": {
+    "name": "",
+    "description": "",
+    "code": "panhandling",
+    "parentAttr": "int",
+    "difficulty": "easy"
+  },
+  "politics": {
+    "name": "",
+    "description": "",
+    "code": "politics",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "publicSpeaking": {
+    "name": "",
+    "description": "",
+    "code": "publicSpeaking",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "philosophy": {
+    "name": "",
+    "description": "",
+    "code": "philosophy",
+    "parentAttr": "int",
+    "difficulty": "hard"
+  },
+  "psychology": {
+    "name": "",
+    "description": "",
+    "code": "psychology",
+    "parentAttr": "int",
+    "difficulty": "hard"
+  },
+  "poisons": {
+    "name": "",
+    "description": "",
+    "code": "poisons",
+    "parentAttr": "int",
+    "difficulty": "hard"
+  },
+  "propaganda": {
+    "name": "",
+    "description": "",
+    "code": "propaganda",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "parachuting": {
+    "name": "",
+    "description": "",
+    "code": "parachuting",
+    "parentAttr": "dex",
+    "difficulty": "easy"
+  },
+  "photography": {
+    "name": "",
+    "description": "",
+    "code": "photography",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "piloting": {
+    "name": "",
+    "description": "",
+    "code": "piloting",
+    "parentAttr": "dex",
+    "difficulty": "medium"
+  },
+  "riding": {
+    "name": "",
+    "description": "",
+    "code": "riding",
+    "parentAttr": "dex",
+    "difficulty": "medium"
+  },
+  "running": {
+    "name": "",
+    "description": "",
+    "code": "running",
+    "parentAttr": "ht",
+    "difficulty": "medium"
+  },
+  "rapier": {
+    "name": "",
+    "description": "",
+    "code": "rapier",
+    "parentAttr": "dex",
+    "difficulty": "medium"
+  },
+  "religious Ritual": {
+    "name": "",
+    "description": "",
+    "code": "religiousRitual",
+    "parentAttr": "int",
+    "difficulty": "hard"
+  },
+  "ritual Magic": {
+    "name": "",
+    "description": "",
+    "code": "ritualMagic",
+    "parentAttr": "int",
+    "difficulty": "very hard"
+  },
+  "research": {
+    "name": "",
+    "description": "",
+    "code": "research",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "symbol Drawing": {
+    "name": "",
+    "description": "",
+    "code": "symbolDrawing",
+    "parentAttr": "int",
+    "difficulty": "hard"
+  },
+  "scuba": {
+    "name": "",
+    "description": "",
+    "code": "scuba",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "skating": {
+    "name": "",
+    "description": "",
+    "code": "skating",
+    "parentAttr": "ht",
+    "difficulty": "hard"
+  },
+  "skiing": {
+    "name": "",
+    "description": "",
+    "code": "skiing",
+    "parentAttr": "ht",
+    "difficulty": "hard"
+  },
+  "survival": {
+    "name": "",
+    "description": "",
+    "code": "survival",
+    "parentAttr": "per",
+    "difficulty": "medium"
+  },
+  "sexAppeal": {
+    "name": "",
+    "description": "",
+    "code": "sexAppeal",
+    "parentAttr": "ht",
+    "difficulty": "medium"
+  },
+  "streetwise": {
+    "name": "",
+    "description": "",
+    "code": "streetwise",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "sociology": {
+    "name": "",
+    "description": "",
+    "code": "sociology",
+    "parentAttr": "int",
+    "difficulty": "hard"
+  },
+  "search": {
+    "name": "",
+    "description": "",
+    "code": "search",
+    "parentAttr": "per",
+    "difficulty": "medium"
+  },
+  "smuggling": {
+    "name": "",
+    "description": "",
+    "code": "smuggling",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "stealth": {
+    "name": "",
+    "description": "",
+    "code": "stealth",
+    "parentAttr": "dex",
+    "difficulty": "medium"
+  },
+  "seamanship": {
+    "name": "",
+    "description": "",
+    "code": "seamanship",
+    "parentAttr": "int",
+    "difficulty": "easy"
+  },
+  "shiphandling": {
+    "name": "",
+    "description": "",
+    "code": "shiphandling",
+    "parentAttr": "int",
+    "difficulty": "hard"
+  },
+  "spacer": {
+    "name": "",
+    "description": "",
+    "code": "spacer",
+    "parentAttr": "int",
+    "difficulty": "easy"
+  },
+  "submarine": {
+    "name": "",
+    "description": "",
+    "code": "submarine",
+    "parentAttr": "dex",
+    "difficulty": "medium"
+  },
+  "submariner": {
+    "name": "",
+    "description": "",
+    "code": "submariner",
+    "parentAttr": "int",
+    "difficulty": "easy"
+  },
+  "swimming": {
+    "name": "Плавание",
+    "description": "Это умение используется и для плаванья (по собственной\nволе или при падении в воду) и для спасения утопающих. Во\nвремя плавания для бросков усталости и избежание водных\nопасностей бросается высшее из значений ЗД и Плавания. Во\nвремя состязания с кем-либо, имеющим такую же скорость,\nиспользуется быстрое состязание по умению Плавания для\nопределения победителя (см. Плавание, с.354).\nНе включает умение прыжков с вышки (для этого используется соответствующая специализация умения Спорт).",
+    "code": "swimming",
+    "parentAttr": "ht",
+    "difficulty": "easy"
+  },
+  "shadowing": {
+    "name": "Слежка",
+    "description": "Это способность преследовать человека в толпе, не будучи замеченным.",
+    "code": "shadowing",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "savoirFaire": {
+    "name": "",
+    "description": "",
+    "code": "savoirFaire",
+    "parentAttr": "int",
+    "difficulty": "easy"
+  },
+  "saber": {
+    "name": "",
+    "description": "",
+    "code": "saber",
+    "parentAttr": "dex",
+    "difficulty": "medium"
+  },
+  "shield": {
+    "name": "",
+    "description": "",
+    "code": "shield",
+    "parentAttr": "dex",
+    "difficulty": "easy"
+  },
+  "shortsword": {
+    "name": "",
+    "description": "",
+    "code": "shortsword",
+    "parentAttr": "dex",
+    "difficulty": "medium"
+  },
+  "smallsword": {
+    "name": "",
+    "description": "",
+    "code": "smallsword",
+    "parentAttr": "dex",
+    "difficulty": "medium"
+  },
+  "spear": {
+    "name": "",
+    "description": "",
+    "code": "spear",
+    "parentAttr": "dex",
+    "difficulty": "medium"
+  },
+  "staff": {
+    "name": "",
+    "description": "",
+    "code": "staff",
+    "parentAttr": "dex",
+    "difficulty": "medium"
+  },
+  "sumoWrestling": {
+    "name": "",
+    "description": "",
+    "code": "sumoWrestling",
+    "parentAttr": "dex",
+    "difficulty": "medium"
+  },
+  "sling": {
+    "name": "",
+    "description": "",
+    "code": "sling",
+    "parentAttr": "dex",
+    "difficulty": "hard"
+  },
+  "spearThrower": {
+    "name": "",
+    "description": "",
+    "code": "spearThrower",
+    "parentAttr": "dex",
+    "difficulty": "medium"
+  },
+  "smith": {
+    "name": "",
+    "description": "",
+    "code": "smith",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "scrounging": {
+    "name": "",
+    "description": "",
+    "code": "scrounging",
+    "parentAttr": "per",
+    "difficulty": "easy"
+  },
+  "suggest": {
+    "name": "",
+    "description": "",
+    "code": "suggest",
+    "parentAttr": "will",
+    "difficulty": "hard"
+  },
+  "swayEmotions": {
+    "name": "",
+    "description": "",
+    "code": "swayEmotions",
+    "parentAttr": "will",
+    "difficulty": "hard"
+  },
+  "sewing": {
+    "name": "",
+    "description": "",
+    "code": "sewing",
+    "parentAttr": "dex",
+    "difficulty": "easy"
+  },
+  "surgery": {
+    "name": "",
+    "description": "",
+    "code": "surgery",
+    "parentAttr": "int",
+    "difficulty": "very hard"
+  },
+  "soldier": {
+    "name": "",
+    "description": "",
+    "code": "soldier",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "strategy": {
+    "name": "",
+    "description": "",
+    "code": "strategy",
+    "parentAttr": "int",
+    "difficulty": "hard"
+  },
+  "singing": {
+    "name": "",
+    "description": "",
+    "code": "singing",
+    "parentAttr": "ht",
+    "difficulty": "easy"
+  },
+  "sleightOfHand": {
+    "name": "",
+    "description": "",
+    "code": "sleightofHand",
+    "parentAttr": "dex",
+    "difficulty": "hard"
+  },
+  "stageCombat": {
+    "name": "",
+    "description": "",
+    "code": "stageCombat",
+    "parentAttr": "dex",
+    "difficulty": "medium"
+  },
+  "sports": {
+    "name": "",
+    "description": "",
+    "code": "sports",
+    "parentAttr": "dex",
+    "difficulty": "medium"
+  },
+  "throwing": {
+    "name": "",
+    "description": "",
+    "code": "throwing",
+    "parentAttr": "dex",
+    "difficulty": "medium"
+  },
+  "tonfa": {
+    "name": "",
+    "description": "",
+    "code": "tonfa",
+    "parentAttr": "dex",
+    "difficulty": "medium"
+  },
+  "twoHandedAxe/Mace": {
+    "name": "",
+    "description": "",
+    "code": "twoHandedAxe/Mace",
+    "parentAttr": "dex",
+    "difficulty": "medium"
+  },
+  "twoHandedFlail": {
+    "name": "",
+    "description": "",
+    "code": "two-HandedFlail",
+    "parentAttr": "dex",
+    "difficulty": "hard"
+  },
+  "twoHandedSword": {
+    "name": "",
+    "description": "",
+    "code": "two-HandedSword",
+    "parentAttr": "dex",
+    "difficulty": "medium"
+  },
+  "thrownWeapon": {
+    "name": "",
+    "description": "",
+    "code": "thrownWeapon",
+    "parentAttr": "dex",
+    "difficulty": "easy"
+  },
+  "throwingArt": {
+    "name": "",
+    "description": "",
+    "code": "throwingArt",
+    "parentAttr": "dex",
+    "difficulty": "hard"
+  },
+  "typing": {
+    "name": "",
+    "description": "",
+    "code": "typing",
+    "parentAttr": "dex",
+    "difficulty": "easy"
+  },
+  "traps": {
+    "name": "",
+    "description": "",
+    "code": "traps",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "thaumatology": {
+    "name": "",
+    "description": "",
+    "code": "thaumatology",
+    "parentAttr": "int",
+    "difficulty": "very hard"
+  },
+  "tracking": {
+    "name": "",
+    "description": "",
+    "code": "tracking",
+    "parentAttr": "per",
+    "difficulty": "medium"
+  },
+  "tactics": {
+    "name": "",
+    "description": "",
+    "code": "tactics",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "teaching": {
+    "name": "",
+    "description": "",
+    "code": "teaching",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "theology": {
+    "name": "",
+    "description": "",
+    "code": "theology",
+    "parentAttr": "int",
+    "difficulty": "hard"
+  },
+  "teamster": {
+    "name": "",
+    "description": "",
+    "code": "teamster",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "veterinary": {
+    "name": "",
+    "description": "",
+    "code": "veterinary",
+    "parentAttr": "int",
+    "difficulty": "hard"
+  },
+  "ventriloquism": {
+    "name": "",
+    "description": "",
+    "code": "ventriloquism",
+    "parentAttr": "int",
+    "difficulty": "hard"
+  },
+  "vaccSuit": {
+    "name": "",
+    "description": "",
+    "code": "vaccSuit",
+    "parentAttr": "dex",
+    "difficulty": "medium"
+  },
+  "zenArchery": {
+    "name": "",
+    "description": "",
+    "code": "zenArchery",
+    "parentAttr": "int",
+    "difficulty": "very hard"
+  },
+  "whip": {
+    "name": "",
+    "description": "",
+    "code": "whip",
+    "parentAttr": "dex",
+    "difficulty": "medium"
+  },
+  "wrestling": {
+    "name": "",
+    "description": "",
+    "code": "wrestling",
+    "parentAttr": "dex",
+    "difficulty": "medium"
+  },
+  "writing": {
+    "name": "",
+    "description": "",
+    "code": "writing",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "weatherSense": {
+    "name": "",
+    "description": "",
+    "code": "weatherSense",
+    "parentAttr": "int",
+    "difficulty": "medium"
+  },
+  "weirdScience": {
+    "name": "",
+    "description": "",
+    "code": "weirdScience",
+    "parentAttr": "int",
+    "difficulty": "very hard"
+  },
+  "urbanSurvival": {
+    "name": "",
+    "description": "",
+    "code": "urbanSurvival",
+    "parentAttr": "per",
+    "difficulty": "medium"
+  }
+}

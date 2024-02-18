@@ -19,9 +19,9 @@ export default function LogEvents({
       {events.map(event => {
         let type: string = '';
         if (event.source instanceof Character) {
-          const id = event.source.id;
+          const id = event.source.getId();
           type =
-            event.source.id === player.id
+            event.source.getId() === player.getId()
               ? 'playerCharacterEvent'
               : 'otherCharacterEvent';
         } else {

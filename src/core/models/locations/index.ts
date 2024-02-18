@@ -18,6 +18,7 @@ export class Location {
   private status: string[] = [];
   private locked: boolean;
   private lockable: boolean;
+  private cultures: string[];
 
   constructor({
     ctx,
@@ -31,6 +32,7 @@ export class Location {
       connections: string[];
       locked?: boolean;
       lockable?: boolean;
+      cultures?: string[];
     };
   }) {
     this.id = locationId++;
@@ -41,6 +43,7 @@ export class Location {
     this.description = data.description;
     this.characters = [];
     this.objects = [];
+    this.cultures = data.cultures || ['default'];
     this.locked = data.locked || false;
     this.lockable = data.lockable || false;
     this.tags = new TagSystem({ ctx, owner: this });
@@ -117,7 +120,11 @@ export class Location {
     return this.objects;
   }
 
-  getId() {
+  getId(): number {
     return this.id;
+  }
+
+  getCultures(): string[] {
+    return this.cultures;
   }
 }

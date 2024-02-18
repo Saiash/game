@@ -70,6 +70,7 @@ export function Game() {
       const ctx: CTX = {
         update: setCtx,
         gameData: {} as GameData,
+        language: 'ru',
         dataloaders,
         setTextNodeId,
         setTextSceneId,

@@ -15,7 +15,7 @@ export default function Objects({
   const [currentTarget, setCurrentTarget] = useState(
     gameData.getPlayerTarget()
   );
-  const currentLocation = gameData.getPlayerCharacter().location;
+  const currentLocation = gameData.getPlayerCharacter().getLocation();
 
   const handleObjectClick = (obj: ObjectModel) => {
     gameData.selectTarget(obj);

@@ -34,6 +34,7 @@ export class TagSystem {
       perk: {},
       flaw: {},
       usable: {},
+      keyword: {},
     };
     this.nonActive = {
       action: {},
@@ -42,6 +43,7 @@ export class TagSystem {
       perk: {},
       flaw: {},
       usable: {},
+      keyword: {},
     };
     this.all = {};
     this.input = input;

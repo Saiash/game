@@ -27,6 +27,7 @@ export const INPUT_TYPES: {
   number: NumberInput,
   attr: SelectInput,
   diff: SelectInput,
+  skills: MultiSelectInput,
   itemZoneSelect: MultiSelectInput,
   boolean: SelectInput,
   status: MultiSelectInput,
@@ -48,7 +49,8 @@ export function AttrInput(props: Props) {
     selectedType,
     onNodesChanged,
   } = props;
-  const list = getList(props);
+  const list = getList(props) || [];
+  const value = selectedEntity[name];
   const params = {
     path: [],
     events: selectedEntity[name],
@@ -56,7 +58,7 @@ export function AttrInput(props: Props) {
     onDataChanged,
     onNodesChanged,
     selectedEntity,
-    value: selectedEntity[name],
+    value,
     data,
     name,
     type,
@@ -95,7 +97,8 @@ export function AttrInput(props: Props) {
 function getList(
   props: Props
 ): string[] | boolean[] | { key: string; value: string }[] {
-  const { type, selectedEntity, name } = props;
+  const { type, selectedEntity, data } = props;
   if (type === 'nodeSelect') return selectedEntity['nodes'];
+  if (type === 'skills') return Object.keys(data['skills']);
   return SELECT_ENUMS[type];
 }

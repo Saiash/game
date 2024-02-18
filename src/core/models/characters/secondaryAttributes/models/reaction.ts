@@ -9,6 +9,6 @@ export class Reaction extends SecondaryAttribute {
   }
 
   getRawValue(): number {
-    return 0 + this.getModsValue();
+    return 0 + this.getModsValue() + this.character.getSocialStatus();
   }
 }

@@ -20,14 +20,17 @@ export class Character {
   skillManager: SkillManager;
   perkManager: PerkManager;
   doll: Doll;
-  name: string;
+  private name: string;
   tags: TagSystem;
-  ctx: CTX;
-  id: number;
-  location: Location;
+  private ctx: CTX;
+  private id: number;
+  private location: Location;
   lore: LoreManager;
-  status: string[] = [];
-  gender: 'male' | 'female';
+  private status: string[] = [];
+  private gender: 'male' | 'female';
+  private cultures: string[] = [];
+  private socialGroups: string[];
+  private socialStatus: number;
 
   constructor({
     ctx,
@@ -37,6 +40,9 @@ export class Character {
     name,
     gender,
     location,
+    cultures,
+    socialGroups,
+    socialStatus,
   }: {
     ctx: CTX;
     attributeProps?: AttributeProps[];
@@ -45,6 +51,9 @@ export class Character {
     name: string;
     gender: 'male' | 'female';
     location: Location;
+    cultures?: string[];
+    socialGroups?: string[];
+    socialStatus?: number;
   }) {
     this.id = itemId++;
     this.location = location;
@@ -75,6 +84,9 @@ export class Character {
     });
     this.tags = new TagSystem({ ctx, owner: this });
     this.name = name;
+    this.cultures = cultures || ['default'];
+    this.socialGroups = socialGroups || [];
+    this.socialStatus = socialStatus || 0;
     this.doll = new Doll({ ctx, character: this });
     this.secondaryAttributes = new SecondaryAttributes({
       ctx,
@@ -156,6 +168,22 @@ export class Character {
   }
 
   getRaw() {}
+
+  getLocation() {
+    return this.location;
+  }
+
+  getCultures(): string[] {
+    return this.cultures;
+  }
+
+  getSocialGroups(): string[] {
+    return this.socialGroups;
+  }
+
+  getSocialStatus(): number {
+    return this.socialStatus;
+  }
 
   initFromRaw() {}
 }

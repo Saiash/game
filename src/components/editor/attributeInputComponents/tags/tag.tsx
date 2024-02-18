@@ -19,6 +19,7 @@ import { NumberInput } from '../number';
 import { Remove } from '@mui/icons-material';
 import IconButton from '@mui/material/Button';
 import { MultiSelectInput } from '../MultiSelect';
+import { TextInput } from '../text';
 
 export type props = printTagsParams & {
   tag: TagInputType;
@@ -30,6 +31,7 @@ const tagCoreFields = {
   mod: ['modType', 'modTarget', 'length', 'value'],
   skill: ['name', 'value'],
   usable: ['target'],
+  keyword: ['word'],
 };
 
 const additionalContainers = {
@@ -53,6 +55,8 @@ export const TagInput = ({ props }: { props: props }) => {
       _tag = { ..._tag, modType: '', modTarget: '', length: 0, value: 0 };
     } else if (value === 'usable') {
       _tag = { ..._tag, target: ['self'] };
+    } else if (value === 'keyword') {
+      _tag = { ..._tag, word: '' };
     } else {
       _tag = { ..._tag, name: '', value: 0 };
     }
@@ -199,6 +203,16 @@ const PrintCoreFields = ({
             <div key={`tag_input_${path.join('_')}_${keyIndex}`}>
               <NumberInput
                 value={parseInt(value)}
+                name={key}
+                onDataChanged={(type, value) => handleInputChange(key, value)}
+              />
+            </div>
+          );
+        } else if (key === 'word') {
+          return (
+            <div key={`tag_input_${path.join('_')}_${keyIndex}`}>
+              <TextInput
+                value={value}
                 name={key}
                 onDataChanged={(type, value) => handleInputChange(key, value)}
               />

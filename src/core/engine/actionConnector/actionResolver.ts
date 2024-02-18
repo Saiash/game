@@ -1,6 +1,7 @@
 import { CTX } from '../../../types';
 import { GameData } from '../gameData';
 import { ActionPayload, ActionConnector } from '.';
+import { ACTION_PAYLOAD_TYPE } from '../constants';
 
 export class ActionResolver {
   gameData: GameData;
@@ -31,14 +32,19 @@ export class ActionResolver {
     //Мы хотим проверить их на условия
     //Согласно проверенным условиям - мутировать на правильное состояние
     //Потом - применить побочные эффекты, а-ка прошедшее время
-    this.appendTime(input['payload']);
+    this.appendTime(input);
     //После этого - уже применить эффект
     return this.actionConnector.performAction(input);
   }
 
-  appendTime(payload: ActionPayload['payload']) {
-    const { type } = payload;
-    //TODO: сделать честный рассчет времени
-    this.ctx.gameData.timeManager.calcTimeSpent(600);
+  appendTime(payload: ActionPayload) {
+    if (payload.time) {
+      this.ctx.gameData.timeManager.calcTimeSpent(payload.time);
+    } else if (payload.payload.type === ACTION_PAYLOAD_TYPE.USE_SKILL) {
+      const skillTime = payload.sourceActor.skillManager
+        .getByCode(payload.payload.skill)
+        ?.getDefaultSkillTime();
+      this.ctx.gameData.timeManager.calcTimeSpent(skillTime || 60);
+    }
   }
 }

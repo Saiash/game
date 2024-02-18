@@ -49,31 +49,7 @@ export async function initGame(gameData: GameData) {
       .join(', '),
   });
 
-  const result = await gameData.actionResolver.performAction({
-    sourceActor: gameData.getPlayerCharacter(),
-    target: characters[1],
-    payload: {
-      type: ACTION_PAYLOAD_TYPE.USE_PERK,
-      perk: 'fashion',
-    },
-  });
-  const result2 = await gameData.actionResolver.performAction({
-    sourceActor: gameData.getPlayerCharacter(),
-    target: gameData.getPlayerCharacter(),
-    payload: {
-      type: ACTION_PAYLOAD_TYPE.USE_PERK,
-      perk: 'fashion',
-    },
-  });
   console.log('test');
-  // gameData.getPlayerCharacter().skillManager.useOn({
-  //   code: 'lockpicking',
-  //   target: gameData.locations.defaultLocation.getObjects()[0],
-  // });
-  // gameData.getPlayerCharacter()..useOn({
-  //   code: 'look',
-  //   target: gameData.locations.defaultLocation.getObjects()[0],
-  // });
 }
 
 async function initItems(gameData: GameData): Promise<Item[]> {
@@ -124,7 +100,7 @@ async function initPlayerCharacter(gameData: GameData): Promise<Character> {
   });
   await player.perkManager.add({
     dataloaders: gameData.dataloaders,
-    name: 'fashion',
+    name: 'mistakenIdentity',
   });
   return player;
 }

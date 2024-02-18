@@ -3,6 +3,7 @@ import { random } from 'lodash';
 import { DefaultCombinedGenerator } from '../defaultCombinedGenerator';
 import { generator as generatorType } from '../tables';
 import { DoorGenerator } from './door';
+import { RoomGenerator } from './room';
 
 const table: { [index: string]: { type: string; options?: string[] } } = {};
 const GenName = 'Dungeon_Passages';
@@ -31,9 +32,11 @@ const passageType = [
   { text: 'Passage narrows (1d6 ÷ 2) x 10 ft. (minimum width 5 ft)' },
   { text: 'Passage widens (1d6 ÷ 2) x 10 ft. (minimum width 10 ft)' },
   { text: 'Opening to the left, stairs', followUp: 'stair' },
-  { text: 'Opening to the left, right', followUp: 'stair' },
+  { text: 'Opening to the left, stairs', followUp: 'stair' },
   { text: 'Opening to the left, floor', followUp: 'passage' },
   { text: 'Opening to the left, floor', followUp: 'room' },
+  { text: 'Opening to the right, floor', followUp: 'passage' },
+  { text: 'Opening to the right, floor', followUp: 'room' },
   { text: 'Roll on Random architecture table', followUp: 'architecture' },
 ];
 
@@ -100,8 +103,10 @@ export const PassageGenerator = (fields: any) => {
   const passage = passageType[roll];
   rooms.push(passage.text + ', ' + rolledContent.text);
   if (passage.followUp) {
-    if (passage.followUp === 'passage') rooms.push(PassageGenerator(''));
-    if (passage.followUp === 'door') rooms.push(DoorGenerator(''));
+    if (passage.followUp === 'passage')
+      rooms.push('Passage: ' + PassageGenerator(''));
+    if (passage.followUp === 'room') rooms.push('Room: ' + RoomGenerator(''));
+    if (passage.followUp === 'door') rooms.push('Door: ' + DoorGenerator(''));
   }
   return rooms.join(', ');
 };

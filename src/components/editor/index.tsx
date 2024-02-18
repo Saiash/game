@@ -14,6 +14,9 @@ const paramsForDataEntitites: { [index: string]: { [index: string]: string } } =
       code: 'string',
       parentAttr: 'attr',
       difficulty: 'diff',
+      cultureBased: 'boolean',
+      relativeSkills: 'skills',
+      relativeSkillsDiff: 'number',
     },
     items: {
       name: 'string',
@@ -121,7 +124,9 @@ export function Editor() {
       } else if (pType === 'boolean') {
         paramDefaultValue = false;
       } else if (
-        ['options', 'tags', 'status', 'nodes', 'event'].some(t => t === pType)
+        ['options', 'tags', 'status', 'nodes', 'event', 'skills'].some(
+          t => t === pType
+        )
       ) {
         paramDefaultValue = [];
       }

@@ -132,4 +132,8 @@ export class ObjectModel {
     });
     return result;
   }
+
+  getCultures(): string[] {
+    return this.location.getCultures();
+  }
 }

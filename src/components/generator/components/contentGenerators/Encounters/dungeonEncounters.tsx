@@ -27,7 +27,8 @@ const generator = (fields: any) => {
   const _hours = parseInt(hours);
   const dungeonActivity = table.activity.options?.indexOf(activity) || 0;
   const dices = dungeonActivity + 1;
-  const totalDices = dices * _hours;
+  const hoursForDice = 12 / dices;
+  const totalDices = Math.floor(_hours / hoursForDice);
   let result: string[] = [];
   for (let i = 0; i < totalDices; i++) {
     const roll = random(1, 4);

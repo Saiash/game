@@ -30,7 +30,7 @@ export class SkillResolver {
     sourceActor?: Character;
     target?: TagSystem['owner'];
   }): boolean {
-    return false;
+    return result.result;
   }
 
   async resolve(input: ActionPayload): Promise<ResolveResult> {
