@@ -1,14 +1,11 @@
-import { CheckResults, ResolveResult } from '..';
-import { Character } from '../..';
-import { ActionPayload } from '../../../../engine/actionConnector';
-import { Location } from '../../../../models/locations';
-import { ObjectModel } from '../../../../models/locations/object';
-import { Item } from '../../inventory/item';
+import { CheckResults, ResolveResult } from '../../skills/skillManager';
+import { ActionPayload } from '../../../engine/actionConnector';
 
-import type { CTX } from '../../../../../types';
-import { Event } from '../../../../models/events';
-import { TagSystem } from '../../../../managers/tag';
-import { ACTION_PAYLOAD_TYPE } from '../../../../engine/constants';
+import type { CTX } from '../../../../types';
+import { Event } from '../../../models/events';
+import { TagSystem } from '../../../managers/tag';
+import { ACTION_PAYLOAD_TYPE } from '../../../engine/constants';
+import { Character } from '../../characters';
 
 export class SkillResolver {
   code: string;

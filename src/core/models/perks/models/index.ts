@@ -1,6 +1,6 @@
 import { createPerkF } from '..';
 import { getLocalisedText } from '../../../../translations';
-import { Perk, rawPerkModel } from '../../characters/perks/perk';
+import { Perk, rawPerkModel } from '../perk';
 
 export type perkFabricType = Omit<
   rawPerkModel,

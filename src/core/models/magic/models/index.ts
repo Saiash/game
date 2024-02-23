@@ -1,4 +1,4 @@
-import { SpellManager } from '..';
+import { SpellManager } from '../spellManager';
 import { getLocalisedText } from '../../../../translations';
 import { CTX, PartialRecord } from '../../../../types';
 import { Spell } from '../spell';

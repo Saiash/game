@@ -1,4 +1,4 @@
-import { CTX } from '../../../../types';
+import { CTX } from '../../../types';
 
 let id = 0;
 export type rawLore = {

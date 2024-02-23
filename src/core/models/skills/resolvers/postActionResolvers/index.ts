@@ -1,15 +1,15 @@
 import _, { isArray } from 'lodash';
-import { ResolveResult } from '../..';
-import { CTX } from '../../../../../../types';
-import { ActionPayload } from '../../../../../engine/actionConnector';
-import { Event } from '../../../../../models/events';
+import { ResolveResult } from '../../../skills/skillManager';
+import { CTX } from '../../../../../types';
+import { ActionPayload } from '../../../../engine/actionConnector';
+import { Event } from '../../../../models/events';
 import {
   EventAction,
   Tag,
   TagInput,
-} from '../../../../../managers/tag/models/tag';
-import { ACTION_PAYLOAD_TYPE } from '../../../../../engine/constants';
-import { Character } from '../../..';
+} from '../../../../managers/tag/models/tag';
+import { ACTION_PAYLOAD_TYPE } from '../../../../engine/constants';
+import { Character } from '../../../characters';
 
 export const POST_ACTIONS_RESOLVERS: {
   [index: string]: (

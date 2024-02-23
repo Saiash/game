@@ -1,7 +1,7 @@
-import { Character } from '..';
-import { CTX } from '../../../../types';
+import { CTX } from '../../../types';
 import { Item } from './item';
-import { ObjectModel } from '../../../models/locations/object';
+import { ObjectModel } from '../../models/locations/object';
+import { Character } from '../characters';
 
 export class Inventory {
   items: { [index: number]: Item };

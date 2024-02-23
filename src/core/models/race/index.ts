@@ -1,4 +1,4 @@
-import { CTX } from '../../../../types';
+import { CTX } from '../../../types';
 import { raceSettingsRaw } from './models';
 
 export class Race {

@@ -1,10 +1,10 @@
 import { Location } from '.';
 import { CTX } from '../../../types';
 import { Character } from '../characters';
-import { Inventory } from '../characters/inventory';
-import { Item } from '../characters/inventory/item';
 import { TagSystem } from '../../managers/tag';
 import { Tag } from '../../managers/tag/models/tag';
+import { Item } from '../inventory/item';
+import { Inventory } from '../inventory';
 
 export type rawObjectModel = {
   name: string;

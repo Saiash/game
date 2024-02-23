@@ -2,7 +2,7 @@ import { random } from 'lodash';
 import { Character } from '..';
 import { CTX } from '../../../../types';
 import { ModificatorManager } from '../../../../core/managers/ModificatorManager';
-import { CheckResults } from '../skills';
+import { CheckResults } from '../../skills/skillManager';
 import { AttributeManager, AttributeProps } from './';
 
 export class Attribute {

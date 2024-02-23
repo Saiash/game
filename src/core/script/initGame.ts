@@ -1,7 +1,7 @@
 import { ACTION_PAYLOAD_TYPE } from '../engine/constants';
 import { GameData } from '../engine/gameData';
 import { Character } from '../models/characters';
-import { Item } from '../models/characters/inventory/item';
+import { Item } from '../models/inventory/item';
 
 export async function initGame(gameData: GameData) {
   gameData.addLocation({

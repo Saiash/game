@@ -1,4 +1,4 @@
-import { SpellManager } from '.';
+import { SpellManager } from './spellManager';
 import { CTX, PartialRecord } from '../../../types';
 import { Attribute } from '../characters/attributes/attribute';
 import { rawSpellModel, spellList } from './models';

@@ -1,11 +1,11 @@
 import _ from 'lodash';
-import { Item } from '../../models/characters/inventory/item';
 import { CTX } from '../../../types';
 import { Tag, TagInput } from './models/tag';
 import { Character } from '../../models/characters';
 import { ObjectModel } from '../../models/locations/object';
 import { Location } from '../../models/locations';
-import { Perk } from '../../models/characters/perks/perk';
+import { Perk } from '../../models/perks/perk';
+import { Item } from '../../models/inventory/item';
 
 export class TagSystem {
   input: { props: any; target?: Item } | undefined;

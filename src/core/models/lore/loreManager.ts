@@ -1,5 +1,5 @@
 import { result } from 'lodash';
-import { CTX } from '../../../../types';
+import { CTX } from '../../../types';
 import { Lore } from './lore';
 
 export class LoreManager {

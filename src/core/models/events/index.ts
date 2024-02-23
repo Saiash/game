@@ -1,13 +1,13 @@
 import { CTX } from '../../../types';
-import { POST_ACTIONS_RESOLVERS } from '../characters/skills/resolvers/postActionResolvers';
 
 import type { ActionPayload } from '../../engine/actionConnector';
 import { EventAction } from '../../managers/tag/models/tag';
 import { Condition } from '../../managers/tag/models/condition';
-import { ResolveResult } from '../characters/skills';
+import { ResolveResult } from '../skills/skillManager';
 import { TagSystem } from '../../managers/tag';
 import { ACTION_PAYLOAD_TYPE } from '../../engine/constants';
 import { GameData } from '../../engine/gameData';
+import { POST_ACTIONS_RESOLVERS } from '../skills/resolvers/postActionResolvers';
 
 export type rawEvent = { description: string; actions: EventAction[] };
 

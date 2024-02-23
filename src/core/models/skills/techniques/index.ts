@@ -1,6 +1,6 @@
 import { CTX } from '../../../../types';
-import { SkillProps } from '../../characters/skills';
-import { Skill } from '../../characters/skills/skill';
+import { SkillProps } from '../skillManager';
+import { Skill } from '../skill';
 
 export class technique extends Skill {
   constructor({ ctx, props }: { props: SkillProps; ctx: CTX }) {

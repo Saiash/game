@@ -1,15 +1,15 @@
 import { CTX } from '../../../types';
 import { AttributeManager, AttributeProps } from './attributes';
-import { Inventory } from './inventory';
-import { Item } from './inventory/item';
-import { SkillManager, InputSkillProps } from './skills';
-import { Doll } from './inventory/doll';
+import { SkillManager, InputSkillProps } from '../skills/skillManager';
 import { Location } from '../../models/locations';
 import { TagSystem } from '../../managers/tag';
 import { Tag } from '../../managers/tag/models/tag';
-import { LoreManager } from './lore/loreManager';
 import { SecondaryAttributes } from './secondaryAttributes';
-import { PerkManager } from './perks';
+import { Inventory } from '../inventory';
+import { PerkManager } from '../perks/perkManager';
+import { Doll } from '../inventory/doll';
+import { LoreManager } from '../lore/loreManager';
+import { Item } from '../inventory/item';
 
 let itemId = 0;
 

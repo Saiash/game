@@ -2,7 +2,7 @@ import { Character } from '../..';
 import { CTX } from '../../../../../types';
 import { BASE_TIME_PER_ACTION } from '../../../../engine/constants';
 import { Strength } from '../../attributes/models/strength';
-import { ResolveResult } from '../../skills';
+import { ResolveResult } from '../../../skills/skillManager';
 import { SecondaryAttribute } from '../attribute';
 
 export class Weight extends SecondaryAttribute {

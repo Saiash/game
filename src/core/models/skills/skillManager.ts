@@ -1,18 +1,18 @@
-import { ModificatorManager } from '../../../../core/managers/ModificatorManager';
-import { AttributeManager } from '../attributes';
-import { Attribute } from '../attributes/attribute';
+import { ModificatorManager } from '../../managers/ModificatorManager';
+import { AttributeManager } from '../characters/attributes';
+import { Attribute } from '../characters/attributes/attribute';
 import { Skill } from './skill';
-import { Character } from '../index';
+import { Character } from '../characters/index';
 
-import { ActionPayload } from '../../../engine/actionConnector';
+import { ActionPayload } from '../../engine/actionConnector';
 
-import { LookResolver } from './resolvers/look';
+import { LookResolver } from '../skills/resolvers/look';
 
-import type { CTX, PartialRecord } from '../../../../types/';
-import type { SkillResolver } from './resolvers';
-import { CommonActionResolver } from './resolvers/commonAction';
-import { ACTION_PAYLOAD_TYPE } from '../../../engine/constants';
-import { SKILL_LIST, skillList } from '../../skills';
+import type { CTX, PartialRecord } from '../../../types';
+import type { SkillResolver } from '../skills/resolvers';
+import { CommonActionResolver } from '../skills/resolvers/commonAction';
+import { ACTION_PAYLOAD_TYPE } from '../../engine/constants';
+import { SKILL_LIST, skillList } from '.';
 
 export type rawSkill = SkillInputProps;
 

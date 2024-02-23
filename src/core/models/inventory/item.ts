@@ -1,6 +1,6 @@
-import { Character } from '../';
-import { TagSystem } from '../../../managers/tag';
-import type { CTX } from '../../../../types/';
+import { TagSystem } from '../../managers/tag';
+import type { CTX } from '../../../types/';
+import { Character } from '../characters';
 
 export const itemZones = [
   { zones: 1000, key: 'head' },

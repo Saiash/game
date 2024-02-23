@@ -1,5 +1,5 @@
 import { CTX } from '../../../types';
-import { Perk } from '../characters/perks/perk';
+import { Perk } from './perk';
 import { Magery } from './models/magery';
 
 export type perkList = 'magery';

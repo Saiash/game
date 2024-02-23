@@ -1,10 +1,10 @@
 import { Character } from '../../characters';
-import { Item } from '../../characters/inventory/item';
-import { CheckResults } from '../../characters/skills';
-import { SkillResolver } from '../../characters/skills/resolvers';
+import { CheckResults } from '../skillManager';
 import { ObjectModel } from '../../locations/object';
 
 import { skillFabric, skillFabricType } from './index';
+import { Item } from '../../inventory/item';
+import { SkillResolver } from '../resolvers';
 
 const skillSettings: skillFabricType = {
   code: 'lockpicking',

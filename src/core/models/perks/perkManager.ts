@@ -1,11 +1,11 @@
 import { Perk } from './perk';
-import { Character } from '../index';
 
-import { ActionPayload } from '../../../engine/actionConnector';
+import { ActionPayload } from '../../engine/actionConnector';
 
-import type { CTX, PartialRecord } from '../../../../types/';
-import { ACTION_PAYLOAD_TYPE } from '../../../engine/constants';
-import { PERK_LIST, perkList } from '../../perks';
+import type { CTX, PartialRecord } from '../../../types';
+import { ACTION_PAYLOAD_TYPE } from '../../engine/constants';
+import { PERK_LIST, perkList } from '.';
+import { Character } from '../characters';
 
 export type CheckResults = {
   rand?: number;

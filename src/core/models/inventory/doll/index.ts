@@ -1,5 +1,5 @@
-import { CTX } from '../../../../../types';
-import { Character } from '../..';
+import { CTX } from '../../../../types';
+import { Character } from '../../characters';
 import { Item } from '../item';
 
 export type zone = {

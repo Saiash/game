@@ -1,9 +1,9 @@
 import { Race } from '..';
-import { getLocalisedText } from '../../../../../translations';
-import { CTX, PartialRecord } from '../../../../../types';
-import { perkList } from '../../../perks';
-import { attrsCodesList } from '../../attributes';
-import { secondaryAttrsCodesList } from '../../secondaryAttributes';
+import { getLocalisedText } from '../../../../translations';
+import { CTX, PartialRecord } from '../../../../types';
+import { attrsCodesList } from '../../characters/attributes';
+import { secondaryAttrsCodesList } from '../../characters/secondaryAttributes';
+import { perkList } from '../../perks';
 import { Dragon } from './dragon';
 import { Dwarf } from './dwarf';
 import { Felinoid } from './felinoid';

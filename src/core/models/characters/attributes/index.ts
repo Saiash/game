@@ -1,7 +1,7 @@
 import { Character } from '..';
 import { CTX } from '../../../../types';
 import { ModificatorManager } from '../../../../core/managers/ModificatorManager';
-import { CheckResults } from '../skills';
+import { CheckResults } from '../../skills/skillManager';
 import { Attribute } from './attribute';
 import { Dexterity } from './models/dexterity';
 import { Fatigue } from './models/fatigue';

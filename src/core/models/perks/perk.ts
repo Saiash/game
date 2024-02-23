@@ -1,12 +1,12 @@
-import { Character } from '..';
-import { CTX } from '../../../../types';
-import { ActionPayload } from '../../../engine/actionConnector';
-import { ACTION_PAYLOAD_TYPE } from '../../../engine/constants';
-import { TagSystem } from '../../../managers/tag';
-import { Event } from '../../events';
-import { ObjectModel } from '../../locations/object';
-import { perkList } from '../../perks';
-import { ResolveResult } from '../skills';
+import { Character } from '../characters';
+import { CTX } from '../../../types';
+import { ActionPayload } from '../../engine/actionConnector';
+import { ACTION_PAYLOAD_TYPE } from '../../engine/constants';
+import { TagSystem } from '../../managers/tag';
+import { Event } from '../events';
+import { ObjectModel } from '../locations/object';
+import { perkList } from '.';
+import { ResolveResult } from '../skills/skillManager';
 
 let perkId = 0;
 

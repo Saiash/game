@@ -1,4 +1,4 @@
-import { Skill } from '../../characters/skills/skill';
+import { Skill } from '../skill';
 import { skillFabric, skillFabricType } from './index';
 
 const skillSettings: skillFabricType = {

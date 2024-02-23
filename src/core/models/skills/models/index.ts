@@ -1,10 +1,8 @@
 import { createSkillF } from '..';
 import { getLocalisedText } from '../../../../translations';
-import { CTX } from '../../../../types';
-import { Character } from '../../characters';
-import { SkillInputProps, SkillManager } from '../../characters/skills';
-import { SkillResolver } from '../../characters/skills/resolvers';
-import { Skill } from '../../characters/skills/skill';
+import { SkillInputProps } from '../skillManager';
+import { Skill } from '../skill';
+import { SkillResolver } from '../resolvers';
 
 export type skillFabricType = Omit<SkillInputProps, 'name' | 'description'>;
 
