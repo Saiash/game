@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 //+5 if being tutored
 
-export const Carpentry = skillFabric(skillSettings);
+export const Carpentry = skillFabric({ skillSettings });

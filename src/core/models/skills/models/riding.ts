@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 // +5, если жи- вотное знает вас и вы ему нрави- тесь; +1 и больше, если животное имеет умение Скакун (с.210). -10, если животное не ездовое или необъезженное.
 
-export const Riding = skillFabric(skillSettings);
+export const Riding = skillFabric({ skillSettings });

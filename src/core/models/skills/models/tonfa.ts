@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: { shortsword: -3 },
 };
 
-export const Tonfa = skillFabric(skillSettings);
+export const Tonfa = skillFabric({ skillSettings });

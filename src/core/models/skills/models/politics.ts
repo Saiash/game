@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 //выборы - быстрое состязание
 
-export const Politics = skillFabric(skillSettings);
+export const Politics = skillFabric({ skillSettings });

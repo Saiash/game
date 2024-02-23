@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 //при 8 вложенных опыта - +1 к урону
 
-export const Brawling = skillFabric(skillSettings);
+export const Brawling = skillFabric({ skillSettings });

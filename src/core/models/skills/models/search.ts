@@ -12,4 +12,4 @@ const skillSettings: skillFabricType = {
 // Для умышленно скрытых предметов проводится быстрое состя зание по умению Обыска против  Утаивания или Контрабанды.
 // до +5 за личный досмотр (ощупывание; проверка всего тела; проверка всех полостей)
 
-export const Search = skillFabric(skillSettings);
+export const Search = skillFabric({ skillSettings });

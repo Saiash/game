@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 //теряет усталость при провале?
 
-export const Flight = skillFabric(skillSettings);
+export const Flight = skillFabric({ skillSettings });

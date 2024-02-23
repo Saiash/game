@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: {},
 };
 
-export const Writing = skillFabric(skillSettings);
+export const Writing = skillFabric({ skillSettings });

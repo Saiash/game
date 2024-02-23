@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: { electronicOperations: -5 },
 };
 
-export const Photography = skillFabric(skillSettings);
+export const Photography = skillFabric({ skillSettings });

@@ -12,4 +12,4 @@ const skillSettings: skillFabricType = {
 //Удачный бросок снижает высоту падения на 5 метров
 //Можно использовать при уклонении, что бы получить +Х
 
-export const Acrobatics = skillFabric(skillSettings);
+export const Acrobatics = skillFabric({ skillSettings });

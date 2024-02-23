@@ -12,4 +12,4 @@ const skillSettings: skillFabricType = {
 // Успешный бросок позволит вам предсказать возможный исход опреде- ленного способа ведения переговоров или выбрать наилучший подход.
 // Если ваше умение Дипломатия находится на уровне эксперта (20 или выше), то вы получаете премию +2 ко всем брос- кам на реакцию!
 
-export const Diplomacy = skillFabric(skillSettings);
+export const Diplomacy = skillFabric({ skillSettings });

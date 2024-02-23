@@ -12,4 +12,4 @@ const skillSettings: skillFabricType = {
 // Может заменять бросок реакции
 // +2/-2 за разницу в статусе с целью
 
-export const SavoirFaire = skillFabric(skillSettings);
+export const SavoirFaire = skillFabric({ skillSettings });

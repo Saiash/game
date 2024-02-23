@@ -12,4 +12,4 @@ const skillSettings: skillFabricType = {
 // только раз в день
 // соревновение против шифра
 
-export const Crypthography = skillFabric(skillSettings);
+export const Crypthography = skillFabric({ skillSettings });

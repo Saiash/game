@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: {},
 };
 
-export const UrbanSurvival = skillFabric(skillSettings);
+export const UrbanSurvival = skillFabric({ skillSettings });

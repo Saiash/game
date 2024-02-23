@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: { spear: -3 },
 };
 
-export const Lance = skillFabric(skillSettings);
+export const Lance = skillFabric({ skillSettings });

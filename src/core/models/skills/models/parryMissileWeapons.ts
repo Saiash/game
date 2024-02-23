@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: {},
 };
 
-export const ParryMissileWeapons = skillFabric(skillSettings);
+export const ParryMissileWeapons = skillFabric({ skillSettings });

@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 // Ме- ханика (любая) -5.
 
-export const Machinist = skillFabric(skillSettings);
+export const Machinist = skillFabric({ skillSettings });

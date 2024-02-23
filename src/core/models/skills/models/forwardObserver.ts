@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: { artillery: -5 },
 };
 
-export const ForwardObserver = skillFabric(skillSettings);
+export const ForwardObserver = skillFabric({ skillSettings });

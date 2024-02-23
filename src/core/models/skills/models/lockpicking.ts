@@ -33,4 +33,7 @@ class LockpickingResolver extends SkillResolver {
   }
 }
 
-export const Lockpicking = skillFabric(skillSettings, LockpickingResolver);
+export const Lockpicking = skillFabric({
+  skillSettings,
+  resolverClass: LockpickingResolver,
+});

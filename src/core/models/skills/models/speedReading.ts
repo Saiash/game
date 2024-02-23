@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 // персонаж, обладающий этим умением, увели- чивает скорость чтения в 1+(уме- ние/10) раз.
 
-export const SpeedReading = skillFabric(skillSettings);
+export const SpeedReading = skillFabric({ skillSettings });

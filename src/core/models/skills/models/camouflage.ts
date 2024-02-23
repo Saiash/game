@@ -12,4 +12,4 @@ const skillSettings: skillFabricType = {
 //против зрения или наблюдения
 //-1 к умению атакующего
 
-export const Camouflage = skillFabric(skillSettings);
+export const Camouflage = skillFabric({ skillSettings });

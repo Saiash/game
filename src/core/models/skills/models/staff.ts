@@ -6,9 +6,7 @@ const skillSettings: skillFabricType = {
   difficulty: 'medium',
   defaultSkillTime: 1,
   cultureBased: false,
-  relativeSkills: {},
+  relativeSkills: { spear: -2, polearm: -4 },
 };
 
-// Копье-2, Древко- вое оружие-4.
-
-export const Staff = skillFabric(skillSettings);
+export const Staff = skillFabric({ skillSettings });

@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 //Силовой меч-3, Дага-3, Короткий меч-3.
 
-export const Knife = skillFabric(skillSettings);
+export const Knife = skillFabric({ skillSettings });

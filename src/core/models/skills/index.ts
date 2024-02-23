@@ -481,7 +481,8 @@ export type skillList =
   | 'whip'
   | 'writing';
 
-type createSkillF = ({
+export type createSkillF = ({
+  exp,
   ctx,
   character,
   skillManager,
@@ -489,6 +490,7 @@ type createSkillF = ({
   ctx: CTX;
   character: Character;
   skillManager: SkillManager;
+  exp?: number;
 }) => Skill;
 
 export const SKILL_LIST: Record<skillList, createSkillF> = {

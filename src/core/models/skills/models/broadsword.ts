@@ -15,4 +15,4 @@ const skillSettings: skillFabricType = {
   },
 };
 
-export const Broadsword = skillFabric(skillSettings);
+export const Broadsword = skillFabric({ skillSettings });

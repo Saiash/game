@@ -8,7 +8,14 @@ import { Size } from './models/size';
 
 export type SecondaryAttributesList = Weight | Damage | Dodge | Size | Reaction;
 
-export const ATTRS_LIST = [
+export type secondaryAttrsCodesList =
+  | 'weight'
+  | 'dmg'
+  | 'dodge'
+  | 'size'
+  | 'reaction';
+
+export const SECONDARY_ATTRS_LIST = [
   { code: 'weight', model: Weight },
   { code: 'dmg', model: Damage },
   { code: 'dodge', model: Dodge },
@@ -23,7 +30,7 @@ export class SecondaryAttributes {
   constructor({ ctx, character }: { ctx: CTX; character: Character }) {
     this.ctx = ctx;
     this.collection = {};
-    ATTRS_LIST.forEach(attr => {
+    SECONDARY_ATTRS_LIST.forEach(attr => {
       this.collection[attr.code] = new attr.model({
         ctx,
         character,

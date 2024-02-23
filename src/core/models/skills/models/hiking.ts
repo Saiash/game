@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 //от потери усталости?
 
-export const Hiking = skillFabric(skillSettings);
+export const Hiking = skillFabric({ skillSettings });

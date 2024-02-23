@@ -13,4 +13,4 @@ const skillSettings: skillFabricType = {
 // провал на 5+ - допрашивающий верит в ложь
 // +3 за угрозы, +6 за пытки
 
-export const Interrogation = skillFabric(skillSettings);
+export const Interrogation = skillFabric({ skillSettings });

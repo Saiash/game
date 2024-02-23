@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: {},
 };
 
-export const BeamWeapons = skillFabric(skillSettings);
+export const BeamWeapons = skillFabric({ skillSettings });

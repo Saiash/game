@@ -1,13 +1,11 @@
-import { ModificatorManager } from '../../../../core/managers/ModificatorManager';
-import { AttributeManager } from '../attributes';
-import { Attribute } from '../attributes/attribute';
-import { Perk, rawPerkModel } from './perk';
+import { Perk } from './perk';
 import { Character } from '../index';
 
 import { ActionPayload } from '../../../engine/actionConnector';
 
-import type { CTX } from '../../../../types/';
+import type { CTX, PartialRecord } from '../../../../types/';
 import { ACTION_PAYLOAD_TYPE } from '../../../engine/constants';
+import { PERK_LIST, perkList } from '../../perks';
 
 export type CheckResults = {
   rand?: number;
@@ -24,7 +22,7 @@ export type ResolveResult = {
 };
 
 export class PerkManager {
-  collection: { [index: string]: Perk };
+  collection: PartialRecord<perkList, Perk>;
   character: Character;
   ctx: CTX;
 
@@ -43,20 +41,17 @@ export class PerkManager {
   }
 
   async add({
-    dataloaders,
     name,
+    level = 0,
   }: {
-    dataloaders: CTX['dataloaders'];
-    name: string;
+    name: perkList;
+    level?: number;
   }): Promise<boolean> {
     if (this.collection[name]) return false;
-    const perkData = (await dataloaders.getPerk(name)) as rawPerkModel;
-
-    const perk = new Perk({
+    this.collection[name] = PERK_LIST[name]({
       ctx: this.ctx,
-      data: { ...perkData },
+      level,
     });
-    this.collection[name] = perk;
     return true;
   }
 
@@ -66,7 +61,7 @@ export class PerkManager {
     });
   }
 
-  getByCode(code: string) {
+  getByCode(code: perkList): Perk | undefined {
     return this.collection[code];
   }
 
@@ -74,6 +69,8 @@ export class PerkManager {
     let result: ResolveResult = { executed: false };
     if (input.payload.type !== ACTION_PAYLOAD_TYPE.USE_PERK) return false;
     const perk = this.getByCode(input.payload.perk);
+    if (!perk) return false;
+
     result = await perk.resolve(input);
 
     if (result.message) {

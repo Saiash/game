@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: {},
 };
 
-export const Scrounging = skillFabric(skillSettings);
+export const Scrounging = skillFabric({ skillSettings });

@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 // Когда вы заявляете об использовании данного умения, то Мастер проводит Быстрое состязание умений между вашим Определением лжи и ИН оппонента  (либо его Загова- риванием зубов, либо Артистизмом)
 
-export const DetectLies = skillFabric(skillSettings);
+export const DetectLies = skillFabric({ skillSettings });

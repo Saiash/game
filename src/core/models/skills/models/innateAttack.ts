@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: {},
 };
 
-export const InnateAttack = skillFabric(skillSettings);
+export const InnateAttack = skillFabric({ skillSettings });

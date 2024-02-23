@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 // Если нет схем - 2, за незнакомую технологию -2
 
-export const ElectronicsRepair = skillFabric(skillSettings);
+export const ElectronicsRepair = skillFabric({ skillSettings });

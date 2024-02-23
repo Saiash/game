@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 //Нату- ралист-6.
 //Обычно с -4?
 
-export const Biology = skillFabric(skillSettings);
+export const Biology = skillFabric({ skillSettings });

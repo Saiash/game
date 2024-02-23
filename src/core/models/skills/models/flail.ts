@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 //Топор/Булава -4.
 
-export const Flail = skillFabric(skillSettings);
+export const Flail = skillFabric({ skillSettings });

@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 // Рели- гиозный обряд (той же религии) -4
 
-export const Theology = skillFabric(skillSettings);
+export const Theology = skillFabric({ skillSettings });

@@ -16,4 +16,4 @@ const skillSettings: skillFabricType = {
   },
 };
 
-export const GrenadeLauncher = skillFabric(skillSettings);
+export const GrenadeLauncher = skillFabric({ skillSettings });

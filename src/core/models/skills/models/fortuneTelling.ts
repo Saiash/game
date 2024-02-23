@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: { fastTalk: -3, occultism: -3 },
 };
 
-export const FortuneTelling = skillFabric(skillSettings);
+export const FortuneTelling = skillFabric({ skillSettings });

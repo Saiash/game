@@ -41,7 +41,7 @@ export class ActionResolver {
     if (payload.time) {
       this.ctx.gameData.timeManager.calcTimeSpent(payload.time);
     } else if (payload.payload.type === ACTION_PAYLOAD_TYPE.USE_SKILL) {
-      const skillTime = payload.sourceActor.skillManager
+      const skillTime = payload.sourceActor?.skillManager
         .getByCode(payload.payload.skill)
         ?.getDefaultSkillTime();
       this.ctx.gameData.timeManager.calcTimeSpent(skillTime || 60);

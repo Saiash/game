@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 // -4 к атаке, нет штрафа к парированию от левой руки
 
-export const MainGauche = skillFabric(skillSettings);
+export const MainGauche = skillFabric({ skillSettings });

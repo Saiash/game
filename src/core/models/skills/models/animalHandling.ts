@@ -10,4 +10,4 @@ const skillSettings: skillFabricType = {
 };
 //В бою против животных, животные получают -1, -2 если навык больше 20
 
-export const AnimalHandling = skillFabric(skillSettings);
+export const AnimalHandling = skillFabric({ skillSettings });

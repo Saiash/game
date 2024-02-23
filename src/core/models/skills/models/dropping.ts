@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 // Мета- ние-4.
 
-export const Dropping = skillFabric(skillSettings);
+export const Dropping = skillFabric({ skillSettings });

@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: { kusari: -4, twoHandedAxeMace: -4 },
 };
 
-export const TwoHandedFlail = skillFabric(skillSettings);
+export const TwoHandedFlail = skillFabric({ skillSettings });

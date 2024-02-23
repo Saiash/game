@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 //  Проверка документа срабатывает каждый раз; документ создается с фиксированной сложностью подделки
 
-export const Forgery = skillFabric(skillSettings);
+export const Forgery = skillFabric({ skillSettings });

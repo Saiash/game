@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 //больше чем БГ поднимать, +5% за поинт
 
-export const Lifting = skillFabric(skillSettings);
+export const Lifting = skillFabric({ skillSettings });

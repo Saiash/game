@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 //Вы полу- чаете +4, если все, что вы хотите – это проехать и не упасть.
 
-export const Bicycling = skillFabric(skillSettings);
+export const Bicycling = skillFabric({ skillSettings });

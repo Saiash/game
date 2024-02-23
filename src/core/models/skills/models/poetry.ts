@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: { writing: -5 },
 };
 
-export const Poetry = skillFabric(skillSettings);
+export const Poetry = skillFabric({ skillSettings });

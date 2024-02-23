@@ -12,4 +12,4 @@ const skillSettings: skillFabricType = {
 // Штрафы и бонусы в зависимости от размера. -4 за что-то маленькое, 0 компактдиск, -4 меч, -6 арбалет. от -5 до +5 за объем одежды
 // ьбыстрое состязание поиск против утаивания
 
-export const Holdout = skillFabric(skillSettings);
+export const Holdout = skillFabric({ skillSettings });

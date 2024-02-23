@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: { forceSword: -4, broadsword: -4 },
 };
 
-export const TwoHandedSword = skillFabric(skillSettings);
+export const TwoHandedSword = skillFabric({ skillSettings });

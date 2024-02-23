@@ -12,4 +12,4 @@ const skillSettings: skillFabricType = {
 // шуллерство в игре - дает до +5
 // +3 за свет, помощника, подготовка
 
-export const SleightOfHands = skillFabric(skillSettings);
+export const SleightOfHands = skillFabric({ skillSettings });

@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: {},
 };
 
-export const AreaKnowledge = skillFabric(skillSettings);
+export const AreaKnowledge = skillFabric({ skillSettings });

@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 //(требуется приблизительно два часа исследований, но может занять месяцы для крупных корпораций)
 
-export const Accounting = skillFabric(skillSettings);
+export const Accounting = skillFabric({ skillSettings });

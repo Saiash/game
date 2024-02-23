@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: {},
 };
 
-export const Gesture = skillFabric(skillSettings);
+export const Gesture = skillFabric({ skillSettings });

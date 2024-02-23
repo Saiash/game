@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: { makeup: -3 },
 };
 
-export const Disguise = skillFabric(skillSettings);
+export const Disguise = skillFabric({ skillSettings });

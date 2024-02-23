@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: { acrobatics: -5 },
 };
 
-export const EroticArt = skillFabric(skillSettings);
+export const EroticArt = skillFabric({ skillSettings });

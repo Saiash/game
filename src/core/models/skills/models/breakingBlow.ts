@@ -12,4 +12,4 @@ const skillSettings: skillFabricType = {
 //Проверка после попадания, если успех - делитель брони 5
 //раз в 5 раундов
 
-export const BreakingBlow = skillFabric(skillSettings);
+export const BreakingBlow = skillFabric({ skillSettings });

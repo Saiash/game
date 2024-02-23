@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 // Быстрое состязание - до +3
 
-export const Persuade = skillFabric(skillSettings);
+export const Persuade = skillFabric({ skillSettings });

@@ -1,10 +1,10 @@
 import { ATTRS_LIST } from '../../../core/models/characters/attributes';
 import { itemZones } from '../../../core/models/characters/inventory/item';
-import { ATTRS_LIST as ATTRS_LIST_SECONDARY } from '../../../core/models/characters/secondaryAttributes';
+import { SECONDARY_ATTRS_LIST } from '../../../core/models/characters/secondaryAttributes';
 
 export const ATTRS_ENUM = [
   ...ATTRS_LIST.map(a => a.code),
-  ...ATTRS_LIST_SECONDARY.map(a => a.code),
+  ...SECONDARY_ATTRS_LIST.map(a => a.code),
 ];
 
 export const DIFF_ENUM = ['easy', 'medium', 'hard', 'very hard'];

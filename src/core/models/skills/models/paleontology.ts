@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 // Биология-4.
 
-export const Paleontology = skillFabric(skillSettings);
+export const Paleontology = skillFabric({ skillSettings });

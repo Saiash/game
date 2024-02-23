@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 // Первая Помощь-8, Ветеринария-5 или Врачебное дело-4.
 
-export const Diagnosis = skillFabric(skillSettings);
+export const Diagnosis = skillFabric({ skillSettings });

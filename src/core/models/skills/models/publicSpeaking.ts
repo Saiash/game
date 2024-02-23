@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 // Выступ- ление-2, Артистизм-5, Политика-5.
 
-export const PublicSpeaking = skillFabric(skillSettings);
+export const PublicSpeaking = skillFabric({ skillSettings });

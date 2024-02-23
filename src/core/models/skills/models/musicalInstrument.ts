@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: {},
 };
 
-export const MusicalInstrument = skillFabric(skillSettings);
+export const MusicalInstrument = skillFabric({ skillSettings });

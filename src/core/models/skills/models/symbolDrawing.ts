@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: {},
 };
 
-export const SymbolDrawing = skillFabric(skillSettings);
+export const SymbolDrawing = skillFabric({ skillSettings });

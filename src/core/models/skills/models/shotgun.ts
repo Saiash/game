@@ -16,4 +16,4 @@ const skillSettings: skillFabricType = {
   },
 };
 
-export const Shotgun = skillFabric(skillSettings);
+export const Shotgun = skillFabric({ skillSettings });

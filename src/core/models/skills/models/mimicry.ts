@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: { naturalist: -3, acting: -6, linguistics: -4 },
 };
 
-export const Mimicry = skillFabric(skillSettings);
+export const Mimicry = skillFabric({ skillSettings });

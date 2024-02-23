@@ -14,4 +14,4 @@ const skillSettings: skillFabricType = {
 // При критпровале - бросок страха +10
 // При успехе - состязание СЛ/воли духа, + Cл или воля человека, в которого вселился дух
 
-export const Exorcism = skillFabric(skillSettings);
+export const Exorcism = skillFabric({ skillSettings });

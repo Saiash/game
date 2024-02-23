@@ -4,12 +4,14 @@ import { GameData } from '../gameData';
 import { EventAction } from '../../managers/tag/models/tag';
 import { TagSystem } from '../../managers/tag';
 import { ACTION_PAYLOAD_TYPE } from '../constants';
+import { skillList } from '../../models/skills';
+import { perkList } from '../../models/perks';
 
 export type useSkillPayload = {
   type: ACTION_PAYLOAD_TYPE.USE_SKILL;
   difficulty: number;
   timeMod: number;
-  skill: string;
+  skill: skillList;
   onSuccsess?: EventAction[];
   onFail?: EventAction[];
   options?: {
@@ -18,7 +20,7 @@ export type useSkillPayload = {
 };
 type usePerkPayload = {
   type: ACTION_PAYLOAD_TYPE.USE_PERK;
-  perk: string;
+  perk: perkList;
 };
 type useActionPayload = {
   type: ACTION_PAYLOAD_TYPE.USE_ACTION;
@@ -39,7 +41,7 @@ type unequipItemPayload = {
 type systemEventPayload = { type: ACTION_PAYLOAD_TYPE.SYSTEM_EVENT };
 
 export type ActionPayload = {
-  sourceActor: Character;
+  sourceActor?: Character;
   target?: TagSystem['owner'];
   time?: number;
   payload:

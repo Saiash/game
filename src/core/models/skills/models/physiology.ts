@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: { diagnosis: -5, surgery: -5, physician: -5 },
 };
 
-export const Physiology = skillFabric(skillSettings);
+export const Physiology = skillFabric({ skillSettings });

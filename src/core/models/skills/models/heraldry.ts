@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: { savoirFaire: -3 },
 };
 
-export const Heraldry = skillFabric(skillSettings);
+export const Heraldry = skillFabric({ skillSettings });

@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: { forgery: -2 },
 };
 
-export const Counterfeiting = skillFabric(skillSettings);
+export const Counterfeiting = skillFabric({ skillSettings });

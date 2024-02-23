@@ -14,4 +14,4 @@ const skillSettings: skillFabricType = {
   },
 };
 
-export const Kusari = skillFabric(skillSettings);
+export const Kusari = skillFabric({ skillSettings });

@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: {},
 };
 
-export const Mount = skillFabric(skillSettings);
+export const Mount = skillFabric({ skillSettings });

@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: {},
 };
 
-export const HazardousMaterials = skillFabric(skillSettings);
+export const HazardousMaterials = skillFabric({ skillSettings });

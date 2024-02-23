@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: { alchemy: -3 },
 };
 
-export const Chemistry = skillFabric(skillSettings);
+export const Chemistry = skillFabric({ skillSettings });

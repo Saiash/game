@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 //Каждый раз, когда требуется бросок реакции со стороны пре- ступного мира или «неприятных соседей», вы можете заменить его броском Знания улиц;
 
-export const Streetwise = skillFabric(skillSettings);
+export const Streetwise = skillFabric({ skillSettings });

@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 // бросок каждые 30 минут
 
-export const Scuba = skillFabric(skillSettings);
+export const Scuba = skillFabric({ skillSettings });

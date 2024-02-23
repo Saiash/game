@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 //Ювелир-4.
 
-export const Smith = skillFabric(skillSettings);
+export const Smith = skillFabric({ skillSettings });

@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: { throwing: -2 },
 };
 
-export const ThrownWeapon = skillFabric(skillSettings);
+export const ThrownWeapon = skillFabric({ skillSettings });

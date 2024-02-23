@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 // Взлом-3*.
 
-export const Traps = skillFabric(skillSettings);
+export const Traps = skillFabric({ skillSettings });

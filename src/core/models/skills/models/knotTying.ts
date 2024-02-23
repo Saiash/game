@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 // узел обладает сложностью; надо выкинуть больше, что бы освободиться
 
-export const KnotTying = skillFabric(skillSettings);
+export const KnotTying = skillFabric({ skillSettings });

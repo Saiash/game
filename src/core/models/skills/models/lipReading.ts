@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: {},
 };
 
-export const LipReading = skillFabric(skillSettings);
+export const LipReading = skillFabric({ skillSettings });

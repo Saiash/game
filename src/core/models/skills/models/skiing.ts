@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 // крит падение - 1к урона
 
-export const Skiing = skillFabric(skillSettings);
+export const Skiing = skillFabric({ skillSettings });

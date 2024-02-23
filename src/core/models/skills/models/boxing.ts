@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 //при 8 вложенных опыта - +1 к урону, при 12 - +2
 
-export const Boxing = skillFabric(skillSettings);
+export const Boxing = skillFabric({ skillSettings });

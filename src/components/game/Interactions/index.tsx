@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import styles from '../../../styles/Home.module.css';
 import type { CTX } from '../../../types';
 import { ACTION_PAYLOAD_TYPE } from '../../../core/engine/constants';
+import { skillList } from '../../../core/models/skills';
 
 const TIME_OPTIONS = [0.5, 1, 2, 4, 8, 16, 32];
 
@@ -30,7 +31,7 @@ export default function Interactions({
   const actions = player.getAvaliableActons();
   const _actions = Object.keys(actions);
 
-  const [skillSelected, setSkillSelected] = useState('');
+  const [skillSelected, setSkillSelected] = useState<any>('acting');
   const [targetSelected, setTargetSelected] = useState(0);
   const [skills, setSkills] = useState(_actions);
   const [targets, setTargets] = useState(actions[skillSelected]);

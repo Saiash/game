@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 // каждый спорт - отдельное умение
 
-export const Sports = skillFabric(skillSettings);
+export const Sports = skillFabric({ skillSettings });

@@ -21,7 +21,7 @@ export class Skill {
   protected exp: number;
   resolver: SkillResolver;
   modificatorManager: ModificatorManager;
-  private skillManager: SkillManager;
+  skillManager: SkillManager;
   private ctx: CTX;
 
   private attribute: Attribute;
@@ -61,7 +61,16 @@ export class Skill {
   }
 
   getEffectiveValue(): number {
-    return this.getRawValue() + this.getExpMod() + this.getModsValue();
+    return (
+      this.getRawValue() +
+      this.getExpMod() +
+      this.getModsValue() +
+      this.getSpecificValue()
+    );
+  }
+
+  getSpecificValue(): number {
+    return 0;
   }
 
   getBaseRawValue(): number {
@@ -154,17 +163,17 @@ export class Skill {
   }
 
   async resolve(input: ActionPayload): Promise<ResolveResult> {
-    const { sourceActor, payload, target } = input;
+    const { payload, target } = input;
+    const sourceActor = input.sourceActor || this.skillManager.character;
     if (payload.type !== ACTION_PAYLOAD_TYPE.USE_SKILL)
       return { executed: false, payload: input };
     const { skill, difficulty, timeMod, options } = payload;
-    if (!sourceActor) return { executed: false, payload: input };
     const optionsMod = this.calcOptionsMod(options);
 
     let diffMod = 0;
     if (this.isCultureBased()) {
       const target = input.target?.getCultures();
-      const sourceCulture = input.sourceActor.getCultures();
+      const sourceCulture = input.sourceActor?.getCultures();
       //сравнить между собой культуры источника и локации (если цели нет или цель локация/объект) или персонажа (если есть персонаж-цель)
       if (!!_.intersection(target, sourceCulture).length) {
         diffMod = 3;

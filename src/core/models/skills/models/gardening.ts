@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: { farming: -3 },
 };
 
-export const Gardening = skillFabric(skillSettings);
+export const Gardening = skillFabric({ skillSettings });

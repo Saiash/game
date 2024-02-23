@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 // -5 за незнакомый мир
 
-export const Geography = skillFabric(skillSettings);
+export const Geography = skillFabric({ skillSettings });

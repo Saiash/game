@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 // +1 на все броски кроме боя
 
-export const Leadership = skillFabric(skillSettings);
+export const Leadership = skillFabric({ skillSettings });

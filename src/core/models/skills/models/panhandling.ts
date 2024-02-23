@@ -13,4 +13,4 @@ const skillSettings: skillFabricType = {
 // Успешный бросок – вы насо- бирали $2 за каждое очко успеш- ности броска
 // Критический провал означает, что тот, у кого вы просили, позвал полицию или напал на вас
 
-export const Panhandling = skillFabric(skillSettings);
+export const Panhandling = skillFabric({ skillSettings });

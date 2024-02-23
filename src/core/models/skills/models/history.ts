@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: {},
 };
 
-export const History = skillFabric(skillSettings);
+export const History = skillFabric({ skillSettings });

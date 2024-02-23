@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: {},
 };
 
-export const Escape = skillFabric(skillSettings);
+export const Escape = skillFabric({ skillSettings });

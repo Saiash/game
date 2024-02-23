@@ -13,4 +13,4 @@ const skillSettings: skillFabricType = {
 //можно ронять противника на соседней клетке после парирования
 //Если кинуть в кого-то - тот кидает СЛ/ЛОВ + 3
 
-export const Judo = skillFabric(skillSettings);
+export const Judo = skillFabric({ skillSettings });

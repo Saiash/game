@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: { strategy: -6 },
 };
 
-export const IntelligenceAnalysis = skillFabric(skillSettings);
+export const IntelligenceAnalysis = skillFabric({ skillSettings });

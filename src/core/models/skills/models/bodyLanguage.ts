@@ -12,4 +12,4 @@ const skillSettings: skillFabricType = {
 //модификаторы темноты
 //маски и плащи (как и объемная одежда) могут блокировать уменеие
 
-export const BodyLanguage = skillFabric(skillSettings);
+export const BodyLanguage = skillFabric({ skillSettings });

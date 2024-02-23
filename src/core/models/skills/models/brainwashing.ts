@@ -12,4 +12,4 @@ const skillSettings: skillFabricType = {
 //только раз в день
 // состязание против воли жертвы
 
-export const Brainwashing = skillFabric(skillSettings);
+export const Brainwashing = skillFabric({ skillSettings });

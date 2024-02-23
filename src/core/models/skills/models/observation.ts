@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 //штрафы за темноту и расстонияе
 
-export const Observation = skillFabric(skillSettings);
+export const Observation = skillFabric({ skillSettings });

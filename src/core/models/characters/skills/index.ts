@@ -121,11 +121,9 @@ export class SkillManager {
   }
 
   async add({
-    dataloaders,
     name,
     exp = 0,
   }: {
-    dataloaders: CTX['dataloaders'];
     name: skillList;
     exp?: number;
   }): Promise<boolean> {
@@ -134,6 +132,7 @@ export class SkillManager {
       ctx: this.ctx,
       character: this.character,
       skillManager: this,
+      exp,
     });
     return true;
   }

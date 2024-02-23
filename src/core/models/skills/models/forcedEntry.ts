@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: {},
 };
 
-export const ForcedEntry = skillFabric(skillSettings);
+export const ForcedEntry = skillFabric({ skillSettings });

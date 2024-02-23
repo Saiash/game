@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: { sociology: -4 },
 };
 
-export const Psychology = skillFabric(skillSettings);
+export const Psychology = skillFabric({ skillSettings });

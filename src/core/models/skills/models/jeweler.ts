@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 //Куз- нец (Медь или Олово и свинец)-4.
 
-export const Jeweler = skillFabric(skillSettings);
+export const Jeweler = skillFabric({ skillSettings });

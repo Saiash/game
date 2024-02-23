@@ -12,4 +12,4 @@ const skillSettings: skillFabricType = {
 // +3 за сообщника, +3 за плохой свет
 //Потенциально быстрое состязание против зрения наблюдателя
 
-export const Filch = skillFabric(skillSettings);
+export const Filch = skillFabric({ skillSettings });

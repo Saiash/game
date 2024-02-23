@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: { spear: -4, twoHandedFlail: -4 },
 };
 
-export const TwoHandedAxeMace = skillFabric(skillSettings);
+export const TwoHandedAxeMace = skillFabric({ skillSettings });

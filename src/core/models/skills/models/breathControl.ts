@@ -12,4 +12,4 @@ const skillSettings: skillFabricType = {
 //восстанавливает 1 ЕУ за 2 минуты
 //раз в 5 раундов
 
-export const BreathControl = skillFabric(skillSettings);
+export const BreathControl = skillFabric({ skillSettings });

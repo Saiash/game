@@ -12,4 +12,4 @@ const skillSettings: skillFabricType = {
 // провал - падение
 // крит падение - 1к урона
 
-export const Skating = skillFabric(skillSettings);
+export const Skating = skillFabric({ skillSettings });

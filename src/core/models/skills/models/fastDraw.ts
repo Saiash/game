@@ -12,4 +12,4 @@ const skillSettings: skillFabricType = {
 //Крит - предмет роняется
 //Необходима специализация?
 
-export const FastDraw = skillFabric(skillSettings);
+export const FastDraw = skillFabric({ skillSettings });

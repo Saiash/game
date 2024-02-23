@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: { performance: -3 },
 };
 
-export const StageCombat = skillFabric(skillSettings);
+export const StageCombat = skillFabric({ skillSettings });

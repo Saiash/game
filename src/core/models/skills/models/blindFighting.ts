@@ -13,4 +13,4 @@ const skillSettings: skillFabricType = {
 //штраф за фо- новый шум: -1 за дождь, -2 ливень или буря, -3 – тяжелая техника или толпа, -4 за полный стадион,
 //-5 среди канонады.
 
-export const BlindFighting = skillFabric(skillSettings);
+export const BlindFighting = skillFabric({ skillSettings });

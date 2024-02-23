@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 // Биология-5, Знание трав-5, Натуралист-5 Химия-5 или Врачебное дело-5.
 
-export const Pharmacy = skillFabric(skillSettings);
+export const Pharmacy = skillFabric({ skillSettings });

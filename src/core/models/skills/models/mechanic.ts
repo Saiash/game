@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 // Ин- женерия (та же)-4, Слесарь-5.
 
-export const Mechanic = skillFabric(skillSettings);
+export const Mechanic = skillFabric({ skillSettings });

@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 // посох-4, копье-4, дву- ручный топор/булава-4.
 
-export const Polearm = skillFabric(skillSettings);
+export const Polearm = skillFabric({ skillSettings });

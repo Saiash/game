@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: { ritualMagic: -6, theology: -4 },
 };
 
-export const ReligiousRitual = skillFabric(skillSettings);
+export const ReligiousRitual = skillFabric({ skillSettings });

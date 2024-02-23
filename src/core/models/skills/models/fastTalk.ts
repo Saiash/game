@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 // можно использовать вместо реакции
 
-export const FastTalk = skillFabric(skillSettings);
+export const FastTalk = skillFabric({ skillSettings });

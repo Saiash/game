@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 //раз в день
 
-export const Hypnotism = skillFabric(skillSettings);
+export const Hypnotism = skillFabric({ skillSettings });

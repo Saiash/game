@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: {},
 };
 
-export const BodyControl = skillFabric(skillSettings);
+export const BodyControl = skillFabric({ skillSettings });

@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 // Химия-5 или Врачебное дело-3, Фармацев- тика-3.
 
-export const Poisons = skillFabric(skillSettings);
+export const Poisons = skillFabric({ skillSettings });

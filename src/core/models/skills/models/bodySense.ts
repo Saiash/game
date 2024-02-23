@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: { acrobatics: -3 },
 };
 
-export const BodySense = skillFabric(skillSettings);
+export const BodySense = skillFabric({ skillSettings });

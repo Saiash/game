@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: { kusari: -3, monowireWhip: -3, whip: -3 },
 };
 
-export const ForceWhip = skillFabric(skillSettings);
+export const ForceWhip = skillFabric({ skillSettings });

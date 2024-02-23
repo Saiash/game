@@ -10,4 +10,4 @@ const skillSettings: skillFabricType = {
 };
 //Палеоан- тропология-2, Социология-3.
 
-export const Antopology = skillFabric(skillSettings);
+export const Antopology = skillFabric({ skillSettings });

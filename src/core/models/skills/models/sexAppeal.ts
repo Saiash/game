@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 //При необходимости броска вли- яния (с.359) со стороны представи- теля противоположного пола (или того, кого привлекают лица ваше- го пола) вы можете заменить его броском Сексапильности.
 
-export const SexAppeal = skillFabric(skillSettings);
+export const SexAppeal = skillFabric({ skillSettings });

@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: {},
 };
 
-export const Blowpipe = skillFabric(skillSettings);
+export const Blowpipe = skillFabric({ skillSettings });

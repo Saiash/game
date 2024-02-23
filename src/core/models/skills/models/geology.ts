@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: { geography: -4, prospecting: -5 },
 };
 
-export const Geology = skillFabric(skillSettings);
+export const Geology = skillFabric({ skillSettings });

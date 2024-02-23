@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 //Кроме того, вы можете использовать половину значения умения Прыжков вместо Базового движения для расчета дальности прыжка
 
-export const Jumping = skillFabric(skillSettings);
+export const Jumping = skillFabric({ skillSettings });

@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 // Антропо- логия -3, Психология -4.
 
-export const Sociology = skillFabric(skillSettings);
+export const Sociology = skillFabric({ skillSettings });

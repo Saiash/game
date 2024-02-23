@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: { marketAnalysis: -5, finance: -3, merchant: -6 },
 };
 
-export const Economics = skillFabric(skillSettings);
+export const Economics = skillFabric({ skillSettings });

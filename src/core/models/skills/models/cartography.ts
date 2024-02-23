@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: { geography: -2, navigation: -4, mathematics: -2 },
 };
 
-export const Cartography = skillFabric(skillSettings);
+export const Cartography = skillFabric({ skillSettings });

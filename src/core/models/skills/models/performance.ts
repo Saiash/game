@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: { acting: -2, publicSpeaking: -2 },
 };
 
-export const Performance = skillFabric(skillSettings);
+export const Performance = skillFabric({ skillSettings });

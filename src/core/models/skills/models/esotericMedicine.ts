@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: {},
 };
 
-export const EsotericMedicine = skillFabric(skillSettings);
+export const EsotericMedicine = skillFabric({ skillSettings });

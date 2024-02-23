@@ -16,4 +16,4 @@ const skillSettings: skillFabricType = {
   },
 };
 
-export const Gyroc = skillFabric(skillSettings);
+export const Gyroc = skillFabric({ skillSettings });

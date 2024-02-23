@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: { merchant: -5, psychology: -4 },
 };
 
-export const Propaganda = skillFabric(skillSettings);
+export const Propaganda = skillFabric({ skillSettings });

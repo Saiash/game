@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 // также дать премию +2 к реакции при общении с чиновниками и
 
-export const Administration = skillFabric(skillSettings);
+export const Administration = skillFabric({ skillSettings });

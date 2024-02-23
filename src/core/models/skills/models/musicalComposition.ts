@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 // Музыкальный инструмент -2 или Поэзия-2 для песен.
 
-export const MusicalComposition = skillFabric(skillSettings);
+export const MusicalComposition = skillFabric({ skillSettings });

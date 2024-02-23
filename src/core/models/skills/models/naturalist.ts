@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: { biology: -3 },
 };
 
-export const Naturalist = skillFabric(skillSettings);
+export const Naturalist = skillFabric({ skillSettings });

@@ -13,4 +13,4 @@ const skillSettings: skillFabricType = {
 
 //минус уровень нагрузки; -5, чтобы спрятаться в местности без «естественных» ук- рытий; +3 или больше, если укры- тий много; -5, чтобы бесшумно бе- жать, а не идти (бесшумная ходьба проходит со скоростью 1 ярд в се- кунду); -5, чтобы обмануть облада- ющих Необычайным обонянием.
 
-export const Stealth = skillFabric(skillSettings);
+export const Stealth = skillFabric({ skillSettings });

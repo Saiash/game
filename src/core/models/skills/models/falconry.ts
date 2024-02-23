@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 // Чтобы найти гнездо сокола весной, нужно пот- ратить неделю на поиски и удачно выполнить бросок умения Соко- линая охота; в новом гнезде будет 1к-3 птенцов.
 
-export const Falconry = skillFabric(skillSettings);
+export const Falconry = skillFabric({ skillSettings });

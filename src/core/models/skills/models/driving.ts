@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 // -2 за качество плохой техники, -2 за незнакомый тип, -2 при плохих условиях
 
-export const Driving = skillFabric(skillSettings);
+export const Driving = skillFabric({ skillSettings });

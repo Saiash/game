@@ -22,6 +22,18 @@ export type AttributeProps = {
   typePriority: number;
 };
 
+export type attrsCodesList =
+  | 'str'
+  | 'dex'
+  | 'ht'
+  | 'int'
+  | 'hp'
+  | 'per'
+  | 'will'
+  | 'speed'
+  | 'move'
+  | 'ft';
+
 export const ATTRS_LIST = [
   { code: 'str', model: Strength },
   { code: 'dex', model: Dexterity },

@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: { shortsword: -4 },
 };
 
-export const Smallsword = skillFabric(skillSettings);
+export const Smallsword = skillFabric({ skillSettings });

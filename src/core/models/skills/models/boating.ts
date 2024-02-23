@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 //до -3 за шторм и прочая
 
-export const Boating = skillFabric(skillSettings);
+export const Boating = skillFabric({ skillSettings });

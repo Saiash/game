@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 // быстрое состязание если против кого-то, иначе просто против казино
 
-export const Gambling = skillFabric(skillSettings);
+export const Gambling = skillFabric({ skillSettings });

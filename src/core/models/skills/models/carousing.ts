@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 //+2 к реакции или другим броскам, -2 или проблемы в случае провала
 
-export const Carousing = skillFabric(skillSettings);
+export const Carousing = skillFabric({ skillSettings });

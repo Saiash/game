@@ -17,4 +17,4 @@ const skillSettings: skillFabricType = {
 
 //+1 за каждую разницу в ИНТ с противником
 
-export const Acting = skillFabric(skillSettings);
+export const Acting = skillFabric({ skillSettings });

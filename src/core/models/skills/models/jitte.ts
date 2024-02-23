@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 // +2 к обезоруживанию
 
-export const Jitte = skillFabric(skillSettings);
+export const Jitte = skillFabric({ skillSettings });

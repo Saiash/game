@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 //для предотвращения потери усталости
 
-export const Swimming = skillFabric(skillSettings);
+export const Swimming = skillFabric({ skillSettings });

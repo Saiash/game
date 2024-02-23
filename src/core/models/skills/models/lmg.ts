@@ -16,4 +16,4 @@ const skillSettings: skillFabricType = {
   },
 };
 
-export const LMG = skillFabric(skillSettings);
+export const LMG = skillFabric({ skillSettings });

@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 // Обращение с животными (лошади)-5
 
-export const Packing = skillFabric(skillSettings);
+export const Packing = skillFabric({ skillSettings });

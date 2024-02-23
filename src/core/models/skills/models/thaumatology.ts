@@ -1,3 +1,4 @@
+import { Skill } from '../../characters/skills/skill';
 import { skillFabric, skillFabricType } from './index';
 
 const skillSettings: skillFabricType = {
@@ -9,4 +10,16 @@ const skillSettings: skillFabricType = {
   relativeSkills: {},
 };
 
-export const Thaumatology = skillFabric(skillSettings);
+class ThaumatologyClass extends Skill {
+  getSpecificValue(): number {
+    return (
+      this.skillManager.character.perkManager.getByCode('magery')?.getLevel() ||
+      0
+    );
+  }
+}
+
+export const Thaumatology = skillFabric({
+  skillSettings,
+  skillClass: ThaumatologyClass,
+});

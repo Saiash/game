@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: { biology: -5 },
 };
 
-export const Bioengineering = skillFabric(skillSettings);
+export const Bioengineering = skillFabric({ skillSettings });

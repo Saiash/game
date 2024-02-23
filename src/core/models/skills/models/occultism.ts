@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: {},
 };
 
-export const Occultism = skillFabric(skillSettings);
+export const Occultism = skillFabric({ skillSettings });

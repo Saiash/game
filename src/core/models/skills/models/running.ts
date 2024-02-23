@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: {},
 };
 
-export const Running = skillFabric(skillSettings);
+export const Running = skillFabric({ skillSettings });

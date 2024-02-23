@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 // -2 за незнакомство с игрой
 
-export const Games = skillFabric(skillSettings);
+export const Games = skillFabric({ skillSettings });

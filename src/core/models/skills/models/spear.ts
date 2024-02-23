@@ -11,4 +11,4 @@ const skillSettings: skillFabricType = {
 
 // Алебарда-4, посох-2.
 
-export const Spear = skillFabric(skillSettings);
+export const Spear = skillFabric({ skillSettings });

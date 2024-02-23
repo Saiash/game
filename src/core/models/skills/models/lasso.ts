@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: {},
 };
 
-export const Lasso = skillFabric(skillSettings);
+export const Lasso = skillFabric({ skillSettings });

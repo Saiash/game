@@ -56,6 +56,7 @@ export class TagSystem {
 
   parseInput(input: { props: any; target?: Item }) {
     const { props, target } = input;
+    if (typeof props !== 'object') return;
     const allProps: any = [];
     props.forEach((prop: any) => {
       const { type, tags } = prop;

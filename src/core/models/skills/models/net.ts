@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: { cloak: -5 },
 };
 
-export const Net = skillFabric(skillSettings);
+export const Net = skillFabric({ skillSettings });

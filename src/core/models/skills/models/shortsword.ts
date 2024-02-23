@@ -16,4 +16,4 @@ const skillSettings: skillFabricType = {
   },
 };
 
-export const Shortsword = skillFabric(skillSettings);
+export const Shortsword = skillFabric({ skillSettings });

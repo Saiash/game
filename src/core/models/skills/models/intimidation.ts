@@ -9,4 +9,4 @@ const skillSettings: skillFabricType = {
   relativeSkills: { acting: -3 },
 };
 
-export const Intimidation = skillFabric(skillSettings);
+export const Intimidation = skillFabric({ skillSettings });

@@ -94,13 +94,24 @@ async function initPlayerCharacter(gameData: GameData): Promise<Character> {
     gameData.getLocation('defaultLocation')
   );
   await player.skillManager.add({
-    dataloaders: gameData.dataloaders,
     name: 'lockpicking',
     exp: 1,
   });
+  await player.skillManager.add({
+    name: 'thaumatology',
+    exp: 1,
+  });
   await player.perkManager.add({
-    dataloaders: gameData.dataloaders,
-    name: 'mistakenIdentity',
+    name: 'magery',
+    level: 4,
+  });
+  const skillcheck = await player.skillManager.resolve({
+    payload: {
+      type: ACTION_PAYLOAD_TYPE.USE_SKILL,
+      difficulty: 12,
+      timeMod: 0,
+      skill: 'thaumatology',
+    },
   });
   return player;
 }
