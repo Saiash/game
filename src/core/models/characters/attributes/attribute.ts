@@ -48,7 +48,8 @@ export class Attribute {
   check(difficulty: number): CheckResults {
     const rand = Math.round(random(1, 6) + random(1, 6) + random(1, 6));
     const result = rand <= this.getValue() - difficulty;
-    return { rand, value: this.getValue(), result, difficulty };
+    const successMargin = rand - this.getValue() - difficulty;
+    return { rand, value: this.getValue(), result, difficulty, successMargin };
   }
 
   static getDefaultProps(): AttributeProps {

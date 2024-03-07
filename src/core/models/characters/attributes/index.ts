@@ -86,7 +86,7 @@ export class AttributeManager {
     });
   }
 
-  getByCode(code: string): Attribute {
-    return this.collection[code];
+  getByCode<T = Attribute>(code: attrsCodesList): T {
+    return this.collection[code] as unknown as T;
   }
 }

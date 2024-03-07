@@ -1,6 +1,7 @@
 import { CTX } from '../../../../types';
 import { Character } from '../../characters';
 import { Item } from '../item';
+import { damageTypes } from '../weapon/damage';
 
 export type zone = {
   item: Item;
@@ -42,7 +43,7 @@ export class Doll {
       delete this.zones[zone];
     });
 
-    this.character.tags.removeTagSystem(item.props.tags);
+    this.character.tags.removeTagSystem(item.tags);
     return performer.inventory.add(item);
   }
 
@@ -74,7 +75,7 @@ export class Doll {
         parentZone: i > 0 ? item.props.zones[0] : null,
       };
     });
-    this.character.tags.applyTagSystem(item.props.tags);
+    this.character.tags.applyTagSystem(item.tags);
     return true;
   }
 
@@ -115,6 +116,10 @@ export class Doll {
     const item = this.getItemByZone(index);
     if (!item) return;
     item.unlock();
+  }
+
+  receiveDamageByZone(damage: number, zone: string, type: damageTypes) {
+    return null;
   }
 
   getRaw() {}

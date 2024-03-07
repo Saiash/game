@@ -1,5 +1,5 @@
 import { ModificatorManager } from '../../managers/ModificatorManager';
-import { AttributeManager } from '../characters/attributes';
+import { AttributeManager, attrsCodesList } from '../characters/attributes';
 import { Attribute } from '../characters/attributes/attribute';
 import { Skill } from './skill';
 import { Character } from '../characters/index';
@@ -20,7 +20,7 @@ export type SkillInputProps = {
   name: string;
   description: string;
   code: string;
-  parentAttrCode: string;
+  parentAttrCode: attrsCodesList;
   cultureBased?: boolean;
   defaultSkillTime?: number;
   resolver?: SkillResolver;
@@ -45,10 +45,11 @@ export type InputSkillProps = {
 };
 
 export type CheckResults = {
-  rand?: number;
-  value?: number;
+  rand: number;
+  value: number;
   result: boolean;
-  difficulty?: number;
+  difficulty: number;
+  successMargin: number;
 };
 
 export type ResolveResult = {
@@ -143,8 +144,8 @@ export class SkillManager {
     });
   }
 
-  getByCode(code: string): Skill | undefined {
-    return this.collection[code];
+  getByCode<T = Skill>(code: skillList): T {
+    return this.collection[code] as unknown as T;
   }
 
   isCommonAction(skillName: string): boolean {

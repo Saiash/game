@@ -5,7 +5,10 @@ import { Character } from '../../models/characters';
 import { ObjectModel } from '../../models/locations/object';
 import { Location } from '../../models/locations';
 import { Perk } from '../../models/perks/perk';
-import { Item } from '../../models/inventory/item';
+import { Item } from '../../models/items/item';
+import { skillList } from '../../models/skills';
+import { attrsCodesList } from '../../models/characters/attributes';
+import { secondaryAttrsCodesList } from '../../models/characters/secondaryAttributes';
 
 export class TagSystem {
   input: { props: any; target?: Item } | undefined;
@@ -180,13 +183,19 @@ export class TagSystem {
     const owner = this.pairedToSystem?.owner || this.owner;
     if (!(owner instanceof Character)) return;
     if (type === 'attribute') {
-      let attr: any = owner.attributeManager.getByCode(target);
+      let attr: any = owner.attributeManager.getByCode(
+        target as attrsCodesList
+      );
       if (!attr) {
-        attr = owner.secondaryAttributes.getByCode(target);
+        attr = owner.secondaryAttributes.getByCode(
+          target as secondaryAttrsCodesList
+        );
       }
       attr.modificatorManager.addMod(tag);
     } else if (type === 'skill') {
-      owner.skillManager.getByCode(target)?.modificatorManager.addMod(tag);
+      owner.skillManager
+        .getByCode(target as skillList)
+        ?.modificatorManager.addMod(tag);
     }
   }
 
@@ -199,11 +208,11 @@ export class TagSystem {
     if (!(owner instanceof Character)) return;
     if (target.type === 'attribute') {
       owner.attributeManager
-        .getByCode(target.name)
+        .getByCode(target.name as attrsCodesList)
         ?.props.modificatorManager.removeMod(tag);
     } else if (target.type === 'skill') {
       owner.skillManager
-        .getByCode(target.name)
+        .getByCode(target.name as skillList)
         ?.modificatorManager.removeMod(tag);
     }
   }

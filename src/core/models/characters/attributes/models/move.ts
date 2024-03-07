@@ -31,9 +31,9 @@ export class Move extends Attribute {
 
   getValue(): number {
     const value = this.props.rawValue + this.getModsValue();
-    const encumbrance = (
-      this.character.secondaryAttributes.getByCode('weight') as Weight
-    ).encumbrance();
+    const encumbrance = this.character.secondaryAttributes
+      .getByCode<Weight>('weight')
+      .encumbrance();
     return Math.max(
       ...[
         Math.floor(this.speed.getValue() * (1 - encumbrance * 0.2)) + value,

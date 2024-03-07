@@ -3,7 +3,7 @@ import { CheckResults } from '../skillManager';
 import { ObjectModel } from '../../locations/object';
 
 import { skillFabric, skillFabricType } from './index';
-import { Item } from '../../inventory/item';
+import { Item } from '../../items/item';
 import { SkillResolver } from '../resolvers';
 
 const skillSettings: skillFabricType = {

@@ -8,26 +8,27 @@ export type locale = 'ru' | 'eng';
 /*
 path: skill -> lockpicking -> name
 */
-const languageResolvers: {
-  [index: string]: (cale: locale, path: string[]) => string;
-} = {
-  skill: getSkillText,
-  perk: getPerkText,
-  spell: getSpellText,
+const languageResolvers: Record<entityName, entityType> = {
+  skill: 'skillTexts',
+  race: 'raceTexts',
+  perk: 'perkTexts',
+  spell: 'spellTexts',
+  general: 'generalTexts',
+  weapon: 'weaponTexts',
 };
 
-export function getLocalisedText(locale: locale, path: string[]): string {
-  return languageResolvers[path[0]](locale, path);
-}
+type entityName = 'skill' | 'race' | 'perk' | 'spell' | 'general' | 'weapon';
 
-function getSkillText(locale: locale, path: string[]): string {
-  return texts[locale].skillTexts[path[1]][path[2]];
-}
+type entityType =
+  | 'skillTexts'
+  | 'raceTexts'
+  | 'perkTexts'
+  | 'spellTexts'
+  | 'generalTexts'
+  | 'weaponTexts';
 
-function getPerkText(locale: locale, path: string[]): string {
-  return texts[locale].perkTexts[path[1]][path[2]];
-}
+type path = [entityName, string, string];
 
-function getSpellText(locale: locale, path: string[]): string {
-  return texts[locale].perkTexts[path[1]][path[2]];
+export function getLocalisedText(locale: locale, path: path): string {
+  return texts[locale][languageResolvers[path[0]]][path[1]][path[2]];
 }

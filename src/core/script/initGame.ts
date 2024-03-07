@@ -1,7 +1,8 @@
 import { ACTION_PAYLOAD_TYPE } from '../engine/constants';
 import { GameData } from '../engine/gameData';
 import { Character } from '../models/characters';
-import { Item } from '../models/inventory/item';
+import { Item } from '../models/items/item';
+import { ItemManager } from '../models/items/manager';
 
 export async function initGame(gameData: GameData) {
   gameData.addLocation({
@@ -10,14 +11,17 @@ export async function initGame(gameData: GameData) {
     code: 'defaultLocation',
     connections: [],
   });
-  const [items, characters] = await Promise.all([
-    await initItems(gameData),
+  const [characters] = await Promise.all([
+    //await initItems(gameData),
     await initCharacters(gameData),
   ]);
-  gameData.setPlayerCharacter(characters[0]);
-  for (const item of items) {
-    await gameData.getPlayerCharacter().inventory.add(item);
-  }
+
+  const axe = ItemManager.createItemByCode('axe', gameData.ctx);
+  gameData.getPlayerCharacter().inventory.add(axe);
+
+  // for (const item of items) {
+  //   gameData.getPlayerCharacter().inventory.add(item);
+  // }
   // await this.playerCharacter.lore.add({
   //   dataloaders: this.dataloaders,
   //   name: 'lore_1',

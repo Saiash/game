@@ -1,6 +1,6 @@
 import { CTX } from '../../../types';
 import { Character } from '../../models/characters';
-import { Item } from '../../models/inventory/item';
+import { Item } from '../../models/items/item';
 
 const MAX_LENGTH = 10;
 

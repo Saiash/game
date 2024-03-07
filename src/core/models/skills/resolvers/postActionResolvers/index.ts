@@ -40,7 +40,7 @@ async function removeSelfStatus(
   effects.forEach(e => {
     target.removeStatus(e as string);
   });
-  return { executed: true, checkResult: { result: true } };
+  return returnDefaultTrueResult();
 }
 
 async function addSelfStatus(
@@ -57,7 +57,7 @@ async function addSelfStatus(
   effects.forEach(e => {
     if (typeof e === 'string') target.addStatus(e);
   });
-  return { executed: true, checkResult: { result: true } };
+  return returnDefaultTrueResult();
 }
 
 async function addLore(
@@ -72,7 +72,7 @@ async function addLore(
   for (const e of effect) {
     await actor.lore.add(e as string);
   }
-  return { executed: true, checkResult: { result: true } };
+  return returnDefaultTrueResult();
 }
 
 async function addTag(
@@ -87,7 +87,7 @@ async function addTag(
   // }
   const effectTag = new Tag(effect as TagInput, target, ctx);
   target?.tags.addMod(effectTag);
-  return { executed: true, checkResult: { result: true } };
+  return returnDefaultTrueResult();
 }
 
 // async function addMod(
@@ -118,7 +118,7 @@ async function triggerEvent(
     const event = await Event.getEventById(e as string, ctx, input);
     await event.execute();
   }
-  return { executed: true, checkResult: { result: true } };
+  return returnDefaultTrueResult();
 }
 
 async function sendMessage(
@@ -129,9 +129,22 @@ async function sendMessage(
   if (typeof effects === 'string') {
     ctx.gameData.log.addEvent({ text: effects });
   }
-  return { executed: true, checkResult: { result: true } };
+  return returnDefaultTrueResult();
 }
 
 function returnDefaultResult(): ResolveResult {
   return { executed: false };
+}
+
+function returnDefaultTrueResult(): ResolveResult {
+  return {
+    executed: true,
+    checkResult: {
+      result: true,
+      rand: 0,
+      value: 0,
+      difficulty: 0,
+      successMargin: 0,
+    },
+  };
 }

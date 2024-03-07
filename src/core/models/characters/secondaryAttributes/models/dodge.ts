@@ -9,9 +9,9 @@ export class Dodge extends SecondaryAttribute {
   }
 
   getRawValue(): number {
-    const encumbrance = (
-      this.character.secondaryAttributes.getByCode('weight') as Weight
-    ).encumbrance();
+    const encumbrance = this.character.secondaryAttributes
+      .getByCode<Weight>('weight')
+      .encumbrance();
     return Math.max(
       ...[
         Math.floor(

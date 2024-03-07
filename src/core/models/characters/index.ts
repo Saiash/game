@@ -5,15 +5,17 @@ import { Location } from '../../models/locations';
 import { TagSystem } from '../../managers/tag';
 import { Tag } from '../../managers/tag/models/tag';
 import { SecondaryAttributes } from './secondaryAttributes';
-import { Inventory } from '../inventory';
+import { Inventory } from '../items';
 import { PerkManager } from '../perks/perkManager';
-import { Doll } from '../inventory/doll';
+import { Doll } from '../items/doll';
 import { LoreManager } from '../lore/loreManager';
-import { Item } from '../inventory/item';
+import { Item } from '../items/item';
+import { BattleManager } from './battle';
 
 let itemId = 0;
 
 export class Character {
+  battleManager: BattleManager;
   attributeManager: AttributeManager;
   secondaryAttributes: SecondaryAttributes;
   inventory: Inventory;
@@ -93,6 +95,7 @@ export class Character {
       character: this,
     });
     this.lore = new LoreManager({ ctx });
+    this.battleManager = new BattleManager({ ctx, character: this });
   }
 
   /**

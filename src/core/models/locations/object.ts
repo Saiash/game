@@ -3,8 +3,8 @@ import { CTX } from '../../../types';
 import { Character } from '../characters';
 import { TagSystem } from '../../managers/tag';
 import { Tag } from '../../managers/tag/models/tag';
-import { Item } from '../inventory/item';
-import { Inventory } from '../inventory';
+import { Item } from '../items/item';
+import { Inventory } from '../items';
 
 export type rawObjectModel = {
   name: string;

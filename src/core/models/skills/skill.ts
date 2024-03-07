@@ -10,8 +10,9 @@ import {
 import { Attribute } from '../characters/attributes/attribute';
 import { ActionPayload, useSkillPayload } from '../../engine/actionConnector';
 import { SkillResolver } from '../skills/resolvers';
-import { CTX } from '../../../types';
+import { CTX, PartialRecord } from '../../../types';
 import { ACTION_PAYLOAD_TYPE } from '../../engine/constants';
+import { skillList } from '.';
 
 export class Skill {
   protected exp: number;
@@ -27,7 +28,7 @@ export class Skill {
   private description: string;
   private cultureBased: boolean;
   private defaultSkillTime: number;
-  private relativeSkills: { [index: string]: number };
+  private relativeSkills: PartialRecord<skillList, number>;
 
   constructor({ ctx, props }: { props: SkillProps; ctx: CTX }) {
     this.ctx = ctx;
@@ -48,10 +49,11 @@ export class Skill {
   }
 
   check(difficulty: number): CheckResults {
-    const value = this.getEffectiveValue();
-    const rand = Math.round(random(1, 6) + random(1, 6) + random(1, 6));
-    const result = rand <= value + difficulty;
-    const checkResults = { rand, value, difficulty, result };
+    const value = this.getEffectiveValue(); // эффективный навык
+    const rand = Math.round(random(1, 6) + random(1, 6) + random(1, 6)); // бросок кубика
+    const result = rand <= value + difficulty; //кубик сравнивается против навыка + сложности.
+    const successMargin = rand - (value + difficulty);
+    const checkResults = { rand, value, difficulty, result, successMargin };
     this.getExp(checkResults);
     return checkResults;
   }
@@ -75,14 +77,14 @@ export class Skill {
   }
 
   getRawValue(): number {
-    const relativeSkillsList = Object.keys(this.relativeSkills);
+    const relativeSkillsList = Object.keys(this.relativeSkills) as skillList[];
     const thisExp = this.getExpMod();
     const relativeSkillValue = relativeSkillsList.reduce((value, skillCode) => {
       const skillExp = this.skillManager.getByCode(skillCode)?.getExpMod() || 0;
       const newValue =
         skillExp > thisExp
-          ? this.skillManager.getByCode(skillCode)?.getBaseRawValue() ||
-            0 - this.relativeSkills[skillCode]
+          ? this.skillManager.getByCode(skillCode).getBaseRawValue() ||
+            0 - (this.relativeSkills[skillCode] || 0)
           : 0;
       return newValue > value ? newValue : value;
     }, 0);

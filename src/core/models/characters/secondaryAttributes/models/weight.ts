@@ -26,7 +26,13 @@ export class Weight extends SecondaryAttribute {
     if (weight > this.basicWeight() * 8 - this.currentVal)
       return {
         executed: true,
-        checkResult: { result: false },
+        checkResult: {
+          result: false,
+          rand: 0,
+          value: 0,
+          difficulty: 0,
+          successMargin: 0,
+        },
         message: 'Слишком тяжело!',
       };
     this.ctx.gameData.timeManager.calcTimeSpent(
@@ -34,7 +40,13 @@ export class Weight extends SecondaryAttribute {
     );
     return {
       executed: true,
-      checkResult: { result: false },
+      checkResult: {
+        result: true,
+        rand: 0,
+        value: 0,
+        difficulty: 0,
+        successMargin: 0,
+      },
       message: `Успешно!`,
     };
   }

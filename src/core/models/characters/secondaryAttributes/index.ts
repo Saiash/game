@@ -5,6 +5,7 @@ import { Damage } from './models/damage';
 import { Dodge } from './models/dodge';
 import { Reaction } from './models/reaction';
 import { Size } from './models/size';
+import { SecondaryAttribute } from './attribute';
 
 export type SecondaryAttributesList = Weight | Damage | Dodge | Size | Reaction;
 
@@ -38,7 +39,7 @@ export class SecondaryAttributes {
     });
   }
 
-  getByCode(code: string): SecondaryAttributesList | undefined {
-    return this.collection[code];
+  getByCode<T = SecondaryAttribute>(code: secondaryAttrsCodesList): T {
+    return this.collection[code] as unknown as T;
   }
 }

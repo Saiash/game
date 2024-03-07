@@ -1,5 +1,5 @@
 import { ATTRS_LIST } from '../../../core/models/characters/attributes';
-import { itemZones } from '../../../core/models/inventory/item';
+import { itemZones } from '../../../core/models/items/item';
 import { SECONDARY_ATTRS_LIST } from '../../../core/models/characters/secondaryAttributes';
 
 export const ATTRS_ENUM = [

@@ -1,6 +1,7 @@
 import { TagSystem } from '../../managers/tag';
 import type { CTX } from '../../../types/';
 import { Character } from '../characters';
+import { ITEMS_LIST, itemsList } from './fabric';
 
 export const itemZones = [
   { zones: 1000, key: 'head' },
@@ -57,22 +58,29 @@ export type ItemProps = {
   description: string;
   img: string;
   weight: number;
+  legalityClass?: number;
+  techLevel: number;
 
   zones: number[];
-  tags: TagSystem;
+  tags?: TagSystem;
 
   cost: number;
-  mods: any;
-  options: string[];
+  mods?: any;
+  options?: string[];
+  code: itemsList;
   //Todo: мутабельность предметов. Должен быть отдельный стейт; определяющий, в каком состоянии предмет находится. И логика переключения стейтов + список возможных стейтов.
 };
 
 export class Item {
   id: number;
   props: ItemProps;
+  tags: TagSystem;
   locked: boolean = false;
   lockable: boolean = false;
   owner?: Character;
+  legalityClass: number;
+  techLevel: number;
+  code: itemsList;
   status: string[];
   ctx: CTX;
 
@@ -81,6 +89,9 @@ export class Item {
     this.id = itemId++;
     const tags = props.tags as any as string;
     this.props = props;
+    this.legalityClass = props.legalityClass || 4;
+    this.code = props.code;
+    this.techLevel = props.techLevel || 0;
     if (props.options?.some(o => o === 'lockable')) {
       this.lockable = true;
     }
@@ -90,7 +101,7 @@ export class Item {
       input: { props: tags, target: this },
       owner: this,
     });
-    this.props.tags = tagSystem;
+    this.tags = tagSystem;
     this.status = [];
   }
 
@@ -146,13 +157,13 @@ export class Item {
 
   lock() {
     this.locked = true;
-    this.props.tags.conditionChanged('locked');
+    this.tags.conditionChanged('locked');
     return true;
   }
 
   unlock() {
     this.locked = false;
-    this.props.tags.conditionChanged('locked');
+    this.tags.conditionChanged('locked');
     return true;
   }
 
@@ -178,7 +189,7 @@ export class Item {
 
   removeStatus(status: string): boolean {
     this.status = this.status.filter(s => s !== status);
-    this.props.tags.conditionChanged(status);
+    this.tags.conditionChanged(status);
     return true;
   }
 
