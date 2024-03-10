@@ -1,82 +1,120 @@
+import { trimEnd } from 'lodash';
 import { CTX } from '../../../../types';
 import { Character } from '../../characters';
-import { Item } from '../item';
+import { Item, ItemId } from '../item';
 import { damageTypes } from '../weapon/damage';
-
-export type zone = {
-  item: Item;
-  parentZone: number | null;
-};
+import { DollBodyPart } from './models/bodypart';
+import { dollStructure, equipZones, majorBodyParts } from './types';
 
 export class Doll {
   character: Character;
   ctx: CTX;
-  zones: {
-    [index: number]: zone;
-  };
+  bodyParts: Record<equipZones, DollBodyPart>;
+  equippedItems: Record<ItemId, Item> = [];
 
   constructor({ ctx, character }: { ctx: CTX; character: Character }) {
     this.ctx = ctx;
     this.character = character;
-    this.zones = {};
-  }
-
-  uneqipItem({ zoneIndex }: { zoneIndex: number }): boolean {
-    return this.removeItem({ zoneIndex, performer: this.character });
-  }
-
-  removeItem({
-    zoneIndex,
-    performer,
-  }: {
-    zoneIndex: number;
-    performer: Character;
-  }): boolean {
-    if (!this.zones[zoneIndex]) return false;
-    const zone = this.zones[zoneIndex];
-    if (zone.item.locked) return false;
-
-    const item = zone.item;
-    if (!item) return false;
-
-    item.props.zones.forEach(zone => {
-      delete this.zones[zone];
+    this.bodyParts = {} as unknown as Record<equipZones, DollBodyPart>;
+    Object.keys(dollStructure).forEach(part => {
+      const _part = part as majorBodyParts;
+      new DollBodyPart({
+        innerParts: dollStructure[_part],
+        character,
+        ctx,
+        code: _part,
+        dollManager: this,
+      });
     });
-
-    this.character.tags.removeTagSystem(item.tags);
-    return performer.inventory.add(item);
   }
 
-  checkIfPossibleToEquip(item: Item) {
-    let value = true;
-    item.props.zones.forEach(zoneIndex => {
-      if (!this.zones[zoneIndex]) return;
-      if (this.zones[zoneIndex].item.locked) value = false;
-    });
-    return value;
+  addBodyPart(code: equipZones, bodyPart: DollBodyPart) {
+    this.bodyParts[code] = bodyPart;
   }
 
   equipItem({
     item,
     performer,
+    zoneIndex,
   }: {
     item: Item;
     performer: Character;
+    zoneIndex?: number;
   }): boolean {
-    if (!this.checkIfPossibleToEquip(item)) return false;
-
-    item.props.zones.forEach(zoneIndex => {
-      this.removeItem({ zoneIndex, performer });
+    if (zoneIndex) {
+      return this.equipItemByZoneIndex({ item, zoneIndex });
+    }
+    let equipped = false;
+    item.zones.forEach((zoneNameGroup, zoneIndex) => {
+      if (!equipped) {
+        equipped = this.equipItemByZoneIndex({ item, zoneIndex });
+      }
     });
+    return equipped;
+  }
 
-    item.props.zones.forEach((zoneIndex, i) => {
-      this.zones[zoneIndex] = {
-        item,
-        parentZone: i > 0 ? item.props.zones[0] : null,
-      };
+  private equipItemByZoneIndex({
+    item,
+    zoneIndex,
+  }: {
+    item: Item;
+    zoneIndex: number;
+  }) {
+    const zoneGroup = item.zones[zoneIndex];
+    if (!this.ifPossibleToEquipForZone(zoneGroup)) {
+      return false;
+    }
+    zoneGroup.forEach(zoneName => {
+      this.getZoneByCode(zoneName).eqiupItem(item);
     });
-    this.character.tags.applyTagSystem(item.tags);
     return true;
+  }
+
+  recordEquippedItem(item: Item) {
+    if (!this.equippedItems[item.getId()]) {
+      this.equippedItems[item.getId()] = item;
+    }
+  }
+
+  unrecordEquippedItem(itemId: ItemId) {
+    if (this.equippedItems[itemId]) {
+      delete this.equippedItems[itemId];
+    }
+  }
+
+  getItemById(id: ItemId): Item {
+    return this.equippedItems[id];
+  }
+
+  unequipItem({
+    itemId,
+    performer,
+  }: {
+    itemId: ItemId;
+    performer: Character;
+  }): boolean {
+    const item = this.getItemById(itemId);
+
+    item.zones.forEach(zoneNameGroup => {
+      zoneNameGroup.forEach(zoneName => {
+        this.getZoneByCode(zoneName).uneqiupItem(item);
+      });
+    });
+    this.unrecordEquippedItem(itemId);
+
+    return performer.inventory.add(item); //TODO?
+  }
+
+  checkIfPossibleToEquip(item: Item) {
+    return item.zones.some(zoneNameGroup => {
+      return this.ifPossibleToEquipForZone(zoneNameGroup);
+    });
+  }
+
+  private ifPossibleToEquipForZone(zone: equipZones[]) {
+    return zone.every(zoneName => {
+      return this.getZoneByCode(zoneName).isPossibleToEquip();
+    });
   }
 
   equipFromInventory({ index }: { index: number }): boolean {
@@ -92,34 +130,20 @@ export class Doll {
     return equipped;
   }
 
-  getEquippedItems(): [number, Item][] {
-    const items: [number, Item][] = [];
-    for (const zoneIndex in this.zones) {
-      const item = this.zones[zoneIndex].item;
-      if (!this.zones[zoneIndex].parentZone)
-        items.push([parseInt(zoneIndex), item]);
-    }
-    return items;
+  getEquippedItems() {
+    return this.equippedItems;
   }
 
-  getItemByZone(zone: number): Item | null {
-    return this.zones[zone].item ? this.zones[zone].item : null;
-  }
-
-  lockZone(index: number) {
-    const item = this.getItemByZone(index);
-    if (!item) return;
-    item.lock();
-  }
-
-  unlockZone(index: number) {
-    const item = this.getItemByZone(index);
-    if (!item) return;
-    item.unlock();
+  getItemsByZone(code: equipZones) {
+    return this.getZoneByCode(code).getAllItems();
   }
 
   receiveDamageByZone(damage: number, zone: string, type: damageTypes) {
-    return null;
+    return null; // TODO
+  }
+
+  getZoneByCode(zone: equipZones) {
+    return this.bodyParts[zone];
   }
 
   getRaw() {}

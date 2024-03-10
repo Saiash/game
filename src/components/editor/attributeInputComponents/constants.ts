@@ -1,5 +1,4 @@
 import { ATTRS_LIST } from '../../../core/models/characters/attributes';
-import { itemZones } from '../../../core/models/items/item';
 import { SECONDARY_ATTRS_LIST } from '../../../core/models/characters/secondaryAttributes';
 
 export const ATTRS_ENUM = [
@@ -86,7 +85,7 @@ export const CORE_INPUT_NAME_ENUM = ['actions', 'tags'];
 export const SELECT_ENUMS: {
   [index: string]: string[] | boolean[] | { key: string; value: string }[];
 } = {
-  itemZoneSelect: itemZones.map(zone => {
+  itemZoneSelect: [].map((zone: any) => {
     return { value: zone.zones + ``, key: zone.key };
   }),
   nodeType: NODE_TYPE,

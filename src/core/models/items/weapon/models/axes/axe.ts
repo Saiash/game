@@ -12,7 +12,7 @@ const weaponSettings: weaponFabricType = {
   weight: 4,
   strRequired: 11,
   img: '',
-  zones: [3100],
+  zones: [['rightTool'], ['leftTool']],
 };
 
 export const Axe = weaponFabric(weaponSettings);

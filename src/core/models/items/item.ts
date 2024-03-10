@@ -1,57 +1,12 @@
 import { TagSystem } from '../../managers/tag';
 import type { CTX } from '../../../types/';
 import { Character } from '../characters';
-import { ITEMS_LIST, itemsList } from './fabric';
+import { itemsList } from './fabric';
+import { equipZones } from './doll/types';
 
-export const itemZones = [
-  { zones: 1000, key: 'head' },
-  { zones: 1010, key: 'skull' },
-  { zones: 1020, key: 'left eye' },
-  { zones: 1120, key: 'right eye' },
-  { zones: 1220, key: 'eyes' },
-  { zones: 1030, key: 'nose' },
-  { zones: 1040, key: 'mouth' },
-  { zones: 1050, key: 'neck' },
-  //уши
-  //язык
-
-  { zones: 2000, key: 'body' },
-  { zones: 2010, key: 'chest' },
-  { zones: 2020, key: 'belly' },
-  { zones: 2030, key: 'belt' },
-  { zones: 2040, key: 'pelvis' },
-  //зоны?
-  { zones: 2050, key: 'back' },
-
-  { zones: 3000, key: 'leftHand' },
-  { zones: 3100, key: 'rightHand' },
-  { zones: 3200, key: 'bothHands' },
-  { zones: 3010, key: 'upperShoulder' },
-  { zones: 3020, key: 'shoulder' },
-  { zones: 3030, key: 'forearm' },
-  { zones: 3040, key: 'wrist' },
-  { zones: 3050, key: 'hand' },
-  { zones: 3060, key: 'finger' },
-
-  { zones: 4000, key: 'leftLeg' },
-  { zones: 4100, key: 'rightLeg' },
-  { zones: 4200, key: 'bothLegs' },
-  { zones: 4010, key: 'thigh' },
-  { zones: 4020, key: 'knee' },
-  { zones: 4030, key: 'shin' },
-  { zones: 4040, key: 'foot' },
-  { zones: 4050, key: 'toe' },
-
-  { zones: 5000, key: 'leftHandItem' },
-  { zones: 5100, key: 'rightHandItem' },
-
-  //слоты быстрого использования: с пояса, рюкзака, разгрузки, карманов
-];
-//TODO: доопределить все зоны. Возможно их следует организовать немного более удобно.
-// Подумать над базовыми формами предметов и цепочкой наследования: каждый предмет наследует и переписывает родителя. Либо категории предметов для условий
-
-let itemId = 0;
+export type ItemId = number;
 export type rawItem = ItemProps;
+let itemId: ItemId = 0;
 
 export type ItemProps = {
   name: string;
@@ -61,7 +16,7 @@ export type ItemProps = {
   legalityClass?: number;
   techLevel: number;
 
-  zones: number[];
+  zones: equipZones[][];
   tags?: TagSystem;
 
   cost: number;
@@ -72,7 +27,8 @@ export type ItemProps = {
 };
 
 export class Item {
-  id: number;
+  id: ItemId;
+  zones: equipZones[][];
   props: ItemProps;
   tags: TagSystem;
   locked: boolean = false;
@@ -95,7 +51,7 @@ export class Item {
     if (props.options?.some(o => o === 'lockable')) {
       this.lockable = true;
     }
-    this.props.zones = this.calculateZones(props.zones);
+    this.zones = props.zones;
     const tagSystem = new TagSystem({
       ctx,
       input: { props: tags, target: this },
@@ -115,6 +71,10 @@ export class Item {
 
   getName(): string {
     return this.props.name;
+  }
+
+  getZones() {
+    return this.zones;
   }
 
   getRaw() {
@@ -137,22 +97,6 @@ export class Item {
   }): Promise<Item> {
     const itemData = await dataloaders.getItem(name);
     return new Item({ ctx, props: itemData });
-  }
-
-  calculateZones(zones: number[]): number[] {
-    const result: number[] = [];
-    zones.forEach(zone => {
-      result.push(zone);
-      if ((zone + '')[1] === '2') {
-        result.push(zone - 100);
-        result.push(zone - 200);
-      }
-    });
-    return result;
-  }
-
-  getMainSlot(): number {
-    return this.props.zones[0];
   }
 
   lock() {

@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import doll from '../../../Assets/doll.png';
 import type { CTX } from '../../../types';
 import { ACTION_PAYLOAD_TYPE } from '../../../core/engine/constants';
+import { Item } from '../../../core/models/items/item';
 
 export default function Inventory({
   ctx,
@@ -15,13 +16,13 @@ export default function Inventory({
   const character = gameData.getPlayerCharacter();
   const [items, setItems] = useState(character.doll.getEquippedItems());
 
-  const unequipItem = async (index: number): Promise<boolean> => {
+  const unequipItem = async (item: Item): Promise<boolean> => {
     const result = await gameData.actionResolver.performAction({
       sourceActor: character,
       target: character,
       payload: {
         type: ACTION_PAYLOAD_TYPE.UNEQUIP_ITEM,
-        zoneIndex: index,
+        itemId: item.getId(),
       },
     });
     if (result) {
@@ -31,13 +32,13 @@ export default function Inventory({
     return result;
   };
 
-  const lockItem = async (index: number): Promise<boolean> => {
+  const lockItem = async (item: Item): Promise<boolean> => {
     const result = await gameData.actionResolver.performAction({
       sourceActor: character,
       target: character,
       payload: {
         type: ACTION_PAYLOAD_TYPE.LOCK_ITEM,
-        zoneIndex: index,
+        itemId: item.getId(),
       },
     });
     stateManager.updateSkills();
@@ -46,29 +47,30 @@ export default function Inventory({
 
   return (
     <div>
-      {items.map(item => {
+      {Object.keys(items).map(itemId => {
+        const item = items[itemId as unknown as number];
         return (
-          <div key={item[0]}>
-            {!item[1].locked && (
+          <div key={item.getId()}>
+            {!item.locked && (
               <button
                 onClick={() => {
-                  unequipItem(item[0]);
+                  unequipItem(item);
                 }}
               >
                 U
               </button>
             )}
-            {item[1].isLockable() && (
+            {item.isLockable() && (
               <button
                 onClick={() => {
-                  lockItem(item[0]);
+                  lockItem(item);
                 }}
               >
                 L
               </button>
             )}
-            {item[1].isLocked() && <span>(L) </span>}
-            {item[1].getName()}
+            {item.isLocked() && <span>(L) </span>}
+            {item.getName()}
           </div>
         );
       })}

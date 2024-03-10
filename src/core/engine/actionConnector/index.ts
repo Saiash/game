@@ -6,6 +6,7 @@ import { TagSystem } from '../../managers/tag';
 import { ACTION_PAYLOAD_TYPE } from '../constants';
 import { skillList } from '../../models/skills';
 import { perkList } from '../../models/perks';
+import { ItemId } from '../../models/items/item';
 
 export type useSkillPayload = {
   type: ACTION_PAYLOAD_TYPE.USE_SKILL;
@@ -32,11 +33,11 @@ type equipItemPayload = {
 };
 type lockItemPayload = {
   type: ACTION_PAYLOAD_TYPE.LOCK_ITEM;
-  zoneIndex: number;
+  itemId: ItemId;
 };
 type unequipItemPayload = {
   type: ACTION_PAYLOAD_TYPE.UNEQUIP_ITEM;
-  zoneIndex: number;
+  itemId: ItemId;
 };
 type systemEventPayload = { type: ACTION_PAYLOAD_TYPE.SYSTEM_EVENT };
 
@@ -119,11 +120,11 @@ export class ActionConnector {
     const {
       target,
       sourceActor,
-      payload: { zoneIndex },
+      payload: { itemId },
     } = input;
     if (!sourceActor || !target) return false;
     if (sourceActor.getId() === target.getId()) {
-      const item = sourceActor.doll.getItemByZone(zoneIndex);
+      const item = sourceActor.doll.getItemById(itemId);
       if (!item) return false;
       return item.lock();
     }
@@ -135,11 +136,11 @@ export class ActionConnector {
     const {
       target,
       sourceActor,
-      payload: { zoneIndex },
+      payload: { itemId },
     } = input;
     if (!sourceActor || !target) return false;
     if (sourceActor.getId() === target.getId()) {
-      return sourceActor.doll.uneqipItem({ zoneIndex });
+      return sourceActor.doll.unequipItem({ itemId, performer: sourceActor });
     }
     throw Error('Доделать использование предметов на других персонажей!');
   }
