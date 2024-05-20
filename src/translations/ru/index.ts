@@ -4,6 +4,7 @@ import { spellTexts } from './spell';
 import { generalTexts } from './general';
 import { weaponTexts } from './weapons';
 import { raceTexts } from './race';
+import { modificationsTexts } from './modifications';
 
 export const ruTexts = {
   skillTexts,
@@ -12,4 +13,5 @@ export const ruTexts = {
   generalTexts,
   weaponTexts,
   raceTexts,
+  modificationsTexts,
 };

@@ -1,6 +1,6 @@
 import { damageRoll } from '../../characters/secondaryAttributes/models/damage';
 
-export type damageTypes =
+export type damageType =
   | 'aff'
   | 'burn'
   | 'cor'
@@ -15,7 +15,7 @@ export type damageTypes =
   | 'spec'
   | 'tox';
 
-export const damageMods: Record<damageTypes, number> = {
+export const damageMods: Record<damageType, number> = {
   'pi-': 0.5,
   pi: 1,
   aff: 1,

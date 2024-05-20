@@ -1,8 +1,10 @@
 import { Character } from '..';
 import { CTX } from '../../../../types';
 import { throwDices } from '../../../utils/diceThrower';
-import { Weapon } from '../../items/weapon';
-import { damageMods, damageTypes } from '../../items/weapon/damage';
+import { Weapon, weaponManagerTypes } from '../../items/weapon';
+import { damageMods, damageType } from '../../items/weapon/damage';
+import { MeleeManager } from '../../items/weapon/meleeManager';
+import { RangedManager } from '../../items/weapon/rangedManager';
 import { CheckResults } from '../../skills/skillManager';
 import { Damage } from '../secondaryAttributes/models/damage';
 
@@ -17,13 +19,14 @@ export type attackOptions = {
   target: Character;
   type?: attackType;
   zone: string; //TODO: зоны атаки
+  weaponType: weaponManagerTypes;
   rof: number;
 };
 
 export type damagePayload = {
   zone: string;
   value: number;
-  type: damageTypes;
+  type: damageType;
   armorDelimiter: number;
   amountOfHits: number;
 };
@@ -48,35 +51,44 @@ export class BattleManager {
   }
 
   attack(options: attackOptions): damagePayload | null {
-    const { weapon, zone } = options;
+    const { weapon, weaponType, zone } = options;
+    const weaponManager = weapon.getManagerByType(weaponType);
+    if (!weaponManager) return null;
+
     const attackResult = this.rollForAttack(options);
     const amountOfHits = this.countOfHits(options, attackResult);
     if (attackResult.result) {
       return {
         value: this.rollForDamage(options),
-        type: weapon.getDamageType(),
+        type: weaponManager.getDamageType(),
         zone,
         amountOfHits,
-        armorDelimiter: weapon.getArmorDelimiter(),
+        armorDelimiter: weaponManager.getArmorDelimiter(),
       };
     }
     return null;
   }
 
   countOfHits(options: attackOptions, attackResult: CheckResults) {
-    const { weapon, rof } = options;
+    const { weapon, rof, weaponType } = options;
+    const weaponManager = weapon.getManagerByType(weaponType);
+    if (!weaponManager) return 1;
+    if (!(weaponManager instanceof RangedManager)) return 1;
+
     if (!attackResult.result) {
       return 0;
     }
     if (rof > 1) {
       const possibleHits =
-        Math.floor(attackResult.successMargin / weapon.getRecoil()) + 1;
+        Math.floor(attackResult.successMargin / weaponManager.getRecoil()) + 1;
       return possibleHits > options.rof ? options.rof : possibleHits;
     }
     return 1;
   }
 
-  defend(options: defendOptions) {}
+  defend(options: defendOptions) {
+    //Например у цепа внутри набора урона могут быть модификаторы к защите (-4 к парированию и -2 к блоку)
+  }
 
   recieveDamage(damagePayload: damagePayload) {
     const { value, type, zone, armorDelimiter } = damagePayload;
@@ -90,8 +102,11 @@ export class BattleManager {
   }
 
   private rollForAttack(options: attackOptions): CheckResults {
-    const { weapon } = options;
-    const skillCode = weapon.getSkill();
+    const { weapon, weaponType } = options;
+
+    const weaponManager = weapon.getManagerByType(weaponType);
+    if (!weaponManager) throw new Error();
+    const skillCode = weaponManager.getSkill();
 
     const weaponStr = weapon.getStrRequired();
     const str = this.character.attributeManager.getByCode('str').getValue();
@@ -118,11 +133,21 @@ export class BattleManager {
   }
 
   private getDamageModByAttackType(options: attackOptions) {
-    const { weapon, type } = options;
-    const dmgModel =
-      weapon.getOwnStr() === 0
-        ? this.character.secondaryAttributes.getByCode<Damage>('dmg')
-        : weapon;
+    const { weapon, weaponType, type } = options;
+
+    const weaponManager = weapon.getManagerByType(weaponType);
+    if (!weaponManager) throw new Error();
+
+    let dmgModel = this.character.secondaryAttributes.getByCode<Damage>('dmg');
+    if (
+      weaponManager instanceof RangedManager &&
+      weaponManager.getOwnStr() !== 0
+    ) {
+      if (type && type === 'swing') {
+        return weaponManager.calculateSwingVal(weapon.strRequired * 3);
+      }
+      return weaponManager.calculateThrustVal(weapon.strRequired * 3);
+    }
     if (type && type === 'swing') {
       return dmgModel.calculateSwingVal(weapon.strRequired * 3);
     }
@@ -130,10 +155,13 @@ export class BattleManager {
   }
 
   private rollForDamage(options: attackOptions): number {
-    const { weapon } = options;
+    const { weapon, weaponType } = options;
+    const weaponManager = weapon.getManagerByType(weaponType);
+    if (!weaponManager) throw new Error();
+
     const dmgModfromStr = this.getDamageModByAttackType(options);
-    const dmgModFromWeapon = weapon.getDamageMod();
-    const strBased = weapon.isStrBased();
+    const dmgModFromWeapon = weaponManager.getDamageMod();
+    const strBased = weaponManager.isStrBased();
 
     const dmg = {
       dices: (strBased ? dmgModfromStr.dices : 0) + dmgModFromWeapon.dices,
@@ -152,11 +180,16 @@ export class BattleManager {
   }
 
   isTargetTooFar(options: attackOptions) {
-    const { weapon, target } = options;
-    const range = weapon.getRange()[1];
-    if (!weapon.isRanged() || range === null) return false;
+    const { weapon, target, weaponType } = options;
+    const weaponManager = weapon.getManagerByType(weaponType);
+    if (!weaponManager) throw new Error();
+    if (!(weaponManager instanceof RangedManager)) return true;
 
-    return range >= this.calculateDistance(target.battleManager.getLocation());
+    const range = weaponManager.getRange();
+    return (
+      range.maxRange >=
+      this.calculateDistance(target.battleManager.getLocation())
+    );
   }
 
   explosionDamage(options: attackOptions, distance: number) {
@@ -164,17 +197,25 @@ export class BattleManager {
   }
 
   rollForAffliction(options: attackOptions) {
-    const { weapon } = options;
+    const { weapon, weaponType } = options;
+
+    const weaponManager = weapon.getManagerByType(weaponType);
+    if (!weaponManager) throw new Error();
+
     const bonusFromRange = this.isTargetTooFar(options) ? 3 : 0;
     this.character.attributeManager.check(
       'ht',
-      this.getDRForZone() + weapon.getDamageMod().mod + bonusFromRange
+      this.getDRForZone() + weaponManager.getDamageMod().mod + bonusFromRange
     );
     //наложить состояние
   }
 
   checkWeaponReach(target: Character, weapon: Weapon): boolean {
-    const reach = weapon.getReach();
+    const weaponManager = weapon.getManagerByType('melee');
+    if (!weaponManager || !(weaponManager instanceof MeleeManager))
+      throw new Error();
+
+    const reach = weaponManager.getReach();
     const targetLocation = target.battleManager.getLocation();
     const distance = this.calculateDistance(targetLocation); // //нужно реализовать рассчет координат
     return reach.some(r => r === distance);

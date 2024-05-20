@@ -2,12 +2,22 @@ import { weaponFabric, weaponFabricType } from '../../fabric';
 
 const weaponSettings: weaponFabricType = {
   code: 'axe',
-  relativeSkill: 'axeMace',
+  melee: {
+    relativeSkill: 'axeMace',
+    damageSets: [
+      {
+        dmgMod: 2,
+        reach: [1],
+        damageType: 'cut',
+        attackType: 'swing',
+      },
+    ],
+    parry: {
+      bonus: 0,
+      options: 'unbalanced',
+    },
+  },
   techLevel: 0,
-  dmgMod: 2,
-  damageType: 'cut',
-  reach: [1],
-  parry: [0, 'unbalanced'],
   cost: 50,
   weight: 4,
   strRequired: 11,

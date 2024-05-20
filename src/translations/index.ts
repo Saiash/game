@@ -15,9 +15,17 @@ const languageResolvers: Record<entityName, entityType> = {
   spell: 'spellTexts',
   general: 'generalTexts',
   weapon: 'weaponTexts',
+  modification: 'modificationsTexts',
 };
 
-type entityName = 'skill' | 'race' | 'perk' | 'spell' | 'general' | 'weapon';
+type entityName =
+  | 'skill'
+  | 'race'
+  | 'perk'
+  | 'spell'
+  | 'general'
+  | 'weapon'
+  | 'modification';
 
 type entityType =
   | 'skillTexts'
@@ -25,7 +33,8 @@ type entityType =
   | 'perkTexts'
   | 'spellTexts'
   | 'generalTexts'
-  | 'weaponTexts';
+  | 'weaponTexts'
+  | 'modificationsTexts';
 
 type path = [entityName, string, string];
 

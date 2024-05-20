@@ -3,9 +3,12 @@ import type { CTX } from '../../../types/';
 import { Character } from '../characters';
 import { itemsList } from './fabric';
 import { equipZones } from './doll/types';
+import { Modification } from './modifications';
+import { MODIFICATION_LIST, modificationsList } from './modifications/fabric';
 
 export type ItemId = number;
 export type rawItem = ItemProps;
+export type itemType = 'item' | 'weapon';
 let itemId: ItemId = 0;
 
 export type ItemProps = {
@@ -28,7 +31,9 @@ export type ItemProps = {
 
 export class Item {
   id: ItemId;
+  type: itemType;
   zones: equipZones[][];
+  modifications: Modification[];
   props: ItemProps;
   tags: TagSystem;
   locked: boolean = false;
@@ -40,7 +45,17 @@ export class Item {
   status: string[];
   ctx: CTX;
 
-  constructor({ ctx, props }: { ctx: CTX; props: ItemProps }) {
+  constructor({
+    ctx,
+    props,
+    type = 'item',
+    modification = [],
+  }: {
+    ctx: CTX;
+    props: ItemProps;
+    type?: itemType;
+    modification?: modificationsList[];
+  }) {
     this.ctx = ctx;
     this.id = itemId++;
     const tags = props.tags as any as string;
@@ -59,6 +74,10 @@ export class Item {
     });
     this.tags = tagSystem;
     this.status = [];
+    this.type = type;
+    this.modifications = modification.map(m =>
+      MODIFICATION_LIST[m]({ ctx, item: this })
+    );
   }
 
   getId(): number {

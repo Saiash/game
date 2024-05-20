@@ -2,7 +2,7 @@ import { trimEnd } from 'lodash';
 import { CTX } from '../../../../types';
 import { Character } from '../../characters';
 import { Item, ItemId } from '../item';
-import { damageTypes } from '../weapon/damage';
+import { damageType } from '../weapon/damage';
 import { DollBodyPart } from './models/bodypart';
 import { dollStructure, equipZones, majorBodyParts } from './types';
 
@@ -138,7 +138,7 @@ export class Doll {
     return this.getZoneByCode(code).getAllItems();
   }
 
-  receiveDamageByZone(damage: number, zone: string, type: damageTypes) {
+  receiveDamageByZone(damage: number, zone: string, type: damageType) {
     return null; // TODO
   }
 
