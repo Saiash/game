@@ -15,6 +15,7 @@ const languageResolvers: Record<entityName, entityType> = {
   spell: 'spellTexts',
   general: 'generalTexts',
   weapon: 'weaponTexts',
+  ammo: 'ammoTexts',
   modification: 'modificationsTexts',
 };
 
@@ -25,6 +26,7 @@ type entityName =
   | 'spell'
   | 'general'
   | 'weapon'
+  | 'ammo'
   | 'modification';
 
 type entityType =
@@ -34,6 +36,7 @@ type entityType =
   | 'spellTexts'
   | 'generalTexts'
   | 'weaponTexts'
+  | 'ammoTexts'
   | 'modificationsTexts';
 
 type path = [entityName, string, string];

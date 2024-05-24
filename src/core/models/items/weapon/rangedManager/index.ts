@@ -9,7 +9,7 @@ import {
   baseWeaponManagerProps,
 } from '../baseManager';
 import { calculateSwingVal, calculateThrustVal } from '../damage';
-import { ammoClip } from './ammo';
+import { ammoClip, AmmoClip } from './ammoClip';
 
 export type rangeType = {
   maxRange: number;
@@ -38,7 +38,7 @@ export type rangedManagerProps = baseWeaponManagerProps & {
 };
 
 export class RangedManager extends BaseManager {
-  ammoClip: ammoClip;
+  ammoClip: AmmoClip;
 
   reloadTime: number;
   bulk: number;
@@ -63,7 +63,7 @@ export class RangedManager extends BaseManager {
   }) {
     super({ ctx, props, item });
 
-    this.ammoClip = { ...props.ammoClip, currentAmmo: 0 };
+    this.ammoClip = new AmmoClip(props.ammoClip);
     this.damageSets = props.damageSets;
 
     this.bulk = props.bulk;
@@ -87,14 +87,23 @@ export class RangedManager extends BaseManager {
 
   getRange(str?: number): rangeType {
     const _str = this.getOwnStr() ? this.getOwnStr() : str || 0;
+    const modRange = this.item.modificationManager.getRangedMultiplier().range;
+    const _range = {
+      ...this.range,
+      ...(this.range.halfRange
+        ? { halfRange: this.range.halfRange * (modRange?.halfRange || 1) }
+        : {}),
+      ...{ maxRange: this.range.maxRange * (modRange?.maxRange || 1) },
+    };
+
     if (_str > 0) {
       return {
-        maxRange: this.range.maxRange * _str,
-        halfRange: this.range.halfRange || 0 * _str,
-        strBased: this.range.strBased,
+        maxRange: _range.maxRange * _str,
+        halfRange: _range.halfRange || 0 * _str,
+        strBased: _range.strBased,
       };
     }
-    return this.range;
+    return _range;
   }
 
   getRateOfFire() {
@@ -103,6 +112,22 @@ export class RangedManager extends BaseManager {
 
   getOwnStr() {
     return this.ownStr;
+  }
+
+  getDamageSetByIndex(index?: number) {
+    const set = this.damageSets[index || 0] || this.damageSets[0];
+    return this.updateDamageSetByMods(this.updateDamageSetByAmmo(set));
+  }
+
+  updateDamageSetByAmmo(set: baseDamageSet): baseDamageSet {
+    const ammo = this.ammoClip.getCurrentAmmo();
+    ammo.modificationManager.mergeDamageSetWithMultipliers(set, 'ranged');
+    return set;
+  }
+
+  updateDamageSetByMods(set: baseDamageSet): baseDamageSet {
+    this.item.modificationManager.mergeDamageSetWithMultipliers(set, 'ranged');
+    return set;
   }
 
   isStrBased() {
@@ -120,7 +145,7 @@ export class RangedManager extends BaseManager {
   }
 }
 
-/*
+/* TODO
 «П» указывает на огнестрель- ное оружие, использующее муш- кетную подставку. Она включена в вес оружия. Требуется манёвр Подготовки, чтобы установить оружие на подставку - но после этого любой прицельный выстрел стоя считается произведенным с упора (см. Прицеливание, с.364).
 «Сш» указывает на огнестрель- ное оружие с сошкой. Стрельба лежа с использованием сошки считается произведенной с упо- ра и уменьшает требования к СЛ до 2/3 от указанных (округлять вверх); т.е. СЛ 13, например, ста- новится СЛ 9.
 Ст» означает, что оружие обычно монтируется на машине, станке или треноге. Игнорирует требования к СЛ. Монтаж или демонтаж занимает 3 секунды.

@@ -10,6 +10,9 @@ const settings: modificationSettings = {
     damageType: ['cut', 'imp'],
     dmgMod: 1,
   },
+  ranged: {
+    range: { maxRange: 1.2, halfRange: 1.2 },
+  },
   resolver: (item: Item): Partial<modificationSettings> => {
     if (item instanceof Weapon) {
       const skill = item.managers.meleeManager?.getSkill();
@@ -21,6 +24,8 @@ const settings: modificationSettings = {
           'shortsword',
           'smallsword',
           'twoHandedSword',
+          'bow',
+          'crossbow',
         ].some(s => s === skill)
       ) {
         return { priceMultiplier: 4 };

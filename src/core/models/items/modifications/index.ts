@@ -44,4 +44,28 @@ export class Modification {
   getThrowAimMod(): number {
     return this.optionalModifications.throw?.aim || 0;
   }
+
+  getWeightMod(): number {
+    return this.optionalModifications.weight || 1;
+  }
+
+  getBreakChanceMod(): number {
+    return this.optionalModifications.breakChance || 0;
+  }
+
+  getPriceMultiplierMod(): number {
+    return this.priceMultiplier || 0;
+  }
+
+  getMeleeMod(): optionalModifications['melee'] {
+    return this.optionalModifications.melee;
+  }
+
+  getThrowMod(): optionalModifications['throw'] {
+    return this.optionalModifications.throw;
+  }
+
+  getRangedMod(): optionalModifications['ranged'] {
+    return this.optionalModifications.ranged;
+  }
 }

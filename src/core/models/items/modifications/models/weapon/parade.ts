@@ -1,5 +1,3 @@
-import { Item } from '../../../item';
-import { Weapon } from '../../../weapon';
 import { modificationFabric, modificationSettings } from '../../fabric';
 
 const settings: modificationSettings = {

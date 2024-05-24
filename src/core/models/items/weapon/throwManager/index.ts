@@ -50,22 +50,24 @@ export class ThrowManager extends BaseManager {
   }
 
   getAim(): number {
-    return (
-      this.item.modifications.reduce(
-        (result, mod) => result + mod.getThrowAimMod(),
-        0
-      ) + this.aim
-    );
+    return this.item.modificationManager.getThrowMultiplier().aim || 0;
   }
 
   getRange(str?: number): rangeType {
     const _str = str || 0;
     if (_str > 0) {
-      return {
+      const range = {
         maxRange: this.range.maxRange * _str,
         halfRange: this.range.halfRange || 0 * _str,
         strBased: this.range.strBased,
       };
+      if (['net', 'lasso'].some(s => s === this.getSkill())) {
+        range.maxRange +=
+          (this.item.owner?.skillManager
+            .getByCode(this.getSkill())
+            .getEffectiveValue() || 0) / 2;
+      }
+      return range;
     }
     return this.range;
   }
@@ -76,5 +78,15 @@ export class ThrowManager extends BaseManager {
 
   calculateSwingVal(maxStr: number): damageRoll {
     return calculateSwingVal(maxStr, maxStr, 0);
+  }
+
+  getDamageSetByIndex(index?: number) {
+    const set = this.damageSets[index || 0] || this.damageSets[0];
+    return this.updateDamageSetByMods(set);
+  }
+
+  updateDamageSetByMods(set: baseDamageSet): baseDamageSet {
+    this.item.modificationManager.mergeDamageSetWithMultipliers(set, 'ranged');
+    return set;
   }
 }

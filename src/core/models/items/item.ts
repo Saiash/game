@@ -3,12 +3,17 @@ import type { CTX } from '../../../types/';
 import { Character } from '../characters';
 import { itemsList } from './fabric';
 import { equipZones } from './doll/types';
-import { Modification } from './modifications';
-import { MODIFICATION_LIST, modificationsList } from './modifications/fabric';
+import { modificationsList } from './modifications/fabric';
+import {
+  Material,
+  materialModels,
+  materialsList,
+} from './modifications/models/materials';
+import { ModificationManager } from './modifications/manager';
 
 export type ItemId = number;
 export type rawItem = ItemProps;
-export type itemType = 'item' | 'weapon';
+export type itemType = 'item' | 'weapon' | 'ammo';
 let itemId: ItemId = 0;
 
 export type ItemProps = {
@@ -33,7 +38,8 @@ export class Item {
   id: ItemId;
   type: itemType;
   zones: equipZones[][];
-  modifications: Modification[];
+  modificationManager: ModificationManager;
+  material: Material;
   props: ItemProps;
   tags: TagSystem;
   locked: boolean = false;
@@ -48,11 +54,13 @@ export class Item {
   constructor({
     ctx,
     props,
+    materialCode,
     type = 'item',
     modification = [],
   }: {
     ctx: CTX;
     props: ItemProps;
+    materialCode: materialsList;
     type?: itemType;
     modification?: modificationsList[];
   }) {
@@ -75,9 +83,8 @@ export class Item {
     this.tags = tagSystem;
     this.status = [];
     this.type = type;
-    this.modifications = modification.map(m =>
-      MODIFICATION_LIST[m]({ ctx, item: this })
-    );
+    this.modificationManager = new ModificationManager(modification, ctx, this);
+    this.material = materialModels[materialCode]({ ctx, item: this });
   }
 
   getId(): number {
@@ -115,7 +122,7 @@ export class Item {
     name: string;
   }): Promise<Item> {
     const itemData = await dataloaders.getItem(name);
-    return new Item({ ctx, props: itemData });
+    return new Item({ ctx, props: itemData, materialCode: 'steel' }); //TODO
   }
 
   lock() {
@@ -158,6 +165,10 @@ export class Item {
 
   getCultures(): string[] {
     return [];
+  }
+
+  getWeight() {
+    return this.props.weight * this.modificationManager.getWeightMultiplier();
   }
 
   //У предмета могут быть морфы(?) - возможность превращаться в другие предметы. Морфы должны быть строго совместимы.

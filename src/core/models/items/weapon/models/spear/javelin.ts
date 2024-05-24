@@ -17,6 +17,19 @@ const weaponSettings: weaponFabricType = {
       bonus: 0,
     },
   },
+  throw: {
+    relativeSkill: 'thrownWeapon',
+    bulk: 4,
+    aim: 3,
+    range: { halfRange: 1.5, maxRange: 2.5, strBased: true },
+    damageSets: [
+      {
+        dmgMod: 1,
+        damageType: 'imp',
+        attackType: 'thrust',
+      },
+    ],
+  },
   cost: 30,
   weight: 2,
   strRequired: 6,

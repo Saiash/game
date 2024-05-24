@@ -52,9 +52,16 @@ export class MeleeManager extends BaseManager {
   }
 
   getReach(setIndex?: number) {
-    if (setIndex) {
-      return this.damageSets[setIndex].reach;
-    }
-    return this.damageSets[0].reach;
+    return this.getDamageSetByIndex(setIndex).reach;
+  }
+
+  getDamageSetByIndex(index?: number): meleeDamageSet {
+    const set = this.damageSets[index || 0] || this.damageSets[0];
+    return this.updateDamageSetByMods(set);
+  }
+
+  updateDamageSetByMods(set: meleeDamageSet): meleeDamageSet {
+    this.item.modificationManager.mergeDamageSetWithMultipliers(set, 'melee');
+    return set;
   }
 }

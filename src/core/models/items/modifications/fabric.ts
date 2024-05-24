@@ -3,25 +3,41 @@ import { getLocalisedText } from '../../../../translations';
 import { CTX } from '../../../../types';
 import { Item } from '../item';
 import { damageType } from '../weapon/damage';
+import { materialModels, materialsList } from './models/materials';
 import {
   weaponModificationList,
   weaponModificationModels,
 } from './models/weapon';
 
 export type optionalModifications = {
-  breakChance?: number;
+  breakChance?: number; // +/-
+  weight?: number; // *
   throw?: {
-    aim?: number;
+    dmgMod?: number; // +/-
+    aim?: number; // +/-
+    damageType?: damageType[]; // бонусы применяются только для наборов матчащихся по типу урона
+    newDamageType?: damageType; // заменяет
+    armorDelimiter?: number; //??? пока заменяет
   };
   melee?: {
-    dmgMod?: number;
-    damageType?: damageType[];
+    dmgMod?: number; // +/-
+    damageType?: damageType[]; // бонусы применяются только для наборов матчащихся по типу урона
+    newDamageType?: damageType; // заменяет
+    armorDelimiter?: number; //??? пока заменяет
+  };
+  ranged?: {
+    range?: { maxRange?: number; halfRange?: number }; //перемножаем
+    aim?: number; // +/-
+    dmgMod?: number; // +/-
+    damageType?: damageType[]; // бонусы применяются только для наборов матчащихся по типу урона
+    newDamageType?: damageType; // заменяет
+    armorDelimiter?: number; //??? пока заменяет
   };
 };
 
 export type baseModifications = {
   code: modificationsList;
-  priceMultiplier: number;
+  priceMultiplier: number; // +/-
 };
 
 export type modificationResolver = (
@@ -33,11 +49,12 @@ export type modificationSettings = baseModifications &
     resolver?: modificationResolver;
   };
 
-export type modificationsList = weaponModificationList;
+export type modificationsList = weaponModificationList | materialsList;
 
 export const MODIFICATION_LIST: Record<modificationsList, createModificationF> =
   {
     ...weaponModificationModels,
+    ...materialModels,
   };
 
 export type createModificationF = ({

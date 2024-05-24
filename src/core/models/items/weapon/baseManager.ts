@@ -58,24 +58,19 @@ export class BaseManager {
   }
 
   getDamageMod(setIndex?: number) {
-    if (setIndex) {
-      return this.calculateDamageMod(this.damageSets[setIndex].dmgMod);
-    }
-    return this.calculateDamageMod(this.damageSets[0].dmgMod);
+    return this.calculateDamageMod(this.getDamageSetByIndex(setIndex).dmgMod);
   }
 
   getDamageType(setIndex?: number) {
-    if (setIndex) {
-      return this.damageSets[setIndex].damageType;
-    }
-    return this.damageSets[0].damageType;
+    return this.getDamageSetByIndex(setIndex).damageType;
+  }
+
+  getDamageSetByIndex(index?: number): baseDamageSet {
+    return this.damageSets[index || 0] || this.damageSets[0];
   }
 
   getArmorDelimiter(setIndex?: number): number {
-    if (setIndex) {
-      return this.damageSets[setIndex].armorDelimiter || 1;
-    }
-    return this.damageSets[0].armorDelimiter || 1;
+    return this.getDamageSetByIndex(setIndex).armorDelimiter || 1;
   }
 
   isStrBased() {

@@ -12,6 +12,7 @@ const weaponSettings: weaponFabricType = {
     recoil: 0,
     reloadTime: 2,
     ammoClip: { maxAmmo: 1, type: 'niddle' },
+    ownStr: 13, // при 13 базовый урон thrust = 1к
     damageSets: [
       {
         dmgMod: -3,

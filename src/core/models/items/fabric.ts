@@ -1,5 +1,12 @@
+import { createAmmoF } from './ammo/fabric';
+import { AMMO_LIST, ammoList } from './ammo/models';
 import { WEAPON_LIST, createWeaponF, weaponList } from './weapon/fabric';
 
-export type itemsList = weaponList;
+export type itemsList = weaponList | ammoList;
 
-export const ITEMS_LIST: Record<itemsList, createWeaponF> = { ...WEAPON_LIST };
+export type createItemF = createWeaponF | createAmmoF;
+
+export const ITEMS_LIST: Record<itemsList, createItemF> = {
+  ...WEAPON_LIST,
+  ...AMMO_LIST,
+};
