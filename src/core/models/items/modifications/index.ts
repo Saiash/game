@@ -8,6 +8,7 @@ export class Modification {
   name: string;
   description: string;
   ctx: CTX;
+  item: Item;
   optionalModifications: optionalModifications;
 
   constructor({
@@ -33,6 +34,7 @@ export class Modification {
     this.code = code;
     this.name = name;
     this.description = description;
+    this.item = item;
     this.ctx = ctx;
     this.optionalModifications = optionalModifications || {};
 

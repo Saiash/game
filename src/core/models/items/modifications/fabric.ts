@@ -49,12 +49,11 @@ export type modificationSettings = baseModifications &
     resolver?: modificationResolver;
   };
 
-export type modificationsList = weaponModificationList | materialsList;
+export type modificationsList = weaponModificationList;
 
 export const MODIFICATION_LIST: Record<modificationsList, createModificationF> =
   {
     ...weaponModificationModels,
-    ...materialModels,
   };
 
 export type createModificationF = ({
@@ -67,8 +66,15 @@ export type createModificationF = ({
   level?: number;
 }) => Modification;
 
+export type materialSettings = {
+  code: materialsList;
+  priceMultiplier: number;
+} & optionalModifications & {
+    resolver?: modificationResolver;
+  };
+
 export function modificationFabric(
-  modificationSettings: modificationSettings
+  modificationSettings: modificationSettings | materialSettings
 ): createModificationF {
   return ({ ctx, item }) => {
     const { code, priceMultiplier, resolver, ...rest } = modificationSettings;

@@ -16,7 +16,7 @@ export async function initGame(gameData: GameData) {
     await initCharacters(gameData),
   ]);
 
-  const axe = ItemManager.createItemByCode('axe', gameData.ctx, ['cheap']);
+  const axe = ItemManager.createItemByCode('axe', gameData.ctx, ['good']);
   gameData.getPlayerCharacter().inventory.add(axe);
 
   // for (const item of items) {

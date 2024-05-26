@@ -10,6 +10,7 @@ import {
   materialsList,
 } from './modifications/models/materials';
 import { ModificationManager } from './modifications/manager';
+import { weaponManagers } from './weapon';
 
 export type ItemId = number;
 export type rawItem = ItemProps;
@@ -39,6 +40,7 @@ export class Item {
   type: itemType;
   zones: equipZones[][];
   modificationManager: ModificationManager;
+  managers: weaponManagers;
   material: Material;
   props: ItemProps;
   tags: TagSystem;
@@ -64,6 +66,7 @@ export class Item {
     type?: itemType;
     modification?: modificationsList[];
   }) {
+    this.managers = [] as weaponManagers;
     this.ctx = ctx;
     this.id = itemId++;
     const tags = props.tags as any as string;

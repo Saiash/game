@@ -4,6 +4,7 @@ import { CTX } from '../../../../types';
 import { Character } from '../../characters';
 import { modificationsList } from '../modifications/fabric';
 import { axesList, axesModels } from './models/axes';
+import { smgList, smgModels } from './models/beam';
 import { blowPipeList, blowPipeModels } from './models/blowPipe';
 import { bolasList, bolasModels } from './models/bolas';
 import { bowList, bowModels } from './models/bow';
@@ -12,20 +13,36 @@ import { broadswordList, broadswordModels } from './models/broadsword';
 import { crossbowList, crossbowModels } from './models/crossbow';
 import { flailsList, flailsModels } from './models/flail';
 import { garroteList, garroteModels } from './models/garrote';
+import {
+  grenadeLauncherList,
+  grenadeLauncherModels,
+} from './models/grenadeLauncher';
+import { grenadesList, grenadesModels } from './models/grenades';
+import { gunnerList, gunnerModels } from './models/gunner';
+import { gyrocList, gyrocModels } from './models/gyroc';
 import { knifeList, knifeModels } from './models/knife';
 import { kusariList, kusariModels } from './models/kusari';
 import { lanceList, lanceModels } from './models/lance';
 import { lassoList, lassoModels } from './models/lasso';
+import {
+  liquidProjectorList,
+  liquidProjectorModels,
+} from './models/liquidProjector';
+import { lmgList, lmgModels } from './models/lmg';
 import { monowireWhipList, monowireWhipModels } from './models/monowireWhip';
 import { netList, netModels } from './models/net';
+import { pistolList, pistolModels } from './models/pistol';
 import { polearmList, polearmModels } from './models/polearm';
 import { forceSwordList, forceSwordModels } from './models/powerSword';
 import { rapierList, rapierModels } from './models/rapier';
+import { rifleList, rifleModels } from './models/rifle';
 import { saberList, saberModels } from './models/saber';
 import { shieldList, shieldModels } from './models/shield';
 import { smallswordList, smallswordModels } from './models/shortsword';
+import { shotgunList, shotgunModels } from './models/shotgun';
 import { slingList, slingModels } from './models/sling';
 import { shortswordList, shortswordModels } from './models/smallsword';
+import { beamList, beamModels } from './models/smg';
 import { spearList, spearModels } from './models/spear';
 import { staffList, staffModels } from './models/staff';
 import {
@@ -71,6 +88,17 @@ export type weaponList =
   | crossbowList
   | netList
   | slingList
+  | pistolList
+  | rifleList
+  | shotgunList
+  | smgList
+  | lmgList
+  | gunnerList
+  | beamList
+  | grenadeLauncherList
+  | gyrocList
+  | liquidProjectorList
+  | grenadesList
   | blowPipeList;
 
 export const WEAPON_LIST: Record<weaponList, createWeaponF> = {
@@ -102,6 +130,17 @@ export const WEAPON_LIST: Record<weaponList, createWeaponF> = {
   ...lassoModels,
   ...netModels,
   ...slingModels,
+  ...grenadesModels,
+  ...pistolModels,
+  ...smgModels,
+  ...lmgModels,
+  ...liquidProjectorModels,
+  ...gunnerModels,
+  ...shotgunModels,
+  ...rifleModels,
+  ...grenadeLauncherModels,
+  ...beamModels,
+  ...gyrocModels,
   ...blowPipeModels,
 };
 

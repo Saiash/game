@@ -1,6 +1,6 @@
-import { modificationFabric, modificationSettings } from '../../fabric';
+import { materialSettings, modificationFabric } from '../../fabric';
 
-const settings: modificationSettings = {
+const settings: materialSettings = {
   code: 'stone',
   breakChance: 2,
   priceMultiplier: -0.3,

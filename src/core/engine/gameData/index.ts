@@ -9,6 +9,7 @@ import { ObjectModel } from '../../models/locations/object';
 import { TimeManager } from './timeManager';
 import { SceneEngine } from '../../engine/SceneEngine';
 import { initGame } from '../../script/initGame';
+import { materialModels } from '../../models/items/modifications/models/materials';
 
 export class GameData {
   private playerCharacter: Character | null;

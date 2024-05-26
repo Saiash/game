@@ -1,5 +1,4 @@
 import { Item } from '../../../item';
-import { Weapon } from '../../../weapon';
 import { modificationFabric, modificationSettings } from '../../fabric';
 
 const settings: modificationSettings = {
@@ -7,7 +6,7 @@ const settings: modificationSettings = {
   priceMultiplier: 20,
   breakChance: -2,
   resolver: (item: Item): Partial<modificationSettings> => {
-    if (item instanceof Weapon) {
+    if (!!item.managers.meleeManager) {
       const skill = item.managers.meleeManager?.getSkill();
       if (
         [
