@@ -51,6 +51,10 @@ export class Modification {
     return this.optionalModifications.weight || 1;
   }
 
+  getMalfunctionMod(): number {
+    return this.optionalModifications.malfunction || 0;
+  }
+
   getBreakChanceMod(): number {
     return this.optionalModifications.breakChance || 0;
   }

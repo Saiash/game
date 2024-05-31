@@ -102,6 +102,20 @@ export class ModificationManager {
     ) as Required<optionalModifications>['weight'];
   }
 
+  getMalfunctionMultiplier(): Required<optionalModifications>['malfunction'] {
+    const cache = this.getFromCache('malfunction');
+    if (cache) return cache as Required<optionalModifications>['malfunction'];
+
+    const mod = this.getBaseArray().reduce(
+      (result, mod) => result * mod.getMalfunctionMod(),
+      1
+    );
+    return this.updateCache(
+      'malfunction',
+      mod
+    ) as Required<optionalModifications>['malfunction'];
+  }
+
   getBreakChanceMultiplier(): Required<optionalModifications>['breakChance'] {
     const cache = this.getFromCache('breakChance');
     if (cache) return cache as Required<optionalModifications>['breakChance'];
@@ -230,7 +244,35 @@ export class ModificationManager {
           mod.armorDelimiter
         );
       }
+      if (mod.options) {
+        mod.options.forEach(option => {
+          if (option === 'improvePiType') {
+            this.increasePiType(damageSet);
+          } else if ((option = 'decreasePiType')) {
+            this.decreasePiType(damageSet);
+          }
+        });
+      }
     }
+    return damageSet;
+  }
+
+  increasePiType(
+    damageSet: baseDamageSet | meleeDamageSet
+  ): baseDamageSet | meleeDamageSet {
+    const types: Partial<damageType>[] = ['pi-', 'pi', 'pi+', 'pi++'];
+    const index = types.findIndex(t => t === damageSet.damageType);
+    damageSet.damageType =
+      index + 1 >= types.length ? types[index] : types[index + 1];
+    return damageSet;
+  }
+
+  decreasePiType(
+    damageSet: baseDamageSet | meleeDamageSet
+  ): baseDamageSet | meleeDamageSet {
+    const types: Partial<damageType>[] = ['pi-', 'pi', 'pi+', 'pi++'];
+    const index = types.findIndex(t => t === damageSet.damageType);
+    damageSet.damageType = index - 1 <= 0 ? types[index] : types[index - 1];
     return damageSet;
   }
 }

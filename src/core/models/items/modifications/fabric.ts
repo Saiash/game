@@ -3,27 +3,36 @@ import { getLocalisedText } from '../../../../translations';
 import { CTX } from '../../../../types';
 import { Item } from '../item';
 import { damageType } from '../weapon/damage';
-import { materialModels, materialsList } from './models/materials';
+import { ammoModificationsList, ammoModificationsModels } from './models/ammo';
+import { materialsList } from './models/materials';
+import { meleeModificationList, meleeModificationModels } from './models/melee';
 import {
-  weaponModificationList,
-  weaponModificationModels,
-} from './models/weapon';
+  rangedModificationList,
+  rangedModificationModels,
+} from './models/ranged';
+import {
+  universalModificationList,
+  universalModificationModels,
+} from './models/universal';
 
 export type optionalModifications = {
   breakChance?: number; // +/-
   weight?: number; // *
+  malfunction?: number;
   throw?: {
     dmgMod?: number; // +/-
     aim?: number; // +/-
     damageType?: damageType[]; // бонусы применяются только для наборов матчащихся по типу урона
     newDamageType?: damageType; // заменяет
     armorDelimiter?: number; //??? пока заменяет
+    options?: string[];
   };
   melee?: {
     dmgMod?: number; // +/-
     damageType?: damageType[]; // бонусы применяются только для наборов матчащихся по типу урона
     newDamageType?: damageType; // заменяет
     armorDelimiter?: number; //??? пока заменяет
+    options?: string[];
   };
   ranged?: {
     range?: { maxRange?: number; halfRange?: number }; //перемножаем
@@ -32,6 +41,7 @@ export type optionalModifications = {
     damageType?: damageType[]; // бонусы применяются только для наборов матчащихся по типу урона
     newDamageType?: damageType; // заменяет
     armorDelimiter?: number; //??? пока заменяет
+    options?: string[];
   };
 };
 
@@ -49,11 +59,18 @@ export type modificationSettings = baseModifications &
     resolver?: modificationResolver;
   };
 
-export type modificationsList = weaponModificationList;
+export type modificationsList =
+  | meleeModificationList
+  | ammoModificationsList
+  | rangedModificationList
+  | universalModificationList;
 
 export const MODIFICATION_LIST: Record<modificationsList, createModificationF> =
   {
-    ...weaponModificationModels,
+    ...meleeModificationModels,
+    ...ammoModificationsModels,
+    ...universalModificationModels,
+    ...rangedModificationModels,
   };
 
 export type createModificationF = ({

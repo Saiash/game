@@ -3,6 +3,16 @@ TODO: культура. Есть у локации и у персонажа. У 
 
 Социальные группы у персонажей и ассоциированность модификаторов репутации к этим социальным группам. (condition / outer condition equal to socialGroup)
 
+v0.0.26
+Armor
+
+v0.0.25
+ranged weapons and ammo
+
+v0.0.24
+* Items (weapons)
+* Item modifications
+
 v 0.0.23
 * Added generators (MVP)
 * Added perks (usable)
