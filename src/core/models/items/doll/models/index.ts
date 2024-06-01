@@ -17,7 +17,7 @@ export class DollBodyPart {
   character: Character;
   code: equipZones | battleZones;
   equipZones: equipZones[] = [];
-  equippedItems: Record<ItemId, Item> = [];
+  equippedItems: Record<ItemId, Item> = {};
   dollManager: Doll;
 
   constructor({
@@ -40,7 +40,7 @@ export class DollBodyPart {
         dollManager,
       });
     });
-    this.innerParts = {} as any;
+    this.innerParts = record;
     this.hp = 10; // TODO
     this.character = character;
     this.ctx = ctx;

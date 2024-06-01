@@ -4,7 +4,6 @@ import { CTX } from '../../../../types';
 import { modificationsList } from '../modifications/fabric';
 import { materialsList } from '../modifications/models/materials';
 import { armorTypesList, armorTypesModels } from './armorTypes/cloth';
-import { layredClothLight } from './armorTypes/cloth/layredClothLight';
 import { armorSchemaList, armorSchemaModels } from './schemas/models';
 
 export type createArmorSettings = {

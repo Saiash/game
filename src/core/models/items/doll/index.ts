@@ -16,7 +16,7 @@ export class Doll {
   character: Character;
   ctx: CTX;
   bodyParts: Record<equipZones | battleZones, DollBodyPart>;
-  equippedItems: Record<ItemId, Item> = [];
+  equippedItems: Record<ItemId, Item> = {};
 
   constructor({ ctx, character }: { ctx: CTX; character: Character }) {
     this.ctx = ctx;
@@ -71,7 +71,7 @@ export class Doll {
     item: Item;
     zoneIndex: number;
   }) {
-    const zoneGroup = item.zones[zoneIndex];
+    const zoneGroup = item.getZones(zoneIndex) as equipZones[];
     if (!this.ifPossibleToEquipForZone(zoneGroup)) {
       return false;
     }
@@ -186,12 +186,12 @@ export class Doll {
       return this.getInnerPartByKey('torso').getInnerPartByKey('belly');
     } else if (roll === 15) {
       return throwDices(1, 2) === 1
-        ? this.getInnerPartByKey('leftHand').getInnerPartByKey('palm')
-        : this.getInnerPartByKey('rightHand').getInnerPartByKey('palm');
+        ? this.getInnerPartByKey('leftHand').getInnerPartByKey('leftPalm')
+        : this.getInnerPartByKey('rightHand').getInnerPartByKey('rightPalm');
     } else if (roll === 16) {
       return throwDices(1, 2) === 1
-        ? this.getInnerPartByKey('leftLeg').getInnerPartByKey('foot')
-        : this.getInnerPartByKey('rightLeg').getInnerPartByKey('foot');
+        ? this.getInnerPartByKey('leftLeg').getInnerPartByKey('leftFoot')
+        : this.getInnerPartByKey('rightLeg').getInnerPartByKey('rightFoot');
     } else if ([17, 18].includes(roll)) {
       return this.getInnerPartByKey('neck');
     }

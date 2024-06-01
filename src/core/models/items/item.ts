@@ -102,7 +102,8 @@ export class Item {
     return this.props.name;
   }
 
-  getZones() {
+  getZones(index?: number) {
+    if (index) return this.zones[index];
     return this.zones;
   }
 

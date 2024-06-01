@@ -2,22 +2,22 @@ import { DollBodyPart } from '.';
 import { throwDices } from '../../../../utils/diceThrower';
 
 export const leftLeg = {
-  thigh: {},
-  knee: {},
-  shin: {},
-  foot: {},
-  toe: {},
+  leftThigh: {},
+  leftKnee: {},
+  leftShin: {},
+  leftFoot: {},
+  leftToe: {},
 };
 
 export class LeftLegBodyPart extends DollBodyPart {
   getZoneHit(): DollBodyPart {
     const val = throwDices(1, 6);
     if ([1, 2, 3].includes(val)) {
-      return this.getInnerPartByKey('shin');
+      return this.getInnerPartByKey('leftShin');
     } else if (val === 4) {
-      return this.getInnerPartByKey('knee');
+      return this.getInnerPartByKey('leftKnee');
     } else {
-      return this.getInnerPartByKey('thigh');
+      return this.getInnerPartByKey('leftThigh');
     }
   }
 }
