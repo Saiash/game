@@ -6,6 +6,7 @@ import { weaponTexts } from './weapons';
 import { raceTexts } from './race';
 import { modificationsTexts } from './modifications';
 import { ammoTexts } from '../ru/ammo';
+import { armorTexts } from './armor';
 
 export const engTexts = {
   skillTexts,
@@ -16,4 +17,5 @@ export const engTexts = {
   raceTexts,
   modificationsTexts,
   ammoTexts,
+  armorTexts,
 };

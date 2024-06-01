@@ -1,6 +1,7 @@
 import { materialSettings, modificationFabric } from '../../fabric';
 
 const settings: materialSettings = {
+  tl: 2,
   code: 'iron',
   type: 'metal',
   breakChance: 1,

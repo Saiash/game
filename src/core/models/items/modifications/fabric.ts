@@ -84,9 +84,11 @@ export type createModificationF = ({
 }) => Modification;
 
 export type materialSettings = {
+  tl: number;
   code: materialsList;
   priceMultiplier: number;
   type: materialTypes;
+  DR?: number;
 } & optionalModifications & {
     resolver?: modificationResolver;
   };

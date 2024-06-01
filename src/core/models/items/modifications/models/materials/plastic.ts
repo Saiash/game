@@ -1,6 +1,7 @@
 import { materialSettings, modificationFabric } from '../../fabric';
 
 const settings: materialSettings = {
+  tl: 6,
   code: 'plastic',
   type: 'composite',
   priceMultiplier: 2,

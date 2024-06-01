@@ -2,10 +2,9 @@ import { materialSettings, modificationFabric } from '../../fabric';
 
 const settings: materialSettings = {
   tl: 0,
-  code: 'bronze',
-  type: 'metal',
-  breakChance: 2,
+  code: 'leather',
+  type: 'leather',
   priceMultiplier: 0,
 };
 
-export const Bronze = modificationFabric(settings);
+export const Leather = modificationFabric(settings);

@@ -3,6 +3,7 @@ import { getLocalisedText } from '../../../../translations';
 import { CTX } from '../../../../types';
 import { Character } from '../../characters';
 import { modificationsList } from '../modifications/fabric';
+import { materialsList } from '../modifications/models/materials';
 import { axesList, axesModels } from './models/axes';
 import { smgList, smgModels } from './models/beam';
 import { blowPipeList, blowPipeModels } from './models/blowPipe';
@@ -149,9 +150,11 @@ export type weaponFabricType = Omit<weaponProps, 'name' | 'description'>;
 export type createWeaponF = ({
   level,
   ctx,
+  materialCode,
   modification,
 }: {
   ctx: CTX;
+  materialCode?: materialsList;
   level?: number;
   modification?: modificationsList[];
 }) => Weapon;
@@ -160,7 +163,7 @@ export function weaponFabric(
   weaponSettings: weaponFabricType,
   resolver?: weaponEffectResolver
 ): createWeaponF {
-  return ({ ctx, modification }) => {
+  return ({ ctx, modification, materialCode }) => {
     const name = getLocalisedText(ctx.language, [
       'weapon',
       weaponSettings.code,
@@ -179,6 +182,7 @@ export function weaponFabric(
       },
       resolver,
       ctx,
+      materialCode,
       modification,
     });
   };

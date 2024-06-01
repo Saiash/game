@@ -1,9 +1,10 @@
-import { CTX } from '../../../../types';
+import { CTX, PartialRecord } from '../../../../types';
 import { throwDices } from '../../../utils/diceThrower';
 import { Character } from '../../characters';
 import { Item, ItemId } from '../item';
 import { damageType } from '../weapon/damage';
-import { DollBodyPart, specialBodyPartsList } from './models';
+import { DollBodyPart } from './models';
+import { ChestBodyPart, PelvisBodyPart, TorsoBodyPart } from './models/_body';
 import {
   battleZones,
   dollStructure,
@@ -26,9 +27,8 @@ export class Doll {
     >;
     Object.keys(dollStructure).forEach(part => {
       const _part = part as majorBodyParts;
-      const classModel = !!specialBodyPartsList[_part]
-        ? specialBodyPartsList[_part]
-        : DollBodyPart;
+      let classModel = specialBodyPartsList[_part];
+      if (!classModel) classModel = DollBodyPart;
       new classModel({
         innerParts: dollStructure[_part],
         character,
@@ -198,4 +198,11 @@ export class Doll {
   }
 }
 
-//
+export const specialBodyPartsList: PartialRecord<
+  equipZones | battleZones,
+  typeof DollBodyPart
+> = {
+  torso: TorsoBodyPart,
+  chest: ChestBodyPart,
+  pelvis: PelvisBodyPart,
+};

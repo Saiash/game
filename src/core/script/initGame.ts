@@ -17,7 +17,12 @@ export async function initGame(gameData: GameData) {
   ]);
 
   const axe = ItemManager.createItemByCode('axe', gameData.ctx, ['good']);
+  const armor = ItemManager.createItemByCode(
+    'layredClothLightbodyArmor',
+    gameData.ctx
+  );
   gameData.getPlayerCharacter().inventory.add(axe);
+  gameData.getPlayerCharacter().inventory.add(armor);
 
   // for (const item of items) {
   //   gameData.getPlayerCharacter().inventory.add(item);

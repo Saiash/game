@@ -1,23 +1,13 @@
-import { Doll } from '..';
-import { CTX, PartialRecord } from '../../../../../types';
+import { Doll, specialBodyPartsList } from '..';
+import { CTX } from '../../../../../types';
 import { Character } from '../../../characters';
 import { Item, ItemId } from '../../item';
 import { battleZones, equipZones } from '../types';
-import { ChestBodyPart, PelvisBodyPart, TorsoBodyPart } from './_body';
 
 export type bodypartProps = {
   character: Character;
   ctx: CTX;
   code: equipZones | battleZones;
-};
-
-export const specialBodyPartsList: PartialRecord<
-  equipZones | battleZones,
-  typeof DollBodyPart
-> = {
-  torso: TorsoBodyPart,
-  chest: ChestBodyPart,
-  pelvis: PelvisBodyPart,
 };
 
 export class DollBodyPart {
@@ -40,9 +30,8 @@ export class DollBodyPart {
     const record: Record<string, DollBodyPart> = {};
     Object.keys(innerParts).forEach(part => {
       const _part = part as equipZones | battleZones;
-      const classModel = !!specialBodyPartsList[_part]
-        ? specialBodyPartsList[_part]
-        : DollBodyPart;
+      let classModel = specialBodyPartsList[_part];
+      if (!classModel) classModel = DollBodyPart;
       record[_part] = new classModel({
         innerParts: innerParts[_part],
         character,
@@ -51,7 +40,7 @@ export class DollBodyPart {
         dollManager,
       });
     });
-    this.innerParts = record;
+    this.innerParts = {} as any;
     this.hp = 10; // TODO
     this.character = character;
     this.ctx = ctx;
