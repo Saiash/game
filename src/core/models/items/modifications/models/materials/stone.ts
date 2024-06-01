@@ -2,6 +2,7 @@ import { materialSettings, modificationFabric } from '../../fabric';
 
 const settings: materialSettings = {
   code: 'stone',
+  type: 'stone',
   breakChance: 2,
   priceMultiplier: -0.3,
   melee: {

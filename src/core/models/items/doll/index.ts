@@ -1,24 +1,35 @@
-import { trimEnd } from 'lodash';
 import { CTX } from '../../../../types';
+import { throwDices } from '../../../utils/diceThrower';
 import { Character } from '../../characters';
 import { Item, ItemId } from '../item';
 import { damageType } from '../weapon/damage';
-import { DollBodyPart } from './models/bodypart';
-import { dollStructure, equipZones, majorBodyParts } from './types';
+import { DollBodyPart, specialBodyPartsList } from './models';
+import {
+  battleZones,
+  dollStructure,
+  equipZones,
+  majorBodyParts,
+} from './types';
 
 export class Doll {
   character: Character;
   ctx: CTX;
-  bodyParts: Record<equipZones, DollBodyPart>;
+  bodyParts: Record<equipZones | battleZones, DollBodyPart>;
   equippedItems: Record<ItemId, Item> = [];
 
   constructor({ ctx, character }: { ctx: CTX; character: Character }) {
     this.ctx = ctx;
     this.character = character;
-    this.bodyParts = {} as unknown as Record<equipZones, DollBodyPart>;
+    this.bodyParts = {} as unknown as Record<
+      equipZones | battleZones,
+      DollBodyPart
+    >;
     Object.keys(dollStructure).forEach(part => {
       const _part = part as majorBodyParts;
-      new DollBodyPart({
+      const classModel = !!specialBodyPartsList[_part]
+        ? specialBodyPartsList[_part]
+        : DollBodyPart;
+      new classModel({
         innerParts: dollStructure[_part],
         character,
         ctx,
@@ -28,7 +39,7 @@ export class Doll {
     });
   }
 
-  addBodyPart(code: equipZones, bodyPart: DollBodyPart) {
+  addBodyPart(code: equipZones | battleZones, bodyPart: DollBodyPart) {
     this.bodyParts[code] = bodyPart;
   }
 
@@ -106,6 +117,7 @@ export class Doll {
   }
 
   checkIfPossibleToEquip(item: Item) {
+    //TODO: можно надевать до трех слоев брони. Каждый последующий слой дает -1 к DX. Броня должна быть гибкой (flexible) для внутренних слоев. То, что не дает брони - не дает штрафов.
     return item.zones.some(zoneNameGroup => {
       return this.ifPossibleToEquipForZone(zoneNameGroup);
     });
@@ -149,6 +161,41 @@ export class Doll {
   getRaw() {}
 
   initFromRaw() {}
+
+  getInnerPartByKey(key: equipZones | battleZones) {
+    return this.bodyParts[key];
+  }
+
+  getRandomHitPart() {
+    const roll = throwDices(3, 6);
+    if (roll <= 4) {
+      return this.getInnerPartByKey('head').getInnerPartByKey('skull');
+    } else if (roll === 5) {
+      return this.getInnerPartByKey('head').getInnerPartByKey('face');
+    } else if ([6, 7].includes(roll)) {
+      return this.getInnerPartByKey('leftLeg');
+    } else if ([13, 14].includes(roll)) {
+      return this.getInnerPartByKey('rightLeg');
+    } else if (roll === 8) {
+      return this.getInnerPartByKey('leftHand');
+    } else if (roll === 12) {
+      return this.getInnerPartByKey('rightHand');
+    } else if ([9, 10].includes(roll)) {
+      return this.getInnerPartByKey('torso').getInnerPartByKey('chest');
+    } else if (roll === 11) {
+      return this.getInnerPartByKey('torso').getInnerPartByKey('belly');
+    } else if (roll === 15) {
+      return throwDices(1, 2) === 1
+        ? this.getInnerPartByKey('leftHand').getInnerPartByKey('palm')
+        : this.getInnerPartByKey('rightHand').getInnerPartByKey('palm');
+    } else if (roll === 16) {
+      return throwDices(1, 2) === 1
+        ? this.getInnerPartByKey('leftLeg').getInnerPartByKey('foot')
+        : this.getInnerPartByKey('rightLeg').getInnerPartByKey('foot');
+    } else if ([17, 18].includes(roll)) {
+      return this.getInnerPartByKey('neck');
+    }
+  }
 }
 
 //

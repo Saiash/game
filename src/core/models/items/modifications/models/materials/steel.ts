@@ -2,6 +2,7 @@ import { materialSettings, modificationFabric } from '../../fabric';
 
 const settings: materialSettings = {
   code: 'steel',
+  type: 'metal',
   priceMultiplier: 0,
 };
 

@@ -50,7 +50,9 @@ export class ThrowManager extends BaseManager {
   }
 
   getAim(): number {
-    return this.item.modificationManager.getThrowMultiplier().aim || 0;
+    return (
+      this.aim + (this.item.modificationManager.getThrowMultiplier().aim || 0)
+    );
   }
 
   getRange(str?: number): rangeType {

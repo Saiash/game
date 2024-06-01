@@ -2,6 +2,7 @@ import { materialSettings, modificationFabric } from '../../fabric';
 
 const settings: materialSettings = {
   code: 'obsidian',
+  type: 'stone',
   breakChance: 2,
   priceMultiplier: 4,
   melee: {

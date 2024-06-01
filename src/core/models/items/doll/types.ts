@@ -1,6 +1,6 @@
 //ITEM ZONES TYPES
 
-import { body } from './models/_body';
+import { torso } from './models/_body';
 import { head } from './models/head';
 import { leftHand } from './models/leftHand';
 import { leftLeg } from './models/leftLeg';
@@ -11,7 +11,7 @@ import { rightLeg } from './models/rightLeg';
 export const majorStructure = {
   leftHand: leftHand,
   rightHand: rightHand,
-  body: body,
+  torso: torso,
   head: head,
   leftLeg: leftLeg,
   rightLeg: rightLeg,
@@ -39,7 +39,7 @@ export type leftLegZonesGroup = keyof typeof leftLeg;
 export type rightLegZonesGroup = keyof typeof rightLeg;
 export type leftHandZonesGroup = keyof typeof leftHand;
 export type rightHandZonesGroup = keyof typeof rightHand;
-export type bodyZonesGroup = keyof typeof body;
+export type bodyZonesGroup = keyof typeof torso;
 
 export type eyesZonesGroup = keyof typeof head.eyes;
 export type earsZonesGroup = keyof typeof head.ears;
@@ -61,6 +61,7 @@ export type equipZones =
 export type battleZones =
   | majorBodyParts
   | 'skull'
+  | 'face'
   | 'eyes'
   | 'leftPalm'
   | 'rightPalm'

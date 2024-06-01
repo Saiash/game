@@ -16,6 +16,14 @@ export type materialsList =
   | 'silver'
   | 'plastic';
 
+export type materialTypes =
+  | 'metal'
+  | 'wood'
+  | 'fabric'
+  | 'composite'
+  | 'leather'
+  | 'stone';
+
 export const materialModels = {
   stone: Stone,
   obsidian: Obsidian,

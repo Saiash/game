@@ -4,7 +4,7 @@ import { CTX } from '../../../../types';
 import { Item } from '../item';
 import { damageType } from '../weapon/damage';
 import { ammoModificationsList, ammoModificationsModels } from './models/ammo';
-import { materialsList } from './models/materials';
+import { materialsList, materialTypes } from './models/materials';
 import { meleeModificationList, meleeModificationModels } from './models/melee';
 import {
   rangedModificationList,
@@ -86,6 +86,7 @@ export type createModificationF = ({
 export type materialSettings = {
   code: materialsList;
   priceMultiplier: number;
+  type: materialTypes;
 } & optionalModifications & {
     resolver?: modificationResolver;
   };

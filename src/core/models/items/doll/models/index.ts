@@ -1,21 +1,31 @@
 import { Doll } from '..';
-import { CTX } from '../../../../../types';
+import { CTX, PartialRecord } from '../../../../../types';
 import { Character } from '../../../characters';
 import { Item, ItemId } from '../../item';
-import { equipZones } from '../types';
+import { battleZones, equipZones } from '../types';
+import { ChestBodyPart, PelvisBodyPart, TorsoBodyPart } from './_body';
 
 export type bodypartProps = {
   character: Character;
   ctx: CTX;
-  code: equipZones;
+  code: equipZones | battleZones;
+};
+
+export const specialBodyPartsList: PartialRecord<
+  equipZones | battleZones,
+  typeof DollBodyPart
+> = {
+  torso: TorsoBodyPart,
+  chest: ChestBodyPart,
+  pelvis: PelvisBodyPart,
 };
 
 export class DollBodyPart {
-  innerParts: Record<equipZones, DollBodyPart>;
+  innerParts: Record<equipZones | battleZones, DollBodyPart>;
   hp: number;
   ctx: CTX;
   character: Character;
-  code: equipZones;
+  code: equipZones | battleZones;
   equipZones: equipZones[] = [];
   equippedItems: Record<ItemId, Item> = [];
   dollManager: Doll;
@@ -29,8 +39,11 @@ export class DollBodyPart {
   }: bodypartProps & { innerParts: any; dollManager: Doll }) {
     const record: Record<string, DollBodyPart> = {};
     Object.keys(innerParts).forEach(part => {
-      const _part = part as equipZones;
-      record[_part] = new DollBodyPart({
+      const _part = part as equipZones | battleZones;
+      const classModel = !!specialBodyPartsList[_part]
+        ? specialBodyPartsList[_part]
+        : DollBodyPart;
+      record[_part] = new classModel({
         innerParts: innerParts[_part],
         character,
         ctx,
@@ -47,10 +60,14 @@ export class DollBodyPart {
     dollManager.addBodyPart(code, this);
   }
 
+  getInnerPartByKey(key: equipZones | battleZones) {
+    return this.innerParts[key];
+  }
+
   eqiupItem(item: Item) {
     this.equippedItems[item.getId()] = item;
     Object.keys(this.innerParts).forEach(key => {
-      const _key = key as equipZones;
+      const _key = key as equipZones | battleZones;
       this.innerParts[_key].eqiupItem(item);
     });
     this.dollManager.recordEquippedItem(item);
@@ -59,7 +76,7 @@ export class DollBodyPart {
   uneqiupItem(item: Item) {
     delete this.equippedItems[item.getId()];
     Object.keys(this.innerParts).forEach(key => {
-      const _key = key as equipZones;
+      const _key = key as equipZones & battleZones;
       this.innerParts[_key].uneqiupItem(item);
     });
     this.dollManager.unrecordEquippedItem(item.getId());
@@ -70,7 +87,7 @@ export class DollBodyPart {
       return false;
     }
     Object.keys(this.innerParts).forEach(key => {
-      const _key = key as equipZones;
+      const _key = key as equipZones & battleZones;
       if (!this.innerParts[_key].isPossibleToEquip()) {
         return false;
       }
@@ -80,6 +97,10 @@ export class DollBodyPart {
 
   getAllItems() {
     return this.equippedItems;
+  }
+
+  getZoneHit(): DollBodyPart {
+    return this;
   }
 }
 

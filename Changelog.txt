@@ -3,6 +3,8 @@ TODO: культура. Есть у локации и у персонажа. У 
 
 Социальные группы у персонажей и ассоциированность модификаторов репутации к этим социальным группам. (condition / outer condition equal to socialGroup)
 
+TODO: concealing armor. To conceal armor - quick contest of holdout VS search. pentalty to holdout = DR of DR/3 for flrxible armor, bonus for every layer of clothes
+
 v0.0.26
 Armor
 

@@ -50,6 +50,7 @@ export class RangedManager extends BaseManager {
   ownStr: number;
   damageSets: baseDamageSet[];
   relativeSkill: skillList;
+  malfunction: number;
   type: weaponManagerTypes = 'ranged';
 
   constructor({
@@ -73,6 +74,7 @@ export class RangedManager extends BaseManager {
     this.aim = props.aim;
     this.range = props.range;
     this.rateOfFire = props.rateOfFire;
+    this.malfunction = 17;
     this.ownStr = props.ownStr || 0;
     this.relativeSkill = props.relativeSkill;
   }
@@ -83,6 +85,19 @@ export class RangedManager extends BaseManager {
 
   getRecoil() {
     return this.recoil;
+  }
+
+  getAim(): number {
+    return (
+      this.aim + (this.item.modificationManager.getRangedMultiplier().aim || 0)
+    );
+  }
+
+  getMalfunction(): number {
+    return (
+      this.malfunction +
+      this.item.modificationManager.getMalfunctionMultiplier()
+    );
   }
 
   getRange(str?: number): rangeType {
