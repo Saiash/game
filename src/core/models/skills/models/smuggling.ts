@@ -9,6 +9,6 @@ const skillSettings: skillFabricType = {
   relativeSkills: {},
 };
 
-// От обычного осмот- ра помогает простой бросок уме- ния, при внимательном осмотре требуется состязание.
+//TODO:  От обычного осмот- ра помогает простой бросок уме- ния, при внимательном осмотре требуется состязание.
 
 export const Smuggling = skillFabric({ skillSettings });

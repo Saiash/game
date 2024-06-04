@@ -9,6 +9,6 @@ const skillSettings: skillFabricType = {
   relativeSkills: {},
 };
 
-//Ювелир-4.
+//TODO: Ювелир-4.
 
 export const Smith = skillFabric({ skillSettings });

@@ -87,7 +87,7 @@ export class BattleManager {
   }
 
   defend(options: defendOptions) {
-    //Например у цепа внутри набора урона могут быть модификаторы к защите (-4 к парированию и -2 к блоку)
+    //TODO: Например у цепа внутри набора урона могут быть модификаторы к защите (-4 к парированию и -2 к блоку)
   }
 
   recieveDamage(damagePayload: damagePayload) {
@@ -126,9 +126,9 @@ export class BattleManager {
   }
 
   getDRForZone() {
-    //как-то получить список предметов в этой зоне
-    //у каждого предмета получить DR
-    // const dr = armor.reduce()
+    //TODO: как-то получить список предметов в этой зоне
+    //TODO: у каждого предмета получить DR
+    //TODO:  const dr = armor.reduce()
     return 0;
   }
 
@@ -207,7 +207,7 @@ export class BattleManager {
       'ht',
       this.getDRForZone() + weaponManager.getDamageMod().mod + bonusFromRange
     );
-    //наложить состояние
+    //TODO: наложить состояние
   }
 
   checkWeaponReach(target: Character, weapon: Weapon): boolean {
@@ -217,7 +217,7 @@ export class BattleManager {
 
     const reach = weaponManager.getReach();
     const targetLocation = target.battleManager.getLocation();
-    const distance = this.calculateDistance(targetLocation); // //нужно реализовать рассчет координат
+    const distance = this.calculateDistance(targetLocation); // //TODO: нужно реализовать рассчет координат
     return reach.some(r => r === distance);
   }
 

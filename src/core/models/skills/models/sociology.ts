@@ -9,6 +9,6 @@ const skillSettings: skillFabricType = {
   relativeSkills: {},
 };
 
-// Антропо- логия -3, Психология -4.
+//TODO:  Антропо- логия -3, Психология -4.
 
 export const Sociology = skillFabric({ skillSettings });

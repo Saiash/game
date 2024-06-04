@@ -24,9 +24,9 @@ export class GameData {
   objects: { [index: string]: ObjectModel };
   timeManager: TimeManager;
   sceneEngine: SceneEngine;
-  //время
-  //локация
-  //персонажи
+  //TODO: время
+  //TODO: локация
+  //TODO: персонажи
 
   constructor({
     ctx,

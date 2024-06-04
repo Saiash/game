@@ -9,6 +9,6 @@ const skillSettings: skillFabricType = {
   relativeSkills: {},
 };
 
-// Взлом-3*.
+//TODO:  Взлом-3*.
 
 export const Traps = skillFabric({ skillSettings });

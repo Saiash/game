@@ -9,6 +9,6 @@ const skillSettings: skillFabricType = {
   relativeSkills: { environmentSuit: -2 },
 };
 
-// бросок каждые 30 минут
+//TODO:  бросок каждые 30 минут
 
 export const Scuba = skillFabric({ skillSettings });

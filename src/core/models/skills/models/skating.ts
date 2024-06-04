@@ -9,7 +9,7 @@ const skillSettings: skillFabricType = {
   relativeSkills: {},
 };
 
-// провал - падение
-// крит падение - 1к урона
+// TODO: провал - падение
+// TODO: крит падение - 1к урона
 
 export const Skating = skillFabric({ skillSettings });

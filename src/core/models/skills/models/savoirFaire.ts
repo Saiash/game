@@ -9,7 +9,7 @@ const skillSettings: skillFabricType = {
   relativeSkills: {},
 };
 
-// Может заменять бросок реакции
-// +2/-2 за разницу в статусе с целью
+//TODO:  Может заменять бросок реакции
+//TODO:  +2/-2 за разницу в статусе с целью
 
 export const SavoirFaire = skillFabric({ skillSettings });

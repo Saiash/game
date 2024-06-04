@@ -9,6 +9,6 @@ const skillSettings: skillFabricType = {
   relativeSkills: {},
 };
 
-//для предотвращения потери усталости
+//TODO: для предотвращения потери усталости
 
 export const Swimming = skillFabric({ skillSettings });

@@ -9,6 +9,6 @@ const skillSettings: skillFabricType = {
   relativeSkills: {},
 };
 
-// Алебарда-4, посох-2.
+//TODO:  Алебарда-4, посох-2.
 
 export const Spear = skillFabric({ skillSettings });

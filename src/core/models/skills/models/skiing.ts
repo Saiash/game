@@ -9,6 +9,6 @@ const skillSettings: skillFabricType = {
   relativeSkills: {},
 };
 
-// крит падение - 1к урона
+//TODO:  крит падение - 1к урона
 
 export const Skiing = skillFabric({ skillSettings });

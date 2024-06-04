@@ -9,7 +9,7 @@ const skillSettings: skillFabricType = {
   relativeSkills: { filch: -5 },
 };
 
-// шуллерство в игре - дает до +5
-// +3 за свет, помощника, подготовка
+//TODO:  шуллерство в игре - дает до +5
+//TODO:  +3 за свет, помощника, подготовка
 
 export const SleightOfHands = skillFabric({ skillSettings });

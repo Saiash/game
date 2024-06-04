@@ -18,7 +18,7 @@ export class TagSystem {
   ctx: CTX;
   owner: Character | Item | ObjectModel | Location | Perk;
   pairedToSystem?: TagSystem;
-  //придумать, что делать со слоями
+  //TODO: придумать, что делать со слоями
 
   constructor({
     ctx,
@@ -70,7 +70,7 @@ export class TagSystem {
         allProps.push(...tags);
       }
     });
-    //пока идем по схеме, что тэги предметов применяются к персонажу, остальное само к себе
+    //TODO: пока идем по схеме, что тэги предметов применяются к персонажу, остальное само к себе
     allProps.forEach((tagProps: TagInput) => {
       const newTag = new Tag(tagProps, this.owner, this.ctx);
       this.all[newTag.getId()] = newTag;

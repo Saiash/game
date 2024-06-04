@@ -9,6 +9,6 @@ const skillSettings: skillFabricType = {
   relativeSkills: {},
 };
 
-// каждый спорт - отдельное умение
+//TODO:  каждый спорт - отдельное умение
 
 export const Sports = skillFabric({ skillSettings });

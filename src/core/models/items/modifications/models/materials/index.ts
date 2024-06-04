@@ -30,6 +30,7 @@ export type materialTypes =
   | 'fabric'
   | 'composite'
   | 'leather'
+  | 'bone'
   | 'stone';
 
 export const materialModels = {

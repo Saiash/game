@@ -9,6 +9,6 @@ const skillSettings: skillFabricType = {
   relativeSkills: { religiousRitual: -4 },
 };
 
-// Рели- гиозный обряд (той же религии) -4
+//TODO:  Рели- гиозный обряд (той же религии) -4
 
 export const Theology = skillFabric({ skillSettings });
