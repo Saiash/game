@@ -3,8 +3,8 @@ import { getLocalisedText } from '../../../../translations';
 import { CTX } from '../../../../types';
 import { modificationsList } from '../modifications/fabric';
 import { materialsList } from '../modifications/models/materials';
-import { armorTypesList, armorTypesModels } from './armorTypes/cloth';
-import { armorSchemaList, armorSchemaModels } from './schemas/models';
+import { armorTypesList, armorTypesModels } from './armorTypes';
+import { armorSchemaList, armorSchemaModels } from './schemas';
 
 export type createArmorSettings = {
   schema: armorSchemaList;
@@ -22,7 +22,7 @@ export type createArmorF = ({
 }) => Armor;
 
 export const createArmorF = (props: createArmorSettings): createArmorF => {
-  const code: armorList = `${props.armorType}${props.schema}`;
+  const code: armorList = `${props.armorType}${props.schema}` as any; // TODO!!
   return ({ ctx, modification, materialCode }) => {
     const name = getLocalisedText(ctx.language, ['armor', code, 'name']);
     const description = getLocalisedText(ctx.language, [
@@ -46,11 +46,17 @@ export const createArmorF = (props: createArmorSettings): createArmorF => {
   };
 };
 
-export type armorList = 'layredClothLightbodyArmor';
+export type armorList =
+  | 'layredClothLightbodyArmor'
+  | 'clothordinary1hoodedDress';
 
 export const ARMOR_LIST = {
   layredClothLightbodyArmor: createArmorF({
     armorType: 'layredClothLight',
     schema: 'bodyArmor',
+  }),
+  clothordinary1hoodedDress: createArmorF({
+    armorType: 'clothordinary1',
+    schema: 'hoodedDress',
   }),
 };

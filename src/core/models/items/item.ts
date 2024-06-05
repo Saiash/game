@@ -17,6 +17,8 @@ export type rawItem = ItemProps;
 export type itemType = 'item' | 'weapon' | 'ammo';
 let itemId: ItemId = 0;
 
+export type itemOptions = { lockable?: boolean; hood?: boolean };
+
 export type ItemProps = {
   name: string;
   description: string;
@@ -30,7 +32,7 @@ export type ItemProps = {
 
   cost: number;
   mods?: any;
-  options?: string[];
+  options?: itemOptions;
   code: itemsList;
   //TODO: мутабельность предметов. Должен быть отдельный стейт; определяющий, в каком состоянии предмет находится. И логика переключения стейтов + список возможных стейтов.
 };
@@ -74,7 +76,7 @@ export class Item {
     this.legalityClass = props.legalityClass || 4;
     this.code = props.code;
     this.techLevel = props.techLevel || 0;
-    if (props.options?.some(o => o === 'lockable')) {
+    if (props.options?.lockable) {
       this.lockable = true;
     }
     this.zones = props.zones;
@@ -103,7 +105,7 @@ export class Item {
   }
 
   getZones(index?: number) {
-    if (index) return this.zones[index];
+    if (typeof index === 'number' && index! >= 0) return this.zones[index];
     return this.zones;
   }
 

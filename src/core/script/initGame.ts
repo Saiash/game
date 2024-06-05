@@ -21,8 +21,13 @@ export async function initGame(gameData: GameData) {
     'layredClothLightbodyArmor',
     gameData.ctx
   );
+  const dress = ItemManager.createItemByCode(
+    'clothordinary1hoodedDress',
+    gameData.ctx
+  );
   gameData.getPlayerCharacter().inventory.add(axe);
   gameData.getPlayerCharacter().inventory.add(armor);
+  gameData.getPlayerCharacter().inventory.add(dress);
 
   // for (const item of items) {
   //   gameData.getPlayerCharacter().inventory.add(item);

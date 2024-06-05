@@ -10,4 +10,8 @@ export const armorTexts: {
     descriprion:
       'Well-tailored, close-fitting armor consisting of small, overlapping metal plates riveted to the inside of a cloth or leather garment',
   },
+  clothordinary1hoodedDress: {
+    name: 'Dress',
+    descriprion: 'Dress for test',
+  },
 };
