@@ -7,8 +7,6 @@ export const rightHand = {
   rightForearm: {},
   rightElbow: {},
   rightWrist: {},
-  rightPalm: {},
-  rightFingers: {},
 };
 
 export class RightHandBodyPart extends DollBodyPart {

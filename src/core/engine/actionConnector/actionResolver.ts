@@ -45,6 +45,16 @@ export class ActionResolver {
         .getByCode(payload.payload.skill)
         ?.getDefaultSkillTime();
       this.ctx.gameData.timeManager.calcTimeSpent(skillTime || 60);
+    } else if (payload.payload.type === ACTION_PAYLOAD_TYPE.EQUIP_ITEM) {
+      const item = payload.sourceActor?.inventory.getItem(
+        payload.payload.itemIndex || 0
+      );
+      this.ctx.gameData.timeManager.calcTimeSpent(item?.getDonningTime() || 3);
+    } else if (payload.payload.type === ACTION_PAYLOAD_TYPE.UNEQUIP_ITEM) {
+      const item = this.ctx.gameData.items[payload.payload.itemId];
+      this.ctx.gameData.timeManager.calcTimeSpent(
+        item?.getDonningTime() / 2 || 3
+      );
     }
   }
 }

@@ -10,6 +10,7 @@ import { TimeManager } from './timeManager';
 import { SceneEngine } from '../../engine/SceneEngine';
 import { initGame } from '../../script/initGame';
 import { materialModels } from '../../models/items/modifications/models/materials';
+import { Item, ItemId } from '../../models/items/item';
 
 export class GameData {
   private playerCharacter: Character | null;
@@ -24,6 +25,7 @@ export class GameData {
   objects: { [index: string]: ObjectModel };
   timeManager: TimeManager;
   sceneEngine: SceneEngine;
+  items: Record<ItemId, Item>;
   //TODO: время
   //TODO: локация
   //TODO: персонажи
@@ -48,6 +50,7 @@ export class GameData {
       gameData: this,
       actionConnector: this.actionConnector,
     });
+    this.items = {};
     this.log = new Log(ctx);
     this.timeManager = new TimeManager({ ctx });
     this.sceneEngine = new SceneEngine({ ctx });

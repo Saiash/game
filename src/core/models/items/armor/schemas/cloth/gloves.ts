@@ -40,6 +40,7 @@ export const gloves: armorSchema = {
     'clothwinter-1',
     'layeredLeatherLight',
     'leatherMedium',
+    'layredClothLight',
   ],
 };
 

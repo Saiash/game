@@ -1,6 +1,7 @@
 import { Doll, specialBodyPartsList } from '..';
 import { CTX } from '../../../../../types';
 import { Character } from '../../../characters';
+import { Armor } from '../../armor';
 import { Item, ItemId } from '../../item';
 import { battleZones, equipZones } from '../types';
 
@@ -71,8 +72,20 @@ export class DollBodyPart {
     this.dollManager.unrecordEquippedItem(item.getId());
   }
 
-  isPossibleToEquip() {
-    if (Object.keys(this.equippedItems).length !== 0) {
+  isPossibleToEquip(item?: Item) {
+    if (Object.keys(this.equippedItems).length >= 3) {
+      return false;
+    }
+    if (item instanceof Armor && item.getArmorType() === 'flexible') {
+      //TODO: доделать условия
+      // подниз можно надевать только скрытого ношения и/или одежду?
+      return true;
+    }
+    if (
+      Object.values(this.getAllItems()).some(
+        i => i instanceof Armor && i.getArmorType() === 'rigit'
+      )
+    ) {
       return false;
     }
     Object.keys(this.innerParts).forEach(key => {
@@ -90,6 +103,13 @@ export class DollBodyPart {
 
   getZoneHit(): DollBodyPart {
     return this;
+  }
+
+  getDr(): number {
+    const items = this.getAllItems();
+    return Object.values(items).reduce((acc, item) => {
+      return acc + item.getDr();
+    }, 0);
   }
 }
 

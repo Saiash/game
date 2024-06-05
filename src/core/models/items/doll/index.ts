@@ -119,13 +119,13 @@ export class Doll {
   checkIfPossibleToEquip(item: Item) {
     //TODO: можно надевать до трех слоев брони. Каждый последующий слой дает -1 к DX. Броня должна быть гибкой (flexible) для внутренних слоев. То, что не дает брони - не дает штрафов.
     return item.zones.some(zoneNameGroup => {
-      return this.ifPossibleToEquipForZone(zoneNameGroup);
+      return this.ifPossibleToEquipForZone(zoneNameGroup, item);
     });
   }
 
-  private ifPossibleToEquipForZone(zone: equipZones[]) {
+  private ifPossibleToEquipForZone(zone: equipZones[], item?: Item) {
     return zone.every(zoneName => {
-      return this.getZoneByCode(zoneName).isPossibleToEquip();
+      return this.getZoneByCode(zoneName).isPossibleToEquip(item);
     });
   }
 
@@ -161,6 +161,18 @@ export class Doll {
   getRaw() {}
 
   initFromRaw() {}
+
+  checkReactionPentalty(): number {
+    //TODO: в боевой обстановке это ок; обстановка определяется локацией?
+    let penalty = 0;
+    if (this.getZoneByCode('face').getDr() >= 1) {
+      penalty += 2;
+    }
+    if (this.getZoneByCode('chest').getDr() >= 2) {
+      penalty += 2;
+    }
+    return penalty;
+  }
 
   getInnerPartByKey(key: equipZones | battleZones) {
     return this.bodyParts[key];

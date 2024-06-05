@@ -1,0 +1,33 @@
+import { armorSchema } from '..';
+
+export const jacket: armorSchema = {
+  techLevel: 0,
+  code: 'jacket',
+  zones: [['torso', 'leftHand', 'rightHand']],
+  matchingArmorTypes: [
+    'layredClothLight',
+    'cane',
+    'paddedCloth',
+    'hardenedLeatherMedium',
+    'hardenedLeatherHeavy',
+    'brigandineMedium',
+    'brigandineHeavy',
+    'horn',
+    'mailFine',
+    'straw',
+    'layeredLeatherHeavy',
+    'layeredLeatherMedium',
+    'layeredClothHeavy',
+    'jackOfPlates',
+    'leatherHeavy',
+    'leatherMedium',
+    'mailAndPlates',
+    'mailLight',
+    'mailHeavy',
+    'layeredClothMedium',
+    'papperProofed',
+    'layeredLeatherLight',
+    'mailJousting',
+    'brigandineLight',
+  ],
+};

@@ -4,6 +4,8 @@
 //TODO:  дизайн - нагрудник (грудь + пах, но не спина)
 
 import { CTX } from '../../../../types';
+import { coverageTable } from '../doll/const';
+import { equipZones } from '../doll/types';
 import { Item, ItemProps } from '../item';
 import { modificationsList } from '../modifications/fabric';
 import { materialsList } from '../modifications/models/materials';
@@ -46,7 +48,10 @@ export class Armor extends Item {
   }
 
   getDonningTime(): number {
-    return this.donningTime; //TODO: время фактически зависит от занимаемыхс слотов; нужно считать сумму по таблице покрытия
+    const zones = this.getZones(0) as equipZones[];
+    return zones.reduce((acc, zone) => {
+      return acc + (coverageTable[zone] || 0) * this.donningTime;
+    }, 0);
   }
 
   getDR(): number {

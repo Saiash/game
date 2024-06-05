@@ -5,8 +5,6 @@ export const rightLeg = {
   rightThigh: {},
   rightKnee: {},
   rightShin: {},
-  rightFoot: {},
-  rightToe: {},
 };
 
 export class RightLegBodyPart extends DollBodyPart {

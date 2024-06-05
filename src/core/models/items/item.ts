@@ -90,6 +90,7 @@ export class Item {
     this.type = type;
     this.modificationManager = new ModificationManager(modification, ctx, this);
     this.material = materialModels[materialCode]({ ctx, item: this });
+    ctx.gameData.items[this.id] = this;
   }
 
   getId(): number {
@@ -175,6 +176,14 @@ export class Item {
 
   getWeight() {
     return this.props.weight * this.modificationManager.getWeightMultiplier();
+  }
+
+  getDr() {
+    return 0;
+  }
+
+  getDonningTime(): number {
+    return 3;
   }
 
   //TODO: У предмета могут быть морфы(?) - возможность превращаться в другие предметы. Морфы должны быть строго совместимы.

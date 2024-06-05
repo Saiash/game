@@ -1,0 +1,32 @@
+import { armorSchema } from '..';
+
+export const coif: armorSchema = {
+  techLevel: 0,
+  code: 'coif',
+  zones: [['skull', 'neck']],
+  matchingArmorTypes: [
+    'layredClothLight',
+    'cane',
+    'paddedCloth',
+    'hardenedLeatherMedium',
+    'hardenedLeatherHeavy',
+    'horn',
+    'mailFine',
+    'straw',
+    'layeredLeatherHeavy',
+    'layeredLeatherMedium',
+    'layeredClothHeavy',
+    'leatherHeavy',
+    'leatherMedium',
+    'mailAndPlates',
+    'scaleLight',
+    'scaleMedium',
+    'scaleHeavy',
+    'mailLight',
+    'mailHeavy',
+    'layeredClothMedium',
+    'papperProofed',
+    'layeredLeatherLight',
+    'mailJousting',
+  ],
+};

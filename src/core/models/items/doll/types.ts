@@ -2,11 +2,15 @@
 
 import { torso } from './models/_body';
 import { head } from './models/head';
+import { leftFoot } from './models/leftFoot';
 import { leftHand } from './models/leftHand';
 import { leftLeg } from './models/leftLeg';
+import { leftPalm } from './models/leftPalm';
 import { neck } from './models/neck';
+import { rightFoot } from './models/rightFoot';
 import { rightHand } from './models/rightHand';
 import { rightLeg } from './models/rightLeg';
+import { rightPalm } from './models/rightPalm';
 
 export const majorStructure = {
   leftHand: leftHand,
@@ -16,6 +20,10 @@ export const majorStructure = {
   leftLeg: leftLeg,
   rightLeg: rightLeg,
   neck: neck,
+  leftFoot: leftFoot,
+  rightFoot: rightFoot,
+  leftPalm: leftPalm,
+  rightPalm: rightPalm,
 };
 
 export const additionalStructure = {
