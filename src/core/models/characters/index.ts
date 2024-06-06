@@ -12,7 +12,7 @@ import { LoreManager } from '../lore/loreManager';
 import { Item } from '../items/item';
 import { BattleManager } from './battle';
 
-let itemId = 0;
+let characterId = 0;
 
 export class Character {
   battleManager: BattleManager;
@@ -57,7 +57,7 @@ export class Character {
     socialGroups?: string[];
     socialStatus?: number;
   }) {
-    this.id = itemId++;
+    this.id = characterId++;
     this.location = location;
     this.ctx = ctx;
     this.gender = gender;

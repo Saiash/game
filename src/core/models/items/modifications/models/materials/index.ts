@@ -10,6 +10,7 @@ import { Silver } from './silver';
 import { SpiderSilk } from './spiderSlik';
 import { Steel } from './steel';
 import { Stone } from './stone';
+import { Wood } from './wood';
 
 export type materialsList =
   | 'stone'
@@ -22,6 +23,7 @@ export type materialsList =
   | 'spiderSilk'
   | 'cloth'
   | 'leather'
+  | 'wood'
   | 'plastic';
 
 export type materialTypes =
@@ -44,6 +46,7 @@ export const materialModels = {
   spiderSilk: SpiderSilk,
   cloth: Cloth,
   leather: Leather,
+  wood: Wood,
   plastic: Plastic,
 };
 

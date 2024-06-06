@@ -38,7 +38,6 @@ import { forceSwordList, forceSwordModels } from './models/powerSword';
 import { rapierList, rapierModels } from './models/rapier';
 import { rifleList, rifleModels } from './models/rifle';
 import { saberList, saberModels } from './models/saber';
-import { shieldList, shieldModels } from './models/shield';
 import { smallswordList, smallswordModels } from './models/shortsword';
 import { shotgunList, shotgunModels } from './models/shotgun';
 import { slingList, slingModels } from './models/sling';
@@ -74,7 +73,6 @@ export type weaponList =
   | forceSwordList
   | rapierList
   | saberList
-  | shieldList
   | shortswordList
   | smallswordList
   | spearList
@@ -116,7 +114,6 @@ export const WEAPON_LIST: Record<weaponList, createWeaponF> = {
   ...forceSwordModels,
   ...rapierModels,
   ...saberModels,
-  ...shieldModels,
   ...shortswordModels,
   ...smallswordModels,
   ...spearModels,

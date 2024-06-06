@@ -34,6 +34,8 @@ export type ItemProps = {
   mods?: any;
   options?: itemOptions;
   code: itemsList;
+  hp?: number;
+  selfDR?: number;
   //TODO: мутабельность предметов. Должен быть отдельный стейт; определяющий, в каком состоянии предмет находится. И логика переключения стейтов + список возможных стейтов.
 };
 
@@ -54,6 +56,8 @@ export class Item {
   code: itemsList;
   status: string[];
   ctx: CTX;
+  hp: { current: number; max: number };
+  selfDR: { current: number; max: number };
 
   constructor({
     ctx,
@@ -91,6 +95,8 @@ export class Item {
     this.modificationManager = new ModificationManager(modification, ctx, this);
     this.material = materialModels[materialCode]({ ctx, item: this });
     ctx.gameData.items[this.id] = this;
+    this.hp = { current: props.hp || 1, max: props.hp || 1 };
+    this.selfDR = { current: props.selfDR || 0, max: props.selfDR || 0 };
   }
 
   getId(): number {

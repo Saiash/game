@@ -9,6 +9,7 @@ export type locale = 'ru' | 'eng';
 path: skill -> lockpicking -> name
 */
 const languageResolvers: Record<entityName, entityType> = {
+  shield: 'shieldTexts',
   skill: 'skillTexts',
   race: 'raceTexts',
   perk: 'perkTexts',
@@ -21,6 +22,7 @@ const languageResolvers: Record<entityName, entityType> = {
 };
 
 type entityName =
+  | 'shield'
   | 'skill'
   | 'race'
   | 'perk'
@@ -32,6 +34,7 @@ type entityName =
   | 'modification';
 
 type entityType =
+  | 'shieldTexts'
   | 'skillTexts'
   | 'raceTexts'
   | 'perkTexts'

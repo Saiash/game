@@ -7,8 +7,10 @@ import { raceTexts } from './race';
 import { modificationsTexts } from './modifications';
 import { ammoTexts } from '../ru/ammo';
 import { armorTexts } from './armor';
+import { shieldTexts } from './shield';
 
 export const engTexts = {
+  shieldTexts,
   skillTexts,
   perkTexts,
   spellTexts,
