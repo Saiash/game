@@ -1,18 +1,18 @@
 import _, { random } from 'lodash';
 import { ModificatorManager } from '../../managers/ModificatorManager';
-import {
-  SkillProps,
-  SkillInputProps,
-  CheckResults,
-  ResolveResult,
-  SkillManager,
-} from './skillManager';
+import { SkillManager } from './skillManager';
 import { Attribute } from '../characters/attributes/attribute';
 import { ActionPayload, useSkillPayload } from '../../engine/actionConnector';
 import { SkillResolver } from '../skills/resolvers';
 import { CTX, PartialRecord } from '../../../types';
 import { ACTION_PAYLOAD_TYPE } from '../../engine/constants';
 import { skillList } from '.';
+import {
+  CheckResults,
+  ResolveResult,
+  SkillInputProps,
+  SkillProps,
+} from './types';
 
 export class Skill {
   protected exp: number;

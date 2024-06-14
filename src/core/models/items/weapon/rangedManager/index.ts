@@ -151,11 +151,13 @@ export class RangedManager extends BaseManager {
 
   calculateThrustVal(maxStr: number): damageRoll {
     const itemStr = this.getOwnStr();
+    if (itemStr === 0) return super.calculateThrustVal(maxStr);
     return calculateThrustVal(itemStr, maxStr, 0);
   }
 
   calculateSwingVal(maxStr: number): damageRoll {
     const itemStr = this.getOwnStr();
+    if (itemStr === 0) return super.calculateSwingVal(maxStr);
     return calculateSwingVal(itemStr, maxStr, 0);
   }
 }

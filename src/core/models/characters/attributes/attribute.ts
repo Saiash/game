@@ -1,9 +1,9 @@
-import { random } from 'lodash';
 import { Character } from '..';
 import { CTX } from '../../../../types';
 import { ModificatorManager } from '../../../../core/managers/ModificatorManager';
-import { CheckResults } from '../../skills/skillManager';
 import { AttributeManager, AttributeProps } from './';
+import { CheckResults } from '../../skills/types';
+import { throwDices } from '../../../utils/diceThrower';
 
 export class Attribute {
   props: AttributeProps;
@@ -45,10 +45,10 @@ export class Attribute {
     return this.props.rawValue;
   }
 
-  check(difficulty: number): CheckResults {
-    const rand = Math.round(random(1, 6) + random(1, 6) + random(1, 6));
-    const result = rand <= this.getValue() - difficulty;
-    const successMargin = rand - this.getValue() - difficulty;
+  check(difficulty: number = 0): CheckResults {
+    const rand = throwDices(3, 6);
+    const result = rand <= this.getValue() + difficulty;
+    const successMargin = rand - this.getValue() + difficulty;
     return { rand, value: this.getValue(), result, difficulty, successMargin };
   }
 

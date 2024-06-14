@@ -2,6 +2,7 @@ import { CTX } from '../../../types';
 import { Item } from './item';
 import { ObjectModel } from '../../models/locations/object';
 import { Character } from '../characters';
+import { Weight } from '../characters/secondaryAttributes/models/weight';
 
 export class Inventory {
   items: { [index: number]: Item };
@@ -42,12 +43,18 @@ export class Inventory {
   add(item: Item): boolean {
     this.items[this.getFirstFreeSlot()] = item;
     item.owner = this.character;
+    this.character?.secondaryAttributes
+      .getByCode<Weight>('weight')
+      .addWeight(item.getWeight());
     return true;
   }
 
   removeItem(index: number) {
     if (this.items[index]) {
       this.items[index].setOwner(undefined);
+      this.character?.secondaryAttributes
+        .getByCode<Weight>('weight')
+        .removeWeight(this.items[index].getWeight());
       delete this.items[index];
     }
   }

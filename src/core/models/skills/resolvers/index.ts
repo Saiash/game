@@ -1,4 +1,3 @@
-import { CheckResults, ResolveResult } from '../../skills/skillManager';
 import { ActionPayload } from '../../../engine/actionConnector';
 
 import type { CTX } from '../../../../types';
@@ -6,6 +5,7 @@ import { Event } from '../../../models/events';
 import { TagSystem } from '../../../managers/tag';
 import { ACTION_PAYLOAD_TYPE } from '../../../engine/constants';
 import { Character } from '../../characters';
+import { CheckResults, ResolveResult } from '../types';
 
 export class SkillResolver {
   code: string;

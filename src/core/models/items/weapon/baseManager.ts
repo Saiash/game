@@ -1,9 +1,9 @@
-import { weaponManagerTypes } from '.';
+import { Weapon, weaponManagerTypes } from '.';
 import { CTX } from '../../../../types';
 import { damageRoll } from '../../characters/secondaryAttributes/models/damage';
 import { skillList } from '../../skills';
 import { Item } from '../item';
-import { damageType } from './damage';
+import { calculateSwingVal, calculateThrustVal, damageType } from './damage';
 import { attackTypesList } from './meleeManager';
 
 export type baseWeaponManagerProps = {
@@ -31,7 +31,7 @@ export class BaseManager {
   strBased: boolean;
   type: string = 'base';
   ctx: CTX;
-  item: Item;
+  item: Weapon;
 
   constructor({
     ctx,
@@ -46,6 +46,7 @@ export class BaseManager {
     this.relativeSkill = props.relativeSkill;
     this.damageSets = props.damageSets;
     this.strBased = props.strBased || false;
+    if (!(item instanceof Weapon)) throw new Error();
     this.item = item;
   }
 
@@ -71,6 +72,36 @@ export class BaseManager {
 
   getArmorDelimiter(setIndex?: number): number {
     return this.getDamageSetByIndex(setIndex).armorDelimiter || 1;
+  }
+
+  getOwnStr() {
+    return 0;
+  }
+
+  getDmgMod(index: number = 0) {
+    const attackType = this.getDamageSetByIndex(index).attackType;
+    const weapon = this.item;
+    if (attackType === 'swing') {
+      return this.calculateSwingVal(weapon.strRequired * 3);
+    } else {
+      return this.calculateThrustVal(weapon.strRequired * 3);
+    }
+  }
+
+  calculateThrustVal(maxStr: number): damageRoll {
+    return calculateThrustVal(
+      this.item.owner?.attributeManager.getByCode('str').getValue() || 0,
+      maxStr,
+      0
+    );
+  }
+
+  calculateSwingVal(maxStr: number): damageRoll {
+    return calculateSwingVal(
+      this.item.owner?.attributeManager.getByCode('str').getValue() || 0,
+      maxStr,
+      0
+    );
   }
 
   isStrBased() {

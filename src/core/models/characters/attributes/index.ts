@@ -1,7 +1,6 @@
 import { Character } from '..';
 import { CTX } from '../../../../types';
 import { ModificatorManager } from '../../../../core/managers/ModificatorManager';
-import { CheckResults } from '../../skills/skillManager';
 import { Attribute } from './attribute';
 import { Dexterity } from './models/dexterity';
 import { Fatigue } from './models/fatigue';
@@ -13,6 +12,7 @@ import { Perception } from './models/perception';
 import { Speed } from './models/speed';
 import { Strength } from './models/strength';
 import { Will } from './models/will';
+import { CheckResults } from '../../skills/types';
 
 export type AttributeProps = {
   name: string;

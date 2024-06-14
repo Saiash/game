@@ -1,6 +1,6 @@
 import { CTX } from '../../../types';
 import { AttributeManager, AttributeProps } from './attributes';
-import { SkillManager, InputSkillProps } from '../skills/skillManager';
+import { SkillManager } from '../skills/skillManager';
 import { Location } from '../../models/locations';
 import { TagSystem } from '../../managers/tag';
 import { Tag } from '../../managers/tag/models/tag';
@@ -11,6 +11,7 @@ import { Doll } from '../items/doll';
 import { LoreManager } from '../lore/loreManager';
 import { Item } from '../items/item';
 import { BattleManager } from './battle';
+import { InputSkillProps } from '../skills/types';
 
 let characterId = 0;
 

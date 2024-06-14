@@ -1,6 +1,6 @@
 import { SkillResolver } from '.';
-import { ResolveResult } from '../../skills/skillManager';
 import { ActionPayload } from '../../../engine/actionConnector';
+import { ResolveResult } from '../types';
 
 export class CommonActionResolver extends SkillResolver {
   async resolve(input: ActionPayload): Promise<ResolveResult> {

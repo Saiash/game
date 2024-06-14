@@ -1,8 +1,7 @@
 import { Character } from '../..';
 import { CTX } from '../../../../../types';
-import { BASE_TIME_PER_ACTION } from '../../../../engine/constants';
+import { ResolveResult } from '../../../skills/types';
 import { Strength } from '../../attributes/models/strength';
-import { ResolveResult } from '../../../skills/skillManager';
 import { SecondaryAttribute } from '../attribute';
 
 export class Weight extends SecondaryAttribute {
@@ -52,14 +51,22 @@ export class Weight extends SecondaryAttribute {
   }
 
   basicWeight(): number {
-    return this.strength.getRawValue() / 5;
+    return Math.pow(this.strength.getValue(), 2) / 5;
+  }
+
+  addWeight(val: number) {
+    return (this.currentVal += val);
+  }
+
+  removeWeight(val: number) {
+    return (this.currentVal += val);
   }
 
   encumbrance(): number {
     let level = Math.floor(this.currentVal / this.basicWeight());
     if (level >= 4 && level <= 6) {
       level = 3;
-    } else {
+    } else if (level > 6) {
       level = 4;
     }
     return level;

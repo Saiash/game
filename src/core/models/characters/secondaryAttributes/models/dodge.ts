@@ -8,20 +8,20 @@ export class Dodge extends SecondaryAttribute {
     super({ ctx, character });
   }
 
-  getRawValue(): number {
+  getRawValue() {
+    return (
+      Math.floor(
+        this.character.attributeManager.getByCode('speed')?.getValue() || 0
+      ) + 3
+    );
+  }
+
+  getValue(): number {
     const encumbrance = this.character.secondaryAttributes
       .getByCode<Weight>('weight')
       .encumbrance();
     return Math.max(
-      ...[
-        Math.floor(
-          this.character.attributeManager.getByCode('speed')?.getValue() || 0
-        ) +
-          3 -
-          encumbrance +
-          this.getModsValue(),
-        1,
-      ]
+      ...[this.getRawValue() - encumbrance + this.getModsValue(), 1]
     );
   }
 }

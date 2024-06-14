@@ -43,6 +43,7 @@ export type majorBodyParts = keyof typeof majorStructure;
 export type additionalBodyParts = keyof typeof additionalStructure;
 
 export type headZonesGroup = keyof typeof head | keyof typeof head.skull;
+export type torsoZonesGroup = keyof typeof torso | keyof typeof torso.chest;
 export type leftLegZonesGroup = keyof typeof leftLeg;
 export type rightLegZonesGroup = keyof typeof rightLeg;
 export type leftHandZonesGroup = keyof typeof leftHand;
@@ -55,6 +56,7 @@ export type mouthZonesGroup = keyof typeof head.mouth;
 
 export type equipZones =
   | majorBodyParts
+  | torsoZonesGroup
   | additionalBodyParts
   | headZonesGroup
   | leftLegZonesGroup

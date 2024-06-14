@@ -1,6 +1,8 @@
 import { CTX, PartialRecord } from '../../../../types';
+import { damagePayload } from '../../../engine/battleEngine/types';
 import { throwDices } from '../../../utils/diceThrower';
 import { Character } from '../../characters';
+import { Weight } from '../../characters/secondaryAttributes/models/weight';
 import { Item, ItemId } from '../item';
 import { damageType } from '../weapon/damage';
 import { DollBodyPart } from './models';
@@ -83,12 +85,19 @@ export class Doll {
 
   recordEquippedItem(item: Item) {
     if (!this.equippedItems[item.getId()]) {
+      this.character?.secondaryAttributes
+        .getByCode<Weight>('weight')
+        .addWeight(item.getWeight());
       this.equippedItems[item.getId()] = item;
+      item.setOwner(this.character);
     }
   }
 
   unrecordEquippedItem(itemId: ItemId) {
     if (this.equippedItems[itemId]) {
+      this.character?.secondaryAttributes
+        .getByCode<Weight>('weight')
+        .removeWeight(this.equippedItems[itemId].getWeight());
       delete this.equippedItems[itemId];
     }
   }
@@ -150,12 +159,21 @@ export class Doll {
     return this.getZoneByCode(code).getAllItems();
   }
 
-  receiveDamageByZone(damage: number, zone: string, type: damageType) {
-    return null; // TODO
+  getItemsByZones(codes: equipZones[]) {
+    return this.getZonesByCodes(codes).map(z => z.getAllItems());
+  }
+
+  receiveDamageByZone(damagePayload: damagePayload) {
+    const { zone } = damagePayload;
+    return this.getZoneByCode(zone).receiveDamage(damagePayload);
   }
 
   getZoneByCode(zone: equipZones) {
     return this.bodyParts[zone];
+  }
+
+  getZonesByCodes(zones: equipZones[]): DollBodyPart[] {
+    return zones.map(z => this.bodyParts[z]);
   }
 
   getRaw() {}

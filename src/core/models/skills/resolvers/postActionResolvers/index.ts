@@ -1,5 +1,4 @@
 import _, { isArray } from 'lodash';
-import { ResolveResult } from '../../../skills/skillManager';
 import { CTX } from '../../../../../types';
 import { ActionPayload } from '../../../../engine/actionConnector';
 import { Event } from '../../../../models/events';
@@ -10,6 +9,7 @@ import {
 } from '../../../../managers/tag/models/tag';
 import { ACTION_PAYLOAD_TYPE } from '../../../../engine/constants';
 import { Character } from '../../../characters';
+import { ResolveResult } from '../../types';
 
 export const POST_ACTIONS_RESOLVERS: {
   [index: string]: (

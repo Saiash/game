@@ -7,6 +7,8 @@ import { Character } from '../..';
 
 export class Hitpoints extends Attribute {
   strength: Strength;
+  current: number = 0;
+  max: number = 0;
 
   constructor({
     ctx,
@@ -23,6 +25,26 @@ export class Hitpoints extends Attribute {
     if (!attributeManager?.collection['str'])
       throw Error('Str should be defined before HP');
     this.strength = attributeManager.collection['str'];
+    this.renewMaxValue();
+  }
+
+  renewMaxValue(): number {
+    const newVal = this.getValue();
+    const diff = newVal - this.max;
+    this.changeCurrentValue(diff);
+    return (this.max = newVal);
+  }
+
+  changeCurrentValue(diff: number) {
+    this.current = this.current + diff;
+  }
+
+  getCurrentValue(): number {
+    return this.current;
+  }
+
+  recieveDamage(damage: number) {
+    return (this.current -= damage);
   }
 
   getValue(): number {

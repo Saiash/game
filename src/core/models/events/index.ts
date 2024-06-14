@@ -3,11 +3,10 @@ import { CTX } from '../../../types';
 import type { ActionPayload } from '../../engine/actionConnector';
 import { EventAction } from '../../managers/tag/models/tag';
 import { Condition } from '../../managers/tag/models/condition';
-import { ResolveResult } from '../skills/skillManager';
 import { TagSystem } from '../../managers/tag';
 import { ACTION_PAYLOAD_TYPE } from '../../engine/constants';
-import { GameData } from '../../engine/gameData';
 import { POST_ACTIONS_RESOLVERS } from '../skills/resolvers/postActionResolvers';
+import { ResolveResult } from '../skills/types';
 
 export type rawEvent = { description: string; actions: EventAction[] };
 

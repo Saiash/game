@@ -1,7 +1,8 @@
 import { CTX } from '../../../../types';
 import { Attribute } from '../../characters/attributes/attribute';
-import { SkillInputProps, SkillManager } from '../skillManager';
+import { SkillManager } from '../skillManager';
 import { Skill } from '../skill';
+import { SkillInputProps } from '../types';
 
 const skillSettings: SkillInputProps = {
   name: 'Бой неосновной рукой',

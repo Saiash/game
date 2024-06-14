@@ -1,8 +1,12 @@
 import { Doll, specialBodyPartsList } from '..';
 import { CTX } from '../../../../../types';
+import { damagePayload } from '../../../../engine/battleEngine/types';
 import { Character } from '../../../characters';
+import { Hitpoints } from '../../../characters/attributes/models/hitpoints';
+import { damageTaken } from '../../../characters/battle/types';
 import { Armor } from '../../armor';
 import { Item, ItemId } from '../../item';
+import { damageMods } from '../../weapon/damage';
 import { battleZones, equipZones } from '../types';
 
 export type bodypartProps = {
@@ -13,6 +17,7 @@ export type bodypartProps = {
 
 export class DollBodyPart {
   innerParts: Record<equipZones | battleZones, DollBodyPart>;
+  parentPart: DollBodyPart | null;
   hp: number;
   ctx: CTX;
   character: Character;
@@ -27,7 +32,12 @@ export class DollBodyPart {
     code,
     innerParts,
     dollManager,
-  }: bodypartProps & { innerParts: any; dollManager: Doll }) {
+    parentPart,
+  }: bodypartProps & {
+    innerParts: any;
+    dollManager: Doll;
+    parentPart?: DollBodyPart;
+  }) {
     const record: Record<string, DollBodyPart> = {};
     Object.keys(innerParts).forEach(part => {
       const _part = part as equipZones | battleZones;
@@ -39,6 +49,7 @@ export class DollBodyPart {
         ctx,
         code: _part,
         dollManager,
+        parentPart: this,
       });
     });
     this.innerParts = record;
@@ -47,6 +58,7 @@ export class DollBodyPart {
     this.ctx = ctx;
     this.code = code;
     this.dollManager = dollManager;
+    this.parentPart = parentPart || null;
     dollManager.addBodyPart(code, this);
   }
 
@@ -110,6 +122,34 @@ export class DollBodyPart {
     return Object.values(items).reduce((acc, item) => {
       return acc + item.getDr();
     }, 0);
+  }
+
+  receiveDamage(damagePayload: damagePayload): damageTaken {
+    const { value, type, armorDelimiter } = damagePayload;
+
+    const dr = this.getDr();
+    const rawDamage = value - dr / armorDelimiter;
+    if (rawDamage <= 0)
+      return { zone: this.code as battleZones, damage: 0, DR: dr };
+
+    //bluntTrauma
+    if (dr * 2 > rawDamage) {
+      this.applyDamage(rawDamage);
+      return { zone: this.code as battleZones, damage: rawDamage, DR: dr };
+    }
+    const resultingDmg = rawDamage * damageMods[type];
+    this.applyDamage(resultingDmg);
+    return { zone: this.code as battleZones, damage: resultingDmg, DR: dr };
+  }
+
+  private applyDamage(value: number) {
+    this.hp = this.hp - value;
+    if (this.parentPart) {
+      this.parentPart.applyDamage(value);
+    }
+    this.dollManager.character.attributeManager
+      .getByCode<Hitpoints>('hp')
+      .recieveDamage(value);
   }
 }
 
