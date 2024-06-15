@@ -1,7 +1,8 @@
-import { CTX } from '../../../types';
 import { GameData } from '../gameData';
-import { ActionPayload, ActionConnector } from '.';
 import { ACTION_PAYLOAD_TYPE } from '../constants';
+
+import type { ActionPayload, ActionConnector } from '.';
+import type { CTX } from '../../../types';
 
 export class ActionResolver {
   gameData: GameData;
