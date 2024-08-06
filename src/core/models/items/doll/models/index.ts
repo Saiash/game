@@ -109,7 +109,7 @@ export class DollBodyPart {
     return true;
   }
 
-  getAllItems() {
+  getAllItems(): Record<ItemId, Item> {
     return this.equippedItems;
   }
 

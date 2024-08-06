@@ -35,16 +35,16 @@ export class BattleManager {
     return this.location;
   }
 
-  attack(options: attackOptions): damagePayload | null {
+  attack(options: attackOptions, mod: number = 0): damagePayload | null {
     const { attackType, zone, hand } = options;
-    const weapon = this.character.doll.getItemsByZone(`${hand}Tool`)[0];
+    const weapon = this.character.doll.getItemsByZoneAsMap(`${hand}Tool`)[0];
     if (!(weapon instanceof Weapon)) {
       return null;
     }
     const weaponManager = weapon.getManagerByType(attackType);
     if (!weaponManager) return null;
 
-    const attackResult = this.rollForAttack(options, weapon);
+    const attackResult = this.rollForAttack(options, weapon, mod);
     const amountOfHits = this.countOfHits(options, attackResult, weapon);
     if (attackResult.result) {
       return {
@@ -60,7 +60,7 @@ export class BattleManager {
 
   checkWeapon(options: attackOptions) {
     const { attackType, hand } = options;
-    const weapon = this.character.doll.getItemsByZone(`${hand}Tool`)[0];
+    const weapon = this.character.doll.getItemsByZoneAsMap(`${hand}Tool`)[0];
     if (!(weapon instanceof Weapon)) {
       return null;
     }
@@ -159,7 +159,11 @@ export class BattleManager {
     return this.character.doll.receiveDamageByZone(damagePayload);
   }
 
-  private rollForAttack(options: attackOptions, weapon: Weapon): CheckResults {
+  private rollForAttack(
+    options: attackOptions,
+    weapon: Weapon,
+    outerMod: number = 0
+  ): CheckResults {
     const { attackType } = options;
 
     const weaponManager = weapon.getManagerByType(attackType);
@@ -168,9 +172,9 @@ export class BattleManager {
 
     const weaponStr = weapon.getStrRequired();
     const str = this.character.attributeManager.getByCode('str').getValue();
-    let mod = 0;
+    let mod = 0 + outerMod;
     if (weaponStr > str) {
-      mod = str - weaponStr;
+      mod = mod + str - weaponStr;
     }
     return this.character.skillManager.check({
       code: skillCode,
@@ -247,7 +251,7 @@ export class BattleManager {
 
   rollForAffliction(options: attackOptions) {
     const { hand, attackType, zone } = options;
-    const weapon = this.character.doll.getItemsByZone(`${hand}Tool`);
+    const weapon = this.character.doll.getItemsByZoneAsMap(`${hand}Tool`)[0];
     if (!(weapon instanceof Weapon)) {
       return null;
     }

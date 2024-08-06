@@ -67,6 +67,10 @@ export type characterStatus = {
     target: number;
     turnsCount: number;
   };
+  feint: {
+    target: number;
+    value: number;
+  };
   pose: pose;
 };
 

@@ -14,7 +14,7 @@ import { weaponManagers } from './weapon';
 
 export type ItemId = number;
 export type rawItem = ItemProps;
-export type itemType = 'item' | 'weapon' | 'ammo';
+export type itemType = 'item' | 'weapon' | 'ammo' | 'armor';
 let itemId: ItemId = 0;
 
 export type itemOptions = { lockable?: boolean; hood?: boolean };

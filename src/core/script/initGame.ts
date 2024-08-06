@@ -16,6 +16,12 @@ export async function initGame(gameData: GameData) {
     //await initItems(gameData),
     await initCharacters(gameData),
   ]);
+  await characters[1].skillManager.add({
+    name: 'broadsword',
+    exp: 12,
+  });
+  const sword = ItemManager.createItemByCode('katana', gameData.ctx, ['good']);
+  characters[1].doll.equipItem({ item: sword, performer: characters[1] });
 
   const axe = ItemManager.createItemByCode('axe', gameData.ctx, ['good']);
   const armor = ItemManager.createItemByCode(
@@ -38,17 +44,20 @@ export async function initGame(gameData: GameData) {
   //const attack = gameData.battleEngine.performAction({
   gameData.battleEngine.performAction({
     actorId: gameData.getPlayerCharacter().getId(),
-    maneur: 'changePose',
+    maneur: 'totalAttack',
     otherOptions: {
       changePoseDirection: 'down',
     },
-    // attackOptions: {
-    //   hand: 'right',
-    //   setIndex: 0,
-    //   attackType: 'melee',
-    //   target: characters[1].getId(),
-    //   zone: 'torso',
-    // },
+    attackOptions: {
+      hand: 'right',
+      setIndex: 0,
+      attackType: 'melee',
+      target: characters[1].getId(),
+      zone: 'torso',
+      options: {
+        type: 'feint',
+      },
+    },
   });
   // if (attack) {
   //   gameData.battleEngine.performAction({
@@ -78,23 +87,23 @@ export async function initGame(gameData: GameData) {
     location: gameData.locations.defaultLocation,
   });
   await gameData.sceneEngine.initScene('scene_1');
-  const text = JSON.stringify(
-    characters[0].skillManager.check({
-      code: 'lockpicking',
-      difficulty: 12,
-      timeMod: 0,
-    })
-  );
-  gameData.log.addEvent({ text });
-  gameData.log.addEvent({
-    text: gameData
-      .getPlayerCharacter()
-      .perkManager.getAsArray()
-      .map(p => {
-        return p[0];
-      })
-      .join(', '),
-  });
+  // const text = JSON.stringify(
+  //   characters[0].skillManager.check({
+  //     code: 'lockpicking',
+  //     difficulty: 12,
+  //     timeMod: 0,
+  //   })
+  // );
+  // gameData.log.addEvent({ text });
+  // gameData.log.addEvent({
+  //   text: gameData
+  //     .getPlayerCharacter()
+  //     .perkManager.getAsArray()
+  //     .map(p => {
+  //       return p[0];
+  //     })
+  //     .join(', '),
+  // });
 
   console.log('test');
 }

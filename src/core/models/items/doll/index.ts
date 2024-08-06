@@ -155,8 +155,11 @@ export class Doll {
     return this.equippedItems;
   }
 
-  getItemsByZone(code: equipZones) {
+  getItemsByZone(code: equipZones): Record<ItemId, Item> {
     return this.getZoneByCode(code).getAllItems();
+  }
+  getItemsByZoneAsMap(code: equipZones): Item[] {
+    return Object.values(this.getZoneByCode(code).getAllItems());
   }
 
   getItemsByZones(codes: equipZones[]) {

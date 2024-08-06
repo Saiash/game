@@ -36,6 +36,10 @@ export class BattleEngine {
         target: -1,
         turnsCount: 0,
       },
+      feint: {
+        target: -1,
+        value: 0,
+      },
       pose: 'stand',
       movement: 0,
       maxMovement: 5,
@@ -134,7 +138,11 @@ export class BattleEngine {
     if (!attackOptions) return null;
     this.useAction(actorId);
     const actor = this.characters[actorId];
-    const result = actor.character.battleManager.attack(attackOptions);
+    const mod =
+      actor.status.feint.target === attackOptions.target
+        ? actor.status.feint.value
+        : 0;
+    const result = actor.character.battleManager.attack(attackOptions, mod);
     this.ctx.gameData.log.addEvent({ text: 'attack!' });
     this.ctx.gameData.log.addEvent({ text: JSON.stringify(result) });
     return result;
@@ -331,11 +339,10 @@ export class BattleEngine {
     attackOptions,
     defenceOptions,
   }: battleActionPayload) {
+    const actor = this.characters[actorId];
+    let feintValue = 0;
     if (!attackOptions) return null;
-    const result =
-      this.characters[actorId].character.battleManager.checkWeapon(
-        attackOptions
-      );
+    const result = actor.character.battleManager.checkWeapon(attackOptions);
     if (!result?.result) return null;
     const defenceResult = this.characters[
       attackOptions.target
@@ -346,8 +353,13 @@ export class BattleEngine {
       setIndex: 0,
       attackType: 'melee',
     });
-    if (!defenceResult?.result) return result.successMargin;
-    return result.successMargin - defenceResult.successMargin;
+    if (!defenceResult?.result) {
+      feintValue = result.successMargin;
+    } else {
+      feintValue = result.successMargin - defenceResult.successMargin;
+    }
+    actor.status.feint = { target: attackOptions.target, value: feintValue };
+    return actor.status.feint;
   }
 
   private actionMove({
@@ -358,9 +370,26 @@ export class BattleEngine {
 
   private actionMoveAndAttack({
     actorId,
+    maneur,
     attackOptions,
     defenceOptions,
-  }: battleActionPayload) {}
+  }: battleActionPayload) {
+    const actor = this.characters[actorId];
+    if (
+      this.characters[actorId].status.movement >= 2 &&
+      maneur !== 'totalAttack'
+    ) {
+      actor.status.aim.turnsCount = 0;
+    }
+    // мув и аттак - если не тоталка и пройдено более одного шага.
+    // для ренж -2 или bulk, для мили -4 и не больше 9 в итоге
+    this.actionAttack({
+      maneur: 'moveAndAttack',
+      actorId,
+      attackOptions,
+      defenceOptions,
+    });
+  }
 
   private actionReady({
     actorId,

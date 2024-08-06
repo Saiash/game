@@ -37,7 +37,7 @@ export class Armor extends Item {
     super({
       ctx,
       props,
-      type: 'weapon',
+      type: 'armor',
       modification,
       materialCode: materialCode || defaultMaterial,
     });

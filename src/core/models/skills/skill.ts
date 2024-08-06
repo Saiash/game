@@ -52,7 +52,7 @@ export class Skill {
     const value = this.getEffectiveValue(); // эффективный навык
     const rand = Math.round(random(1, 6) + random(1, 6) + random(1, 6)); // бросок кубика
     const result = rand <= value + difficulty; //кубик сравнивается против навыка + сложности.
-    const successMargin = rand - (value + difficulty);
+    const successMargin = value + difficulty - rand;
     const checkResults = { rand, value, difficulty, result, successMargin };
     this.getExp(checkResults);
     return checkResults;
