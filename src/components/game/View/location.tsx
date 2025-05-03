@@ -11,5 +11,5 @@ export default function Location({
 }) {
   const { gameData } = ctx;
   const currentLocation = gameData.getPlayerCharacter().getLocation();
-  return <div>{currentLocation.getDescription()}</div>;
+  return <div>{}</div>;
 }

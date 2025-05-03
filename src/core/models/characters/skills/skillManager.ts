@@ -1,7 +1,7 @@
 import { Skill } from './skill';
-import { Character } from '../characters/index';
-import { ActionPayload } from '../../engine/actionConnector';
-import { ACTION_PAYLOAD_TYPE } from '../../engine/constants';
+import { Character } from '../index';
+import { ActionPayload } from '../../../engine/actionConnector';
+import { ACTION_PAYLOAD_TYPE } from '../../../engine/constants';
 import { SKILL_LIST, skillList } from '.';
 import {
   CheckResults,
@@ -9,7 +9,7 @@ import {
   InputSkillsProps,
   ResolveResult,
 } from './types';
-import type { CTX } from '../../../types';
+import type { CTX } from '../../../../types';
 
 export class SkillManager {
   collection: { [index: string]: Skill };

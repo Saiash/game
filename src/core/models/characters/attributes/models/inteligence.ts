@@ -1,15 +1,14 @@
-import { ModificatorManager } from '../../../../../core/managers/ModificatorManager';
-import { AttributeProps } from '..';
 import { Attribute } from '../attribute';
+import { DataStore } from '../../../../engine/models/store/store';
 
 export class Inteligence extends Attribute {
-  static getDefaultProps(): AttributeProps {
-    return {
-      name: 'Inteligence',
-      code: 'int',
-      rawValue: 10,
-      modificatorManager: new ModificatorManager(),
-      typePriority: 0,
-    };
+  constructor(store: DataStore) {
+    super(store, ['int']);
+  }
+
+  initDefaultValues() {
+    this.setName('Inteligence');
+    this.setModificationValue(0);
+    this.setValue(10);
   }
 }

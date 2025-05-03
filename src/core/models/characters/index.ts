@@ -1,7 +1,6 @@
 import { CTX } from '../../../types';
-import { AttributeManager, AttributeProps } from './attributes';
-import { SkillManager } from '../skills/skillManager';
-import { Location } from '../../models/locations';
+import { AttributeManager } from './attributes';
+import { SkillManager } from './skills/skillManager';
 import { TagSystem } from '../../managers/tag';
 import { Tag } from '../../managers/tag/models/tag';
 import { SecondaryAttributes } from './secondaryAttributes';
@@ -11,62 +10,49 @@ import { Doll } from '../items/doll';
 import { LoreManager } from '../lore/loreManager';
 import { Item } from '../items/item';
 import { BattleManager } from './battle';
-import { InputSkillProps } from '../skills/types';
+import { InputSkillProps } from './skills/types';
+import { DisadvantagesManager } from '../disadvantages/disadvantagesManager';
+import { Entity } from '../../engine/models/entity/entity';
+import { CharacterModel } from '../../engine/models/entity/models/character';
 
-let characterId = 0;
+export class Character extends Entity {
+  private ctx: CTX;
+  protected character: CharacterModel;
 
-export class Character {
   battleManager: BattleManager;
   attributeManager: AttributeManager;
   secondaryAttributes: SecondaryAttributes;
   inventory: Inventory;
   skillManager: SkillManager;
   perkManager: PerkManager;
+  disadvantagesManager: DisadvantagesManager;
   doll: Doll;
-  private name: string;
   tags: TagSystem;
-  private ctx: CTX;
-  private id: number;
-  private location: Location;
   lore: LoreManager;
   private status: string[] = [];
-  private gender: 'male' | 'female';
   private cultures: string[] = [];
   private socialGroups: string[];
-  private socialStatus: number;
 
   constructor({
     ctx,
-    attributeProps,
     inventoryProps,
     skillProps,
-    name,
-    gender,
-    location,
     cultures,
     socialGroups,
-    socialStatus,
+    rawStruct,
   }: {
     ctx: CTX;
-    attributeProps?: AttributeProps[];
     inventoryProps?: { [index: number]: Item };
     skillProps?: InputSkillProps[];
-    name: string;
-    gender: 'male' | 'female';
-    location: Location;
     cultures?: string[];
     socialGroups?: string[];
-    socialStatus?: number;
+    rawStruct?: string;
   }) {
-    this.id = characterId++;
-    this.location = location;
+    super(rawStruct);
+    this.character = new CharacterModel(this.store);
+    this.attributeManager = new AttributeManager(this.store);
+
     this.ctx = ctx;
-    this.gender = gender;
-    this.attributeManager = new AttributeManager({
-      ctx,
-      character: this,
-      inputAttrs: attributeProps,
-    });
     this.inventory = new Inventory({
       ctx,
       character: this,
@@ -85,11 +71,14 @@ export class Character {
       character: this,
       input: {},
     });
+    this.disadvantagesManager = new DisadvantagesManager({
+      ctx,
+      character: this,
+      input: {},
+    });
     this.tags = new TagSystem({ ctx, owner: this });
-    this.name = name;
     this.cultures = cultures || ['default'];
     this.socialGroups = socialGroups || [];
-    this.socialStatus = socialStatus || 0;
     this.doll = new Doll({ ctx, character: this });
     this.secondaryAttributes = new SecondaryAttributes({
       ctx,
@@ -97,6 +86,10 @@ export class Character {
     });
     this.lore = new LoreManager({ ctx });
     this.battleManager = new BattleManager({ ctx, character: this });
+  }
+
+  protected initStore() {
+    this.character = new CharacterModel(this.store);
   }
 
   /**
@@ -143,7 +136,16 @@ export class Character {
   }
 
   getGender(): string {
-    return this.gender;
+    return this.character.getGender();
+  }
+
+  setGender(gender: string): Character {
+    this.character.setGender(gender);
+    return this;
+  }
+
+  getSocialStatus(): number {
+    return this.character.getSocialStatus();
   }
 
   addStatus(status: string): boolean {
@@ -163,19 +165,7 @@ export class Character {
     return false;
   }
 
-  getName() {
-    return this.name;
-  }
-
-  getId() {
-    return this.id;
-  }
-
   getRaw() {}
-
-  getLocation() {
-    return this.location;
-  }
 
   getCultures(): string[] {
     return this.cultures;
@@ -183,10 +173,6 @@ export class Character {
 
   getSocialGroups(): string[] {
     return this.socialGroups;
-  }
-
-  getSocialStatus(): number {
-    return this.socialStatus;
   }
 
   initFromRaw() {}

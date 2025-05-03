@@ -1,7 +1,7 @@
 import { weaponManagerTypes } from '..';
 import { CTX } from '../../../../../types';
 import { damageRoll } from '../../../characters/secondaryAttributes/models/damage';
-import { skillList } from '../../../skills';
+import { skillList } from '../../../characters/skills';
 import { Item } from '../../item';
 import {
   BaseManager,

@@ -13,7 +13,7 @@ import { Weapon } from '../../items/weapon';
 import { damageMods } from '../../items/weapon/damage';
 import { MeleeManager } from '../../items/weapon/meleeManager';
 import { RangedManager } from '../../items/weapon/rangedManager';
-import { CheckResults } from '../../skills/types';
+import { CheckResults } from '../skills/types';
 import { defenceResult } from './types';
 
 export class BattleManager {

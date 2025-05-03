@@ -1,46 +1,33 @@
-import { ModificatorManager } from '../../../../managers/ModificatorManager';
-import { AttributeProps, AttributeManager } from '..';
-import { Inteligence } from './inteligence';
 import { Attribute } from '../attribute';
-import { CTX } from '../../../../../types';
-import { Character } from '../..';
+import { DataStore } from '../../../../engine/models/store/store';
 
 export class Perception extends Attribute {
-  inteligence: Inteligence;
-
-  constructor({
-    ctx,
-    props,
-    character,
-    attributeManager,
-  }: {
-    ctx: CTX;
-    props: AttributeProps;
-    character: Character;
-    attributeManager?: AttributeManager;
-  }) {
-    super({ ctx, props, attributeManager, character });
-    if (!attributeManager?.collection['int'])
-      throw Error('Inteligence should be defined before per');
-    this.inteligence = attributeManager.collection['int'];
+  constructor(store: DataStore) {
+    super(store, ['per']);
   }
 
   getValue(): number {
-    const value = this.props.rawValue + this.getModsValue();
-    return this.inteligence.getValue() + value;
+    const value = super.getValue() + this.getModsValue();
+    return this.getIntValue() + value;
   }
 
   getRawValue(): number {
-    return this.inteligence.getValue();
+    return this.getIntValue();
   }
 
-  static getDefaultProps(): AttributeProps {
-    return {
-      name: 'Perception',
-      code: 'per',
-      rawValue: 0,
-      modificatorManager: new ModificatorManager(),
-      typePriority: 1,
-    };
+  private getIntValue() {
+    const [intValue] = this.store.getValueByPath([
+      'object',
+      'attribute',
+      'int',
+      'value',
+    ]);
+    return parseInt(intValue);
+  }
+
+  initDefaultValues() {
+    this.setName('Perception');
+    this.setModificationValue(0);
+    this.setValue(0);
   }
 }

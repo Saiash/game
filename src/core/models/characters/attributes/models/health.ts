@@ -1,15 +1,14 @@
-import { ModificatorManager } from '../../../../../core/managers/ModificatorManager';
-import { AttributeProps } from '..';
 import { Attribute } from '../attribute';
+import { DataStore } from '../../../../engine/models/store/store';
 
 export class Health extends Attribute {
-  static getDefaultProps(): AttributeProps {
-    return {
-      name: 'Health',
-      code: 'ht',
-      rawValue: 10,
-      modificatorManager: new ModificatorManager(),
-      typePriority: 1,
-    };
+  constructor(store: DataStore) {
+    super(store, ['ht']);
+  }
+
+  initDefaultValues() {
+    this.setName('Health');
+    this.setModificationValue(0);
+    this.setValue(10);
   }
 }

@@ -1,66 +1,30 @@
-import { Character } from '..';
-import { CTX } from '../../../../types';
-import { ModificatorManager } from '../../../../core/managers/ModificatorManager';
-import { AttributeManager, AttributeProps } from './';
-import { CheckResults } from '../../skills/types';
-import { throwDices } from '../../../utils/diceThrower';
+import { CharacterAttributeModel } from '../../../engine/models/entity/models/characterAttribute';
+import { DataStore } from '../../../engine/models/store/store';
+import { attrsMapType } from '../../../engine/models/store/types';
 
-export class Attribute {
-  props: AttributeProps;
-  attributeManager: AttributeManager | null;
-  character: Character;
-  ctx: CTX;
-
-  constructor({
-    props,
-    ctx,
-    character,
-    attributeManager,
-  }: {
-    props: AttributeProps;
-    character: Character;
-    attributeManager?: AttributeManager;
-    ctx: CTX;
-  }) {
-    this.attributeManager = attributeManager || null;
-    this.props = props;
-    this.ctx = ctx;
-    this.character = character;
-  }
-
-  getName(): string {
-    return this.props.name;
+export class Attribute extends CharacterAttributeModel {
+  constructor(store: DataStore, path: attrsMapType[]) {
+    super(store, path);
+    if (!this._getUnsafeValue('value')) {
+      this.initDefaultValues();
+    }
   }
 
   getValue(): number {
-    let value = this.props.rawValue;
+    let value = super.getValue();
     return value + this.getModsValue();
   }
 
   getModsValue(): number {
-    return this.props.modificatorManager.getValue();
+    return this.getModificationValue();
+    //return this.props.modificatorManager.getValue();?? ToDo? Значения, которые как-то прокидываются извне и могут влиять; например кольцо +1 силы
   }
 
   getRawValue(): number {
-    return this.props.rawValue;
+    return super.getValue();
   }
 
-  check(difficulty: number = 0): CheckResults {
-    const rand = throwDices(3, 6);
-    const result = rand <= this.getValue() + difficulty;
-    const successMargin = rand - this.getValue() + difficulty;
-    return { rand, value: this.getValue(), result, difficulty, successMargin };
-  }
-
-  static getDefaultProps(): AttributeProps {
-    return {
-      name: '',
-      code: '',
-      rawValue: 10,
-      modificatorManager: new ModificatorManager(),
-      typePriority: 0,
-    };
-  }
+  initDefaultValues() {}
 
   getRaw() {}
 

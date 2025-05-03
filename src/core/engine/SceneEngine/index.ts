@@ -1,7 +1,6 @@
 import { CTX } from '../../../types';
-import { nodeId } from './nodes';
-import { Node, NodeData } from './nodes/node';
-import { Scene, SceneData, sceneId } from './nodes/scene';
+import { nodeId } from '../../models/scene';
+import { Node, NodeData } from '../../models/scene/node';
 import { Condition } from '../../managers/tag/models/condition';
 
 export type nodeHistory = {
@@ -11,49 +10,21 @@ export type nodeHistory = {
 export class SceneEngine {
   private ctx: CTX;
   private currentNode: Node | null;
-  private currentScene: Scene | null;
-  private currentScenes: sceneId[];
-  private sceneHistory: { [index: sceneId]: nodeHistory };
   private lastNodeAction: number;
 
   constructor({ ctx }: { ctx: CTX }) {
     this.ctx = ctx;
     this.currentNode = null;
-    this.currentScene = null;
-    this.currentScenes = [];
-    this.sceneHistory = {};
     this.lastNodeAction = -1;
-  }
-
-  async initScene(sceneId: sceneId): Promise<void> {
-    this.currentScene = await this.getSceneById(sceneId);
-    this.currentScenes.push(sceneId);
-    await this.initNode(this.currentScene.getInitialNodeId());
-  }
-
-  async getSceneById(sceneId: sceneId): Promise<Scene> {
-    const sceneData = (await this.ctx.dataloaders.getScene(
-      sceneId
-    )) as SceneData;
-    return new Scene({ data: sceneData, ctx: this.ctx });
   }
 
   async getNodeById(nodeId: nodeId): Promise<Node> {
-    const nodeData = (await this.ctx.dataloaders.getNode(nodeId)) as NodeData;
-    return new Node({ data: nodeData, ctx: this.ctx });
+    return new Node(nodeId, this.ctx);
   }
 
   async initNode(nodeId: string) {
-    if (!this.currentScene) return;
     this.lastNodeAction = -1;
     this.currentNode = await this.getNodeById(nodeId);
-    const currentSceneId = this.currentScene.getId();
-
-    if (!this.sceneHistory[currentSceneId]) {
-      this.sceneHistory[currentSceneId] = {};
-    }
-    this.sceneHistory[currentSceneId][nodeId] = {};
-
     await this.currentNode.init();
   }
 
@@ -65,11 +36,13 @@ export class SceneEngine {
     return this.lastNodeAction;
   }
 
-  saveLastAction(index: number): void {
-    this.lastNodeAction = index;
-    const currentSceneId = this.currentScene?.getId() || '';
-    const currentNodeId = this.currentNode?.getId() || '';
-    this.sceneHistory[currentSceneId][currentNodeId][index] = true;
+  async forwardByArrow(index: number) {
+    if (!this.currentNode) throw new Error('no current node');
+    const arrow = this.currentNode.getArrows()[index];
+    if (!!arrow.onChooseEffect) {
+      arrow.onChooseEffect(this.ctx);
+    }
+    await this.initNode(arrow.nextNodeId);
   }
 
   /*
@@ -95,8 +68,7 @@ export class SceneEngine {
     const currentNode = this.currentNode;
     if (!currentNode)
       throw new Error('No current node, SceneEngine -> executeAction');
-    await currentNode.executeAction(index);
-    this.saveLastAction(index);
+    //await currentNode.executeAction(index);
     const nextNode = await this.getNextNode();
     if (nextNode === null) {
       //TODO: вернуться на уровень выше к прошлой сцене

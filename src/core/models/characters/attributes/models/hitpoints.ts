@@ -1,68 +1,48 @@
 import { ModificatorManager } from '../../../../../core/managers/ModificatorManager';
-import { AttributeProps, AttributeManager } from '..';
-import { Strength } from './strength';
 import { Attribute } from '../attribute';
-import { CTX } from '../../../../../types';
-import { Character } from '../..';
+import { DataStore } from '../../../../engine/models/store/store';
 
 export class Hitpoints extends Attribute {
-  strength: Strength;
-  current: number = 0;
-  max: number = 0;
-
-  constructor({
-    ctx,
-    props,
-    character,
-    attributeManager,
-  }: {
-    ctx: CTX;
-    props: AttributeProps;
-    character: Character;
-    attributeManager?: AttributeManager;
-  }) {
-    super({ ctx, props, attributeManager, character });
-    if (!attributeManager?.collection['str'])
-      throw Error('Str should be defined before HP');
-    this.strength = attributeManager.collection['str'];
-    this.renewMaxValue();
-  }
-
-  renewMaxValue(): number {
-    const newVal = this.getValue();
-    const diff = newVal - this.max;
-    this.changeCurrentValue(diff);
-    return (this.max = newVal);
+  constructor(store: DataStore) {
+    super(store, ['hp']);
   }
 
   changeCurrentValue(diff: number) {
-    this.current = this.current + diff;
+    this.setCurrentValue(this.getCurrentValue() + diff);
   }
 
   getCurrentValue(): number {
-    return this.current;
+    return super.getCurrentValue();
   }
 
   recieveDamage(damage: number) {
-    return (this.current -= damage);
+    this.changeCurrentValue(-damage);
+    return this.getCurrentValue();
   }
 
   getValue(): number {
-    const value = this.props.rawValue + this.getModsValue();
-    return this.strength.getValue() + value;
+    const value = super.getValue() + this.getModsValue();
+    return this.getRawValue() + value;
   }
 
   getRawValue(): number {
-    return this.strength.getValue();
+    return this.getStrValue();
   }
 
-  static getDefaultProps(): AttributeProps {
-    return {
-      name: 'Hitpoints',
-      code: 'hp',
-      rawValue: 0,
-      modificatorManager: new ModificatorManager(),
-      typePriority: 1,
-    };
+  private getStrValue() {
+    const [strValue] = this.store.getValueByPath([
+      'object',
+      'attribute',
+      'str',
+      'value',
+    ]);
+    return parseInt(strValue);
+  }
+
+  initDefaultValues() {
+    this.setName('Hitpoints');
+    this.setModificationValue(0);
+    this.setValue(0);
+    this.setCurrentValue(this.getValue());
   }
 }

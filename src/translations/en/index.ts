@@ -8,6 +8,8 @@ import { modificationsTexts } from './modifications';
 import { ammoTexts } from '../ru/ammo';
 import { armorTexts } from './armor';
 import { shieldTexts } from './shield';
+import { nodeTexts } from './nodes';
+import { disadvantageTexts } from './disadvantage';
 
 export const engTexts = {
   shieldTexts,
@@ -20,4 +22,6 @@ export const engTexts = {
   modificationsTexts,
   ammoTexts,
   armorTexts,
+  nodeTexts,
+  disadvantageTexts,
 };

@@ -1,5 +1,5 @@
 import { battleZones } from '../../items/doll/types';
-import { CheckResults } from '../../skills/types';
+import { CheckResults } from '../skills/types';
 
 export type defenceResult = {
   defenceRoll: CheckResults;

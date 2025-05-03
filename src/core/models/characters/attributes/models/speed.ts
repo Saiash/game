@@ -1,51 +1,44 @@
 import { ModificatorManager } from '../../../../../core/managers/ModificatorManager';
-import { AttributeProps, AttributeManager } from '..';
-import { Health } from './health';
-import { Dexterity } from './dexterity';
 import { Attribute } from '../attribute';
-import { CTX } from '../../../../../types';
-import { Character } from '../..';
+import { DataStore } from '../../../../engine/models/store/store';
 
 export class Speed extends Attribute {
-  health: Health;
-  dexterity: Dexterity;
-
-  constructor({
-    ctx,
-    props,
-    attributeManager,
-    character,
-  }: {
-    ctx: CTX;
-    props: AttributeProps;
-    character: Character;
-    attributeManager?: AttributeManager;
-  }) {
-    super({ ctx, props, attributeManager, character });
-    if (!attributeManager?.collection['dex'])
-      throw Error('Dex should be defined before speed');
-    if (!attributeManager?.collection['ht'])
-      throw Error('Health should be defined before speed');
-    this.health = attributeManager.collection['ht'];
-    this.dexterity = attributeManager.collection['dex'];
+  constructor(store: DataStore) {
+    super(store, ['speed']);
   }
 
   getValue(): number {
-    const value = this.props.rawValue + this.getModsValue();
+    const value = super.getValue() + this.getModsValue();
     return this.getRawValue() + value;
   }
 
   getRawValue(): number {
-    return this.health.getValue() * 0.25 + this.dexterity.getValue() * 0.25;
+    return this.getHealtValue() * 0.25 + this.getDexValue() * 0.25;
   }
 
-  static getDefaultProps(): AttributeProps {
-    return {
-      name: 'Speed',
-      code: 'speed',
-      rawValue: 0,
-      modificatorManager: new ModificatorManager(),
-      typePriority: 1,
-    };
+  private getDexValue() {
+    const [dexValue] = this.store.getValueByPath([
+      'object',
+      'attribute',
+      'dex',
+      'value',
+    ]);
+    return parseInt(dexValue);
+  }
+
+  private getHealtValue() {
+    const [healtValue] = this.store.getValueByPath([
+      'object',
+      'attribute',
+      'ht',
+      'value',
+    ]);
+    return parseInt(healtValue);
+  }
+
+  initDefaultValues() {
+    this.setName('Speed');
+    this.setModificationValue(0);
+    this.setValue(0);
   }
 }

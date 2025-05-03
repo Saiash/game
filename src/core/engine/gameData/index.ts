@@ -108,10 +108,10 @@ export class GameData {
   addCharacter(name: string, location: Location) {
     const character = new Character({
       ctx: this.ctx,
-      name,
-      location,
-      gender: 'female',
-    });
+    })
+      .setGender('female')
+      .setName(name)
+      .setLocation(location.getId());
     this.characters[character.getId()] = character;
     location.addCharacter(character);
     return character;

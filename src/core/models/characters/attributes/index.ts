@@ -1,6 +1,3 @@
-import { Character } from '..';
-import { CTX } from '../../../../types';
-import { ModificatorManager } from '../../../../core/managers/ModificatorManager';
 import { Attribute } from './attribute';
 import { Dexterity } from './models/dexterity';
 import { Fatigue } from './models/fatigue';
@@ -12,27 +9,9 @@ import { Perception } from './models/perception';
 import { Speed } from './models/speed';
 import { Strength } from './models/strength';
 import { Will } from './models/will';
-import { CheckResults } from '../../skills/types';
-
-export type AttributeProps = {
-  name: string;
-  code: string;
-  rawValue: number;
-  modificatorManager: ModificatorManager;
-  typePriority: number;
-};
-
-export type attrsCodesList =
-  | 'str'
-  | 'dex'
-  | 'ht'
-  | 'int'
-  | 'hp'
-  | 'per'
-  | 'will'
-  | 'speed'
-  | 'move'
-  | 'ft';
+import { DataStore } from '../../../engine/models/store/store';
+import { AttributesModel } from '../../../engine/models/entity/models/attributes';
+import { characterAttrsCodesList } from '../../../engine/models/store/types';
 
 export const ATTRS_LIST = [
   { code: 'str', model: Strength },
@@ -47,46 +26,21 @@ export const ATTRS_LIST = [
   { code: 'ft', model: Fatigue },
 ];
 
-export class AttributeManager {
-  collection: { [index: string]: Attribute };
-  character: Character;
-  ctx: CTX;
+export class AttributeManager extends AttributesModel {
+  private collection = new Map<characterAttrsCodesList, Attribute>();
 
-  constructor({
-    ctx,
-    character,
-    inputAttrs,
-  }: {
-    ctx: CTX;
-    character: Character;
-    inputAttrs?: AttributeProps[];
-  }) {
-    this.ctx = ctx;
-    this.collection = {};
-    this.character = character;
+  constructor(store: DataStore) {
+    super(store);
+
     ATTRS_LIST.forEach(attr => {
-      const data = inputAttrs?.find(inputAttr => inputAttr.code === attr.code);
-      const props = data || attr.model.getDefaultProps();
-      this.collection[attr.code] = new attr.model({
-        ctx,
-        props,
-        character,
-        attributeManager: this,
-      });
+      const newModel = new attr.model(store);
+      this.collection.set(attr.code as characterAttrsCodesList, newModel);
     });
   }
 
-  check(key: string, difficulty: number): CheckResults {
-    return this.collection[key].check(difficulty);
-  }
-
-  getAsArray(): [string, Attribute][] {
-    return Object.entries(this.collection).map(i => {
-      return [i[0], i[1]];
-    });
-  }
-
-  getByCode<T = Attribute>(code: attrsCodesList): T {
-    return this.collection[code] as unknown as T;
+  getByCode<T = Attribute>(code: characterAttrsCodesList): T {
+    const attr = this.collection.get(code);
+    if (!attr) throw new Error(`not propper attribute key ${code}`);
+    return attr as unknown as T;
   }
 }

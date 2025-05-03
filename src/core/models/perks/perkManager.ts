@@ -6,20 +6,7 @@ import type { CTX, PartialRecord } from '../../../types';
 import { ACTION_PAYLOAD_TYPE } from '../../engine/constants';
 import { PERK_LIST, perkList } from '.';
 import { Character } from '../characters';
-
-export type CheckResults = {
-  rand?: number;
-  value?: number;
-  result: boolean;
-  difficulty?: number;
-};
-
-export type ResolveResult = {
-  executed: boolean;
-  payload?: ActionPayload;
-  checkResult?: CheckResults;
-  message?: string;
-};
+import { ResolveResult } from '../characters/skills/types';
 
 export class PerkManager {
   collection: PartialRecord<perkList, Perk>;

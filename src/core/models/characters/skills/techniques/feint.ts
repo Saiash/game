@@ -1,14 +1,14 @@
 import { CTX } from '../../../../types';
 import { Attribute } from '../../characters/attributes/attribute';
-import { SkillManager } from '../skillManager';
+import { SkillManager } from '../../characters/skills/skillManager';
 import { Skill } from '../skill';
 import { SkillInputProps } from '../types';
 
 const skillSettings: SkillInputProps = {
-  name: 'Бой неосновной рукой',
+  name: 'Финт',
   description:
-    'Эта техника позволяет выку- пить штраф -4 за использование определенного контактного ору- жия неосновной рукой. При ата- ке будет использоваться уровень техники, а не умения – как для атаки, так и для парирования.',
-  code: 'offHandWeaponTraining',
+    'Если вы знакомы с этой тех- никой лучше, чем это предлагает уровень по умолчанию, вы можете использовать ее вместо основного умения, если пытаетесь провес- ти финт против противника ',
+  code: 'feint',
   parentAttrCode: 'dex',
   difficulty: 'hard',
   defaultSkillTime: 1,
@@ -16,7 +16,7 @@ const skillSettings: SkillInputProps = {
   relativeSkills: {},
 };
 
-export function OffHandWeaponTraining({
+export function Feint({
   ctx,
   parentAttr,
   skillManager,

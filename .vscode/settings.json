@@ -7,7 +7,7 @@
   },
   "editor.formatOnPaste": false,
   "eslint.autoFixOnSave": true,
-  "editor.tabSize": 4,
+  "editor.tabSize": 2,
   "editor.renderWhitespace": "all",
   "extensions.ignoreRecommendations": false,
   "editor.formatOnSave": true,

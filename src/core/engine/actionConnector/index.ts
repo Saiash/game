@@ -4,7 +4,7 @@ import { GameData } from '../gameData';
 import { EventAction } from '../../managers/tag/models/tag';
 import { TagSystem } from '../../managers/tag';
 import { ACTION_PAYLOAD_TYPE } from '../constants';
-import { skillList } from '../../models/skills';
+import { skillList } from '../../models/characters/skills';
 import { perkList } from '../../models/perks';
 import { ItemId } from '../../models/items/item';
 

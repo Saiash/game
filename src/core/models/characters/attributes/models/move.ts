@@ -1,44 +1,20 @@
-import { ModificatorManager } from '../../../../../core/managers/ModificatorManager';
-import { AttributeProps, AttributeManager } from '..';
-import { Speed } from './speed';
 import { Attribute } from '../attribute';
-import { CTX } from '../../../../../types';
-import { Character } from '../..';
-import { Weight } from '../../secondaryAttributes/models/weight';
+import { DataStore } from '../../../../engine/models/store/store';
+import { calculateEncumbrance } from '../../helpers/encumbrance';
 
 export class Move extends Attribute {
-  speed: Speed;
-
-  constructor({
-    ctx,
-    props,
-    character,
-    attributeManager,
-  }: {
-    ctx: CTX;
-    props: AttributeProps;
-    character: Character;
-    attributeManager?: AttributeManager;
-  }) {
-    super({ ctx, props, attributeManager, character });
-    if (
-      !attributeManager?.collection['speed'] ||
-      !(attributeManager?.collection['speed']! instanceof Speed)
-    )
-      throw Error('Speed should be defined before move');
-    this.speed = attributeManager.collection['speed'];
+  constructor(store: DataStore) {
+    super(store, ['move']);
   }
 
   getValue(): number {
-    const value = this.props.rawValue + this.getModsValue();
-    const encumbrance = this.character.secondaryAttributes
-      .getByCode<Weight>('weight')
-      .encumbrance();
+    const value = super.getValue() + this.getModsValue();
+    const encumbrance = calculateEncumbrance(
+      this.getWeightValue(),
+      this.getStrValue()
+    );
     return Math.max(
-      ...[
-        Math.floor(this.speed.getValue() * (1 - encumbrance * 0.2)) + value,
-        1,
-      ]
+      ...[Math.floor(this.getSpeedValue() * (1 - encumbrance * 0.2)) + value, 1]
     );
   }
 
@@ -47,16 +23,42 @@ export class Move extends Attribute {
   }
 
   getRawValue(): number {
-    return Math.floor(this.speed.getValue());
+    return Math.floor(this.getSpeedValue());
   }
 
-  static getDefaultProps(): AttributeProps {
-    return {
-      name: 'Move',
-      code: 'move',
-      rawValue: 0,
-      modificatorManager: new ModificatorManager(),
-      typePriority: 1,
-    };
+  private getSpeedValue() {
+    const [speedValue] = this.store.getValueByPath([
+      'object',
+      'attribute',
+      'speed',
+      'value',
+    ]);
+    return parseInt(speedValue);
+  }
+
+  private getWeightValue() {
+    const [weightValue] = this.store.getValueByPath([
+      'object',
+      'attribute',
+      'weight',
+      'value',
+    ]);
+    return parseInt(weightValue);
+  }
+
+  private getStrValue() {
+    const [strValue] = this.store.getValueByPath([
+      'object',
+      'attribute',
+      'str',
+      'value',
+    ]);
+    return parseInt(strValue);
+  }
+
+  initDefaultValues() {
+    this.setName('Move');
+    this.setModificationValue(0);
+    this.setValue(0);
   }
 }

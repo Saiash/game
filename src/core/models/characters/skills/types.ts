@@ -1,8 +1,10 @@
 import { skillList } from '.';
-import { PartialRecord } from '../../../types';
-import { ActionPayload } from '../../engine/actionConnector';
-import { AttributeManager, attrsCodesList } from '../characters/attributes';
-import { Attribute } from '../characters/attributes/attribute';
+import { PartialRecord } from '../../../../types';
+import { ActionPayload } from '../../../engine/actionConnector';
+import { characterAttrsCodesList } from '../../../engine/models/store/types';
+import { CheckResults } from '../../../managers/ChecksManager/type';
+import { AttributeManager } from '../attributes';
+import { Attribute } from '../attributes/attribute';
 import { SkillResolver } from './resolvers';
 import { CommonActionResolver } from './resolvers/commonAction';
 import { LookResolver } from './resolvers/look';
@@ -14,7 +16,7 @@ export type SkillInputProps = {
   name: string;
   description: string;
   code: string;
-  parentAttrCode: attrsCodesList;
+  parentAttrCode: characterAttrsCodesList;
   cultureBased?: boolean;
   defaultSkillTime?: number;
   resolver?: SkillResolver;
@@ -36,14 +38,6 @@ export type InputSkillsProps = {
 export type InputSkillProps = {
   skillProps: SkillInputProps;
   exp?: number;
-};
-
-export type CheckResults = {
-  rand: number;
-  value: number;
-  result: boolean;
-  difficulty: number;
-  successMargin: number;
 };
 
 export type ResolveResult = {

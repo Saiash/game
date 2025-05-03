@@ -1,15 +1,14 @@
-import { ModificatorManager } from '../../../../../core/managers/ModificatorManager';
-import { AttributeProps } from '../';
 import { Attribute } from '../attribute';
+import { DataStore } from '../../../../engine/models/store/store';
 
 export class Strength extends Attribute {
-  static getDefaultProps(): AttributeProps {
-    return {
-      name: 'Strength',
-      code: 'str',
-      rawValue: 10,
-      modificatorManager: new ModificatorManager(),
-      typePriority: 0,
-    };
+  constructor(store: DataStore) {
+    super(store, ['str']);
+  }
+
+  initDefaultValues() {
+    this.setName('Strength');
+    this.setModificationValue(0);
+    this.setValue(10);
   }
 }

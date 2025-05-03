@@ -1,47 +1,32 @@
-import { AttributeProps, AttributeManager } from '..';
-import { Inteligence } from './inteligence';
 import { Attribute } from '../attribute';
-import { ModificatorManager } from '../../../../../core/managers/ModificatorManager';
-import { CTX } from '../../../../../types';
-import { Character } from '../..';
+import { DataStore } from '../../../../engine/models/store/store';
 
 export class Will extends Attribute {
-  inteligence: Inteligence;
-
-  constructor({
-    ctx,
-    props,
-    character,
-    attributeManager,
-  }: {
-    ctx: CTX;
-    props: AttributeProps;
-    character: Character;
-    attributeManager?: AttributeManager;
-  }) {
-    super({ ctx, props, attributeManager, character });
-    if (!attributeManager?.collection['int'])
-      throw Error('Inteligence should be defined before will');
-    this.inteligence = attributeManager.collection['int'];
+  constructor(store: DataStore) {
+    super(store, ['will']);
   }
 
   getValue(): number {
-    return (
-      this.inteligence.getValue() + this.props.rawValue + this.getModsValue()
-    );
+    return this.getIntValue() + super.getValue() + this.getModsValue();
   }
 
   getRawValue(): number {
-    return this.inteligence.getValue();
+    return this.getIntValue();
   }
 
-  static getDefaultProps(): AttributeProps {
-    return {
-      name: 'Will',
-      code: 'will',
-      rawValue: 0,
-      modificatorManager: new ModificatorManager(),
-      typePriority: 1,
-    };
+  private getIntValue() {
+    const [intValue] = this.store.getValueByPath([
+      'object',
+      'attribute',
+      'int',
+      'value',
+    ]);
+    return parseInt(intValue);
+  }
+
+  initDefaultValues() {
+    this.setName('Will');
+    this.setModificationValue(0);
+    this.setValue(0);
   }
 }

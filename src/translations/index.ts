@@ -18,7 +18,9 @@ const languageResolvers: Record<entityName, entityType> = {
   weapon: 'weaponTexts',
   ammo: 'ammoTexts',
   armor: 'armorTexts',
+  disadvantage: 'disadvantageTexts',
   modification: 'modificationsTexts',
+  node: 'nodeTexts',
 };
 
 type entityName =
@@ -31,6 +33,8 @@ type entityName =
   | 'weapon'
   | 'ammo'
   | 'armor'
+  | 'node'
+  | 'disadvantage'
   | 'modification';
 
 type entityType =
@@ -43,10 +47,14 @@ type entityType =
   | 'weaponTexts'
   | 'ammoTexts'
   | 'armorTexts'
+  | 'nodeTexts'
+  | 'disadvantageTexts'
   | 'modificationsTexts';
 
 type path = [entityName, string, string];
 
 export function getLocalisedText(locale: locale, path: path): string {
-  return texts[locale][languageResolvers[path[0]]][path[1]][path[2]];
+  const text = texts[locale][languageResolvers[path[0]]][path[1]][path[2]];
+  if (!text) return '';
+  return typeof text === 'string' ? text : text.join('\r\n');
 }

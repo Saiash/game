@@ -6,7 +6,7 @@ import { TagSystem } from '../../managers/tag';
 import { Event } from '../events';
 import { ObjectModel } from '../locations/object';
 import { perkList } from '.';
-import { ResolveResult } from './perkManager';
+import { ResolveResult } from '../characters/skills/types';
 
 let perkId = 0;
 

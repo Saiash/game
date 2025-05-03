@@ -1,15 +1,15 @@
 import { ModificatorManager } from '../../../../../core/managers/ModificatorManager';
-import { AttributeProps } from '../';
 import { Attribute } from '../attribute';
+import { DataStore } from '../../../../engine/models/store/store';
 
 export class Dexterity extends Attribute {
-  static getDefaultProps(): AttributeProps {
-    return {
-      name: 'Dexterity',
-      code: 'dex',
-      rawValue: 10,
-      modificatorManager: new ModificatorManager(),
-      typePriority: 0,
-    };
+  constructor(store: DataStore) {
+    super(store, ['dex']);
+  }
+
+  initDefaultValues() {
+    this.setName('Dexterity');
+    this.setModificationValue(0);
+    this.setValue(10);
   }
 }

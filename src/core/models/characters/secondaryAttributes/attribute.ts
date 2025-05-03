@@ -2,7 +2,7 @@ import { Character } from '..';
 import { CTX } from '../../../../types';
 import { ModificatorManager } from '../../../managers/ModificatorManager';
 import { throwDices } from '../../../utils/diceThrower';
-import { CheckResults } from '../../skills/types';
+import { CheckResults } from '../skills/types';
 
 export class SecondaryAttribute {
   character: Character;

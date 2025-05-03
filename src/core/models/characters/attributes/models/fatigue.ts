@@ -1,46 +1,34 @@
-import { ModificatorManager } from '../../../../../core/managers/ModificatorManager';
-import { AttributeProps, AttributeManager } from '..';
 import { Attribute } from '../attribute';
-import { Health } from './health';
-import { CTX } from '../../../../../types';
-import { Character } from '../..';
+import { DataStore } from '../../../../engine/models/store/store';
+import { dataValue } from '../../../../engine/models/store/types';
 
 export class Fatigue extends Attribute {
-  health: Health;
-
-  constructor({
-    ctx,
-    props,
-    attributeManager,
-    character,
-  }: {
-    ctx: CTX;
-    props: AttributeProps;
-    character: Character;
-    attributeManager?: AttributeManager;
-  }) {
-    super({ ctx, props, attributeManager, character });
-    if (!attributeManager?.collection['ht'])
-      throw Error('Health should be defined before fatigue');
-    this.health = attributeManager.collection['ht'];
+  constructor(store: DataStore) {
+    super(store, ['ft']);
   }
 
   getValue(): number {
-    const value = this.props.rawValue + this.getModsValue();
-    return this.health.getValue() + value;
+    const value = this.getRawValue() + this.getModsValue();
+    return super.getValue() + value;
   }
 
   getRawValue(): number {
-    return this.health.getValue();
+    return this.getHtValue();
   }
 
-  static getDefaultProps(): AttributeProps {
-    return {
-      name: 'Fatigue',
-      code: 'ft',
-      rawValue: 0,
-      modificatorManager: new ModificatorManager(),
-      typePriority: 1,
-    };
+  private getHtValue() {
+    const [healtValue] = this.store.getValueByPath([
+      'object',
+      'attribute',
+      'ht',
+      'value',
+    ]);
+    return parseInt(healtValue);
+  }
+
+  initDefaultValues() {
+    this.setName('Fatigue');
+    this.setModificationValue(0);
+    this.setValue(0);
   }
 }

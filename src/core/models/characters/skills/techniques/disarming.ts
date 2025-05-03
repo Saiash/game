@@ -1,6 +1,6 @@
 import { CTX } from '../../../../types';
 import { Attribute } from '../../characters/attributes/attribute';
-import { SkillManager } from '../skillManager';
+import { SkillManager } from '../../characters/skills/skillManager';
 import { Skill } from '../skill';
 import { SkillInputProps } from '../types';
 

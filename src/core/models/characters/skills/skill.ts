@@ -1,11 +1,14 @@
 import _, { random } from 'lodash';
-import { ModificatorManager } from '../../managers/ModificatorManager';
+import { ModificatorManager } from '../../../managers/ModificatorManager';
 import { SkillManager } from './skillManager';
-import { Attribute } from '../characters/attributes/attribute';
-import { ActionPayload, useSkillPayload } from '../../engine/actionConnector';
+import { Attribute } from '../attributes/attribute';
+import {
+  ActionPayload,
+  useSkillPayload,
+} from '../../../engine/actionConnector';
 import { SkillResolver } from '../skills/resolvers';
-import { CTX, PartialRecord } from '../../../types';
-import { ACTION_PAYLOAD_TYPE } from '../../engine/constants';
+import { CTX, PartialRecord } from '../../../../types';
+import { ACTION_PAYLOAD_TYPE } from '../../../engine/constants';
 import { skillList } from '.';
 import {
   CheckResults,

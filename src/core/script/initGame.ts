@@ -1,5 +1,6 @@
 import { ACTION_PAYLOAD_TYPE } from '../engine/constants';
 import { GameData } from '../engine/gameData';
+import { Entity } from '../engine/models/entity/entity';
 import { Character } from '../models/characters';
 import { Item } from '../models/items/item';
 import { ItemManager } from '../models/items/manager';
@@ -86,7 +87,10 @@ export async function initGame(gameData: GameData) {
     name: 'chest_test_2',
     location: gameData.locations.defaultLocation,
   });
-  await gameData.sceneEngine.initScene('scene_1');
+  await gameData.sceneEngine.initNode('node_init_1');
+  await gameData.sceneEngine.forwardByArrow(0);
+  await gameData.sceneEngine.forwardByArrow(1);
+  console.log(gameData.getPlayerCharacter());
   // const text = JSON.stringify(
   //   characters[0].skillManager.check({
   //     code: 'lockpicking',
@@ -104,8 +108,6 @@ export async function initGame(gameData: GameData) {
   //     })
   //     .join(', '),
   // });
-
-  console.log('test');
 }
 
 async function initCharacters(gameData: GameData): Promise<Character[]> {

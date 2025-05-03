@@ -236,11 +236,11 @@ import { Veterinary } from './models/veterinary';
 import { Whip } from './models/whip';
 import { Writing } from './models/writing';
 
-import { CTX } from '../../../types';
-import { Attribute } from '../characters/attributes/attribute';
+import { CTX } from '../../../../types';
+import { Attribute } from '../attributes/attribute';
 import { SkillManager } from './skillManager';
 import { Skill } from './skill';
-import { Character } from '../characters';
+import { Character } from '..';
 
 export type skillList =
   | 'accounting'

@@ -1,6 +1,6 @@
 import { Character } from '../..';
 import { CTX } from '../../../../../types';
-import { ResolveResult } from '../../../skills/types';
+import { ResolveResult } from '../../skills/types';
 import { Strength } from '../../attributes/models/strength';
 import { SecondaryAttribute } from '../attribute';
 
@@ -60,15 +60,5 @@ export class Weight extends SecondaryAttribute {
 
   removeWeight(val: number) {
     return (this.currentVal += val);
-  }
-
-  encumbrance(): number {
-    let level = Math.floor(this.currentVal / this.basicWeight());
-    if (level >= 4 && level <= 6) {
-      level = 3;
-    } else if (level > 6) {
-      level = 4;
-    }
-    return level;
   }
 }
