@@ -1,64 +1,47 @@
-import _, { random } from 'lodash';
-import { ModificatorManager } from '../../../managers/ModificatorManager';
-import { SkillManager } from './skillManager';
-import { Attribute } from '../attributes/attribute';
 import {
   ActionPayload,
   useSkillPayload,
 } from '../../../engine/actionConnector';
-import { SkillResolver } from '../skills/resolvers';
-import { CTX, PartialRecord } from '../../../../types';
 import { ACTION_PAYLOAD_TYPE } from '../../../engine/constants';
 import { skillList } from '.';
 import {
-  CheckResults,
   ResolveResult,
   SkillInputProps,
-  SkillProps,
 } from './types';
+import { CharacterSkillModel } from '../../../engine/models/entity/models/characterSkill';
+import { DataStore } from '../../../engine/models/store/store';
+import { getLocalisedText } from '../../../../translations';
 
-export class Skill {
-  protected exp: number;
-  resolver: SkillResolver;
-  modificatorManager: ModificatorManager;
-  skillManager: SkillManager;
-  private ctx: CTX;
+export class Skill extends CharacterSkillModel {
+  private code: skillList;
 
-  private attribute: Attribute;
-  protected difficulty: string;
-  private name: string;
-  private code: string;
-  private description: string;
-  private cultureBased: boolean;
-  private defaultSkillTime: number;
-  private relativeSkills: PartialRecord<skillList, number>;
-
-  constructor({ ctx, props }: { props: SkillProps; ctx: CTX }) {
-    this.ctx = ctx;
-    this.attribute = props.parentAttr;
-    this.exp = props.exp;
-    this.difficulty = props.difficulty;
-    this.name = props.name;
-    this.code = props.code;
-    this.description = props.description;
-    this.cultureBased = props.cultureBased || false;
-    this.relativeSkills = props.relativeSkills || {};
-    this.skillManager = props.skillManager;
-    this.defaultSkillTime = props.defaultSkillTime || 60;
-    this.modificatorManager = new ModificatorManager();
-    this.resolver =
-      props.resolver ||
-      new SkillResolver({ ctx, name: this.name, code: this.code });
+  constructor(store: DataStore, data: { code: skillList, rawStruct: string }) {
+    const { code, rawStruct } = data;
+    super(store, [code]);
+    this.code = code;
   }
 
-  check(difficulty: number): CheckResults {
-    const value = this.getEffectiveValue(); // эффективный навык
-    const rand = Math.round(random(1, 6) + random(1, 6) + random(1, 6)); // бросок кубика
-    const result = rand <= value + difficulty; //кубик сравнивается против навыка + сложности.
-    const successMargin = value + difficulty - rand;
-    const checkResults = { rand, value, difficulty, result, successMargin };
-    this.getExp(checkResults);
-    return checkResults;
+  initDefaultValues() {
+    this.setName('Hitpoints');
+    this.setModificationValue(0);
+    this.setValue(0);
+    this.setCurrentValue(this.getValue());
+  }
+
+  getName() {
+    return getLocalisedText('eng', [
+      'skill',
+      this.code,
+      'name',
+    ]);
+  }
+
+  getDescription() {
+    return getLocalisedText('eng', [
+      'skill',
+      this.code,
+      'description',
+    ]);
   }
 
   getEffectiveValue(): number {
@@ -87,7 +70,7 @@ export class Skill {
       const newValue =
         skillExp > thisExp
           ? this.skillManager.getByCode(skillCode).getBaseRawValue() ||
-            0 - (this.relativeSkills[skillCode] || 0)
+          0 - (this.relativeSkills[skillCode] || 0)
           : 0;
       return newValue > value ? newValue : value;
     }, 0);
@@ -203,9 +186,9 @@ export class Skill {
     return result;
   }
 
-  getRaw() {}
+  getRaw() { }
 
-  initFromRaw() {}
+  initFromRaw() { }
 
   showValue(): string {
     let text = 'Забытые / редко используемые';

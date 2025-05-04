@@ -1,3 +1,5 @@
+import { skillList } from "../../../models/characters/skills";
+
 export type characterAttrsCodesList =
   | 'str'
   | 'dex'
@@ -25,7 +27,9 @@ export type attrsMapType =
   | 'baseParameters'
   | 'value'
   | 'currentValue'
-  | characterAttrsCodesList;
+  | 'skills'
+  | characterAttrsCodesList
+  | skillList;
 
 export const attrsMap = new Map<string, attrsMapType>();
 
@@ -54,6 +58,7 @@ attrsMap.set('Атрибуты', 'attribute');
 attrsMap.set('Локация', 'location');
 attrsMap.set('Значение', 'value');
 attrsMap.set('Текущее Значение', 'currentValue');
+attrsMap.set('Навыки', 'skills');
 
 // ----------------------------------------------------------------------
 

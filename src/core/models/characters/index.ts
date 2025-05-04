@@ -51,6 +51,7 @@ export class Character extends Entity {
     super(rawStruct);
     this.character = new CharacterModel(this.store);
     this.attributeManager = new AttributeManager(this.store);
+    this.skillManager = new SkillManager(this.store);
 
     this.ctx = ctx;
     this.inventory = new Inventory({
@@ -58,14 +59,7 @@ export class Character extends Entity {
       character: this,
       items: inventoryProps,
     });
-    this.skillManager = new SkillManager({
-      ctx,
-      character: this,
-      input: {
-        skills: skillProps,
-        attributes: this.attributeManager,
-      },
-    });
+
     this.perkManager = new PerkManager({
       ctx,
       character: this,
@@ -165,7 +159,7 @@ export class Character extends Entity {
     return false;
   }
 
-  getRaw() {}
+  getRaw() { }
 
   getCultures(): string[] {
     return this.cultures;
@@ -175,5 +169,5 @@ export class Character extends Entity {
     return this.socialGroups;
   }
 
-  initFromRaw() {}
+  initFromRaw() { }
 }

@@ -493,7 +493,7 @@ export type createSkillF = ({
   exp?: number;
 }) => Skill;
 
-export const SKILL_LIST: Record<skillList, createSkillF> = {
+export const SKILL_LIST: Record<skillList, { code: skillList, rawStruct: string }> = {
   accounting: Accounting,
   acrobatics: Acrobatics,
   acting: Acting,
