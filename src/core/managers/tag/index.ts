@@ -6,7 +6,7 @@ import { ObjectModel } from '../../models/locations/object';
 import { Location } from '../../models/locations';
 import { Perk } from '../../models/perks/perk';
 import { Item } from '../../models/items/item';
-import { skillList } from '../../models/characters/skills';
+import { skillList } from '../../models/characters/skills/models';
 import { attrsCodesList } from '../../models/characters/attributes';
 import { secondaryAttrsCodesList } from '../../models/characters/secondaryAttributes';
 

@@ -1,4 +1,4 @@
-import { skillList } from '.';
+import { skillList } from './models';
 import { PartialRecord } from '../../../../types';
 import { ActionPayload } from '../../../engine/actionConnector';
 import { characterAttrsCodesList } from '../../../engine/models/store/types';

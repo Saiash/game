@@ -1,8 +1,9 @@
 import { Attribute } from '../attribute';
 import { DataStore } from '../../../../engine/models/store/store';
+import { AttributeManager } from '..';
 
 export class Strength extends Attribute {
-  constructor(store: DataStore) {
+  constructor(store: DataStore, attributeManager: AttributeManager) {
     super(store, ['str']);
   }
 

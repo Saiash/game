@@ -1,9 +1,13 @@
 import { Attribute } from '../attribute';
 import { DataStore } from '../../../../engine/models/store/store';
+import { AttributeManager } from '..';
 
 export class Will extends Attribute {
-  constructor(store: DataStore) {
+  private attributeManager: AttributeManager;
+
+  constructor(store: DataStore, attributeManager: AttributeManager) {
     super(store, ['will']);
+    this.attributeManager = attributeManager;
   }
 
   getValue(): number {
@@ -15,13 +19,7 @@ export class Will extends Attribute {
   }
 
   private getIntValue() {
-    const [intValue] = this.store.getValueByPath([
-      'object',
-      'attribute',
-      'int',
-      'value',
-    ]);
-    return parseInt(intValue);
+    return this.attributeManager.getByCode('int').getValue();
   }
 
   initDefaultValues() {

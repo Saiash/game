@@ -1,6 +1,7 @@
 import { BaseEntityModel } from '.';
+import { skillList } from '../../../../models/characters/skills/models';
 import { DataStore } from '../../store/store';
-import { attrsMapType } from '../../store/types';
+import { attrsMapType, characterAttrsCodesList, dataAttribute, dataValue } from '../../store/types';
 
 export class CharacterSkillModel extends BaseEntityModel {
   protected fixedPath: attrsMapType[] = [];
@@ -15,7 +16,7 @@ export class CharacterSkillModel extends BaseEntityModel {
   }
 
   getName(): string {
-    const [name] = this._getRawValue('name'); // set.keys().next().value
+    const [name] = this._getRawValue('name');
     return name;
   }
 
@@ -37,12 +38,36 @@ export class CharacterSkillModel extends BaseEntityModel {
     return this._setValue('modificator', `${modificator}`);
   }
 
-  getCurrentValue(): number {
-    const [value] = this._getRawValue('currentValue');
-    return parseInt(value) as number;
+  getRelatedAttribute(): characterAttrsCodesList {
+    const [attribute] = this._getRawValue('attribute');
+    return attribute as characterAttrsCodesList;
   }
 
-  setCurrentValue(value: string | number) {
-    return this._setValue('currentValue', `${value}`);
+  getDifficulty(): string {
+    const [difficulty] = this._getRawValue('difficulty');
+    return difficulty;
+  }
+
+  getTime(): number {
+    const [time] = this._getRawValue('time');
+    return parseInt(time) as number;
+  }
+
+  getCultureBased(): boolean {
+    const cultureBased = this._getUnsafeValue('cultureBased');
+    if (!cultureBased) return false;
+    if (cultureBased instanceof Map) {
+      throw new Error(`no correct value parsed, ${cultureBased}, cultureBased`);
+    }
+    const [value] = cultureBased;
+    return value === 'да';
+  }
+
+  getRelatedSkills(): dataAttribute {
+    const relatedSkills = this._getValue('relatedSkills');
+    if (!relatedSkills || !(relatedSkills instanceof Map)) {
+      throw new Error(`no related skills set`);
+    }
+    return relatedSkills;
   }
 }

@@ -1,10 +1,13 @@
 import { Attribute } from '../attribute';
 import { DataStore } from '../../../../engine/models/store/store';
-import { dataValue } from '../../../../engine/models/store/types';
+import { AttributeManager } from '..';
 
 export class Fatigue extends Attribute {
-  constructor(store: DataStore) {
+  private attributeManager: AttributeManager;
+
+  constructor(store: DataStore, attributeManager: AttributeManager) {
     super(store, ['ft']);
+    this.attributeManager = attributeManager;
   }
 
   getValue(): number {
@@ -17,13 +20,7 @@ export class Fatigue extends Attribute {
   }
 
   private getHtValue() {
-    const [healtValue] = this.store.getValueByPath([
-      'object',
-      'attribute',
-      'ht',
-      'value',
-    ]);
-    return parseInt(healtValue);
+    return this.attributeManager.getByCode('ht').getValue();
   }
 
   initDefaultValues() {

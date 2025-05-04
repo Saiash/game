@@ -1,4 +1,4 @@
-import { skillList } from "../../../models/characters/skills";
+import { skillList } from "../../../models/characters/skills/models";
 
 export type characterAttrsCodesList =
   | 'str'
@@ -28,6 +28,12 @@ export type attrsMapType =
   | 'value'
   | 'currentValue'
   | 'skills'
+  | 'difficulty'
+  | 'time'
+  | 'cultureBased'
+  | 'relatedSkills'
+  | 'cultures'
+  | 'socialGroups'
   | characterAttrsCodesList
   | skillList;
 
@@ -44,6 +50,12 @@ attrsMap.set('Скорость', 'speed');
 attrsMap.set('Движение', 'move');
 attrsMap.set('Усталость', 'ft');
 attrsMap.set('Нагрузка', 'weight');
+attrsMap.set('Сложность', 'difficulty');
+attrsMap.set('Время', 'time');
+attrsMap.set('Зависит от культуры', 'cultureBased');
+attrsMap.set('Связанные навыки', 'relatedSkills');
+attrsMap.set('Культуры', 'cultures');
+attrsMap.set('Социальные группы', 'socialGroups');
 
 attrsMap.set('Объект', 'object');
 attrsMap.set('Свойство', 'property');
@@ -59,6 +71,13 @@ attrsMap.set('Локация', 'location');
 attrsMap.set('Значение', 'value');
 attrsMap.set('Текущее Значение', 'currentValue');
 attrsMap.set('Навыки', 'skills');
+
+attrsMap.set('Бухгалтерский учет', 'accounting');
+attrsMap.set('Торговля', 'merchant');
+attrsMap.set('Математика', 'mathematics');
+attrsMap.set('Финансы', 'finance');
+attrsMap.set('Анализ рынка', 'marketAnalysis');
+attrsMap.set('Экономика', 'economics');
 
 // ----------------------------------------------------------------------
 

@@ -4,7 +4,7 @@ import { GameData } from '../gameData';
 import { EventAction } from '../../managers/tag/models/tag';
 import { TagSystem } from '../../managers/tag';
 import { ACTION_PAYLOAD_TYPE } from '../constants';
-import { skillList } from '../../models/characters/skills';
+import { skillList } from '../../models/characters/skills/models';
 import { perkList } from '../../models/perks';
 import { ItemId } from '../../models/items/item';
 
@@ -46,13 +46,13 @@ export type ActionPayload = {
   target?: TagSystem['owner'];
   time?: number;
   payload:
-    | useSkillPayload
-    | usePerkPayload
-    | useActionPayload
-    | equipItemPayload
-    | lockItemPayload
-    | unequipItemPayload
-    | systemEventPayload;
+  | useSkillPayload
+  | usePerkPayload
+  | useActionPayload
+  | equipItemPayload
+  | lockItemPayload
+  | unequipItemPayload
+  | systemEventPayload;
 };
 
 export class ActionConnector {

@@ -5,7 +5,6 @@ import { EventAction } from '../../managers/tag/models/tag';
 import { Condition } from '../../managers/tag/models/condition';
 import { TagSystem } from '../../managers/tag';
 import { ACTION_PAYLOAD_TYPE } from '../../engine/constants';
-import { POST_ACTIONS_RESOLVERS } from '../skills/resolvers/postActionResolvers';
 import { ResolveResult } from '../characters/skills/types';
 
 export type rawEvent = { description: string; actions: EventAction[] };
@@ -72,14 +71,15 @@ export class Event {
       ctx,
     });
     if (!condition.checkConditions()) return { executed: false };
-    return await POST_ACTIONS_RESOLVERS[type](
-      input || {
-        payload: { type: ACTION_PAYLOAD_TYPE.SYSTEM_EVENT },
-        sourceActor: ctx.gameData.getPlayerCharacter(),
-        target: ctx.gameData.getPlayerCharacter(),
-      },
-      effect,
-      ctx
-    );
+    // return await POST_ACTIONS_RESOLVERS[type](
+    //   input || {
+    //     payload: { type: ACTION_PAYLOAD_TYPE.SYSTEM_EVENT },
+    //     sourceActor: ctx.gameData.getPlayerCharacter(),
+    //     target: ctx.gameData.getPlayerCharacter(),
+    //   },
+    //   effect,
+    //   ctx
+    // );
+    return { executed: false };
   }
 }

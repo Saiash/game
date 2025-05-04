@@ -1,45 +1,44 @@
-import {
-  ActionPayload,
-  useSkillPayload,
-} from '../../../engine/actionConnector';
-import { ACTION_PAYLOAD_TYPE } from '../../../engine/constants';
-import { skillList } from '.';
-import {
-  ResolveResult,
-  SkillInputProps,
-} from './types';
+import { skillList } from './models';
 import { CharacterSkillModel } from '../../../engine/models/entity/models/characterSkill';
 import { DataStore } from '../../../engine/models/store/store';
 import { getLocalisedText } from '../../../../translations';
+import { StoreMerge } from '../../../engine/models/store/helper/storeMerge';
+import { Character } from '..';
+import { characterAttrsCodesList } from '../../../engine/models/store/types';
 
 export class Skill extends CharacterSkillModel {
-  private code: skillList;
+  private character: Character;
 
-  constructor(store: DataStore, data: { code: skillList, rawStruct: string }) {
-    const { code, rawStruct } = data;
-    super(store, [code]);
-    this.code = code;
+  constructor(store: DataStore, data: { code: skillList, rawStruct: string }, character: Character) {
+    super(store, [data.code]);
+    this.character = character;
+    const value = this._getUnsafeValue('value');
+    if (!value) {
+      this.initDefaultValues(data);
+    }
   }
 
-  initDefaultValues() {
-    this.setName('Hitpoints');
+  initDefaultValues(data: { code: skillList, rawStruct: string }) {
+    const { code, rawStruct } = data;
+    StoreMerge.mergeByRawStruct(this.store, rawStruct);
+
+    this.setName(code);
     this.setModificationValue(0);
     this.setValue(0);
-    this.setCurrentValue(this.getValue());
   }
 
-  getName() {
+  _getName() {
     return getLocalisedText('eng', [
       'skill',
-      this.code,
+      this.getName(),
       'name',
     ]);
   }
 
-  getDescription() {
+  _getDescription() {
     return getLocalisedText('eng', [
       'skill',
-      this.code,
+      this.getName(),
       'description',
     ]);
   }
@@ -58,23 +57,25 @@ export class Skill extends CharacterSkillModel {
   }
 
   getBaseRawValue(): number {
-    const attrValue = this.attribute.getValue();
+    const attrValue = this.getValue();
     return attrValue > 20 ? 20 : attrValue - this.diffMod().value;
   }
 
   getRawValue(): number {
-    const relativeSkillsList = Object.keys(this.relativeSkills) as skillList[];
-    const thisExp = this.getExpMod();
-    const relativeSkillValue = relativeSkillsList.reduce((value, skillCode) => {
-      const skillExp = this.skillManager.getByCode(skillCode)?.getExpMod() || 0;
-      const newValue =
-        skillExp > thisExp
-          ? this.skillManager.getByCode(skillCode).getBaseRawValue() ||
-          0 - (this.relativeSkills[skillCode] || 0)
-          : 0;
+    const relatedSkillsMap = this.getRelatedSkills();
+    const relatedSkillsList = Array.from(relatedSkillsMap.keys()) as skillList[];
+
+    const thisExp = this.getValue();
+    const relativeSkillValue = relatedSkillsList.reduce((value, skillCode) => {
+      const relatedSkillModel = this.store.getByPath(['object', 'character', 'skills', skillCode, 'value']);
+
+      const skillExp = relatedSkillModel instanceof Map ? parseInt(relatedSkillModel.get('value') as unknown as string) : 0;
+      const newValue = skillExp > thisExp ? skillExp : 0;
       return newValue > value ? newValue : value;
     }, 0);
-    const _attrValue = this.attribute.getValue();
+
+    const relativeAttrCode = this.getRelatedAttribute();
+    const _attrValue = this.getAttrValue(relativeAttrCode);
     const attrValue = _attrValue > 20 ? 20 : _attrValue;
     const baseValue =
       attrValue > relativeSkillValue ? attrValue : relativeSkillValue;
@@ -82,12 +83,8 @@ export class Skill extends CharacterSkillModel {
     return baseValue - this.diffMod().value;
   }
 
-  getDefaultSkillTime() {
-    return this.defaultSkillTime;
-  }
-
   getExpMod(): number {
-    const exp = this.exp;
+    const exp = this.getValue();
     if (exp <= 0) return -4;
     if (exp >= 1 && exp < 2) return 0;
     if (exp >= 2 && exp < 3) return 1;
@@ -95,20 +92,14 @@ export class Skill extends CharacterSkillModel {
     return 2 + (exp - 4) / 4;
   }
 
-  getExp(checkResults: CheckResults) {
-    const { rand, value, difficulty, result } = checkResults;
-    const baseExpValue = 10;
-    const difficulyExpMod = 1;
-    const expirienceExpMod = 1;
-    const successExpMod = result ? 1 : 0.1;
-    const newExp =
-      baseExpValue * difficulyExpMod * expirienceExpMod * successExpMod;
-    this.exp += newExp / 100;
+  private getAttrValue(attr: characterAttrsCodesList) {
+    return this.character.attributeManager.getByCode(attr).getValue();
   }
 
   diffMod(): { difficulty: string; value: number } {
     let value = 0;
-    switch (this.difficulty) {
+    const difficulty = this.getDifficulty();
+    switch (difficulty) {
       case 'easy':
         value = 0;
         break;
@@ -125,70 +116,12 @@ export class Skill extends CharacterSkillModel {
         value = 3;
         break;
     }
-    return { difficulty: this.difficulty, value };
+    return { difficulty: difficulty, value };
   }
 
   getModsValue(): number {
-    return this.modificatorManager.getValue();
+    return this.getModificationValue();
   }
-
-  setExp(exp: number) {
-    this.exp = exp;
-  }
-
-  static getDefaultProps(): SkillInputProps {
-    return {
-      name: 'Default',
-      description: 'Default',
-      code: 'def',
-      parentAttrCode: 'dex',
-      difficulty: 'easy',
-    };
-  }
-
-  async resolve(input: ActionPayload): Promise<ResolveResult> {
-    const { payload, target } = input;
-    const sourceActor = input.sourceActor || this.skillManager.character;
-    if (payload.type !== ACTION_PAYLOAD_TYPE.USE_SKILL)
-      return { executed: false, payload: input };
-    const { skill, difficulty, timeMod, options } = payload;
-    const optionsMod = this.calcOptionsMod(options);
-
-    let diffMod = 0;
-    if (this.isCultureBased()) {
-      const target = input.target?.getCultures();
-      const sourceCulture = input.sourceActor?.getCultures();
-      //сравнить между собой культуры источника и локации (если цели нет или цель локация/объект) или персонажа (если есть персонаж-цель)
-      if (!!_.intersection(target, sourceCulture).length) {
-        diffMod = 3;
-      }
-    }
-
-    const skillCheckResult = this.check(
-      difficulty + diffMod + timeMod * 1 + optionsMod
-    );
-    this.resolver.commonResolve({
-      result: skillCheckResult,
-      sourceActor,
-      target,
-    });
-    return {
-      executed: true,
-      payload: input,
-      checkResult: skillCheckResult,
-      message: `${this.name}: ${skillCheckResult.result}, ${skillCheckResult.value}`,
-    };
-  }
-
-  calcOptionsMod(options: useSkillPayload['options']): number {
-    let result = 0;
-    if (options?.offHand) result -= 4;
-    return result;
-  }
-
-  getRaw() { }
-
-  initFromRaw() { }
 
   showValue(): string {
     let text = 'Забытые / редко используемые';
@@ -222,9 +155,5 @@ export class Skill extends CharacterSkillModel {
         break;
     }
     return text;
-  }
-
-  isCultureBased() {
-    return this.cultureBased;
   }
 }

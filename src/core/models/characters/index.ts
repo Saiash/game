@@ -16,70 +16,30 @@ import { Entity } from '../../engine/models/entity/entity';
 import { CharacterModel } from '../../engine/models/entity/models/character';
 
 export class Character extends Entity {
-  private ctx: CTX;
   protected character: CharacterModel;
 
-  battleManager: BattleManager;
   attributeManager: AttributeManager;
   secondaryAttributes: SecondaryAttributes;
-  inventory: Inventory;
   skillManager: SkillManager;
+  inventory: Inventory;
   perkManager: PerkManager;
   disadvantagesManager: DisadvantagesManager;
+
   doll: Doll;
-  tags: TagSystem;
-  lore: LoreManager;
-  private status: string[] = [];
-  private cultures: string[] = [];
-  private socialGroups: string[];
 
-  constructor({
-    ctx,
-    inventoryProps,
-    skillProps,
-    cultures,
-    socialGroups,
-    rawStruct,
-  }: {
-    ctx: CTX;
-    inventoryProps?: { [index: number]: Item };
-    skillProps?: InputSkillProps[];
-    cultures?: string[];
-    socialGroups?: string[];
-    rawStruct?: string;
-  }) {
+  constructor(rawStruct?: string) {
     super(rawStruct);
+
     this.character = new CharacterModel(this.store);
-    this.attributeManager = new AttributeManager(this.store);
-    this.skillManager = new SkillManager(this.store);
+    this.attributeManager = new AttributeManager(this, this.store);
+    this.skillManager = new SkillManager(this, this.store);
+    this.secondaryAttributes = new SecondaryAttributes();
 
-    this.ctx = ctx;
-    this.inventory = new Inventory({
-      ctx,
-      character: this,
-      items: inventoryProps,
-    });
+    this.inventory = new Inventory(this, this.store);
 
-    this.perkManager = new PerkManager({
-      ctx,
-      character: this,
-      input: {},
-    });
-    this.disadvantagesManager = new DisadvantagesManager({
-      ctx,
-      character: this,
-      input: {},
-    });
-    this.tags = new TagSystem({ ctx, owner: this });
-    this.cultures = cultures || ['default'];
-    this.socialGroups = socialGroups || [];
-    this.doll = new Doll({ ctx, character: this });
-    this.secondaryAttributes = new SecondaryAttributes({
-      ctx,
-      character: this,
-    });
-    this.lore = new LoreManager({ ctx });
-    this.battleManager = new BattleManager({ ctx, character: this });
+    this.perkManager = new PerkManager(this, this.store);
+    this.disadvantagesManager = new DisadvantagesManager(this, this.store);
+    this.doll = new Doll(this, this.store);
   }
 
   protected initStore() {
@@ -170,4 +130,9 @@ export class Character extends Entity {
   }
 
   initFromRaw() { }
+
+  getDataToSave() {
+    return this.store.getDataToSave();
+  }
+
 }

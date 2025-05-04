@@ -1,10 +1,13 @@
-import { ModificatorManager } from '../../../../../core/managers/ModificatorManager';
 import { Attribute } from '../attribute';
 import { DataStore } from '../../../../engine/models/store/store';
+import { AttributeManager } from '..';
 
 export class Speed extends Attribute {
-  constructor(store: DataStore) {
+  private attributeManager: AttributeManager;
+
+  constructor(store: DataStore, attributeManager: AttributeManager) {
     super(store, ['speed']);
+    this.attributeManager = attributeManager;
   }
 
   getValue(): number {
@@ -17,23 +20,11 @@ export class Speed extends Attribute {
   }
 
   private getDexValue() {
-    const [dexValue] = this.store.getValueByPath([
-      'object',
-      'attribute',
-      'dex',
-      'value',
-    ]);
-    return parseInt(dexValue);
+    return this.attributeManager.getByCode('dex').getValue();
   }
 
   private getHealtValue() {
-    const [healtValue] = this.store.getValueByPath([
-      'object',
-      'attribute',
-      'ht',
-      'value',
-    ]);
-    return parseInt(healtValue);
+    return this.attributeManager.getByCode('ht').getValue();
   }
 
   initDefaultValues() {

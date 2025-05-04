@@ -1,9 +1,9 @@
-import { ModificatorManager } from '../../../../../core/managers/ModificatorManager';
 import { Attribute } from '../attribute';
 import { DataStore } from '../../../../engine/models/store/store';
+import { AttributeManager } from '..';
 
 export class Dexterity extends Attribute {
-  constructor(store: DataStore) {
+  constructor(store: DataStore, attributeManager: AttributeManager) {
     super(store, ['dex']);
   }
 

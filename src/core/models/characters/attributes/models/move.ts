@@ -1,10 +1,14 @@
 import { Attribute } from '../attribute';
 import { DataStore } from '../../../../engine/models/store/store';
 import { calculateEncumbrance } from '../../helpers/encumbrance';
+import { AttributeManager } from '..';
 
 export class Move extends Attribute {
-  constructor(store: DataStore) {
+  private attributeManager: AttributeManager;
+
+  constructor(store: DataStore, attributeManager: AttributeManager) {
     super(store, ['move']);
+    this.attributeManager = attributeManager;
   }
 
   getValue(): number {
@@ -27,33 +31,15 @@ export class Move extends Attribute {
   }
 
   private getSpeedValue() {
-    const [speedValue] = this.store.getValueByPath([
-      'object',
-      'attribute',
-      'speed',
-      'value',
-    ]);
-    return parseInt(speedValue);
+    return this.attributeManager.getByCode('speed').getValue();
   }
 
   private getWeightValue() {
-    const [weightValue] = this.store.getValueByPath([
-      'object',
-      'attribute',
-      'weight',
-      'value',
-    ]);
-    return parseInt(weightValue);
+    return this.attributeManager.getByCode('weight').getValue();
   }
 
   private getStrValue() {
-    const [strValue] = this.store.getValueByPath([
-      'object',
-      'attribute',
-      'str',
-      'value',
-    ]);
-    return parseInt(strValue);
+    return this.attributeManager.getByCode('str').getValue();
   }
 
   initDefaultValues() {

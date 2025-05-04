@@ -1,9 +1,13 @@
 import { Attribute } from '../attribute';
 import { DataStore } from '../../../../engine/models/store/store';
+import { AttributeManager } from '..';
 
 export class Inteligence extends Attribute {
-  constructor(store: DataStore) {
+  private attributeManager: AttributeManager;
+
+  constructor(store: DataStore, attributeManager: AttributeManager) {
     super(store, ['int']);
+    this.attributeManager = attributeManager;
   }
 
   initDefaultValues() {

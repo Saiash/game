@@ -9,9 +9,10 @@ import { Perception } from './models/perception';
 import { Speed } from './models/speed';
 import { Strength } from './models/strength';
 import { Will } from './models/will';
-import { DataStore } from '../../../engine/models/store/store';
 import { AttributesModel } from '../../../engine/models/entity/models/attributes';
 import { characterAttrsCodesList } from '../../../engine/models/store/types';
+import { Character } from '..';
+import { DataStore } from '../../../engine/models/store/store';
 
 export const ATTRS_LIST = [
   { code: 'str', model: Strength },
@@ -29,11 +30,11 @@ export const ATTRS_LIST = [
 export class AttributeManager extends AttributesModel {
   private collection = new Map<characterAttrsCodesList, Attribute>();
 
-  constructor(store: DataStore) {
+  constructor(character: Character, store: DataStore) {
     super(store);
 
     ATTRS_LIST.forEach(attr => {
-      const newModel = new attr.model(store);
+      const newModel = new attr.model(store, this);
       this.collection.set(attr.code as characterAttrsCodesList, newModel);
     });
   }

@@ -1,6 +1,6 @@
 import { characterAttrsCodesList } from '../../engine/models/store/types';
 import { Character } from '../../models/characters';
-import { skillList } from '../../models/characters/skills';
+import { skillList } from '../../models/characters/skills/models';
 import { throwDices } from '../../utils/diceThrower';
 import { CheckResults } from './type';
 

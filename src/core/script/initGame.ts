@@ -17,10 +17,10 @@ export async function initGame(gameData: GameData) {
     //await initItems(gameData),
     await initCharacters(gameData),
   ]);
-  await characters[1].skillManager.add({
-    name: 'broadsword',
-    exp: 12,
-  });
+  // await characters[1].skillManager.add({
+  //   name: 'broadsword',
+  //   exp: 12,
+  // });
   const sword = ItemManager.createItemByCode('katana', gameData.ctx, ['good']);
   characters[1].doll.equipItem({ item: sword, performer: characters[1] });
 
@@ -40,26 +40,27 @@ export async function initGame(gameData: GameData) {
     .getPlayerCharacter()
     .doll.equipItem({ item: armor, performer: gameData.getPlayerCharacter() });
   gameData.getPlayerCharacter().inventory.add(dress);
+  gameData.getPlayerCharacter().skillManager.getByCode('accounting');
 
-  gameData.battleEngine.initBattle(characters);
+  //gameData.battleEngine.initBattle(characters);
   //const attack = gameData.battleEngine.performAction({
-  gameData.battleEngine.performAction({
-    actorId: gameData.getPlayerCharacter().getId(),
-    maneur: 'totalAttack',
-    otherOptions: {
-      changePoseDirection: 'down',
-    },
-    attackOptions: {
-      hand: 'right',
-      setIndex: 0,
-      attackType: 'melee',
-      target: characters[1].getId(),
-      zone: 'torso',
-      options: {
-        type: 'feint',
-      },
-    },
-  });
+  // gameData.battleEngine.performAction({
+  //   actorId: gameData.getPlayerCharacter().getId(),
+  //   maneur: 'totalAttack',
+  //   otherOptions: {
+  //     changePoseDirection: 'down',
+  //   },
+  //   attackOptions: {
+  //     hand: 'right',
+  //     setIndex: 0,
+  //     attackType: 'melee',
+  //     target: characters[1].getId(),
+  //     zone: 'torso',
+  //     options: {
+  //       type: 'feint',
+  //     },
+  //   },
+  // });
   // if (attack) {
   //   gameData.battleEngine.performAction({
   //     actorId: gameData.getPlayerCharacter().getId(),
@@ -90,7 +91,7 @@ export async function initGame(gameData: GameData) {
   await gameData.sceneEngine.initNode('node_init_1');
   await gameData.sceneEngine.forwardByArrow(0);
   await gameData.sceneEngine.forwardByArrow(1);
-  console.log(gameData.getPlayerCharacter());
+  console.log(gameData.getPlayerCharacter().getDataToSave());
   // const text = JSON.stringify(
   //   characters[0].skillManager.check({
   //     code: 'lockpicking',
@@ -127,22 +128,22 @@ async function initPlayerCharacter(gameData: GameData): Promise<Character> {
     gameData.getLocation('defaultLocation')
   );
   gameData.setPlayerCharacter(player);
-  await player.skillManager.add({
-    name: 'lockpicking',
-    exp: 1,
-  });
-  await player.skillManager.add({
-    name: 'thaumatology',
-    exp: 1,
-  });
-  await player.skillManager.add({
-    name: 'axeMace',
-    exp: 12,
-  });
-  await player.perkManager.add({
-    name: 'magery',
-    level: 4,
-  });
+  // await player.skillManager.add({
+  //   name: 'lockpicking',
+  //   exp: 1,
+  // });
+  // await player.skillManager.add({
+  //   name: 'thaumatology',
+  //   exp: 1,
+  // });
+  // await player.skillManager.add({
+  //   name: 'axeMace',
+  //   exp: 12,
+  // });
+  // await player.perkManager.add({
+  //   name: 'magery',
+  //   level: 4,
+  // });
   // const skillcheck = await player.skillManager.resolve({
   //   payload: {
   //     type: ACTION_PAYLOAD_TYPE.USE_SKILL,

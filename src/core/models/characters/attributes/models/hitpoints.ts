@@ -1,10 +1,14 @@
-import { ModificatorManager } from '../../../../../core/managers/ModificatorManager';
 import { Attribute } from '../attribute';
 import { DataStore } from '../../../../engine/models/store/store';
+import { AttributeManager } from '..';
 
 export class Hitpoints extends Attribute {
-  constructor(store: DataStore) {
+  private attributeManager: AttributeManager;
+
+  constructor(store: DataStore, attributeManager: AttributeManager) {
     super(store, ['hp']);
+    this.attributeManager = attributeManager;
+    this.setCurrentValue(this.getValue());
   }
 
   changeCurrentValue(diff: number) {
@@ -30,19 +34,12 @@ export class Hitpoints extends Attribute {
   }
 
   private getStrValue() {
-    const [strValue] = this.store.getValueByPath([
-      'object',
-      'attribute',
-      'str',
-      'value',
-    ]);
-    return parseInt(strValue);
+    return this.attributeManager.getByCode('str').getValue();
   }
 
   initDefaultValues() {
     this.setName('Hitpoints');
     this.setModificationValue(0);
     this.setValue(0);
-    this.setCurrentValue(this.getValue());
   }
 }

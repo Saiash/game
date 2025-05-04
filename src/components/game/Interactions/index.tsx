@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import styles from '../../../styles/Home.module.css';
 import type { CTX } from '../../../types';
 import { ACTION_PAYLOAD_TYPE } from '../../../core/engine/constants';
-import { skillList } from '../../../core/models/characters/skills';
+import { skillList } from '../../../core/models/characters/skills/models';
 
 const TIME_OPTIONS = [0.5, 1, 2, 4, 8, 16, 32];
 

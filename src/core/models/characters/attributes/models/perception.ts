@@ -1,9 +1,13 @@
 import { Attribute } from '../attribute';
 import { DataStore } from '../../../../engine/models/store/store';
+import { AttributeManager } from '..';
 
 export class Perception extends Attribute {
-  constructor(store: DataStore) {
+  private attributeManager: AttributeManager;
+
+  constructor(store: DataStore, attributeManager: AttributeManager) {
     super(store, ['per']);
+    this.attributeManager = attributeManager;
   }
 
   getValue(): number {
@@ -16,13 +20,7 @@ export class Perception extends Attribute {
   }
 
   private getIntValue() {
-    const [intValue] = this.store.getValueByPath([
-      'object',
-      'attribute',
-      'int',
-      'value',
-    ]);
-    return parseInt(intValue);
+    return this.attributeManager.getByCode('int').getValue();
   }
 
   initDefaultValues() {
