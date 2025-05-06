@@ -82,7 +82,7 @@ export class BaseEntityModel {
   }
 
   //возвращает только значение; кидает ошибку, если это оказалось аттрибутом / узлом
-  _getRawValue(key: attrsMapType): dataValue {
+  _getValueAsSet(key: attrsMapType): dataValue {
     const value = this._getValue(key);
     if (!value || !(value instanceof Set)) {
       throw new Error(`no correct value parsed, ${value}, ${key}`);

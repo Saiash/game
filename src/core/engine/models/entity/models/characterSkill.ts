@@ -1,5 +1,4 @@
 import { BaseEntityModel } from '.';
-import { skillList } from '../../../../models/characters/skills/models';
 import { DataStore } from '../../store/store';
 import { attrsMapType, characterAttrsCodesList, dataAttribute, dataValue } from '../../store/types';
 
@@ -16,12 +15,12 @@ export class CharacterSkillModel extends BaseEntityModel {
   }
 
   getName(): string {
-    const [name] = this._getRawValue('name');
+    const [name] = this._getValueAsSet('name');
     return name;
   }
 
   getValue(): number {
-    const [value] = this._getRawValue('value');
+    const [value] = this._getValueAsSet('value');
     return parseInt(value) as number;
   }
 
@@ -30,7 +29,7 @@ export class CharacterSkillModel extends BaseEntityModel {
   }
 
   getModificationValue(): number {
-    const values = this._getRawValue('modificator');
+    const values = this._getValueAsSet('modificator');
     return Array.from(values).reduce((acc, value) => acc + parseInt(value), 0);
   }
 
@@ -39,17 +38,17 @@ export class CharacterSkillModel extends BaseEntityModel {
   }
 
   getRelatedAttribute(): characterAttrsCodesList {
-    const [attribute] = this._getRawValue('attribute');
+    const [attribute] = this._getValueAsSet('attribute');
     return attribute as characterAttrsCodesList;
   }
 
   getDifficulty(): string {
-    const [difficulty] = this._getRawValue('difficulty');
+    const [difficulty] = this._getValueAsSet('difficulty');
     return difficulty;
   }
 
   getTime(): number {
-    const [time] = this._getRawValue('time');
+    const [time] = this._getValueAsSet('time');
     return parseInt(time) as number;
   }
 

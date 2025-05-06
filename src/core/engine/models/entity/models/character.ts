@@ -19,7 +19,7 @@ export class CharacterModel extends BaseEntityModel {
   }
 
   getGender(): string {
-    const [gender] = this._getRawValue('gender');
+    const [gender] = this._getValueAsSet('gender');
     return gender;
   }
 
@@ -28,23 +28,27 @@ export class CharacterModel extends BaseEntityModel {
   }
 
   getSocialStatus(): number {
-    const [socialStatus] = this._getRawValue('socialStatus');
+    const [socialStatus] = this._getValueAsSet('socialStatus');
     return parseInt(socialStatus) as number;
   }
 
   setCultures(cultures: string[]) {
-    return this._setValue('cultures', cultures);
+    this._setValue('cultures', cultures.pop() as string);
+    cultures.forEach(culture => this._addValue('cultures', culture));
+    return this;
   }
 
   getCultures(): string[] {
-    return this._getValue('cultures');
+    return Array.from(this._getValueAsSet('cultures'));
   }
 
   setSocialGroups(socialGroups: string[]) {
-    return this._setValue('socialGroups', socialGroups);
+    this._setValue('socialGroups', socialGroups.pop() as string);
+    socialGroups.forEach(socialGroups => this._addValue('socialGroups', socialGroups));
+    return this;
   }
 
   getSocialGroups(): string[] {
-    return this._getValue('socialGroups');
+    return Array.from(this._getValueAsSet('socialGroups'));
   }
 }

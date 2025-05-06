@@ -1,3 +1,4 @@
+import { disadvantageList, perkList } from "../../../models/characters/perk/type";
 import { skillList } from "../../../models/characters/skills/models";
 
 export type characterAttrsCodesList =
@@ -13,6 +14,13 @@ export type characterAttrsCodesList =
   | 'ft'
   | 'weight';
 
+export type secondaryAttrsCodesList =
+  | 'weight'
+  | 'dmg'
+  | 'dodge'
+  | 'size'
+  | 'reaction';
+
 export type attrsMapType =
   | 'object'
   | 'property'
@@ -24,6 +32,7 @@ export type attrsMapType =
   | 'location'
   | 'socialStatus'
   | 'attribute'
+  | 'secondaryAttributes'
   | 'baseParameters'
   | 'value'
   | 'currentValue'
@@ -34,7 +43,12 @@ export type attrsMapType =
   | 'relatedSkills'
   | 'cultures'
   | 'socialGroups'
+  | 'perks'
+  | 'disadvantages'
   | characterAttrsCodesList
+  | secondaryAttrsCodesList
+  | perkList
+  | disadvantageList
   | skillList;
 
 export const attrsMap = new Map<string, attrsMapType>();
@@ -67,10 +81,13 @@ attrsMap.set('Пол', 'gender');
 attrsMap.set('Имя', 'name');
 attrsMap.set('Статус', 'socialStatus');
 attrsMap.set('Атрибуты', 'attribute');
+attrsMap.set('Вторичные атрибуты', 'secondaryAttributes');
 attrsMap.set('Локация', 'location');
 attrsMap.set('Значение', 'value');
 attrsMap.set('Текущее Значение', 'currentValue');
 attrsMap.set('Навыки', 'skills');
+attrsMap.set('Преимущества', 'perks');
+attrsMap.set('Недостатки', 'disadvantages');
 
 attrsMap.set('Бухгалтерский учет', 'accounting');
 attrsMap.set('Торговля', 'merchant');

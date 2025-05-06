@@ -1,4 +1,4 @@
-import { damageRoll } from '../../characters/secondaryAttributes/models/damage';
+import { damageRoll } from '../../characters/attributes/models/damage';
 
 export type damageType =
   | 'aff'

@@ -5,4 +5,6 @@ export class BaseCharacterParams extends CharacterModel {
   constructor(store: DataStore) {
     super(store);
   }
+
+
 }

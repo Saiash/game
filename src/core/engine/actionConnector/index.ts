@@ -5,7 +5,7 @@ import { EventAction } from '../../managers/tag/models/tag';
 import { TagSystem } from '../../managers/tag';
 import { ACTION_PAYLOAD_TYPE } from '../constants';
 import { skillList } from '../../models/characters/skills/models';
-import { perkList } from '../../models/perks';
+import { perkList } from '../../models/perks/type';
 import { ItemId } from '../../models/items/item';
 
 export type useSkillPayload = {

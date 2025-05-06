@@ -1,6 +1,6 @@
 import { Weapon, weaponManagerTypes } from '.';
 import { CTX } from '../../../../types';
-import { damageRoll } from '../../characters/secondaryAttributes/models/damage';
+import { damageRoll } from '../../characters/attributes/models/damage';
 import { skillList } from '../../characters/skills/models';
 import { Item } from '../item';
 import { calculateSwingVal, calculateThrustVal, damageType } from './damage';

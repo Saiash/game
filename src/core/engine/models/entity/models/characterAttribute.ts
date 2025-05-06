@@ -15,12 +15,12 @@ export class CharacterAttributeModel extends BaseEntityModel {
   }
 
   getName(): string {
-    const [name] = this._getRawValue('name'); // set.keys().next().value
+    const [name] = this._getValueAsSet('name'); // set.keys().next().value
     return name;
   }
 
   getValue(): number {
-    const [value] = this._getRawValue('value');
+    const [value] = this._getValueAsSet('value');
     return parseInt(value) as number;
   }
 
@@ -29,7 +29,7 @@ export class CharacterAttributeModel extends BaseEntityModel {
   }
 
   getModificationValue(): number {
-    const values = this._getRawValue('modificator');
+    const values = this._getValueAsSet('modificator');
     return Array.from(values).reduce((acc, value) => acc + parseInt(value), 0);
   }
 
@@ -38,7 +38,7 @@ export class CharacterAttributeModel extends BaseEntityModel {
   }
 
   getCurrentValue(): number {
-    const [value] = this._getRawValue('currentValue');
+    const [value] = this._getValueAsSet('currentValue');
     return parseInt(value) as number;
   }
 

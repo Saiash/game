@@ -3,7 +3,7 @@ import { getLocalisedText } from '../../../../translations';
 import { CTX, PartialRecord } from '../../../../types';
 import { attrsCodesList } from '../../characters/attributes';
 import { secondaryAttrsCodesList } from '../../characters/secondaryAttributes';
-import { perkList } from '../../perks';
+import { perkList } from '../../perks/type';
 import { Dragon } from './dragon';
 import { Dwarf } from './dwarf';
 import { Felinoid } from './felinoid';

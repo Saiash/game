@@ -4,7 +4,7 @@ import { Character } from '../characters';
 import { TagSystem } from '../../managers/tag';
 import { Tag } from '../../managers/tag/models/tag';
 import { Item } from '../items/item';
-import { Inventory } from '../items';
+import { Inventory } from '../characters/inventory';
 
 export type rawObjectModel = {
   name: string;

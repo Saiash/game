@@ -16,7 +16,7 @@ export class BaseParametersModel extends BaseEntityModel {
   }
 
   getId(): number {
-    const [id] = this._getRawValue('id'); // set.keys().next().value
+    const [id] = this._getValueAsSet('id'); // set.keys().next().value
     return parseInt(id) as number;
   }
 
@@ -25,7 +25,7 @@ export class BaseParametersModel extends BaseEntityModel {
   }
 
   getName(): string {
-    const [name] = this._getRawValue('name'); // set.keys().next().value
+    const [name] = this._getValueAsSet('name'); // set.keys().next().value
     return name;
   }
 
@@ -34,7 +34,7 @@ export class BaseParametersModel extends BaseEntityModel {
   }
 
   getLocation(): string {
-    const [name] = this._getRawValue('location'); // set.keys().next().value
+    const [name] = this._getValueAsSet('location'); // set.keys().next().value
     return name;
   }
 }

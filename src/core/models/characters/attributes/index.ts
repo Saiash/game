@@ -11,7 +11,11 @@ import { Strength } from './models/strength';
 import { Will } from './models/will';
 import { AttributesModel } from '../../../engine/models/entity/models/attributes';
 import { characterAttrsCodesList } from '../../../engine/models/store/types';
-import { Character } from '..';
+import { Weight } from './models/weight';
+import { Damage } from './models/damage';
+import { Dodge } from './models/dodge';
+import { Reaction } from './models/reaction';
+import { Size } from './models/size';
 import { DataStore } from '../../../engine/models/store/store';
 
 export const ATTRS_LIST = [
@@ -27,13 +31,25 @@ export const ATTRS_LIST = [
   { code: 'ft', model: Fatigue },
 ];
 
+export const SECONDARY_ATTRS_LIST = [
+  { code: 'weight', model: Weight },
+  { code: 'dmg', model: Damage },
+  { code: 'dodge', model: Dodge },
+  { code: 'size', model: Size },
+  { code: 'reaction', model: Reaction },
+];
+
 export class AttributeManager extends AttributesModel {
   private collection = new Map<characterAttrsCodesList, Attribute>();
 
-  constructor(character: Character, store: DataStore) {
+  constructor(store: DataStore) {
     super(store);
 
     ATTRS_LIST.forEach(attr => {
+      const newModel = new attr.model(store, this);
+      this.collection.set(attr.code as characterAttrsCodesList, newModel);
+    });
+    SECONDARY_ATTRS_LIST.forEach(attr => {
       const newModel = new attr.model(store, this);
       this.collection.set(attr.code as characterAttrsCodesList, newModel);
     });

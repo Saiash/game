@@ -4,7 +4,7 @@
 //TODO:  дизайн - нагрудник (грудь + пах, но не спина)
 
 import { CTX } from '../../../../types';
-import { coverageTable } from '../doll/const';
+import { coverageTable } from '../../characters/inventory/doll/const';
 import { equipZones } from '../doll/types';
 import { Item, ItemProps } from '../item';
 import { modificationsList } from '../modifications/fabric';

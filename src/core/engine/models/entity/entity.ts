@@ -21,7 +21,7 @@ export class Entity {
     }
   }
 
-  protected initStore(): void {}
+  protected initStore(): void { }
 
   static loadFromRaw(rawStruct: string): Entity {
     return new this(rawStruct);
