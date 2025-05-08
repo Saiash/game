@@ -1,14 +1,14 @@
 import { Magery } from './advantagesModels/magery';
-import { Curious } from './disadvantagesModels/curious';
+import { Curiosity } from './disadvantagesModels/curiosity';
 
 export type perkList = 'magery';
 
 
-export type disadvantageList = 'curious';
+export type disadvantageList = 'curiosity';
 
 export const DISADVANTAGE_LIST: Record<disadvantageList, { code: disadvantageList, rawStruct: string }> =
 {
-  curious: Curious,
+  curiosity: Curiosity,
 };
 
 export const PERK_LIST: Record<perkList, { code: perkList, rawStruct: string }> = { magery: Magery };

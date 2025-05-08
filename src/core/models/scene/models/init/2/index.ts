@@ -3,7 +3,7 @@ import { CTX } from '../../../../../../types';
 const arrow_explorers = (ctx: CTX) => {
   ctx.gameData
     .getPlayerCharacter()
-    .disadvantagesManager.add({ name: 'curious', level: 1 });
+    .disadvantagesManager.add({ name: 'curiosity', level: 1 });
 };
 
 export const node_init_2 = {

@@ -10,4 +10,13 @@ export class AttributesModel extends BaseEntityModel {
   constructor(store: DataStore) {
     super(store, fixedPath);
   }
+
+  setName(name: string) {
+    return this._setValue('name', name);
+  }
+
+  getName(): string {
+    const [name] = this._getValueAsSet('name'); // set.keys().next().value
+    return name;
+  }
 }

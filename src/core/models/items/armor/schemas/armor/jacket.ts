@@ -3,7 +3,7 @@ import { armorSchema } from '..';
 export const jacket: armorSchema = {
   techLevel: 0,
   code: 'jacket',
-  zones: [['torso', 'leftHand', 'rightHand']],
+  zones: [['torso', 'leftArm', 'rightArm']],
   matchingArmorTypes: [
     'layredClothLight',
     'cane',

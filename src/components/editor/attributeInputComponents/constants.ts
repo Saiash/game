@@ -1,9 +1,9 @@
 import { ATTRS_LIST } from '../../../core/models/characters/attributes';
-import { SECONDARY_ATTRS_LIST } from '../../../core/models/characters/secondaryAttributes';
+//import { SECONDARY_ATTRS_LIST } from '../../../core/models/characters/secondaryAttributes';
 
 export const ATTRS_ENUM = [
   ...ATTRS_LIST.map(a => a.code),
-  ...SECONDARY_ATTRS_LIST.map(a => a.code),
+  //  ...SECONDARY_ATTRS_LIST.map(a => a.code),
 ];
 
 export const DIFF_ENUM = ['easy', 'medium', 'hard', 'very hard'];

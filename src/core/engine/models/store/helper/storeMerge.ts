@@ -17,6 +17,11 @@ export class StoreMerge {
 
       const attributeWithValue = pureRowText.split(': ');
       const mappedAttribute = attrsMap.get(attributeWithValue[0] as string);
+      if (!mappedAttribute) {
+        throw new Error(
+          `unknown attribute name during Data Structure merge, ${attributeWithValue}`
+        );
+      }
       const value =
         attributeWithValue.length === 2
           ? (attributeWithValue[1] as string)

@@ -1,7 +1,7 @@
 export const disadvantageTexts: {
   [index: string]: { [index: string]: string };
 } = {
-  curious: {
+  curiosity: {
     name: 'Любопытство',
     description: 'ыва',
   },

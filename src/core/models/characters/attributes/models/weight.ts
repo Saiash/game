@@ -9,11 +9,10 @@ export class Weight extends Attribute {
   constructor(store: DataStore, attributeManager: AttributeManager) {
     super(store, ['weight']);
     this.attributeManager = attributeManager;
-    this.setCurrentValue(this.getValue());
   }
 
   initDefaultValues() {
-    this.setName('Dexterity');
+    this.setName('Weight');
     this.setModificationValue(0);
   }
 

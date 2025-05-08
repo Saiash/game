@@ -22,7 +22,7 @@ export async function initGame(gameData: GameData) {
   //   exp: 12,
   // });
   const sword = ItemManager.createItemByCode('katana', gameData.ctx, ['good']);
-  characters[1].doll.equipItem({ item: sword, performer: characters[1] });
+  //characters[1].doll.equipItem({ item: sword, performer: characters[1] });
 
   const axe = ItemManager.createItemByCode('axe', gameData.ctx, ['good']);
   const armor = ItemManager.createItemByCode(
@@ -33,13 +33,13 @@ export async function initGame(gameData: GameData) {
     'clothordinary1hoodedDress',
     gameData.ctx
   );
-  gameData
-    .getPlayerCharacter()
-    .doll.equipItem({ item: axe, performer: gameData.getPlayerCharacter() });
-  gameData
-    .getPlayerCharacter()
-    .doll.equipItem({ item: armor, performer: gameData.getPlayerCharacter() });
-  gameData.getPlayerCharacter().inventory.add(dress);
+  // gameData
+  //   .getPlayerCharacter()
+  //   .doll.equipItem({ item: axe, performer: gameData.getPlayerCharacter() });
+  // gameData
+  //   .getPlayerCharacter()
+  //   .doll.equipItem({ item: armor, performer: gameData.getPlayerCharacter() });
+  // gameData.getPlayerCharacter().inventory.add(dress);
   gameData.getPlayerCharacter().skillManager.getByCode('accounting');
 
   //gameData.battleEngine.initBattle(characters);
@@ -80,14 +80,14 @@ export async function initGame(gameData: GameData) {
   //   dataloaders: this.dataloaders,
   //   name: 'lore_1',
   // });
-  await gameData.addObject({
-    name: 'chest_test',
-    location: gameData.locations.defaultLocation,
-  });
-  await gameData.addObject({
-    name: 'chest_test_2',
-    location: gameData.locations.defaultLocation,
-  });
+  // await gameData.addObject({
+  //   name: 'chest_test',
+  //   location: gameData.locations.defaultLocation,
+  // });
+  // await gameData.addObject({
+  //   name: 'chest_test_2',
+  //   location: gameData.locations.defaultLocation,
+  // });
   await gameData.sceneEngine.initNode('node_init_1');
   await gameData.sceneEngine.forwardByArrow(0);
   await gameData.sceneEngine.forwardByArrow(1);
@@ -148,7 +148,7 @@ async function initPlayerCharacter(gameData: GameData): Promise<Character> {
   //   payload: {
   //     type: ACTION_PAYLOAD_TYPE.USE_SKILL,
   //     difficulty: 12,
-  //     timeMod: 0,
+  //     timeMod: 0,z
   //     skill: 'thaumatology',
   //   },
   // });

@@ -36,7 +36,7 @@ export const SECONDARY_ATTRS_LIST = [
   { code: 'dmg', model: Damage },
   { code: 'dodge', model: Dodge },
   { code: 'size', model: Size },
-  { code: 'reaction', model: Reaction },
+  //{ code: 'reaction', model: Reaction },
 ];
 
 export class AttributeManager extends AttributesModel {

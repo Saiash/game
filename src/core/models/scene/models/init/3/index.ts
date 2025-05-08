@@ -7,13 +7,13 @@ const arrow_str = (ctx: CTX) => {
 const arrow_int = (ctx: CTX) => {
   ctx.gameData
     .getPlayerCharacter()
-    .disadvantagesManager.add({ name: 'curious', level: 1 });
+    .disadvantagesManager.add({ name: 'curiosity', level: 1 });
 };
 
 const arrow_dex = (ctx: CTX) => {
   ctx.gameData
     .getPlayerCharacter()
-    .disadvantagesManager.add({ name: 'curious', level: 1 });
+    .disadvantagesManager.add({ name: 'curiosity', level: 1 });
 };
 
 export const node_init_3 = {

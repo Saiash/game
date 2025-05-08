@@ -2,7 +2,7 @@ import { AttributeManager } from './attributes';
 import { SkillManager } from './skills/skillManager';
 import { Inventory } from './inventory';
 import { PerkManager } from './perk/perkManager';
-import { Doll } from './inventory/doll';
+import { CharacterDoll } from './doll';
 import { DisadvantagesManager } from './perk/disadvantagesManager';
 import { Entity } from '../../engine/models/entity/entity';
 import { CharacterModel } from '../../engine/models/entity/models/character';
@@ -15,7 +15,7 @@ export class Character extends Entity {
   inventory: Inventory;
   perkManager: PerkManager;
   disadvantagesManager: DisadvantagesManager;
-  doll: Doll;
+  doll: CharacterDoll;
 
   constructor(rawStruct?: string) {
     super(rawStruct);
@@ -24,11 +24,11 @@ export class Character extends Entity {
     this.attributeManager = new AttributeManager(this.store);
     this.skillManager = new SkillManager(this, this.store);
 
-    this.inventory = new Inventory(this, this.store);
-
     this.perkManager = new PerkManager(this.store);
     this.disadvantagesManager = new DisadvantagesManager(this.store);
-    this.doll = new Doll(this, this.store);
+
+    this.doll = new CharacterDoll(this.store, this);
+    this.inventory = new Inventory(this.store);
   }
 
   protected initStore() {

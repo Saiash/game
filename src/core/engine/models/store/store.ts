@@ -59,6 +59,11 @@ export class DataStore {
 
       const attributeWithValue = pureRowText.split(': ');
       const mappedAttribute = attrsMap.get(attributeWithValue[0] as string);
+      if (!mappedAttribute) {
+        throw new Error(
+          `unknown attribute name during Data Structure merge, ${attributeWithValue}`
+        );
+      }
       const value =
         attributeWithValue.length === 2
           ? (attributeWithValue[1] as string)
@@ -114,10 +119,21 @@ export class DataStore {
     const offsetStrong = ''.padStart(2 * offset, ' ');
     if (value instanceof Set) {
       const attribute = reverseMap.get(key);
+      if (!attribute) {
+        throw new Error(
+          `unknown attribute name during Data getDataToSave, ${key}`
+        );
+      }
       const atoms = Array.from(value).join(`\n${offsetStrong}${attribute}: `);
       string += `${offsetStrong}${attribute}: ${atoms}\n`;
     } else {
-      string += `${offsetStrong}${reverseMap.get(key)}\n`;
+      const attribute = reverseMap.get(key);
+      string += `${offsetStrong}${attribute}\n`;
+      if (!attribute) {
+        throw new Error(
+          `unknown attribute name during Data getDataToSave, ${key}`
+        );
+      }
       value.forEach((_value, _key) => {
         string = this._parseDataRecursive(
           string,
